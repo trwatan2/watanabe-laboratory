@@ -1,47 +1,33 @@
 # Watanabe Laboratory Website
 
-GitHub Pages用の静的サイト第1版です。
+GitHub Pages 用の静的サイトです。
 
-## ファイル
-- `index.html` — トップページ
-- `research.html` — Researchページの骨格
-- `css/style.css` — 全体デザイン
-- `js/main.js` — メニュー、スクロール表示、動画のフォールバック
-- `assets/videos/` — 研究動画の保存場所
-- `assets/images/` — 写真・図の保存場所
+## 公開ページ
+- `index.html` — HOME
+- `research.html` — Research
+- `about.html` — About
+- `people.html` — People
+- `news.html` — News
+- `publications.html` — Publications
+- `contact.html` — Contact
+- `404.html` — 404 page
+
+## GitHubで更新する方法
+1. このフォルダの中身をリポジトリの**一番上（root）**にアップロードします。
+2. 既存ファイルがある場合は、同名ファイルを置き換えて Commit changes します。
+3. GitHub Pages は `main` / `/(root)` のままで自動再公開されます。
+4. 通常は1〜2分後にサイトへ反映されます。
 
 ## 動画の差し替え
-以下のファイル名でMP4を配置すると、トップページの仮表示が自動的に動画へ切り替わります。
+以下のファイル名でMP4を `assets/videos/` に置くと、仮表示が動画へ置き換わります。
+- `electrified-catalysis.mp4`
+- `carbon-circulation.mp4`
+- `structured-catalyst.mp4`（現在実動画あり）
 
-- `assets/videos/electrified-catalysis.mp4`
-- `assets/videos/carbon-circulation.mp4`
-- `assets/videos/structured-catalyst.mp4`
+トップ背景：`assets/videos/hamamatsu-campus-bg.mp4`
 
-短い無音ループ動画を推奨します。長い動画はYouTube等の埋め込みへ変更できます。
+## People の追加
+現在はPI情報と学生受賞のみ掲載しています。学生写真・氏名・研究テーマが揃ったら `people.html` の MEMBER セクションを更新します。
 
-## GitHub Pages
-1. GitHubで新規repositoryを作成
-2. このフォルダ内のファイルをアップロード
-3. Settings → Pages
-4. Deploy from a branch
-5. Branch: `main` / Folder: `/ (root)`
-6. Save
-
-## 次に入れるもの
-- 所属表記
-- 研究室住所・連絡先
-- 教員・学生写真
-- Researchの実動画
-- Publications
-- News
-- 日英切り替え
-
-## Research v3
-Research is organized into five major themes:
-1. Electrified Catalysis
-2. Carbon Conversion & Solid Carbon Fixation
-3. Structured & Spiral Catalysts
-4. e-Reaction Process
-5. Lattice Sulfur Catalysis
-
-The lattice-sulfur section currently uses an HTML/CSS animated concept visual and can later be replaced or supplemented with experimental video or a reaction-scheme animation.
+## 注意
+トップのキャンパス背景は制作時のビジュアル素材です。正式な大学広報サイトとして運用する場合は、権利確認済みの実写素材への差し替えを推奨します。

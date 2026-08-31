@@ -1,3 +1,16 @@
+
+// Optional research videos: a missing MP4 leaves the designed placeholder visible.
+document.querySelectorAll('video[data-src]').forEach(async video => {
+  const src = video.dataset.src;
+  try {
+    const response = await fetch(src, {method:'HEAD'});
+    if(response.ok){
+      video.src = src;
+      video.load();
+      video.play().catch(() => {});
+    }
+  } catch(e) { /* keep placeholder */ }
+});
 const header = document.querySelector('.site-header');
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.global-nav');
