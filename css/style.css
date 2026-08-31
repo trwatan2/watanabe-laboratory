@@ -231,3 +231,161 @@ body{font-size:17px}
   .people-page .profile-copy>p:not(.kicker):not(.profile-role){font-size:18px}
   .people-page .profile-role,.people-page .section-head>p{font-size:17px}
 }
+
+/* v7 — site-wide balance pass: larger supporting text, centered content, restrained portrait */
+:root{
+  --v7-max:1280px;
+  --v7-gutter:max(48px, calc((100vw - var(--v7-max))/2));
+}
+
+/* Supporting text must remain comfortably readable on desktop. */
+body{font-size:18px;line-height:1.72}
+.global-nav{font-size:14px;gap:32px}
+.brand-name b{font-size:16px}.brand-name small{font-size:11px}
+.eyebrow,.kicker{font-size:13px}
+.section-label{font-size:12px}
+.button,.text-link{font-size:13px}
+
+/* Keep all subpage content on one centered visual axis. */
+.subpage .page-hero,
+.subpage .content-section,
+.subpage .research-detail,
+.subpage .research-outro,
+.subpage .site-footer{
+  padding-left:var(--v7-gutter) !important;
+  padding-right:var(--v7-gutter) !important;
+}
+.subpage .content-section > *,
+.subpage .page-hero > *{
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+.subpage .compact-hero>p:last-of-type,
+.subpage .page-hero>p:last-child{
+  max-width:860px !important;
+  font-size:21px !important;
+  line-height:1.85 !important;
+}
+
+/* Common subpage typography. */
+.content-section{padding-top:110px;padding-bottom:110px}
+.content-section .section-head{gap:64px;margin-bottom:64px}
+.content-section .section-head>p{max-width:440px;font-size:20px;line-height:1.8}
+.body-copy{max-width:860px}.body-copy p{font-size:20px;line-height:1.9}
+.info-card p{font-size:18px;line-height:1.75}.info-card span{font-size:12px}
+.project-list p,.award-list p{font-size:18.5px;line-height:1.75}
+.project-list time,.award-list time{font-size:14px}
+
+/* People: smaller portrait, centered profile row, larger profile copy. */
+.people-page .profile-section{padding-top:88px;padding-bottom:105px}
+.people-page .profile-section>.section-label{max-width:1140px;margin-left:auto !important;margin-right:auto !important}
+.people-page .profile-card{
+  width:min(1140px,100%) !important;
+  margin:34px auto 0 !important;
+  display:grid;
+  grid-template-columns:400px minmax(0,660px) !important;
+  gap:64px !important;
+  justify-content:center;
+  align-items:center;
+}
+.people-page .profile-photo{
+  width:400px;
+  min-height:0 !important;
+  aspect-ratio:4/3 !important;
+  margin:0;
+  overflow:hidden;
+  background:#d9d9d4;
+}
+.people-page .profile-photo img{
+  width:100%;height:100%;display:block;
+  object-fit:cover;
+  object-position:72% 48% !important;
+}
+.people-page .profile-copy{padding:0 !important;max-width:660px !important}
+.people-page .profile-copy h2{font-size:clamp(44px,4vw,68px);margin:10px 0 18px}
+.people-page .profile-copy h2 small{font-size:21px;margin-top:12px}
+.people-page .profile-role{font-size:20px;line-height:1.7;margin-bottom:24px}
+.people-page .profile-copy>p:not(.kicker):not(.profile-role){font-size:20px;line-height:1.9;max-width:650px}
+.people-page .profile-links{margin-top:26px}
+.people-page .section-head{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(320px,420px) !important;
+  gap:64px !important;
+  align-items:end !important;
+}
+.people-page .section-head>p{justify-self:start !important;max-width:420px !important;font-size:20px !important;line-height:1.8}
+.people-page .member-placeholder>div{min-height:190px;padding:32px}
+.people-page .member-placeholder b{font-size:26px}
+.people-page .member-placeholder span{font-size:14px;line-height:1.55}
+.people-page .award-list p{font-size:18.5px}
+
+/* Research: keep alternating backgrounds full width, but align both media and copy to the same centered axis. */
+.research-page .research-detail{
+  grid-template-columns:minmax(0,1.2fr) minmax(360px,.8fr);
+  gap:72px;
+  min-height:0;
+  padding-top:92px;
+  padding-bottom:92px;
+}
+.research-page .detail-copy>p:not(.kicker){font-size:19.5px;line-height:1.9;max-width:620px}
+.research-page .research-facts dd{font-size:16px;line-height:1.7}
+.research-page .research-facts dt{font-size:11px}
+.research-page .research-jump span{font-size:16px}.research-page .research-jump b{font-size:12px}
+.research-page .research-outro>p:not(.kicker){font-size:20px;line-height:1.85;max-width:720px}
+
+/* Publications, News, Contact. */
+.publications-page .pub-item p{font-size:18.5px;line-height:1.7}
+.publications-page .pub-year{font-size:15px}
+.publications-page .pub-item>a{font-size:13px}
+.publications-page .source-note{font-size:14px;line-height:1.75}
+.news-page .news-index time{font-size:15px}
+.news-page .news-index .tag{font-size:12px}
+.news-page .news-index p{font-size:18.5px;line-height:1.78}
+.contact-page .contact-card{min-height:310px;padding:38px}
+.contact-page .contact-card p{font-size:19px;line-height:1.75}
+.inquiry-section .section-head>p{font-size:20px;line-height:1.8}
+
+/* Home: supporting copy also gets a readable floor while preserving the large display headings. */
+.statement-copy>p:last-child{font-size:20px;line-height:1.9}
+.research-copy>p:not(.kicker){font-size:19px;line-height:1.85}
+.news-list time{font-size:14px}.news-list .tag{font-size:11px}.news-list b{font-size:18px;line-height:1.55}
+.contact p:not(.kicker){font-size:19px;line-height:1.85}
+.site-footer span{font-size:13px}.site-footer p{font-size:12px}
+
+@media(max-width:1100px){
+  :root{--v7-gutter:36px}
+  .people-page .profile-card{grid-template-columns:340px minmax(0,1fr) !important;gap:44px !important}
+  .people-page .profile-photo{width:340px}
+  .research-page .research-detail{grid-template-columns:1fr;gap:42px}
+  .people-page .section-head{grid-template-columns:1fr !important;gap:18px !important}
+  .people-page .section-head>p{max-width:700px !important}
+}
+@media(max-width:760px){
+  :root{--v7-gutter:22px}
+  body{font-size:17px}
+  .subpage .compact-hero>p:last-of-type,.subpage .page-hero>p:last-child{font-size:18px !important}
+  .content-section{padding-top:78px;padding-bottom:78px}
+  .content-section .section-head>p,.people-page .section-head>p{font-size:18px !important}
+  .people-page .profile-card{grid-template-columns:1fr !important;gap:28px !important;width:100% !important}
+  .people-page .profile-photo{width:100%;max-width:520px;aspect-ratio:4/3 !important}
+  .people-page .profile-copy{max-width:none !important}
+  .people-page .profile-copy>p:not(.kicker):not(.profile-role){font-size:18px}
+  .people-page .profile-role{font-size:18px}
+  .body-copy p{font-size:18px}
+  .research-page .detail-copy>p:not(.kicker){font-size:18px}
+}
+
+/* v7 — center the main HOME sections as well (hero/header intentionally remain cinematic full width). */
+@media(min-width:1101px){
+  body:not(.subpage) .statement,
+  body:not(.subpage) .research,
+  body:not(.subpage) .news,
+  body:not(.subpage) .teaser,
+  body:not(.subpage) .contact,
+  body:not(.subpage) .site-footer{
+    padding-left:max(64px, calc((100vw - 1440px)/2));
+    padding-right:max(64px, calc((100vw - 1440px)/2));
+  }
+}
