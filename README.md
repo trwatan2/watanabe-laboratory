@@ -1,5 +1,9 @@
 # Watanabe Laboratory Website
 
+GitHub Pages用サイト v5。本文文字サイズ、ワイド画面の左右余白、People写真を更新。
+
+# Watanabe Laboratory Website
+
 GitHub Pages 用の静的サイトです。
 
 ## 公開ページ
