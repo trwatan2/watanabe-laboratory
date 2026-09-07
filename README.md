@@ -1,3 +1,7 @@
+# Watanabe Laboratory Website v10
+
+PeopleページにD2・M2・M1のメンバープロフィールを追加した版です。
+
 # Watanabe Laboratory Website
 
 GitHub Pages用サイト v5。本文文字サイズ、ワイド画面の左右余白、People写真を更新。
@@ -35,3 +39,7 @@ GitHub Pages 用の静的サイトです。
 
 ## 注意
 トップのキャンパス背景は制作時のビジュアル素材です。正式な大学広報サイトとして運用する場合は、権利確認済みの実写素材への差し替えを推奨します。
+
+
+## v11
+PeopleページにM1 加藤 集（Shu Kato）を追加。

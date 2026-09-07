@@ -198,3 +198,40 @@ body{font-size:18px;line-height:1.75}
   .body-copy p{font-size:18px}
   .research-page .detail-copy>p:not(.kicker){font-size:18px}
 }
+
+/* v9 — People member cards */
+.people-page .members-section{padding-top:95px;padding-bottom:110px}
+.people-page .members-head{margin-bottom:54px!important}
+.people-page .degree-group{margin-top:64px}
+.people-page .degree-group:first-of-type{margin-top:0}
+.people-page .degree-heading{display:flex;align-items:baseline;gap:16px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid #c9cec9}
+.people-page .degree-heading span{font-size:14px;font-weight:800;letter-spacing:.14em;color:#5d655f}
+.people-page .degree-heading h3{font-size:28px;margin:0;letter-spacing:-.02em}
+.people-page .member-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.people-page .member-grid-single{grid-template-columns:minmax(0,1fr)}
+.people-page .member-grid-single .member-card{max-width:760px}
+.people-page .member-card{display:grid;grid-template-columns:190px minmax(0,1fr);gap:26px;align-items:start;background:#fff;border:1px solid #d4d7d2;padding:22px;min-height:100%;box-shadow:0 8px 28px rgba(16,22,18,.035)}
+.people-page .member-photo{width:190px;aspect-ratio:1/1;margin:0;background:#e7e8e3;overflow:hidden;align-self:start}
+.people-page .member-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.people-page .member-photo.transparent-photo{background:#e7e8e3}
+.people-page .member-photo.transparent-photo img{object-fit:contain;object-position:center bottom;padding:7px}
+.people-page .member-info{min-width:0}
+.people-page .member-year{margin:0 0 4px;color:#68716b;font-size:13px;font-weight:800;letter-spacing:.14em}
+.people-page .member-info h3{font-size:27px;line-height:1.18;margin:0 0 18px;letter-spacing:-.025em}
+.people-page .member-info h3 small{display:block;margin-top:5px;font-size:15px;font-weight:500;color:#6b736e;letter-spacing:.02em}
+.people-page .member-meta{margin:0;display:grid;gap:10px}
+.people-page .member-meta div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;align-items:start}
+.people-page .member-meta dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#777f79}
+.people-page .member-meta dd{margin:0;font-size:16px;line-height:1.65;color:#343a36;overflow-wrap:anywhere}
+.people-page .member-meta a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.people-page .member-message{margin:18px 0 0;padding-top:16px;border-top:1px solid #e0e2de;font-size:15.5px;line-height:1.75;color:#5c645f}
+@media(max-width:1080px){
+  .people-page .member-grid{grid-template-columns:1fr}
+  .people-page .member-grid-single .member-card{max-width:none}
+}
+@media(max-width:680px){
+  .people-page .member-card{grid-template-columns:1fr;gap:18px;padding:18px}
+  .people-page .member-photo{width:170px}
+  .people-page .member-info h3{font-size:25px}
+  .people-page .member-meta dd{font-size:15.5px}
+}
