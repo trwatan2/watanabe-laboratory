@@ -1,12 +1,14 @@
-Watanabe Laboratory Career update v17
+Watanabe Laboratory v27 update
 
-IMPORTANT
-Upload these HTML files ONLY to this repository:
-https://github.com/trwatan2/watanabe-laboratory
+対象リポジトリ:
+  trwatan2/watanabe-laboratory
+公開URL:
+  https://trwatan2.github.io/watanabe-laboratory/
 
-DO NOT upload them to trwatan2/trwatan2.github.io (lecture site).
+1) ZIPを展開
+2) ルートのHTMLファイル9個をリポジトリ直下へ上書き
+3) css/style.css は GitHub上の css フォルダを開いて style.css を上書き
+4) Commit changes
+5) 1〜2分待って公開ページで Ctrl+Shift+R
 
-The public research laboratory site is:
-https://trwatan2.github.io/watanabe-laboratory/
-
-career.html contains employment / graduate-school destinations for 2007–2024.
+※ trwatan2.github.io（講義HP）にはアップロードしないでください。

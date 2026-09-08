@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap");
 
 :root{
   --ink:#0b0d0e;
@@ -239,7 +240,56 @@ body{font-size:18px;line-height:1.75}
   .people-page .member-meta dd{font-size:15.5px}
 }
 
-/* v21 — force BIZ UDPGothic across the research-lab website */
-html, body, button, input, textarea, select, option, a, p, span, div, section, article, nav, header, footer, h1, h2, h3, h4, h5, h6, b, strong, em, small, time, label {
-  font-family: "BIZ UDPGothic", "BIZ UDP Gothic", "Yu Gothic", Meiryo, sans-serif !important;
+
+/* v27: readable accent on light backgrounds + PI academic path */
+:root{--acid-on-light:#496300}
+/* Keep the bright acid green on black/dark surfaces; use a deeper green on paper/white surfaces. */
+.statement .kicker,
+.news .kicker,
+.content-section:not(.dark-section):not(.light-outro) .kicker,
+.research-detail:not(.sulfur-detail) .kicker,
+.pub-page .kicker,
+.pub-page .section-label,
+.career-page .career-intro .section-label,
+.career-page .career-timeline .section-label,
+.people-page .member-year{
+  color:var(--acid-on-light)!important;
 }
+.statement .text-link:hover,
+.news .text-link:hover,
+.content-section:not(.dark-section):not(.light-outro) .text-link:hover,
+.research-detail:not(.sulfur-detail) .text-link:hover,
+.pub-page a:hover{
+  color:var(--acid-on-light)!important;
+}
+/* Explicitly preserve bright highlights on dark backgrounds. */
+.page-hero .eyebrow,
+.dark-section .kicker,
+.research-outro .kicker,
+.hero .eyebrow,
+.research-jump b,
+.info-card span,
+.profile-monogram{
+  color:var(--acid)!important;
+}
+.light-outro .kicker,.contact-card.primary-contact .kicker{color:#0b0d0e!important}
+.sulfur-detail .kicker,.sulfur-feature .kicker{color:#e1b42e!important}
+
+.waseda-origin{margin-top:22px!important;padding:18px 20px;border-left:4px solid var(--acid-on-light);background:#ecebe5;color:#343a36!important;line-height:1.85!important}
+.academic-path-section{background:#f3f1eb}
+.academic-path-head{margin-bottom:52px}
+.academic-path-head>p{max-width:560px;color:#5f6762;font-size:17px;line-height:1.85}
+.academic-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#c8ccc9;border:1px solid #c8ccc9;margin-bottom:62px}
+.academic-links a{min-height:180px;background:#fff;padding:28px;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;gap:16px;transition:.2s}
+.academic-links a:hover{background:#eef1e6;color:#243000}
+.academic-links span{font-size:10px;letter-spacing:.16em;font-weight:800;color:var(--acid-on-light)}
+.academic-links b{align-self:end;font-size:21px;line-height:1.35}
+.academic-links i{grid-column:2;grid-row:1/3;align-self:end;font-style:normal;font-size:22px}
+.academic-timeline{border-top:1px solid #c6cac6}
+.academic-timeline article{display:grid;grid-template-columns:150px 1fr;gap:36px;padding:28px 0;border-bottom:1px solid #d0d4d0;align-items:start}
+.academic-timeline time{font-size:17px;font-weight:800;color:var(--acid-on-light);letter-spacing:.02em}
+.academic-timeline b{display:block;font-size:19px;line-height:1.5}
+.academic-timeline p{margin:7px 0 0;color:#5b635e;font-size:15.5px;line-height:1.75}
+.academic-timeline .sekine-row{background:linear-gradient(90deg,rgba(73,99,0,.075),transparent);padding-left:14px;padding-right:14px;margin-left:-14px;margin-right:-14px}
+@media(max-width:900px){.academic-links{grid-template-columns:1fr}.academic-links a{min-height:140px}.academic-timeline article{grid-template-columns:110px 1fr;gap:22px}}
+@media(max-width:600px){.academic-timeline article{grid-template-columns:1fr;gap:6px}.academic-links a{padding:24px}.academic-path-head{margin-bottom:36px}}
