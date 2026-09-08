@@ -1,106 +1,13 @@
 <!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="渡部研究室 / Watanabe Laboratory — 静岡大学浜松キャンパス。触媒化学・反応工学・構造体触媒・CO2変換・格子硫黄触媒プロセス。" />
-  <meta name="theme-color" content="#0b0d0e" />
-  <title>Watanabe Laboratory | 渡部研究室</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=27" />
-  <style id="biz-udpgothic-force">
-    html, body, body *, body *::before, body *::after {
-      font-family: "BIZ UDPGothic", sans-serif !important;
-    }
-  </style>
-  <style id="heading-font-restore">
-    body h1, body h2 {
-      font-family: "Helvetica Neue", Arial, "Yu Gothic", Meiryo, sans-serif !important;
-    }
-  </style>
-
-  <style id="v28-accent-fix">
-    /* v29: brighter olive-lime accents on light surfaces — inline so GitHub folder/CSS cache cannot block it */
-    :root{--accent-light:#6a8720;--accent-link:#587300}
-    .statement .kicker,
-    .statement .section-label,
-    .news .section-label,
-    .news .text-link,
-    .content-section:not(.dark-section):not(.light-outro) .kicker,
-    .content-section:not(.dark-section):not(.light-outro) .section-label,
-    .content-section:not(.dark-section):not(.light-outro) .text-link,
-    .content-section:not(.dark-section):not(.light-outro) .member-year,
-    .research-detail:not(.sulfur-detail) .kicker,
-    .research-detail:not(.sulfur-detail) .research-no,
-    .pub-page .section-label,
-    .pub-page .pub-doi,
-    .pub-page .pub-links a,
-    .career-timeline .section-label,
-    .career-timeline .external-mark,
-    .contact-card:not(.primary-contact) .kicker,
-    .contact-card:not(.primary-contact) .text-link,
-    .academic-links span,
-    .people-page .member-year{color:var(--accent-light)!important}
-
-    /* Links use a slightly deeper olive-lime for readability; labels stay brighter. */
-    .statement .text-link,
-    .news .text-link,
-    .content-section:not(.dark-section):not(.light-outro) .text-link,
-    .pub-page .pub-doi,
-    .pub-page .pub-links a,
-    .career-timeline .external-mark,
-    .contact-card:not(.primary-contact) .text-link,
-    .academic-links span{color:var(--accent-link)!important}
-
-    .statement .text-link:hover,
-    .news .text-link:hover,
-    .content-section:not(.dark-section):not(.light-outro) .text-link:hover,
-    .pub-page a:hover,
-    .contact-card:not(.primary-contact) .text-link:hover{color:#3f5700!important}
-
-    /* Keep the original bright lime only on genuinely dark backgrounds. */
-    .hero .eyebrow,
-    .page-hero .eyebrow,
-    .dark-section .kicker,
-    .research-outro .kicker,
-    .research-jump b,
-    .info-card span,
-    .profile-monogram,
-    .video-placeholder>span{color:#d7ff45!important}
-
-    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#d29b18!important}
-  </style>
-</head>
-<body>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Watanabe Laboratory home"><span class="brand-mark">WL</span><span class="brand-name"><b>Watanabe Laboratory</b><small>渡部研究室</small></span></a>
-    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
-    <nav class="global-nav" aria-label="Main navigation"><a href="research.html">Research</a><a href="about.html">About</a><a href="people.html">People</a><a href="career.html">Career</a><a href="news.html">News</a><a href="publications.html">Publications</a><a href="playground.html">Playground</a><a href="contact.html">Contact</a></nav>
-  </header>
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true"><video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hamamatsu-campus-poster.jpg"><source src="assets/videos/hamamatsu-campus-bg.mp4" type="video/mp4" /></video><div class="hero-video-shade"></div></div>
-      <div class="hero-content"><p class="eyebrow">CATALYSIS · REACTION ENGINEERING · CARBON CIRCULATION</p><h1 id="hero-title">Watanabe<br>Laboratory</h1><p class="hero-jp">渡 部 研 究 室</p><p class="hero-lead">Transforming molecules, energy, and carbon through catalytic reaction engineering.</p><div class="hero-actions"><a class="button button-solid" href="research.html">Explore Research</a><a class="button button-ghost" href="about.html">About the Lab</a></div></div>
-      <a class="scroll-cue" href="#vision" aria-label="Visionへスクロール"><span></span>SCROLL</a>
-    </section>
-    <section class="statement" id="vision"><div class="section-label">01 / VISION</div><div class="statement-copy reveal"><p class="kicker">REACTION ENGINEERING FOR A CARBON-CIRCULATING SOCIETY</p><h2>反応を、<br><em>社会実装できる技術</em>へ。</h2><p>触媒化学、反応工学、電化反応を横断し、CO₂・メタン・水素・炭素資源・硫黄種を対象とした新しい反応プロセスを研究します。</p></div></section>
-    <section class="research" id="research">
-      <div class="section-head reveal"><div><div class="section-label">02 / RESEARCH</div><h2>Research in motion.</h2></div><p>材料、構造、反応器、エネルギー供給を横断する5つの研究テーマ。</p></div>
-      <article class="research-feature reveal"><div class="video-card"><video autoplay muted loop playsinline preload="metadata" data-src="assets/videos/electrified-catalysis.mp4"></video><div class="video-placeholder"><span>01</span><b>ELECTRIFIED<br>CATALYSIS</b><small>JOULE HEATING · e-DRM</small></div></div><div class="research-copy"><span class="research-no">01</span><p class="kicker">ELECTRIFIED CATALYSIS</p><h3>電気で触媒反応を駆動する。</h3><p>構造体触媒と電気加熱を組み合わせ、反応場そのものを高効率に制御する触媒プロセスを研究します。</p><a class="text-link" href="research.html#electrified">View research <span>↗</span></a></div></article>
-      <article class="research-feature reverse reveal"><div class="video-card"><video autoplay muted loop playsinline preload="metadata" data-src="assets/videos/carbon-circulation.mp4"></video><div class="video-placeholder"><span>02</span><b>CARBON<br>CIRCULATION</b><small>CO₂ → SYNGAS · SOLID CARBON</small></div></div><div class="research-copy"><span class="research-no">02</span><p class="kicker">CARBON CIRCULATION</p><h3>CO₂を資源へ変える。</h3><p>CO₂変換、合成ガス製造、固体炭素固定化を組み合わせ、炭素を循環利用する反応システムを研究します。</p><a class="text-link" href="research.html#carbon">View research <span>↗</span></a></div></article>
-      <article class="research-feature reveal"><div class="video-card"><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/structured-catalyst.mp4" type="video/mp4" /></video><div class="video-placeholder"><span>03</span><b>STRUCTURED<br>CATALYSTS</b><small>SPIRAL · POROUS METAL · FLOW</small></div></div><div class="research-copy"><span class="research-no">03</span><p class="kicker">STRUCTURED CATALYSTS</p><h3>触媒の「かたち」を機能にする。</h3><p>スパイラル、金属多孔体、ウォッシュコートを活用し、熱・物質移動まで含めた触媒反応器を構築します。</p><a class="text-link" href="research.html#structured">View research <span>↗</span></a></div></article>
-      <article class="research-feature reverse reveal"><div class="video-card"><div class="video-placeholder theme-ereaction"><span>04</span><b>e-REACTION<br>PROCESS</b><small>ELECTRICITY → CHEMICAL TRANSFORMATION</small><div class="pulse-line"><i></i><i></i><i></i><i></i><i></i></div></div></div><div class="research-copy"><span class="research-no">04</span><p class="kicker">e-REACTION PROCESS</p><h3>熱の与え方から、化学プロセスを変える。</h3><p>電気エネルギーを反応器・触媒へ直接導入し、高速応答・局所加熱・コンパクト化を活かした反応操作へ展開します。</p><a class="text-link" href="research.html#ereaction">View research <span>↗</span></a></div></article>
-      <article class="research-feature reveal sulfur-feature"><div class="video-card lattice-card"><div class="video-placeholder theme-sulfur"><span>05</span><b>LATTICE SULFUR<br>CATALYSIS</b><small>LATTICE S ⇄ VACANCY ⇄ REGENERATION</small></div></div><div class="research-copy"><span class="research-no">05</span><p class="kicker">LATTICE SULFUR CATALYSIS</p><h3>格子Sを、反応種として利用する。</h3><p>硫化物中の格子Sの放出とH₂Sによる再挿入を利用し、硫黄欠陥を介して格子Sを反復利用するレドックス型触媒プロセスを研究します。</p><a class="text-link" href="research.html#sulfur">View research <span>↗</span></a></div></article>
-    </section>
-    <section class="people teaser"><div class="section-label">03 / PEOPLE</div><div class="teaser-inner reveal"><p class="kicker">PEOPLE</p><h2>Different expertise.<br>One laboratory.</h2><p>触媒化学・反応工学を軸に、材料、構造、流動、電化反応をつなぐチームです。</p><a class="button button-dark" href="people.html">Meet the team</a></div></section>
-    <section class="news"><div class="section-head reveal"><div><div class="section-label">04 / NEWS</div><h2>Latest</h2></div><a class="text-link" href="news.html">All news <span>↗</span></a></div><div class="news-list reveal"><a href="news.html"><time>2026.08.31</time><span class="tag">LAB</span><b>Watanabe Laboratory website launched.</b><span>↗</span></a><a href="publications.html"><time>2026</time><span class="tag">PAPER</span><b>Low-Temperature RWGS Process with a Two-Stage Cu-Fe/Zn Spiral-structured Catalyst.</b><span>↗</span></a><a href="people.html"><time>2026.03–04</time><span class="tag">AWARD</span><b>Carbon Looping and carbon formation studies received student awards.</b><span>↗</span></a></div></section>
-    <section class="publications teaser publication-teaser"><div class="section-label">05 / PUBLICATIONS</div><div class="teaser-inner reveal"><p class="kicker">PUBLICATIONS</p><h2>Ideas made visible.</h2><p>CO₂変換、構造体触媒、固体炭素固定化を中心に、最近の研究成果を掲載しています。</p><a class="button button-light" href="publications.html">View publications</a></div></section>
-    <section class="contact"><div class="contact-inner reveal"><p class="kicker">CONTACT</p><h2>Work with us.</h2><p>共同研究、研究室見学、進学相談などはこちらから。</p><a class="button button-solid" href="contact.html">Contact</a></div></section>
-  </main>
-<footer class="site-footer">
-  <div><b>Watanabe Laboratory</b><span>渡部研究室 · Shizuoka University, Hamamatsu</span></div>
-  <p>© <span id="year"></span> Watanabe Laboratory.</p>
-</footer>
-<script src="js/main.js"></script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chemtree</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
