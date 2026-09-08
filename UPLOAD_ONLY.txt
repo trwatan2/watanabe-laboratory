@@ -1,0 +1,7 @@
+Upload every file/folder in this package to:
+trwatan2/watanabe-laboratory
+at the repository root, then Commit changes.
+
+No Settings / Pages / Actions operation is required.
+
+This is intentionally lightweight. Existing assets/photos/videos in the repository are reused.
