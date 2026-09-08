@@ -62,8 +62,8 @@
   </style>
 
   <style id="v28-accent-fix">
-    /* v28: accent text on light surfaces — inline so GitHub folder/CSS cache cannot block it */
-    :root{--accent-light:#2e5d3b}
+    /* v29: brighter olive-lime accents on light surfaces — inline so GitHub folder/CSS cache cannot block it */
+    :root{--accent-light:#6a8720;--accent-link:#587300}
     .statement .kicker,
     .statement .section-label,
     .news .section-label,
@@ -84,12 +84,21 @@
     .academic-links span,
     .people-page .member-year{color:var(--accent-light)!important}
 
-    /* Make highlighted/interactive text on paper visibly darker, including hover states. */
+    /* Links use a slightly deeper olive-lime for readability; labels stay brighter. */
+    .statement .text-link,
+    .news .text-link,
+    .content-section:not(.dark-section):not(.light-outro) .text-link,
+    .pub-page .pub-doi,
+    .pub-page .pub-links a,
+    .career-timeline .external-mark,
+    .contact-card:not(.primary-contact) .text-link,
+    .academic-links span{color:var(--accent-link)!important}
+
     .statement .text-link:hover,
     .news .text-link:hover,
     .content-section:not(.dark-section):not(.light-outro) .text-link:hover,
     .pub-page a:hover,
-    .contact-card:not(.primary-contact) .text-link:hover{color:#163d28!important}
+    .contact-card:not(.primary-contact) .text-link:hover{color:#3f5700!important}
 
     /* Keep the original bright lime only on genuinely dark backgrounds. */
     .hero .eyebrow,
@@ -101,7 +110,7 @@
     .profile-monogram,
     .video-placeholder>span{color:#d7ff45!important}
 
-    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#c89200!important}
+    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#d29b18!important}
   </style>
 </head>
 <body class="subpage career-page">
