@@ -1,0 +1,179 @@
+name: Visitor Country Statistics
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/visitor-country-stats.yml'
+      - 'visitor-country-stats.json'
+  schedule:
+    # 06:25 JST every day
+    - cron: '25 21 * * *'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: visitor-country-stats
+  cancel-in-progress: false
+
+jobs:
+  update-country-stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch GoatCounter country statistics
+        shell: bash
+        env:
+          GOATCOUNTER_API_KEY: ${{ secrets.GOATCOUNTER_API_KEY }}
+        run: |
+          if [ -z "$GOATCOUNTER_API_KEY" ]; then
+            echo "GOATCOUNTER_API_KEY is not configured."
+            exit 1
+          fi
+
+          node <<'NODE'
+          (async () => {
+          const fs = require('fs');
+
+          const token = process.env.GOATCOUNTER_API_KEY;
+          const base = 'https://watanabe-lab.goatcounter.com/api/v0';
+          const start = '2026-09-08T15:00:00Z'; // tracking began 2026-09-09 JST
+
+          async function apiGet(u) {
+            const r = await fetch(u, {headers: {
+              Authorization: 'Bearer ' + token,
+              'Content-Type': 'application/json'
+            }});
+            if (!r.ok) {
+              const body = (await r.text()).split(token).join('[REDACTED]').slice(0, 1200);
+              throw new Error('GoatCounter ' + u.pathname + ' HTTP ' + r.status + ': ' + body);
+            }
+            return r.json();
+          }
+
+          // Resolve the existing aggregate path to its numeric ID first.
+          // This also works when the server does not support path_by_name.
+          async function findTotalPath() {
+            let after = 0;
+            for (let page = 0; page < 100; page++) {
+              const u = new URL(base + '/paths');
+              u.searchParams.set('limit', '200');
+              u.searchParams.set('after', String(after));
+              const d = await apiGet(u);
+              if (!Array.isArray(d.paths)) throw new Error('Unexpected paths response');
+              const found = d.paths.find(p => String(p.path).replace(/^\//, '') === 'site-total');
+              if (found) {
+                const id = Number(found.id);
+                if (!Number.isInteger(id) || id <= 0) throw new Error('Invalid aggregate path ID');
+                return id;
+              }
+              if (!d.more || !d.paths.length) break;
+              const next = Number(d.paths[d.paths.length - 1].id);
+              if (!(next > after)) throw new Error('Path pagination did not advance');
+              after = next;
+              await new Promise(resolve => setTimeout(resolve, 300));
+            }
+            throw new Error('The /site-total tracking path is not recorded in GoatCounter yet.');
+          }
+          const totalPathID = await findTotalPath();
+          console.log('Aggregate tracking path found; requesting country statistics.');
+
+          async function getAllLocations() {
+            const all = [];
+            let offset = 0;
+
+            for (let page = 0; page < 20; page++) {
+              const u = new URL(base + '/stats/locations');
+              u.searchParams.set('start', start);
+              u.searchParams.set('limit', '100');
+              u.searchParams.set('offset', String(offset));
+              u.searchParams.set('include_paths', String(totalPathID));
+
+              const d = await apiGet(u);
+              if (!Array.isArray(d.stats)) throw new Error('Unexpected GoatCounter response');
+              const stats = d.stats;
+              all.push(...stats);
+
+              if (!d.more || stats.length === 0) break;
+              offset += stats.length;
+            }
+            return all;
+          }
+
+          const countryNames = new Intl.DisplayNames(['en'], {type:'region'});
+          const stats = await getAllLocations();
+
+          let japan = 0;
+          let international = 0;
+          let unknown = 0;
+          const countries = [];
+
+          for (const item of stats) {
+            const rawId = String(item.id ?? '').trim();
+            const code = rawId.split('-')[0].toUpperCase();
+            const count = Number(item.count ?? 0);
+
+            if (!code || code === 'UNKNOWN' || code === 'ZZ') {
+              unknown += count;
+              continue;
+            }
+
+            if (code === 'JP') japan += count;
+            else international += count;
+
+            let name = String(item.name ?? '').trim();
+            if (!name || name === code) {
+              try { name = countryNames.of(code) || code; } catch { name = code; }
+            }
+
+            countries.push({code, name, count});
+          }
+
+          countries.sort((a,b) => b.count - a.count || a.name.localeCompare(b.name));
+
+          const result = {
+            status: 'ready',
+            updatedAt: new Date().toISOString(),
+            since: start,
+            japan,
+            international,
+            unknown,
+            topCountries: countries.slice(0, 10)
+          };
+
+          fs.writeFileSync('visitor-country-stats.json', JSON.stringify(result, null, 2) + '\n');
+          console.log(result);
+          })().catch(err => { console.error(err.message); process.exit(1); });
+          NODE
+
+      - name: Commit public country summary
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add visitor-country-stats.json
+
+          if git diff --cached --quiet; then
+            echo "No country-stat changes."
+            exit 0
+          fi
+
+          git commit -m "Update visitor country statistics"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Rebuild GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
+
