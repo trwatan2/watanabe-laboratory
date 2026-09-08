@@ -131,29 +131,61 @@ img,video{max-width:100%}
 
 <style id="global-visitors-style">
 .global-visitors{
-  max-width:1180px;margin:0 auto;padding:28px 42px 34px;
-  border-top:1px solid rgba(12,17,18,.14)
+  max-width:1180px;
+  margin:0 auto;
+  padding:10px 42px;
+  border-top:1px solid rgba(12,17,18,.14);
+  border-bottom:1px solid rgba(12,17,18,.10);
+  background:#f7f8f5;
 }
-.gv-head{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:12px}
-.gv-head h2{margin:0;font-size:clamp(24px,3vw,36px);line-height:1}
-.gv-kicker{color:#6a8720;font-size:10px;font-weight:800;letter-spacing:.12em}
-.gv-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gv-card{background:#fff;border:1px solid rgba(12,17,18,.12);padding:15px 17px}
-.gv-total{font-size:clamp(32px,5vw,48px);font-weight:800;line-height:1;letter-spacing:-.035em}
-.gv-label{margin-top:5px;color:#626a65;font-size:11px}
-.gv-split{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
-.gv-mini{padding:9px 10px;background:#fafbf8;border:1px solid rgba(12,17,18,.1)}
-.gv-mini b{display:block;font-size:18px;margin-top:2px}
-.gv-mini span{font-size:10px;color:#626a65}
-.gv-countries{margin-top:8px;display:grid;gap:4px}
-.gv-country{display:flex;justify-content:space-between;padding-bottom:4px;border-bottom:1px solid rgba(12,17,18,.08);font-size:12px}
-.gv-note{margin-top:8px;color:#737a75;font-size:10px;line-height:1.45}
-.gv-live{color:#587300;font-weight:800;font-size:10px}
+.gv-strip{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  min-height:34px;
+  font-size:12px;
+  line-height:1.25;
+}
+.gv-title{
+  font-weight:800;
+  font-size:14px;
+  white-space:nowrap;
+}
+.gv-title small{
+  margin-left:7px;
+  color:#6a8720;
+  font-size:9px;
+  letter-spacing:.10em;
+  font-weight:800;
+}
+.gv-metric{
+  display:inline-flex;
+  align-items:baseline;
+  gap:5px;
+  white-space:nowrap;
+  color:#646b66;
+}
+.gv-metric b{
+  color:#141716;
+  font-size:13px;
+}
+.gv-countries{
+  margin-left:auto;
+  color:#646b66;
+  font-size:11px;
+  white-space:nowrap;
+}
+.gv-countries b{
+  color:#141716;
+  font-weight:700;
+}
 @media(max-width:760px){
-  .global-visitors{padding:26px 20px 30px}
-  .gv-head{display:block}
-  .gv-kicker{margin-top:5px}
-  .gv-grid{grid-template-columns:1fr}
+  .global-visitors{padding:9px 18px}
+  .gv-strip{gap:6px 12px;font-size:11px}
+  .gv-title{width:100%;font-size:13px}
+  .gv-countries{width:100%;margin-left:0;white-space:normal;font-size:10px}
+  .gv-metric b{font-size:12px}
 }
 </style>
 
@@ -196,40 +228,34 @@ img,video{max-width:100%}
     <section class="contact"><div class="contact-inner reveal"><p class="kicker">CONTACT</p><h2>Work with us.</h2><p>共同研究、研究室見学、進学相談などはこちらから。</p><a class="button button-solid" href="contact.html">Contact</a></div></section>
   </main>
 
-<section class="global-visitors" aria-labelledby="global-visitors-title">
-  <div class="gv-head"><h2 id="global-visitors-title">Global Visitors</h2><div class="gv-kicker">RESEARCH LAB WEBSITE ONLY</div></div>
-  <div class="gv-grid">
-    <div class="gv-card">
-      <div class="gv-live">● GoatCounter analytics</div>
-      <div class="gv-total" id="gvTotal">集計中</div>
-      <div class="gv-label">Visitor sessions since tracking started</div>
-      <div class="gv-split">
-        <div class="gv-mini"><span>Japan</span><b id="gvJapan">集計中</b></div>
-        <div class="gv-mini"><span>International</span><b id="gvInternational">集計中</b></div>
-      </div>
-      <div class="gv-note">国・地域はアクセス元IPから推定されます。講義サイトは計測対象に含みません。</div>
-    </div>
-    <div class="gv-card">
-      <strong>Top countries</strong>
-      <div class="gv-countries" id="gvCountries"><div class="gv-country"><span>集計中</span><span>—</span></div></div>
-      <div class="gv-note" id="gvUpdated">アクセスデータを集計中です。</div>
-    </div>
+<section class="global-visitors" aria-label="Global Visitors">
+  <div class="gv-strip">
+    <div class="gv-title">Global Visitors <small>LAB WEBSITE</small></div>
+    <div class="gv-metric">Total <b id="gvTotal">集計中</b></div>
+    <div class="gv-metric">Japan <b id="gvJapan">集計中</b></div>
+    <div class="gv-metric">International <b id="gvInternational">集計中</b></div>
+    <div class="gv-countries">Top countries: <b id="gvCountries">集計中</b></div>
   </div>
 </section>
 <script>
 (function(){
- fetch('https://watanabe-lab.goatcounter.com/counter/'+encodeURIComponent('/site-total')+'.json',{cache:'no-store'})
- .then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){document.getElementById('gvTotal').textContent=d.count||'0'})
- .catch(function(){document.getElementById('gvTotal').textContent='集計中'});
- fetch('visitor-country-stats.json?v='+Math.floor(Date.now()/3600000),{cache:'no-store'})
- .then(function(r){return r.json()}).then(function(d){
-   if(!d||d.status!=='ready')return;
-   document.getElementById('gvJapan').textContent=String(d.japan??0);
-   document.getElementById('gvInternational').textContent=String(d.international??0);
-   var box=document.getElementById('gvCountries');box.innerHTML='';
-   (d.topCountries||[]).slice(0,6).forEach(function(c){var row=document.createElement('div');row.className='gv-country';row.innerHTML='<span></span><span></span>';row.children[0].textContent=c.name||c.code||'';row.children[1].textContent=String(c.count??0);box.appendChild(row)});
-   if(d.updatedAt)document.getElementById('gvUpdated').textContent='Country statistics updated: '+new Date(d.updatedAt).toLocaleString();
- }).catch(function(){});
+  fetch('https://watanabe-lab.goatcounter.com/counter/'+encodeURIComponent('/site-total')+'.json',{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw 0;return r.json()})
+    .then(function(d){document.getElementById('gvTotal').textContent=d.count||'0'})
+    .catch(function(){document.getElementById('gvTotal').textContent='集計中'});
+
+  fetch('visitor-country-stats.json?v='+Math.floor(Date.now()/3600000),{cache:'no-store'})
+    .then(function(r){return r.json()})
+    .then(function(d){
+      if(!d||d.status!=='ready')return;
+      document.getElementById('gvJapan').textContent=String(d.japan??0);
+      document.getElementById('gvInternational').textContent=String(d.international??0);
+      var top=(d.topCountries||[]).slice(0,4)
+        .map(function(c){return (c.name||c.code||'')+' '+String(c.count??0)})
+        .join(' / ');
+      document.getElementById('gvCountries').textContent=top||'集計中';
+    })
+    .catch(function(){});
 })();
 </script>
 

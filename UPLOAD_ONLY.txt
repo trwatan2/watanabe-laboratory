@@ -1,11 +1,12 @@
-v49 Compact Global Visitors
+v50 — Global Visitors slim strip
 
 Upload ONLY index.html to the ROOT of:
 trwatan2/watanabe-laboratory
 
 Then Commit changes.
 
-Changes:
-- Global Visitors box is much smaller.
-- "集計中" is shown explicitly for Total / Japan / International / Top countries until data is available.
-- No other page or ChemTree setting is changed.
+The old two-box visitor section is removed.
+It is now a thin single strip:
+Global Visitors | Total | Japan | International | Top countries
+
+No other page, multilingual page, GoatCounter setting, or ChemTree setting is changed.
