@@ -44,6 +44,26 @@
     .play-wrap .section-label,.play-wrap .project-kicker,.play-wrap a:not(.primary){color:#6a8720!important}
     .page-hero .eyebrow{color:#d7ff45!important}
   </style>
+
+<style id="chemtree-pc-only-notice">
+.chemtree-pc-only{
+  margin:14px 0 4px;
+  padding:11px 13px;
+  border:2px solid #d00000;
+  background:#fff1f1;
+  color:#c00000;
+  font-weight:800;
+  line-height:1.55;
+  border-radius:10px;
+}
+.chemtree-pc-only small{
+  display:block;
+  margin-top:3px;
+  color:#a00000;
+  font-weight:700;
+}
+</style>
+
 </head>
 <body class="subpage">
 <header class="site-header scrolled">
@@ -79,7 +99,11 @@
           <p>JACS、Chem、Nature、Scienceの最近の論文を、研究テーマのつながりとして3D樹形図で探索する文献可視化ツールです。</p>
           <p>Explore recent chemistry papers as an interactive research landscape rather than a conventional list.</p>
           <div class="project-meta"><span>JACS</span><span>Chem</span><span>Nature</span><span>Science</span><span>1M / 3M / 6M / 1Y</span><span>OpenAlex metadata</span></div>
-          <div class="project-actions"><a class="primary" href="chemtree-app.html">Open ChemTree →</a><a href="chemtree.html">About &amp; How to use →</a></div>
+          <div class="chemtree-pc-only">
+動作環境：PCのみ
+<small>Windows / macOS の Chrome・Edge 推奨。スマートフォン・タブレットでは ChemTree 本体は現在サポートしていません。<br>PC ONLY — Smartphone / tablet access is currently unsupported.</small>
+</div>
+<div class="project-actions"><a class="primary" href="chemtree-app.html">Open ChemTree (PC ONLY) →</a><a href="chemtree.html">About &amp; How to use →</a></div>
         </div>
       </article>
     </div>

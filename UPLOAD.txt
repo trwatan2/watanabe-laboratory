@@ -1,0 +1,10 @@
+ChemTree v37 PC-only notice patch
+
+Upload ONLY these two HTML files to the ROOT of:
+trwatan2/watanabe-laboratory
+
+- playground.html
+- chemtree.html
+
+This patch does NOT overwrite chemtree-app.html or any ChemTree data.
+It only adds a prominent red PC-only system-requirement notice.
