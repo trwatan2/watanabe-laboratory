@@ -1,0 +1,21 @@
+ONE UPLOAD ONLY
+
+1. Open repository:
+   trwatan2/watanabe-laboratory
+
+2. Add file -> Upload files
+
+3. Drag ALL contents of this extracted package into the repository root.
+
+4. Commit changes.
+
+That is all.
+Do NOT change Settings -> Pages.
+Do NOT manually run Actions.
+
+What this package does automatically:
+- restores the laboratory HOME page
+- publishes the complete website whether Pages is currently branch-based or GitHub-Actions-based
+- keeps ChemTree PC-only with a red mobile warning
+- updates ChemTree every day at 06:10 JST
+- if ChemTree update fails, the existing public site remains available

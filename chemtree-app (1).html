@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>ChemTree | Watanabe Laboratory</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#080c12;color:#f4f7fb;font-family:Arial,"Yu Gothic",Meiryo,sans-serif}
+    main{max-width:760px;margin:0 auto;padding:9vh 22px}
+    h1{font-size:clamp(36px,8vw,72px);margin:0 0 18px}.warn{border:2px solid #ff3b30;background:#2b0808;color:#ff625a;padding:18px;border-radius:14px;font-weight:800;line-height:1.7;margin:24px 0}.pc{color:#d7ff45;font-weight:800}.go{display:inline-block;background:#d7ff45;color:#10130a;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:800}.muted{color:#aab3bf;line-height:1.7}
+  </style>
+</head>
+<body>
+<main>
+  <h1>ChemTree</h1>
+  <div id="mobileNotice" class="warn" hidden>
+    動作環境：PCのみ<br>
+    <span>PC ONLY — ChemTree is currently supported on desktop/laptop browsers only.</span><br>
+    <span>スマートフォン・タブレットでは本体をサポートしていません。</span>
+  </div>
+  <div id="pcNotice">
+    <p class="pc">PC environment detected.</p>
+    <p class="muted">ChemTreeを開いています。自動的に移動しない場合は下のボタンを押してください。</p>
+    <a class="go" href="./chemtree/">OPEN CHEMTREE →</a>
+  </div>
+</main>
+<script>
+(function(){
+  const mobile = /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(navigator.userAgent) || Math.min(screen.width,screen.height) < 720;
+  if (mobile) {
+    document.getElementById('mobileNotice').hidden = false;
+    document.getElementById('pcNotice').hidden = true;
+    return;
+  }
+  location.replace('./chemtree/' + location.search + location.hash);
+})();
+</script>
+</body>
+</html>

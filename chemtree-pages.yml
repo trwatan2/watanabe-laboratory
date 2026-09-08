@@ -1,38 +1,46 @@
-name: ChemTree Daily Update
+name: Watanabe Lab Website + Daily ChemTree
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
   schedule:
-    # 21:10 UTC = 06:10 JST
-    - cron: '10 21 * * *'
+    - cron: '10 21 * * *'   # 06:10 JST
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: chemtree-daily-update
+  group: watanabe-lab-pages
   cancel-in-progress: false
 
 jobs:
-  update:
+  publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 75
+    environment:
+      name: github-pages
 
     steps:
-      - name: Checkout laboratory website repository
-        uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      # Daily/manual runs update ChemTree. Ordinary uploads do NOT wait for this.
+      - name: Setup Node for ChemTree
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
           cache-dependency-path: chemtree-source/package-lock.json
 
-      - name: Restore OpenAlex caches
-        uses: actions/cache@v6
+      - name: Restore ChemTree caches
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: actions/cache@v4
         with:
           path: |
             chemtree-source/public/data/openalex-filter-cache-1y.json
@@ -41,7 +49,8 @@ jobs:
           restore-keys: |
             chemtree-openalex-${{ runner.os }}-
 
-      - name: Seed caches on first run
+      - name: Prepare ChemTree cache seed
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         shell: bash
         run: |
           mkdir -p chemtree-source/public/data
@@ -49,44 +58,55 @@ jobs:
           test -f chemtree-source/public/data/openalex-tree-cache-1y.json || cp chemtree-source/seed/openalex-tree-cache-1y.json chemtree-source/public/data/
 
       - name: Install ChemTree dependencies
+        id: npm_install
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
         working-directory: chemtree-source
         run: npm ci
 
-      - name: Update literature data
-        working-directory: chemtree-source
+      - name: Update and build ChemTree safely
+        id: chemtree_update
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && steps.npm_install.outcome == 'success'
         shell: bash
+        working-directory: chemtree-source
         run: |
+          set +e
+          ok=0
           for attempt in 1 2 3; do
             echo "ChemTree update attempt ${attempt}/3"
-            if npm run update; then
-              exit 0
+            npm run update
+            if [ $? -eq 0 ]; then
+              ok=1
+              break
             fi
-            if [ "$attempt" -lt 3 ]; then
-              sleep $((attempt * 90))
-            fi
+            sleep $((attempt * 90))
           done
-          exit 1
 
-      - name: Prepare deploy data
-        working-directory: chemtree-source
-        run: npm run prepare-deploy
+          if [ "$ok" -ne 1 ]; then
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+            echo "ChemTree update failed. Existing public ChemTree will be kept."
+            exit 0
+          fi
 
-      - name: Build ChemTree
-        working-directory: chemtree-source
-        run: npm run build
+          npm run prepare-deploy && npm run build
+          if [ $? -ne 0 ]; then
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+            echo "ChemTree build failed. Existing public ChemTree will be kept."
+            exit 0
+          fi
 
-      - name: Replace ONLY the public ChemTree files
+          echo "updated=true" >> "$GITHUB_OUTPUT"
+
+      - name: Replace ONLY public ChemTree files
+        if: steps.chemtree_update.outputs.updated == 'true'
         shell: bash
         run: |
           rm -rf chemtree
           cp -a chemtree-source/dist chemtree
           cp chemtree-source/redirect/chemtree-app.html chemtree-app.html
 
-          # IMPORTANT:
-          # index.html, research.html, people.html, publications.html, etc.
-          # are NOT touched by this workflow.
-
-      - name: Commit updated ChemTree to the existing website branch
+      - name: Commit daily ChemTree update
+        if: steps.chemtree_update.outputs.updated == 'true'
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -95,10 +115,45 @@ jobs:
           git add -A chemtree chemtree-app.html
 
           if git diff --cached --quiet; then
-            echo "No public ChemTree changes to commit."
-            exit 0
+            echo "No public ChemTree changes."
+          else
+            git commit -m "Auto-update ChemTree $(date -u +'%Y-%m-%d') [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
 
-          git commit -m "Auto-update ChemTree $(date -u +'%Y-%m-%d')"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+      # Build a complete snapshot of the CURRENT laboratory website.
+      # This fixes the HOME page even if Pages is currently set to GitHub Actions.
+      - name: Assemble full laboratory website
+        shell: bash
+        run: |
+          rm -rf _site
+          mkdir _site
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='_site/' \
+            --exclude='chemtree-source/' \
+            --exclude='node_modules/' \
+            --exclude='*.zip' \
+            --exclude='RECOVERY*.txt' \
+            --exclude='UPLOAD*.txt' \
+            ./ _site/
+          touch _site/.nojekyll
+
+      - name: Configure Pages
+        id: pages_config
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+
+      - name: Upload complete website artifact
+        id: pages_upload
+        continue-on-error: true
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy complete laboratory website
+        if: steps.pages_upload.outcome == 'success'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
