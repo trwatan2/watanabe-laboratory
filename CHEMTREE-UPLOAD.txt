@@ -1,0 +1,21 @@
+Watanabe Laboratory / ChemTree public app
+
+Upload these files to the ROOT of the research-lab repository:
+  trwatan2/watanabe-laboratory
+
+Files:
+  playground.html
+  chemtree.html
+  chemtree-app.html
+  chemtree-App.js
+  chemtree-CameraFocus.js
+  chemtree-GrowthGlow.js
+  chemtree-1y.json.gz
+
+Do NOT upload them to trwatan2.github.io (lecture site).
+
+After GitHub Pages deploys, the live app URL will be:
+https://trwatan2.github.io/watanabe-laboratory/chemtree-app.html
+
+The app uses public ESM modules from esm.sh for React / Three.js libraries.
+The chemistry dataset is compressed (~5 MB) and decompressed in the browser.

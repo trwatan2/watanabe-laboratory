@@ -49,7 +49,7 @@
     .launch-box{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;background:#0b0d0e;color:#fff;padding:42px 46px;margin-top:34px}
     .launch-box h3{font-size:28px;margin:0 0 10px}
     .launch-box p{margin:0;color:#bcc5c0;font-size:15px;line-height:1.75}
-    .launch-disabled{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid #5d6662;color:#b8c0bc;font-size:14px;font-weight:700;white-space:nowrap}
+    .launch-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid var(--ct-lime);background:var(--ct-lime);color:#111;font-size:14px;font-weight:800;white-space:nowrap;text-decoration:none}.launch-button:hover{filter:brightness(1.05)}
     .chemtree-section .section-label,.chemtree-intro .section-label{color:var(--ct-olive)!important}
     @media(max-width:900px){
       .chemtree-intro,.journal-grid,.how-grid,.window-grid,.data-list,.launch-box{grid-template-columns:1fr}
@@ -173,9 +173,9 @@
   <div class="launch-box">
     <div>
       <h3>Public ChemTree application</h3>
-      <p>外部公開用URLの準備ができたら、ここから3Dアプリへ直接アクセスできるようにします。</p>
+      <p>JACS、Chem、Nature、Scienceの最近の化学論文を3D研究マップとして実際に探索できます。初回はデータ読み込みに少し時間がかかる場合があります。</p>
     </div>
-    <span class="launch-disabled">PUBLIC URL COMING SOON</span>
+    <a class="launch-button" href="chemtree-app.html">OPEN CHEMTREE →</a>
   </div>
 </section>
 </main>
