@@ -54,7 +54,50 @@
       .pub-copy h3{font-size:17px}
     }
 </style>
-</link></head>
+</link>
+  <style id="v28-accent-fix">
+    /* v28: accent text on light surfaces — inline so GitHub folder/CSS cache cannot block it */
+    :root{--accent-light:#2e5d3b}
+    .statement .kicker,
+    .statement .section-label,
+    .news .section-label,
+    .news .text-link,
+    .content-section:not(.dark-section):not(.light-outro) .kicker,
+    .content-section:not(.dark-section):not(.light-outro) .section-label,
+    .content-section:not(.dark-section):not(.light-outro) .text-link,
+    .content-section:not(.dark-section):not(.light-outro) .member-year,
+    .research-detail:not(.sulfur-detail) .kicker,
+    .research-detail:not(.sulfur-detail) .research-no,
+    .pub-page .section-label,
+    .pub-page .pub-doi,
+    .pub-page .pub-links a,
+    .career-timeline .section-label,
+    .career-timeline .external-mark,
+    .contact-card:not(.primary-contact) .kicker,
+    .contact-card:not(.primary-contact) .text-link,
+    .academic-links span,
+    .people-page .member-year{color:var(--accent-light)!important}
+
+    /* Make highlighted/interactive text on paper visibly darker, including hover states. */
+    .statement .text-link:hover,
+    .news .text-link:hover,
+    .content-section:not(.dark-section):not(.light-outro) .text-link:hover,
+    .pub-page a:hover,
+    .contact-card:not(.primary-contact) .text-link:hover{color:#163d28!important}
+
+    /* Keep the original bright lime only on genuinely dark backgrounds. */
+    .hero .eyebrow,
+    .page-hero .eyebrow,
+    .dark-section .kicker,
+    .research-outro .kicker,
+    .research-jump b,
+    .info-card span,
+    .profile-monogram,
+    .video-placeholder>span{color:#d7ff45!important}
+
+    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#c89200!important}
+  </style>
+</head>
 <body class="subpage">
 <header class="site-header scrolled">
 <a aria-label="Watanabe Laboratory home" class="brand" href="index.html"><span class="brand-mark">WL</span><span class="brand-name"><b>Watanabe Laboratory</b><small>渡部研究室</small></span></a>
