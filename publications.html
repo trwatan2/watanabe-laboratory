@@ -1,16 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
+&lt;!-- Publications v26: DOI-complete + grouped-by-year layout --&gt;
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="渡部研究室の論文・研究成果。ORCID 0000-0003-1132-0096 に紐づく研究実績を中心に掲載。" />
-  <meta name="theme-color" content="#0b0d0e" />
-  <title>Publications | Watanabe Laboratory</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=21" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="渡部研究室の論文・研究成果。2008–2026年の研究実績を出版年別に掲載し、DOIが付与された論文にはDOIリンクを表示。" name="description"/>
+<meta content="#0b0d0e" name="theme-color"/>
+<title>Publications | Watanabe Laboratory</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css?v=21" rel="stylesheet">
+<style>
     html,body,body *,body *::before,body *::after{font-family:"BIZ UDPGothic",sans-serif!important}
     body h1,body h2{font-family:"Helvetica Neue",Arial,"Yu Gothic",Meiryo,sans-serif!important}
     .pub-page{background:#f3f1eb;color:#111;padding:84px max(32px,calc((100vw - 1180px)/2)) 120px}
@@ -24,533 +27,470 @@
     .year-filter{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
     .year-filter button{border:1px solid #aeb6af;background:#fff;padding:10px 12px;cursor:pointer;font-weight:700;font-size:14px}
     .year-filter button.active{background:#111;color:#fff;border-color:#111}
-    .pub-count{font-size:14px;color:#59615c;margin:18px 0 8px}
-    .pub-row{display:grid;grid-template-columns:90px 1fr 68px;gap:28px;align-items:start;padding:24px 0;border-top:1px solid #c8cdc8}
-    .pub-row:last-child{border-bottom:1px solid #c8cdc8}
-    .pub-year{font-size:22px;font-weight:800;line-height:1.2}
+    .pub-count{font-size:14px;color:#59615c;margin:18px 0 4px}
+    .pub-year-group{padding-top:62px;margin-top:10px}
+    .pub-year-group + .pub-year-group{margin-top:24px}
+    .pub-year-heading{display:flex;align-items:baseline;gap:18px;padding-bottom:16px;border-bottom:2px solid #111;margin-bottom:0}
+    .pub-year-heading strong{font-size:clamp(34px,4vw,52px);line-height:1;font-weight:800;letter-spacing:-.04em}
+    .pub-year-heading span{font-size:13px;color:#68716b;letter-spacing:.08em;text-transform:uppercase}
+    .pub-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,auto);gap:28px;align-items:start;padding:24px 0;border-bottom:1px solid #c8cdc8}
     .pub-copy h3{font-family:"BIZ UDPGothic",sans-serif!important;font-size:18px;line-height:1.55;margin:0 0 7px;font-weight:700;letter-spacing:0}
     .pub-copy .journal{font-size:15px;line-height:1.5;color:#66706a;margin:0}
-    .pub-doi{font-size:13px;font-weight:700;color:#111;text-decoration:none;text-align:right;padding-top:3px}
-    .pub-doi-muted{color:#aaa}
-    .pub-note{font-size:13px;line-height:1.8;color:#6e756f;margin-top:28px;max-width:900px}
+    .pub-doi-wrap{text-align:right;padding-top:2px;min-width:210px}
+    .pub-doi{display:inline-block;font-size:13px;font-weight:700;color:#111;text-decoration:none;overflow-wrap:anywhere;border-bottom:1px solid #8e9690;padding-bottom:2px}
+    .pub-doi-label{display:block;font-size:10px;letter-spacing:.09em;color:#7a827d;margin-bottom:5px;text-transform:uppercase}
+    .pub-no-doi{display:inline-flex;align-items:center;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+    .pub-no-doi b{font-size:13px;color:#777;font-weight:700}
+    .pub-source{font-size:12px;font-weight:700;color:#111;text-decoration:none;border-bottom:1px solid #999}
+    .pub-note{font-size:13px;line-height:1.8;color:#6e756f;margin-top:52px;max-width:980px}
     @media(max-width:760px){
       .pub-page{padding:64px 24px 90px}
-      .pub-top{grid-template-columns:1fr} .pub-links{align-items:flex-start}
-      .pub-tools{grid-template-columns:1fr} .year-filter{justify-content:flex-start}
-      .pub-row{grid-template-columns:58px 1fr;gap:16px} .pub-doi{grid-column:2;text-align:left}
+      .pub-top{grid-template-columns:1fr}.pub-links{align-items:flex-start}
+      .pub-tools{grid-template-columns:1fr}.year-filter{justify-content:flex-start}
+      .pub-year-group{padding-top:46px}.pub-year-group + .pub-year-group{margin-top:14px}
+      .pub-row{grid-template-columns:1fr;gap:12px;padding:20px 0}
+      .pub-doi-wrap{text-align:left;min-width:0}
+      .pub-no-doi{justify-content:flex-start}
       .pub-copy h3{font-size:17px}
     }
-  </style>
-</head>
+</style>
+</link></head>
 <body class="subpage">
 <header class="site-header scrolled">
-  <a class="brand" href="index.html" aria-label="Watanabe Laboratory home"><span class="brand-mark">WL</span><span class="brand-name"><b>Watanabe Laboratory</b><small>渡部研究室</small></span></a>
-  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
-  <nav class="global-nav" aria-label="Main navigation"><a href="research.html">Research</a><a href="about.html">About</a><a href="people.html">People</a><a href="career.html">Career</a><a href="news.html">News</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></nav>
+<a aria-label="Watanabe Laboratory home" class="brand" href="index.html"><span class="brand-mark">WL</span><span class="brand-name"><b>Watanabe Laboratory</b><small>渡部研究室</small></span></a>
+<button aria-expanded="false" aria-label="メニューを開く" class="menu-button" type="button"><span></span><span></span></button>
+<nav aria-label="Main navigation" class="global-nav"><a href="research.html">Research</a><a href="about.html">About</a><a href="people.html">People</a><a href="career.html">Career</a><a href="news.html">News</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></nav>
 </header>
 <main>
 <section class="page-hero compact-hero">
-  <p class="eyebrow">WATANABE LABORATORY / PUBLICATIONS</p>
-  <h1>Ideas made<br>visible.</h1>
-  <p>最新論文から研究室の初期の成果まで、研究の流れが見える形で掲載しています。</p>
+<p class="eyebrow">WATANABE LABORATORY / PUBLICATIONS</p>
+<h1>Ideas made<br/>visible.</h1>
+<p>最新論文から研究室の初期の成果まで、研究の流れが見える形で掲載しています。</p>
 </section>
 <section class="pub-page">
-  <div class="pub-top">
-    <div><p class="section-label">PUBLICATION HISTORY / 2008–2026</p><h2>Publications</h2><p>ORCID 0000-0003-1132-0096 に紐づく研究者情報を基礎に、静岡大学教員データベースおよび最新の出版社情報で更新しています。</p></div>
-    <div class="pub-links"><a href="https://orcid.org/0000-0003-1132-0096" target="_blank" rel="noopener">ORCID ↗</a><a href="https://tdb.shizuoka.ac.jp/RDB/public/Default2.aspx?id=10412&l=1&t=18" target="_blank" rel="noopener">Shizuoka University DB ↗</a></div>
-  </div>
-  <div class="pub-tools"><input id="pubSearch" class="pub-search" type="search" placeholder="論文タイトル・雑誌名で検索" aria-label="論文を検索"><div class="year-filter"><button type="button" data-filter="all" class="active">ALL</button><button type="button" data-filter="2026">2026</button><button type="button" data-filter="2025">2025</button><button type="button" data-filter="2024">2024</button><button type="button" data-filter="2023">2023</button><button type="button" data-filter="2022">2022</button><button type="button" data-filter="2021">2021</button><button type="button" data-filter="2020">2020</button><button type="button" data-filter="2019">2019</button><button type="button" data-filter="2018">2018</button><button type="button" data-filter="2017">2017</button><button type="button" data-filter="2016">2016</button><button type="button" data-filter="2015">2015</button><button type="button" data-filter="2014">2014</button><button type="button" data-filter="2013">2013</button><button type="button" data-filter="2012">2012</button><button type="button" data-filter="2011">2011</button><button type="button" data-filter="2010">2010</button><button type="button" data-filter="2009">2009</button><button type="button" data-filter="2008">2008</button></div></div>
-  <div class="pub-count"><span id="visibleCount">96</span> records shown</div>
-  <div id="pubList"><article class="pub-row" data-year="2026" data-search="first-principles investigation of the structural, electronic, optical, elastic, and thermal properties of defect diamond-like hg3p2s8 advanced physics research">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>First-Principles Investigation of the Structural, Electronic, Optical, Elastic, and Thermal Properties of Defect Diamond-Like Hg3P2S8</h3><p class="journal">Advanced Physics Research</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1002/apxr.70151" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2026" data-search="high-throughput co2 methanation in a two-stage reactor system with spiral-structured catalysts reaction chemistry &amp; engineering">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>High-throughput CO2 methanation in a two-stage reactor system with spiral-structured catalysts</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5RE00477B" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2026" data-search="a study of deactivation by h2s and catalytic performance of nickel phyllosilicate for direct biogas methanation international journal of hydrogen energy">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>A study of deactivation by H2S and catalytic performance of nickel phyllosilicate for direct biogas methanation</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1016/j.ijhydene.2026.155894" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2026" data-search="sustainable conversion of co2 and ch4 greenhouse gases into mesoporous oxygen-functionalized cnt electrodes via thermocatalytic-microwave processing for high-performance supercapacitors composites part b: engineering">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>Sustainable conversion of CO2 and CH4 greenhouse gases into mesoporous oxygen-functionalized CNT electrodes via thermocatalytic-microwave processing for high-performance supercapacitors</h3><p class="journal">Composites Part B: Engineering</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1016/j.compositesb.2026.113640" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2026" data-search="low-temperature rwgs process with a two-stage cu–fe/zn spiral-structured catalyst: the role of intermediate fe plating in electroless plating catalysis science &amp; technology">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>Low-temperature RWGS process with a two-stage Cu–Fe/Zn spiral-structured catalyst: the role of intermediate Fe plating in electroless plating</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5CY01451D" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2026" data-search="defect-engineered pd/wo3−x nanostructures with tunable morphology for enhanced visible-nir light-driven catalysis catalysis science &amp; technology">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>Defect-engineered Pd/WO3−x nanostructures with tunable morphology for enhanced visible-NIR light-driven catalysis</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5CY01196E" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2026" data-search="multi-stage structured catalyst system for post-treatment of ghgs emitted from industrial processes sustainable energy &amp; fuels">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>Multi-stage structured catalyst system for post-treatment of GHGs emitted from industrial processes</h3><p class="journal">Sustainable Energy &amp; Fuels</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5SE00847F" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2026" data-search="visible-nir light-driven hydrogen evolution from ammonia borane using defect-engineered pd/wo3−x catalyst chemcatchem">
-      <div class="pub-year">2026</div>
-      <div class="pub-copy"><h3>Visible-NIR Light-Driven Hydrogen Evolution from Ammonia Borane Using Defect-Engineered Pd/WO3−x Catalyst</h3><p class="journal">ChemCatChem</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="enhancing co2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor new journal of chemistry">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Enhancing CO2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor</h3><p class="journal">New Journal of Chemistry</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5NJ02716K" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2025" data-search="integrated electrically-driven co2 methanation and dry reforming for efficient and flexible syngas production chemistry letters">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Integrated electrically-driven CO2 methanation and dry reforming for efficient and flexible syngas production</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="performance of integrated multi-stage catalytic conversion of co2 to solid carbon via rwgs–boudouard coupling reaction chemistry &amp; engineering">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Performance of integrated multi-stage catalytic conversion of CO2 to solid carbon via RWGS–Boudouard coupling</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5RE00285K" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2025" data-search="direct synthesis of methanethiol from methane and hydrogen sulfide over ni-based catalysts chemistry letters">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Direct synthesis of methanethiol from methane and hydrogen sulfide over Ni-based catalysts</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="enhanced thermal management in co2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems sustainable energy &amp; fuels">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Enhanced thermal management in CO2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems</h3><p class="journal">Sustainable Energy &amp; Fuels</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5SE00718F" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2025" data-search="stable ni–cu hollow-wall catalysts prepared by electroless plating for high-temperature methane decomposition: alloy durability and carbon deposition behaviour catalysis science &amp; technology">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Stable Ni–Cu hollow-wall catalysts prepared by electroless plating for high-temperature methane decomposition: alloy durability and carbon deposition behaviour</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5CY00781J" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2025" data-search="redox mechanism by lattice sulphur in an fe-based catalyst for propane dehydrogenation with h2s co-feeding rsc sustainability">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Redox mechanism by lattice sulphur in an Fe-based catalyst for propane dehydrogenation with H2S co-feeding</h3><p class="journal">RSC Sustainability</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D5SU00447K" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2025" data-search="promotion effect of alkali metal addition on wgs performance of ni-feox structured catalyst new journal of chemistry">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Promotion effect of alkali metal addition on WGS performance of Ni-FeOx structured catalyst</h3><p class="journal">New Journal of Chemistry</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="integrated electrified reactor system for efficient co2-to-syngas conversion via e-methanation and e-pom reaction chemistry &amp; engineering">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Integrated Electrified Reactor System for Efficient CO2-to-Syngas Conversion via e-Methanation and e-POM</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="methane decomposition by a ni-cu-based hollow-wall-structured catalyst prepared by combined electroless plating rsc sustainability">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Methane Decomposition by a Ni-Cu-based Hollow-wall-structured Catalyst Prepared by Combined Electroless Plating</h3><p class="journal">RSC Sustainability</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="multi-stage spiral-type structured catalyst system for direct large-scale methanation of industrial co2 emissions: a feasibility study reaction chemistry &amp; engineering">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Multi-stage spiral-type structured catalyst system for direct large-scale methanation of industrial CO2 emissions: A feasibility study</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="solid steps towards carbon capture nature index / nature advertorial">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Solid steps towards carbon capture</h3><p class="journal">Nature Index / Nature advertorial</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="e-methanation with a spiral catalyst: optimized thermal management and long-term stability rsc advances">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>e-Methanation with a spiral catalyst: optimized thermal management and long-term stability</h3><p class="journal">RSC Advances</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D4RA08236B" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2025" data-search="electric heating system for iso-c5 dehydrogenation in the presence of h2s chemistry letters">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Electric heating system for iso-C5 dehydrogenation in the presence of H2S</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2025" data-search="visible-light-enhanced synergistic catalysis of aucu nanostructures immobilized within porous support journal of chemical sciences">
-      <div class="pub-year">2025</div>
-      <div class="pub-copy"><h3>Visible-light-enhanced synergistic catalysis of AuCu nanostructures immobilized within porous support</h3><p class="journal">Journal of Chemical Sciences</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2024" data-search="design, synthesis, and applications of plasmonic semiconductor wo3 photocatalyst catalysis science &amp; technology">
-      <div class="pub-year">2024</div>
-      <div class="pub-copy"><h3>Design, synthesis, and applications of plasmonic semiconductor WO3 photocatalyst</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2024" data-search="deactivation of an fe-based catalyst in the dehydrogenation of light alkanes under h2s co-feeding: a case study applied catalysis a: general">
-      <div class="pub-year">2024</div>
-      <div class="pub-copy"><h3>Deactivation of an Fe-based catalyst in the dehydrogenation of light alkanes under H2S co-feeding: A case study</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2024" data-search="steam reforming of aromatics mixture as a model tar over ni/al2o3 structured catalyst new journal of chemistry">
-      <div class="pub-year">2024</div>
-      <div class="pub-copy"><h3>Steam reforming of aromatics mixture as a model tar over Ni/Al2O3 structured catalyst</h3><p class="journal">New Journal of Chemistry</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2024" data-search="influence of sulfur contamination on ethylene aromatization over a ga-modified mfi-type zeolite chemical engineering journal">
-      <div class="pub-year">2024</div>
-      <div class="pub-copy"><h3>Influence of sulfur contamination on ethylene aromatization over a Ga-modified MFI-type zeolite</h3><p class="journal">Chemical Engineering Journal</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2024" data-search="effect of h2s co-feeding on the performance of fe/sio2 catalyst for isomerization and dehydrogenation of c5-monoolefin new journal of chemistry">
-      <div class="pub-year">2024</div>
-      <div class="pub-copy"><h3>Effect of H2S co-feeding on the performance of Fe/SiO2 catalyst for isomerization and dehydrogenation of C5-monoolefin</h3><p class="journal">New Journal of Chemistry</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2023" data-search="plasmonic heterojunction photocatalysts for hydrogen generation: a mini-review energy &amp; fuels">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Plasmonic Heterojunction Photocatalysts for Hydrogen Generation: A Mini-Review</h3><p class="journal">Energy &amp; Fuels</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1021/acs.energyfuels.3c02341" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2023" data-search="electric-field-assisted catalytic methanethiol decomposition using pt/ceo2 catalyst catalysis letters">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Electric-field-assisted catalytic methanethiol decomposition using Pt/CeO2 catalyst</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2023" data-search="ethylene production via thermal coupling of methanethiol chemistry letters">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Ethylene production via thermal coupling of methanethiol</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2023" data-search="effect of ga substitution with al in zsm-5 zeolite in methanethiol-to-hydrocarbon conversion rsc advances">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Effect of Ga substitution with Al in ZSM-5 zeolite in methanethiol-to-hydrocarbon conversion</h3><p class="journal">RSC Advances</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D3RA01852K" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2023" data-search="auxpdy-based heterogeneous nanocatalysts for plasmon-mediated enhanced catalysis under visible light irradiation chemnanomat">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>AuxPdy-based heterogeneous nanocatalysts for plasmon-mediated enhanced catalysis under visible light irradiation</h3><p class="journal">ChemNanoMat</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2023" data-search="synthesis of 2,5-dimethylhexene by isobutene dimerization with h2s co-feeding rsc advances">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Synthesis of 2,5-dimethylhexene by isobutene dimerization with H2S co-feeding</h3><p class="journal">RSC Advances</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D3RA01324C" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2023" data-search="effect of twist angle in spiral-type ru/ceo2 catalysts on co2 auto-methanation performance journal of chemical engineering of japan">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Effect of twist angle in spiral-type Ru/CeO2 catalysts on CO2 auto-methanation performance</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2023" data-search="performance intensification of co2 methanation by co-feeding oxygen over various ru-based catalysts journal of chemical engineering of japan">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Performance intensification of CO2 methanation by co-feeding oxygen over various Ru-based catalysts</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1080/00219592.2023.2194327" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2023" data-search="highly stable fe/ceo2 catalyst for the reverse water gas shift reaction in the presence of h2s rsc advances">
-      <div class="pub-year">2023</div>
-      <div class="pub-copy"><h3>Highly stable Fe/CeO2 catalyst for the reverse water gas shift reaction in the presence of H2S</h3><p class="journal">RSC Advances</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1039/D3RA01323E" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2022" data-search="格子硫黄を活用するアルカンのredox型脱水素 触媒（catalysts and catalysis）">
-      <div class="pub-year">2022</div>
-      <div class="pub-copy"><h3>格子硫黄を活用するアルカンのredox型脱水素</h3><p class="journal">触媒（Catalysts and Catalysis）</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2022" data-search="物質変換プロセスにおける電化の最新動向 化学と工業">
-      <div class="pub-year">2022</div>
-      <div class="pub-copy"><h3>物質変換プロセスにおける電化の最新動向</h3><p class="journal">化学と工業</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2022" data-search="effect of como metal loading on h2 and cnts production from biogas by integrative process international journal of hydrogen energy">
-      <div class="pub-year">2022</div>
-      <div class="pub-copy"><h3>Effect of CoMo metal loading on H2 and CNTs production from biogas by integrative process</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2022" data-search="development of como-x catalysts for production of h2 and cnts from biogas by integrative process journal of environmental chemical engineering">
-      <div class="pub-year">2022</div>
-      <div class="pub-copy"><h3>Development of CoMo-X catalysts for production of H2 and CNTs from biogas by integrative process</h3><p class="journal">Journal of Environmental Chemical Engineering</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2022" data-search="simultaneous production of hydrogen and carbon nanotubes from biogas over mono- and bimetallic catalyst journal of environmental chemical engineering">
-      <div class="pub-year">2022</div>
-      <div class="pub-copy"><h3>Simultaneous production of hydrogen and carbon nanotubes from biogas over mono- and bimetallic catalyst</h3><p class="journal">Journal of Environmental Chemical Engineering</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2022" data-search="simultaneous production of hydrogen and carbon nanotubes from biogas: on the design of combined process international journal of hydrogen energy">
-      <div class="pub-year">2022</div>
-      <div class="pub-copy"><h3>Simultaneous production of hydrogen and carbon nanotubes from biogas: On the design of combined process</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2022" data-search="dehydrogenation of lower alkanes using h2s journal of the japan petroleum institute">
-      <div class="pub-year">2022</div>
-      <div class="pub-copy"><h3>Dehydrogenation of lower alkanes using H2S</h3><p class="journal">Journal of the Japan Petroleum Institute</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1627/jpi.65.50" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2021" data-search="effect of stabilizers on the stability enhancement of naturally occurring dye incorporated in clay interlayer journal of physics and chemistry of solids">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>Effect of stabilizers on the stability enhancement of naturally occurring dye incorporated in clay interlayer</h3><p class="journal">Journal of Physics and Chemistry of Solids</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2021" data-search="synthesis of c4- and c5-olefins by novel alkane dehydrogenation with h2s co-feeding applied catalysis a: general">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>Synthesis of C4- and C5-olefins by novel alkane dehydrogenation with H2S co-feeding</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2021" data-search="simultaneous production of hydrogen and carbon nanotubes from biogas: on the effect of ce addition to como/mgo catalyst international journal of hydrogen energy">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>Simultaneous production of hydrogen and carbon nanotubes from biogas: On the effect of Ce addition to CoMo/MgO catalyst</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2021" data-search="development of ni–ce/al-mcm-41 catalysts prepared from natural kaolin for co2 methanation journal of environmental chemical engineering">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>Development of Ni–Ce/Al-MCM-41 catalysts prepared from natural kaolin for CO2 methanation</h3><p class="journal">Journal of Environmental Chemical Engineering</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2021" data-search="natural kaolin-based ni catalysts for co2 methanation: on the effect of ce enhancement and microwave-assisted hydrothermal synthesis acs omega">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>Natural Kaolin-Based Ni Catalysts for CO2 Methanation: On the Effect of Ce Enhancement and Microwave-Assisted Hydrothermal Synthesis</h3><p class="journal">ACS Omega</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2021" data-search="a novel catalytic reaction system capturing solid carbon from greenhouse gas, combined with dry reforming of methane chemical engineering journal advances">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>A novel catalytic reaction system capturing solid carbon from greenhouse gas, combined with dry reforming of methane</h3><p class="journal">Chemical Engineering Journal Advances</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2021" data-search="catalytic performance of ni/ceo2 catalysts prepared from different routes for co2 methanation journal of the taiwan institute of chemical engineers">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>Catalytic performance of Ni/CeO2 catalysts prepared from different routes for CO2 methanation</h3><p class="journal">Journal of the Taiwan Institute of Chemical Engineers</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2021" data-search="theoretical study of the oxygen adsorption energy for the supported pt cluster, focused on the electronic metal-support interaction surface science">
-      <div class="pub-year">2021</div>
-      <div class="pub-copy"><h3>Theoretical study of the oxygen adsorption energy for the supported Pt cluster, focused on the electronic metal-support interaction</h3><p class="journal">Surface Science</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2020" data-search="catalytic performance of ni catalysts supported on ceo2 with different morphologies for low-temperature co2 methanation catalysis today">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>Catalytic performance of Ni catalysts supported on CeO2 with different morphologies for low-temperature CO2 methanation</h3><p class="journal">Catalysis Today</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2020" data-search="performance characteristics of auto-methanation using ru/ceo2 catalyst, autonomously proceeding at room temperature fuel">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>Performance characteristics of auto-methanation using Ru/CeO2 catalyst, autonomously proceeding at room temperature</h3><p class="journal">Fuel</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2020" data-search="high performance of structured ni-based catalyst for autothermal dry reforming of methane journal of chemical engineering of japan">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>High Performance of Structured Ni-based Catalyst for Autothermal Dry Reforming of Methane</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1252/jcej.20we062" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2020" data-search="stabilization of cu-chlorophyllin by incorporation into hydrotalcite interlayer journal of the japan society of colour material">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>Stabilization of cu-chlorophyllin by incorporation into hydrotalcite interlayer</h3><p class="journal">Journal of the Japan Society of Colour Material</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2020" data-search="effect of support species on performance of transition metal-based catalysts for propane dehydrogenation with co-feeding of h2s journal of the japan petroleum institute">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>Effect of support species on performance of transition metal-based catalysts for propane dehydrogenation with co-feeding of H2S</h3><p class="journal">Journal of the Japan Petroleum Institute</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2020" data-search="auto-methanation for transition-metal catalysts loaded in various oxide supports: a novel route for co2 transformation at room temperature and atmospheric pressure chemical engineering science">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>Auto-methanation for transition-metal catalysts loaded in various oxide supports: A novel route for CO2 transformation at room temperature and atmospheric pressure</h3><p class="journal">Chemical Engineering Science</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2020" data-search="photocatalytic uphill conversion of natural gas beyond the limitation of thermal reaction systems nature catalysis">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>Photocatalytic uphill conversion of natural gas beyond the limitation of thermal reaction systems</h3><p class="journal">Nature Catalysis</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2020" data-search="theoretical study of oxygen adsorption energy on supported metal cluster using d-band center theory and hsab concept surface science">
-      <div class="pub-year">2020</div>
-      <div class="pub-copy"><h3>Theoretical study of oxygen adsorption energy on supported metal cluster using d-band center theory and HSAB concept</h3><p class="journal">Surface Science</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2019" data-search="deactivation factor of cucl2-kcl/al2o3 catalyst for ethylene oxychlorination in a commercial-scale plant applied catalysis a: general">
-      <div class="pub-year">2019</div>
-      <div class="pub-copy"><h3>Deactivation factor of CuCl2-KCl/Al2O3 catalyst for ethylene oxychlorination in a commercial-scale plant</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2019" data-search="formation of active species for propane dehydrogenation with hydrogen sulfide co-feeding over transition metal catalyst applied catalysis a: general">
-      <div class="pub-year">2019</div>
-      <div class="pub-copy"><h3>Formation of active species for propane dehydrogenation with hydrogen sulfide co-feeding over transition metal catalyst</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2019.117238" target="_blank" rel="noopener">DOI ↗</a>
-    </article>
-<article class="pub-row" data-year="2019" data-search="auto-methanation of carbon dioxide: a novel route for transforming co2 over ni-based catalyst chemistry letters">
-      <div class="pub-year">2019</div>
-      <div class="pub-copy"><h3>Auto-methanation of carbon dioxide: a novel route for transforming CO2 over Ni-based catalyst</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2019" data-search="auto-methanation performance of structured ni-type catalyst for co2 transformation chemistry letters">
-      <div class="pub-year">2019</div>
-      <div class="pub-copy"><h3>Auto-methanation performance of structured Ni-type catalyst for CO2 transformation</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2019" data-search="theoretical analysis for activation energy of hydrocarbon oxidation reaction by supported pt catalyst journal of chemical engineering of japan">
-      <div class="pub-year">2019</div>
-      <div class="pub-copy"><h3>Theoretical analysis for activation energy of hydrocarbon oxidation reaction by supported Pt catalyst</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2018" data-search="dft study for supported pt catalysts focusing on the chemical potential e-journal of surface science and nanotechnology">
-      <div class="pub-year">2018</div>
-      <div class="pub-copy"><h3>DFT study for supported Pt catalysts focusing on the chemical potential</h3><p class="journal">e-Journal of Surface Science and Nanotechnology</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2018" data-search="development of a powerful co2 methanation process using a structured ni/ceo2 catalyst journal of co2 utilization">
-      <div class="pub-year">2018</div>
-      <div class="pub-copy"><h3>Development of a powerful CO2 methanation process using a structured Ni/CeO2 catalyst</h3><p class="journal">Journal of CO2 Utilization</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2017" data-search="a theoretical study of interaction between platinum and oxide support for exhaust-gas purification catalyst sae technical paper">
-      <div class="pub-year">2017</div>
-      <div class="pub-copy"><h3>A Theoretical Study of Interaction between Platinum and Oxide Support for Exhaust-Gas Purification Catalyst</h3><p class="journal">SAE Technical Paper</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2017" data-search="development of a novel synthesis-gas production system combining with carbon capture journal of co2 utilization">
-      <div class="pub-year">2017</div>
-      <div class="pub-copy"><h3>Development of a novel synthesis-gas production system combining with carbon capture</h3><p class="journal">Journal of CO2 Utilization</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2017" data-search="active species of sulfated metal oxide catalyst for propane dehydrogenation journal of the japan petroleum institute">
-      <div class="pub-year">2017</div>
-      <div class="pub-copy"><h3>Active species of sulfated metal oxide catalyst for propane dehydrogenation</h3><p class="journal">Journal of the Japan Petroleum Institute</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2017" data-search="development of a noble-structured catalyst for methane decomposition to produce pure hydrogen chemistry letters">
-      <div class="pub-year">2017</div>
-      <div class="pub-copy"><h3>Development of a noble-structured catalyst for methane decomposition to produce pure hydrogen</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2017" data-search="a novel nickel-based structured catalyst for co2 methanation: a honeycomb-type ni/ceo2 catalyst to transform greenhouse gas into useful resources applied catalysis a: general">
-      <div class="pub-year">2017</div>
-      <div class="pub-copy"><h3>A novel nickel-based structured catalyst for CO2 methanation: a honeycomb-type Ni/CeO2 catalyst to transform greenhouse gas into useful resources</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2016" data-search="hydrothermal synthesis of iron oxide structured catalyst with microdisk-shape for water gas shift reaction chemistry letters">
-      <div class="pub-year">2016</div>
-      <div class="pub-copy"><h3>Hydrothermal synthesis of iron oxide structured catalyst with microdisk-shape for water gas shift reaction</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2016" data-search="effect of promoter addition on water gas shift property over structured-type iron oxide catalyst catalysis letters">
-      <div class="pub-year">2016</div>
-      <div class="pub-copy"><h3>Effect of promoter addition on water gas shift property over structured-type iron oxide catalyst</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2016" data-search="performance of non-stoichiometric perovskite catalyst axcro3−δ (a: la, pr, nd) for dehydrogenation of propane under steam condition catalysis letters">
-      <div class="pub-year">2016</div>
-      <div class="pub-copy"><h3>Performance of non-stoichiometric perovskite catalyst AxCrO3−δ (A: La, Pr, Nd) for dehydrogenation of propane under steam condition</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2016" data-search="dehydrogenation of methylcyclohexane over pt/tio2 catalyst catalysis letters">
-      <div class="pub-year">2016</div>
-      <div class="pub-copy"><h3>Dehydrogenation of Methylcyclohexane over Pt/TiO2 Catalyst</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2015" data-search="enhancement of ethylbenzene dehydrogenation of perovskite-type bazro3 catalyst by a small amount of fe substitution in the b-site journal of molecular catalysis a: chemical">
-      <div class="pub-year">2015</div>
-      <div class="pub-copy"><h3>Enhancement of ethylbenzene dehydrogenation of perovskite-type BaZrO3 catalyst by a small amount of Fe substitution in the B-site</h3><p class="journal">Journal of Molecular Catalysis A: Chemical</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2015" data-search="effect of water density on heterogeneous catalytic water gas shift reaction in the presence of ru/c, pd/lacoo3 and fe3o4 in supercritical water the journal of supercritical fluids">
-      <div class="pub-year">2015</div>
-      <div class="pub-copy"><h3>Effect of water density on heterogeneous catalytic water gas shift reaction in the presence of Ru/C, Pd/LaCoO3 and Fe3O4 in supercritical water</h3><p class="journal">The Journal of Supercritical Fluids</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2015" data-search="high tolerance to coke deposition in methane steam reforming for yttria stabilized zirconia catalyst supported ni by electroless plating chemistry letters">
-      <div class="pub-year">2015</div>
-      <div class="pub-copy"><h3>High tolerance to coke deposition in methane steam reforming for yttria stabilized zirconia catalyst supported Ni by electroless plating</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2015" data-search="a metal-honeycomb-type structured catalyst for steam reforming of methane: effect of preparation condition change on reforming performance applied catalysis a: general">
-      <div class="pub-year">2015</div>
-      <div class="pub-copy"><h3>A metal-honeycomb-type structured catalyst for steam reforming of methane: Effect of preparation condition change on reforming performance</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2014" data-search="dehydrogenation of ethylbenzene over zirconium-based perovskite-type catalysts of azro3 (a: ca, sr, ba) applied catalysis a: general">
-      <div class="pub-year">2014</div>
-      <div class="pub-copy"><h3>Dehydrogenation of ethylbenzene over zirconium-based perovskite-type catalysts of AZrO3 (A: Ca, Sr, Ba)</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2014" data-search="pd-supporting lacoo3 catalyst with structured configuration for water gas shift reaction applied catalysis a: general">
-      <div class="pub-year">2014</div>
-      <div class="pub-copy"><h3>Pd-supporting LaCoO3 catalyst with structured configuration for water gas shift reaction</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="lanthanoid-free perovskite oxide catalyst for dehydrogenation of ethylbenzene working with redox mechanism frontiers in green and environmental chemistry">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>Lanthanoid-free perovskite oxide catalyst for dehydrogenation of ethylbenzene working with redox mechanism</h3><p class="journal">Frontiers in Green and Environmental Chemistry</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="a novel nickel-based catalyst for methane dry reforming: a metal honeycomb-type catalyst prepared by sol-gel method, and electroless plating applied catalysis a: general">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>A Novel Nickel-Based Catalyst for Methane Dry Reforming: A Metal Honeycomb-Type Catalyst Prepared by Sol-Gel Method, and Electroless Plating</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="stable and selective perovskite catalyst for dehydrogenation of propane working with redox mechanism journal of molecular catalysis a: chemical">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>Stable and selective perovskite catalyst for dehydrogenation of propane working with redox mechanism</h3><p class="journal">Journal of Molecular Catalysis A: Chemical</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="dehydrogenation of ethylbenzene over la0.8ba0.2fe0.4mn0.6o3−δ perovskite oxide catalyst working by redox mechanism using steam and lattice oxygen applied catalysis a: general">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>Dehydrogenation of ethylbenzene over La0.8Ba0.2Fe0.4Mn0.6O3−δ perovskite oxide catalyst working by redox mechanism using steam and lattice oxygen</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="a combination of electroless plating and sol-gel methods as a novel technique for preparing a honeycomb-type-structured catalyst chemistry letters">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>A Combination of Electroless Plating and Sol-Gel Methods as a Novel Technique for Preparing a Honeycomb-type-structured Catalyst</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="role of alkali metal in a highly active pd/alkali/fe2o3 catalyst for water gas shift reaction applied catalysis a: general">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>Role of alkali metal in a highly active Pd/alkali/Fe2O3 catalyst for water gas shift reaction</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="hydrogen production by water gas shift reaction over pd–k impregnated co oxide catalyst catalysis letters">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>Hydrogen Production by Water Gas Shift Reaction Over Pd–K Impregnated Co Oxide Catalyst</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2013" data-search="oxidative dehydrogenation of ethylbenzene over la0.8ba0.2fe0.4mn0.6o3−δ perovskite oxide catalyst applied catalysis a: general">
-      <div class="pub-year">2013</div>
-      <div class="pub-copy"><h3>Oxidative dehydrogenation of ethylbenzene over La0.8Ba0.2Fe0.4Mn0.6O3−δ perovskite oxide catalyst</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2012" data-search="adsorption state of carbon monoxide on a structured copper-based catalyst prepared by electroless plating for low-temperature water gas shift reaction chemistry letters">
-      <div class="pub-year">2012</div>
-      <div class="pub-copy"><h3>Adsorption State of Carbon Monoxide on a Structured Copper-based Catalyst Prepared by Electroless Plating for Low-temperature Water Gas Shift Reaction</h3><p class="journal">Chemistry Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2011" data-search="dehydrogenation of ethylbenzene over highly active and stable perovskite oxide catalyst – effect of lattice oxygen on/in perovskite oxide and role of a/b site in perovskite oxide applied catalysis a: general">
-      <div class="pub-year">2011</div>
-      <div class="pub-copy"><h3>Dehydrogenation of ethylbenzene over highly active and stable perovskite oxide catalyst – Effect of lattice oxygen on/in perovskite oxide and role of A/B site in perovskite oxide</h3><p class="journal">Applied Catalysis A: General</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2010" data-search="effect of loading potassium and palladium over iron-based catalyst for low temperature water–gas shift reaction catalysis letters">
-      <div class="pub-year">2010</div>
-      <div class="pub-copy"><h3>Effect of Loading Potassium and Palladium over Iron-Based Catalyst for Low Temperature Water–Gas Shift Reaction</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2010" data-search="pt and/or pd supported/incorporated catalyst on perovskite-type oxide for water gas shift reaction topics in catalysis">
-      <div class="pub-year">2010</div>
-      <div class="pub-copy"><h3>Pt and/or Pd Supported/Incorporated Catalyst on Perovskite-Type Oxide for Water Gas Shift Reaction</h3><p class="journal">Topics in Catalysis</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2009" data-search="novel perovskite-type oxide catalysts for dehydrogenation of ethylbenzene to styrene catalysis letters">
-      <div class="pub-year">2009</div>
-      <div class="pub-copy"><h3>Novel Perovskite-Type Oxide Catalysts for Dehydrogenation of Ethylbenzene to Styrene</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article>
-<article class="pub-row" data-year="2008" data-search="high performance of fe–k oxide catalysts for dehydrogenation of ethylbenzene to styrene with an aid of ppm-order pd catalysis letters">
-      <div class="pub-year">2008</div>
-      <div class="pub-copy"><h3>High Performance of Fe–K Oxide Catalysts for Dehydrogenation of Ethylbenzene to Styrene with an aid of ppm-order Pd</h3><p class="journal">Catalysis Letters</p></div>
-      <span class="pub-doi pub-doi-muted">—</span>
-    </article></div>
-  <p class="pub-note">注：掲載年は出版社・研究者データベース上の年を基準に整理しています。オンライン公開年と巻号年が異なる論文があります。DOIを確認できたものは直接リンクしています。完全な著者情報・巻号・ページ等はORCIDまたは静岡大学教員データベースをご確認ください。</p>
+<div class="pub-top">
+<div><p class="section-label">PUBLICATION HISTORY / 2008–2026</p><h2>Publications</h2><p>ORCID 0000-0003-1132-0096 に紐づく研究者情報を基礎に、静岡大学教員データベースおよび最新の出版社情報で更新しています。</p></div>
+<div class="pub-links"><a href="https://orcid.org/0000-0003-1132-0096" rel="noopener" target="_blank">ORCID ↗</a><a href="https://tdb.shizuoka.ac.jp/RDB/public/Default2.aspx?id=10412&amp;l=1&amp;t=18" rel="noopener" target="_blank">Shizuoka University DB ↗</a></div>
+</div>
+<div class="pub-tools"><input aria-label="論文を検索" class="pub-search" id="pubSearch" placeholder="論文タイトル・雑誌名で検索" type="search"/><div class="year-filter"><button class="active" data-filter="all" type="button">ALL</button><button data-filter="2026" type="button">2026</button><button data-filter="2025" type="button">2025</button><button data-filter="2024" type="button">2024</button><button data-filter="2023" type="button">2023</button><button data-filter="2022" type="button">2022</button><button data-filter="2021" type="button">2021</button><button data-filter="2020" type="button">2020</button><button data-filter="2019" type="button">2019</button><button data-filter="2018" type="button">2018</button><button data-filter="2017" type="button">2017</button><button data-filter="2016" type="button">2016</button><button data-filter="2015" type="button">2015</button><button data-filter="2014" type="button">2014</button><button data-filter="2013" type="button">2013</button><button data-filter="2012" type="button">2012</button><button data-filter="2011" type="button">2011</button><button data-filter="2010" type="button">2010</button><button data-filter="2009" type="button">2009</button><button data-filter="2008" type="button">2008</button></div></div>
+<div class="pub-count"><span id="visibleCount">96</span> records shown</div>
+<div id="pubList"><section class="pub-year-group" data-year-group="2026"><div class="pub-year-heading"><strong>2026</strong><span>8 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="first-principles investigation of the structural, electronic, optical, elastic, and thermal properties of defect diamond-like hg3p2s8 advanced physics research" data-year="2026">
+
+<div class="pub-copy"><h3>First-Principles Investigation of the Structural, Electronic, Optical, Elastic, and Thermal Properties of Defect Diamond-Like Hg3P2S8</h3><p class="journal">Advanced Physics Research</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1002/apxr.70151" rel="noopener" target="_blank">10.1002/apxr.70151 ↗</a></div></article><article class="pub-row" data-search="high-throughput co2 methanation in a two-stage reactor system with spiral-structured catalysts reaction chemistry &amp; engineering" data-year="2026">
+
+<div class="pub-copy"><h3>High-throughput CO2 methanation in a two-stage reactor system with spiral-structured catalysts</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5RE00477B" rel="noopener" target="_blank">10.1039/D5RE00477B ↗</a></div></article><article class="pub-row" data-search="a study of deactivation by h2s and catalytic performance of nickel phyllosilicate for direct biogas methanation international journal of hydrogen energy" data-year="2026">
+
+<div class="pub-copy"><h3>A study of deactivation by H2S and catalytic performance of nickel phyllosilicate for direct biogas methanation</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.ijhydene.2026.155894" rel="noopener" target="_blank">10.1016/j.ijhydene.2026.155894 ↗</a></div></article><article class="pub-row" data-search="sustainable conversion of co2 and ch4 greenhouse gases into mesoporous oxygen-functionalized cnt electrodes via thermocatalytic-microwave processing for high-performance supercapacitors composites part b: engineering" data-year="2026">
+
+<div class="pub-copy"><h3>Sustainable conversion of CO2 and CH4 greenhouse gases into mesoporous oxygen-functionalized CNT electrodes via thermocatalytic-microwave processing for high-performance supercapacitors</h3><p class="journal">Composites Part B: Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.compositesb.2026.113640" rel="noopener" target="_blank">10.1016/j.compositesb.2026.113640 ↗</a></div></article><article class="pub-row" data-search="low-temperature rwgs process with a two-stage cu–fe/zn spiral-structured catalyst: the role of intermediate fe plating in electroless plating catalysis science &amp; technology" data-year="2026">
+
+<div class="pub-copy"><h3>Low-temperature RWGS process with a two-stage Cu–Fe/Zn spiral-structured catalyst: the role of intermediate Fe plating in electroless plating</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5CY01451D" rel="noopener" target="_blank">10.1039/D5CY01451D ↗</a></div></article><article class="pub-row" data-search="defect-engineered pd/wo3−x nanostructures with tunable morphology for enhanced visible-nir light-driven catalysis catalysis science &amp; technology" data-year="2026">
+
+<div class="pub-copy"><h3>Defect-engineered Pd/WO3−x nanostructures with tunable morphology for enhanced visible-NIR light-driven catalysis</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5CY01196E" rel="noopener" target="_blank">10.1039/D5CY01196E ↗</a></div></article><article class="pub-row" data-search="multi-stage structured catalyst system for post-treatment of ghgs emitted from industrial processes sustainable energy &amp; fuels" data-year="2026">
+
+<div class="pub-copy"><h3>Multi-stage structured catalyst system for post-treatment of GHGs emitted from industrial processes</h3><p class="journal">Sustainable Energy &amp; Fuels</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5SE00847F" rel="noopener" target="_blank">10.1039/D5SE00847F ↗</a></div></article><article class="pub-row" data-search="visible-nir light-driven hydrogen evolution from ammonia borane using defect-engineered pd/wo3−x catalyst chemcatchem" data-year="2026">
+
+<div class="pub-copy"><h3>Visible-NIR Light-Driven Hydrogen Evolution from Ammonia Borane Using Defect-Engineered Pd/WO3−x Catalyst</h3><p class="journal">ChemCatChem</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1002/cctc.202500795" rel="noopener" target="_blank">10.1002/cctc.202500795 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2025"><div class="pub-year-heading"><strong>2025</strong><span>15 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="enhancing co2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor new journal of chemistry" data-year="2025">
+
+<div class="pub-copy"><h3>Enhancing CO2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor</h3><p class="journal">New Journal of Chemistry</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5NJ02716K" rel="noopener" target="_blank">10.1039/D5NJ02716K ↗</a></div></article><article class="pub-row" data-search="integrated electrically-driven co2 methanation and dry reforming for efficient and flexible syngas production chemistry letters" data-year="2025">
+
+<div class="pub-copy"><h3>Integrated electrically-driven CO2 methanation and dry reforming for efficient and flexible syngas production</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1093/chemle/upaf161" rel="noopener" target="_blank">10.1093/chemle/upaf161 ↗</a></div></article><article class="pub-row" data-search="performance of integrated multi-stage catalytic conversion of co2 to solid carbon via rwgs–boudouard coupling reaction chemistry &amp; engineering" data-year="2025">
+
+<div class="pub-copy"><h3>Performance of integrated multi-stage catalytic conversion of CO2 to solid carbon via RWGS–Boudouard coupling</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5RE00285K" rel="noopener" target="_blank">10.1039/D5RE00285K ↗</a></div></article><article class="pub-row" data-search="direct synthesis of methanethiol from methane and hydrogen sulfide over ni-based catalysts chemistry letters" data-year="2025">
+
+<div class="pub-copy"><h3>Direct synthesis of methanethiol from methane and hydrogen sulfide over Ni-based catalysts</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1093/chemle/upaf180" rel="noopener" target="_blank">10.1093/chemle/upaf180 ↗</a></div></article><article class="pub-row" data-search="enhanced thermal management in co2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems sustainable energy &amp; fuels" data-year="2025">
+
+<div class="pub-copy"><h3>Enhanced thermal management in CO2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems</h3><p class="journal">Sustainable Energy &amp; Fuels</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5SE00718F" rel="noopener" target="_blank">10.1039/D5SE00718F ↗</a></div></article><article class="pub-row" data-search="stable ni–cu hollow-wall catalysts prepared by electroless plating for high-temperature methane decomposition: alloy durability and carbon deposition behaviour catalysis science &amp; technology" data-year="2025">
+
+<div class="pub-copy"><h3>Stable Ni–Cu hollow-wall catalysts prepared by electroless plating for high-temperature methane decomposition: alloy durability and carbon deposition behaviour</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5CY00781J" rel="noopener" target="_blank">10.1039/D5CY00781J ↗</a></div></article><article class="pub-row" data-search="redox mechanism by lattice sulphur in an fe-based catalyst for propane dehydrogenation with h2s co-feeding rsc sustainability" data-year="2025">
+
+<div class="pub-copy"><h3>Redox mechanism by lattice sulphur in an Fe-based catalyst for propane dehydrogenation with H2S co-feeding</h3><p class="journal">RSC Sustainability</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5SU00447K" rel="noopener" target="_blank">10.1039/D5SU00447K ↗</a></div></article><article class="pub-row" data-search="promotion effect of alkali metal addition on wgs performance of ni-feox structured catalyst new journal of chemistry" data-year="2025">
+
+<div class="pub-copy"><h3>Promotion effect of alkali metal addition on WGS performance of Ni-FeOx structured catalyst</h3><p class="journal">New Journal of Chemistry</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5NJ01933H" rel="noopener" target="_blank">10.1039/D5NJ01933H ↗</a></div></article><article class="pub-row" data-search="integrated electrified reactor system for efficient co2-to-syngas conversion via e-methanation and e-pom reaction chemistry &amp; engineering" data-year="2025">
+
+<div class="pub-copy"><h3>Integrated Electrified Reactor System for Efficient CO2-to-Syngas Conversion via e-Methanation and e-POM</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5RE00196J" rel="noopener" target="_blank">10.1039/D5RE00196J ↗</a></div></article><article class="pub-row" data-search="methane decomposition by a ni-cu-based hollow-wall-structured catalyst prepared by combined electroless plating rsc sustainability" data-year="2025">
+
+<div class="pub-copy"><h3>Methane Decomposition by a Ni-Cu-based Hollow-wall-structured Catalyst Prepared by Combined Electroless Plating</h3><p class="journal">RSC Sustainability</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D5SU00216H" rel="noopener" target="_blank">10.1039/D5SU00216H ↗</a></div></article><article class="pub-row" data-search="multi-stage spiral-type structured catalyst system for direct large-scale methanation of industrial co2 emissions: a feasibility study reaction chemistry &amp; engineering" data-year="2025">
+
+<div class="pub-copy"><h3>Multi-stage spiral-type structured catalyst system for direct large-scale methanation of industrial CO2 emissions: A feasibility study</h3><p class="journal">Reaction Chemistry &amp; Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D4RE00606B" rel="noopener" target="_blank">10.1039/D4RE00606B ↗</a></div></article><article class="pub-row" data-search="solid steps towards carbon capture nature index / nature advertorial" data-year="2025">
+
+<div class="pub-copy"><h3>Solid steps towards carbon capture</h3><p class="journal">Nature Index / Nature advertorial</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><div class="pub-no-doi"><b>DOIなし</b><a class="pub-source" href="https://www.nature.com/articles/d42473-024-00418-3" rel="noopener" target="_blank">Nature feature ↗</a></div></div></article><article class="pub-row" data-search="e-methanation with a spiral catalyst: optimized thermal management and long-term stability rsc advances" data-year="2025">
+
+<div class="pub-copy"><h3>e-Methanation with a spiral catalyst: optimized thermal management and long-term stability</h3><p class="journal">RSC Advances</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D4RA08236B" rel="noopener" target="_blank">10.1039/D4RA08236B ↗</a></div></article><article class="pub-row" data-search="electric heating system for iso-c5 dehydrogenation in the presence of h2s chemistry letters" data-year="2025">
+
+<div class="pub-copy"><h3>Electric heating system for iso-C5 dehydrogenation in the presence of H2S</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1093/chemle/upae228" rel="noopener" target="_blank">10.1093/chemle/upae228 ↗</a></div></article><article class="pub-row" data-search="visible-light-enhanced synergistic catalysis of aucu nanostructures immobilized within porous support journal of chemical sciences" data-year="2025">
+
+<div class="pub-copy"><h3>Visible-light-enhanced synergistic catalysis of AuCu nanostructures immobilized within porous support</h3><p class="journal">Journal of Chemical Sciences</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s12039-025-02356-z" rel="noopener" target="_blank">10.1007/s12039-025-02356-z ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2024"><div class="pub-year-heading"><strong>2024</strong><span>5 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="design, synthesis, and applications of plasmonic semiconductor wo3 photocatalyst catalysis science &amp; technology" data-year="2024">
+
+<div class="pub-copy"><h3>Design, synthesis, and applications of plasmonic semiconductor WO3 photocatalyst</h3><p class="journal">Catalysis Science &amp; Technology</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D4CY00645C" rel="noopener" target="_blank">10.1039/D4CY00645C ↗</a></div></article><article class="pub-row" data-search="deactivation of an fe-based catalyst in the dehydrogenation of light alkanes under h2s co-feeding: a case study applied catalysis a: general" data-year="2024">
+
+<div class="pub-copy"><h3>Deactivation of an Fe-based catalyst in the dehydrogenation of light alkanes under H2S co-feeding: A case study</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2024.119848" rel="noopener" target="_blank">10.1016/j.apcata.2024.119848 ↗</a></div></article><article class="pub-row" data-search="steam reforming of aromatics mixture as a model tar over ni/al2o3 structured catalyst new journal of chemistry" data-year="2024">
+
+<div class="pub-copy"><h3>Steam reforming of aromatics mixture as a model tar over Ni/Al2O3 structured catalyst</h3><p class="journal">New Journal of Chemistry</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D4NJ00856A" rel="noopener" target="_blank">10.1039/D4NJ00856A ↗</a></div></article><article class="pub-row" data-search="influence of sulfur contamination on ethylene aromatization over a ga-modified mfi-type zeolite chemical engineering journal" data-year="2024">
+
+<div class="pub-copy"><h3>Influence of sulfur contamination on ethylene aromatization over a Ga-modified MFI-type zeolite</h3><p class="journal">Chemical Engineering Journal</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.cej.2023.148241" rel="noopener" target="_blank">10.1016/j.cej.2023.148241 ↗</a></div></article><article class="pub-row" data-search="effect of h2s co-feeding on the performance of fe/sio2 catalyst for isomerization and dehydrogenation of c5-monoolefin new journal of chemistry" data-year="2024">
+
+<div class="pub-copy"><h3>Effect of H2S co-feeding on the performance of Fe/SiO2 catalyst for isomerization and dehydrogenation of C5-monoolefin</h3><p class="journal">New Journal of Chemistry</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D3NJ04923J" rel="noopener" target="_blank">10.1039/D3NJ04923J ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2023"><div class="pub-year-heading"><strong>2023</strong><span>9 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="plasmonic heterojunction photocatalysts for hydrogen generation: a mini-review energy &amp; fuels" data-year="2023">
+
+<div class="pub-copy"><h3>Plasmonic Heterojunction Photocatalysts for Hydrogen Generation: A Mini-Review</h3><p class="journal">Energy &amp; Fuels</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1021/acs.energyfuels.3c02341" rel="noopener" target="_blank">10.1021/acs.energyfuels.3c02341 ↗</a></div></article><article class="pub-row" data-search="electric-field-assisted catalytic methanethiol decomposition using pt/ceo2 catalyst catalysis letters" data-year="2023">
+
+<div class="pub-copy"><h3>Electric-field-assisted catalytic methanethiol decomposition using Pt/CeO2 catalyst</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-023-04416-w" rel="noopener" target="_blank">10.1007/s10562-023-04416-w ↗</a></div></article><article class="pub-row" data-search="ethylene production via thermal coupling of methanethiol chemistry letters" data-year="2023">
+
+<div class="pub-copy"><h3>Ethylene production via thermal coupling of methanethiol</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.230228" rel="noopener" target="_blank">10.1246/cl.230228 ↗</a></div></article><article class="pub-row" data-search="effect of ga substitution with al in zsm-5 zeolite in methanethiol-to-hydrocarbon conversion rsc advances" data-year="2023">
+
+<div class="pub-copy"><h3>Effect of Ga substitution with Al in ZSM-5 zeolite in methanethiol-to-hydrocarbon conversion</h3><p class="journal">RSC Advances</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D3RA01852K" rel="noopener" target="_blank">10.1039/D3RA01852K ↗</a></div></article><article class="pub-row" data-search="auxpdy-based heterogeneous nanocatalysts for plasmon-mediated enhanced catalysis under visible light irradiation chemnanomat" data-year="2023">
+
+<div class="pub-copy"><h3>AuxPdy-based heterogeneous nanocatalysts for plasmon-mediated enhanced catalysis under visible light irradiation</h3><p class="journal">ChemNanoMat</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1002/cnma.202300053" rel="noopener" target="_blank">10.1002/cnma.202300053 ↗</a></div></article><article class="pub-row" data-search="synthesis of 2,5-dimethylhexene by isobutene dimerization with h2s co-feeding rsc advances" data-year="2023">
+
+<div class="pub-copy"><h3>Synthesis of 2,5-dimethylhexene by isobutene dimerization with H2S co-feeding</h3><p class="journal">RSC Advances</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D3RA01324C" rel="noopener" target="_blank">10.1039/D3RA01324C ↗</a></div></article><article class="pub-row" data-search="effect of twist angle in spiral-type ru/ceo2 catalysts on co2 auto-methanation performance journal of chemical engineering of japan" data-year="2023">
+
+<div class="pub-copy"><h3>Effect of twist angle in spiral-type Ru/CeO2 catalysts on CO2 auto-methanation performance</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1080/00219592.2023.2182628" rel="noopener" target="_blank">10.1080/00219592.2023.2182628 ↗</a></div></article><article class="pub-row" data-search="performance intensification of co2 methanation by co-feeding oxygen over various ru-based catalysts journal of chemical engineering of japan" data-year="2023">
+
+<div class="pub-copy"><h3>Performance intensification of CO2 methanation by co-feeding oxygen over various Ru-based catalysts</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1080/00219592.2023.2194327" rel="noopener" target="_blank">10.1080/00219592.2023.2194327 ↗</a></div></article><article class="pub-row" data-search="highly stable fe/ceo2 catalyst for the reverse water gas shift reaction in the presence of h2s rsc advances" data-year="2023">
+
+<div class="pub-copy"><h3>Highly stable Fe/CeO2 catalyst for the reverse water gas shift reaction in the presence of H2S</h3><p class="journal">RSC Advances</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1039/D3RA01323E" rel="noopener" target="_blank">10.1039/D3RA01323E ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2022"><div class="pub-year-heading"><strong>2022</strong><span>7 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="格子硫黄を活用するアルカンのredox型脱水素 触媒（catalysts and catalysis）" data-year="2022">
+
+<div class="pub-copy"><h3>格子硫黄を活用するアルカンのredox型脱水素</h3><p class="journal">触媒（Catalysts and Catalysis）</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><div class="pub-no-doi"><b>DOIなし</b><a class="pub-source" href="https://catsj.jp/jnl/top?issue=6&amp;volume=64" rel="noopener" target="_blank">掲載誌 ↗</a></div></div></article><article class="pub-row" data-search="物質変換プロセスにおける電化の最新動向 化学と工業" data-year="2022">
+
+<div class="pub-copy"><h3>物質変換プロセスにおける電化の最新動向</h3><p class="journal">化学と工業</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><div class="pub-no-doi"><b>DOIなし</b><a class="pub-source" href="https://tdb.shizuoka.ac.jp/ResearcherDB/public/Default2.aspx?id=10412&amp;l=0&amp;t=18" rel="noopener" target="_blank">研究者DB ↗</a></div></div></article><article class="pub-row" data-search="effect of como metal loading on h2 and cnts production from biogas by integrative process international journal of hydrogen energy" data-year="2022">
+
+<div class="pub-copy"><h3>Effect of CoMo metal loading on H2 and CNTs production from biogas by integrative process</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.ijhydene.2022.05.216" rel="noopener" target="_blank">10.1016/j.ijhydene.2022.05.216 ↗</a></div></article><article class="pub-row" data-search="development of como-x catalysts for production of h2 and cnts from biogas by integrative process journal of environmental chemical engineering" data-year="2022">
+
+<div class="pub-copy"><h3>Development of CoMo-X catalysts for production of H2 and CNTs from biogas by integrative process</h3><p class="journal">Journal of Environmental Chemical Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.jece.2022.107901" rel="noopener" target="_blank">10.1016/j.jece.2022.107901 ↗</a></div></article><article class="pub-row" data-search="simultaneous production of hydrogen and carbon nanotubes from biogas over mono- and bimetallic catalyst journal of environmental chemical engineering" data-year="2022">
+
+<div class="pub-copy"><h3>Simultaneous production of hydrogen and carbon nanotubes from biogas over mono- and bimetallic catalyst</h3><p class="journal">Journal of Environmental Chemical Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.jece.2022.107910" rel="noopener" target="_blank">10.1016/j.jece.2022.107910 ↗</a></div></article><article class="pub-row" data-search="simultaneous production of hydrogen and carbon nanotubes from biogas: on the design of combined process international journal of hydrogen energy" data-year="2022">
+
+<div class="pub-copy"><h3>Simultaneous production of hydrogen and carbon nanotubes from biogas: On the design of combined process</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.ijhydene.2022.02.179" rel="noopener" target="_blank">10.1016/j.ijhydene.2022.02.179 ↗</a></div></article><article class="pub-row" data-search="dehydrogenation of lower alkanes using h2s journal of the japan petroleum institute" data-year="2022">
+
+<div class="pub-copy"><h3>Dehydrogenation of lower alkanes using H2S</h3><p class="journal">Journal of the Japan Petroleum Institute</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1627/jpi.65.50" rel="noopener" target="_blank">10.1627/jpi.65.50 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2021"><div class="pub-year-heading"><strong>2021</strong><span>8 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="effect of stabilizers on the stability enhancement of naturally occurring dye incorporated in clay interlayer journal of physics and chemistry of solids" data-year="2021">
+
+<div class="pub-copy"><h3>Effect of stabilizers on the stability enhancement of naturally occurring dye incorporated in clay interlayer</h3><p class="journal">Journal of Physics and Chemistry of Solids</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.jpcs.2021.110546" rel="noopener" target="_blank">10.1016/j.jpcs.2021.110546 ↗</a></div></article><article class="pub-row" data-search="synthesis of c4- and c5-olefins by novel alkane dehydrogenation with h2s co-feeding applied catalysis a: general" data-year="2021">
+
+<div class="pub-copy"><h3>Synthesis of C4- and C5-olefins by novel alkane dehydrogenation with H2S co-feeding</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2021.118442" rel="noopener" target="_blank">10.1016/j.apcata.2021.118442 ↗</a></div></article><article class="pub-row" data-search="simultaneous production of hydrogen and carbon nanotubes from biogas: on the effect of ce addition to como/mgo catalyst international journal of hydrogen energy" data-year="2021">
+
+<div class="pub-copy"><h3>Simultaneous production of hydrogen and carbon nanotubes from biogas: On the effect of Ce addition to CoMo/MgO catalyst</h3><p class="journal">International Journal of Hydrogen Energy</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.ijhydene.2021.09.068" rel="noopener" target="_blank">10.1016/j.ijhydene.2021.09.068 ↗</a></div></article><article class="pub-row" data-search="development of ni–ce/al-mcm-41 catalysts prepared from natural kaolin for co2 methanation journal of environmental chemical engineering" data-year="2021">
+
+<div class="pub-copy"><h3>Development of Ni–Ce/Al-MCM-41 catalysts prepared from natural kaolin for CO2 methanation</h3><p class="journal">Journal of Environmental Chemical Engineering</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.jece.2021.106150" rel="noopener" target="_blank">10.1016/j.jece.2021.106150 ↗</a></div></article><article class="pub-row" data-search="natural kaolin-based ni catalysts for co2 methanation: on the effect of ce enhancement and microwave-assisted hydrothermal synthesis acs omega" data-year="2021">
+
+<div class="pub-copy"><h3>Natural Kaolin-Based Ni Catalysts for CO2 Methanation: On the Effect of Ce Enhancement and Microwave-Assisted Hydrothermal Synthesis</h3><p class="journal">ACS Omega</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1021/acsomega.1c01231" rel="noopener" target="_blank">10.1021/acsomega.1c01231 ↗</a></div></article><article class="pub-row" data-search="a novel catalytic reaction system capturing solid carbon from greenhouse gas, combined with dry reforming of methane chemical engineering journal advances" data-year="2021">
+
+<div class="pub-copy"><h3>A novel catalytic reaction system capturing solid carbon from greenhouse gas, combined with dry reforming of methane</h3><p class="journal">Chemical Engineering Journal Advances</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.ceja.2020.100057" rel="noopener" target="_blank">10.1016/j.ceja.2020.100057 ↗</a></div></article><article class="pub-row" data-search="catalytic performance of ni/ceo2 catalysts prepared from different routes for co2 methanation journal of the taiwan institute of chemical engineers" data-year="2021">
+
+<div class="pub-copy"><h3>Catalytic performance of Ni/CeO2 catalysts prepared from different routes for CO2 methanation</h3><p class="journal">Journal of the Taiwan Institute of Chemical Engineers</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.jtice.2021.04.008" rel="noopener" target="_blank">10.1016/j.jtice.2021.04.008 ↗</a></div></article><article class="pub-row" data-search="theoretical study of the oxygen adsorption energy for the supported pt cluster, focused on the electronic metal-support interaction surface science" data-year="2021">
+
+<div class="pub-copy"><h3>Theoretical study of the oxygen adsorption energy for the supported Pt cluster, focused on the electronic metal-support interaction</h3><p class="journal">Surface Science</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.susc.2020.121747" rel="noopener" target="_blank">10.1016/j.susc.2020.121747 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2020"><div class="pub-year-heading"><strong>2020</strong><span>8 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="catalytic performance of ni catalysts supported on ceo2 with different morphologies for low-temperature co2 methanation catalysis today" data-year="2020">
+
+<div class="pub-copy"><h3>Catalytic performance of Ni catalysts supported on CeO2 with different morphologies for low-temperature CO2 methanation</h3><p class="journal">Catalysis Today</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.cattod.2020.08.010" rel="noopener" target="_blank">10.1016/j.cattod.2020.08.010 ↗</a></div></article><article class="pub-row" data-search="performance characteristics of auto-methanation using ru/ceo2 catalyst, autonomously proceeding at room temperature fuel" data-year="2020">
+
+<div class="pub-copy"><h3>Performance characteristics of auto-methanation using Ru/CeO2 catalyst, autonomously proceeding at room temperature</h3><p class="journal">Fuel</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.fuel.2020.118619" rel="noopener" target="_blank">10.1016/j.fuel.2020.118619 ↗</a></div></article><article class="pub-row" data-search="high performance of structured ni-based catalyst for autothermal dry reforming of methane journal of chemical engineering of japan" data-year="2020">
+
+<div class="pub-copy"><h3>High Performance of Structured Ni-based Catalyst for Autothermal Dry Reforming of Methane</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1252/jcej.20we062" rel="noopener" target="_blank">10.1252/jcej.20we062 ↗</a></div></article><article class="pub-row" data-search="stabilization of cu-chlorophyllin by incorporation into hydrotalcite interlayer journal of the japan society of colour material" data-year="2020">
+
+<div class="pub-copy"><h3>Stabilization of cu-chlorophyllin by incorporation into hydrotalcite interlayer</h3><p class="journal">Journal of the Japan Society of Colour Material</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.4011/shikizai.93.280" rel="noopener" target="_blank">10.4011/shikizai.93.280 ↗</a></div></article><article class="pub-row" data-search="effect of support species on performance of transition metal-based catalysts for propane dehydrogenation with co-feeding of h2s journal of the japan petroleum institute" data-year="2020">
+
+<div class="pub-copy"><h3>Effect of support species on performance of transition metal-based catalysts for propane dehydrogenation with co-feeding of H2S</h3><p class="journal">Journal of the Japan Petroleum Institute</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1627/jpi.63.228" rel="noopener" target="_blank">10.1627/jpi.63.228 ↗</a></div></article><article class="pub-row" data-search="auto-methanation for transition-metal catalysts loaded in various oxide supports: a novel route for co2 transformation at room temperature and atmospheric pressure chemical engineering science" data-year="2020">
+
+<div class="pub-copy"><h3>Auto-methanation for transition-metal catalysts loaded in various oxide supports: A novel route for CO2 transformation at room temperature and atmospheric pressure</h3><p class="journal">Chemical Engineering Science</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.ces.2020.115589" rel="noopener" target="_blank">10.1016/j.ces.2020.115589 ↗</a></div></article><article class="pub-row" data-search="photocatalytic uphill conversion of natural gas beyond the limitation of thermal reaction systems nature catalysis" data-year="2020">
+
+<div class="pub-copy"><h3>Photocatalytic uphill conversion of natural gas beyond the limitation of thermal reaction systems</h3><p class="journal">Nature Catalysis</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1038/s41929-019-0419-z" rel="noopener" target="_blank">10.1038/s41929-019-0419-z ↗</a></div></article><article class="pub-row" data-search="theoretical study of oxygen adsorption energy on supported metal cluster using d-band center theory and hsab concept surface science" data-year="2020">
+
+<div class="pub-copy"><h3>Theoretical study of oxygen adsorption energy on supported metal cluster using d-band center theory and HSAB concept</h3><p class="journal">Surface Science</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.susc.2020.121601" rel="noopener" target="_blank">10.1016/j.susc.2020.121601 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2019"><div class="pub-year-heading"><strong>2019</strong><span>5 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="deactivation factor of cucl2-kcl/al2o3 catalyst for ethylene oxychlorination in a commercial-scale plant applied catalysis a: general" data-year="2019">
+
+<div class="pub-copy"><h3>Deactivation factor of CuCl2-KCl/Al2O3 catalyst for ethylene oxychlorination in a commercial-scale plant</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2019.117205" rel="noopener" target="_blank">10.1016/j.apcata.2019.117205 ↗</a></div></article><article class="pub-row" data-search="formation of active species for propane dehydrogenation with hydrogen sulfide co-feeding over transition metal catalyst applied catalysis a: general" data-year="2019">
+
+<div class="pub-copy"><h3>Formation of active species for propane dehydrogenation with hydrogen sulfide co-feeding over transition metal catalyst</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2019.117238" rel="noopener" target="_blank">10.1016/j.apcata.2019.117238 ↗</a></div></article><article class="pub-row" data-search="auto-methanation of carbon dioxide: a novel route for transforming co2 over ni-based catalyst chemistry letters" data-year="2019">
+
+<div class="pub-copy"><h3>Auto-methanation of carbon dioxide: a novel route for transforming CO2 over Ni-based catalyst</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.180894" rel="noopener" target="_blank">10.1246/cl.180894 ↗</a></div></article><article class="pub-row" data-search="auto-methanation performance of structured ni-type catalyst for co2 transformation chemistry letters" data-year="2019">
+
+<div class="pub-copy"><h3>Auto-methanation performance of structured Ni-type catalyst for CO2 transformation</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.190025" rel="noopener" target="_blank">10.1246/cl.190025 ↗</a></div></article><article class="pub-row" data-search="theoretical analysis for activation energy of hydrocarbon oxidation reaction by supported pt catalyst journal of chemical engineering of japan" data-year="2019">
+
+<div class="pub-copy"><h3>Theoretical analysis for activation energy of hydrocarbon oxidation reaction by supported Pt catalyst</h3><p class="journal">Journal of Chemical Engineering of Japan</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1252/jcej.18we315" rel="noopener" target="_blank">10.1252/jcej.18we315 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2018"><div class="pub-year-heading"><strong>2018</strong><span>2 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="dft study for supported pt catalysts focusing on the chemical potential e-journal of surface science and nanotechnology" data-year="2018">
+
+<div class="pub-copy"><h3>DFT study for supported Pt catalysts focusing on the chemical potential</h3><p class="journal">e-Journal of Surface Science and Nanotechnology</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1380/ejssnt.2018.209" rel="noopener" target="_blank">10.1380/ejssnt.2018.209 ↗</a></div></article><article class="pub-row" data-search="development of a powerful co2 methanation process using a structured ni/ceo2 catalyst journal of co2 utilization" data-year="2018">
+
+<div class="pub-copy"><h3>Development of a powerful CO2 methanation process using a structured Ni/CeO2 catalyst</h3><p class="journal">Journal of CO2 Utilization</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.jcou.2018.01.004" rel="noopener" target="_blank">10.1016/j.jcou.2018.01.004 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2017"><div class="pub-year-heading"><strong>2017</strong><span>5 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="a theoretical study of interaction between platinum and oxide support for exhaust-gas purification catalyst sae technical paper" data-year="2017">
+
+<div class="pub-copy"><h3>A Theoretical Study of Interaction between Platinum and Oxide Support for Exhaust-Gas Purification Catalyst</h3><p class="journal">SAE Technical Paper</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.4271/2017-32-0009" rel="noopener" target="_blank">10.4271/2017-32-0009 ↗</a></div></article><article class="pub-row" data-search="development of a novel synthesis-gas production system combining with carbon capture journal of co2 utilization" data-year="2017">
+
+<div class="pub-copy"><h3>Development of a novel synthesis-gas production system combining with carbon capture</h3><p class="journal">Journal of CO2 Utilization</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.jcou.2017.08.021" rel="noopener" target="_blank">10.1016/j.jcou.2017.08.021 ↗</a></div></article><article class="pub-row" data-search="active species of sulfated metal oxide catalyst for propane dehydrogenation journal of the japan petroleum institute" data-year="2017">
+
+<div class="pub-copy"><h3>Active species of sulfated metal oxide catalyst for propane dehydrogenation</h3><p class="journal">Journal of the Japan Petroleum Institute</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1627/jpi.60.223" rel="noopener" target="_blank">10.1627/jpi.60.223 ↗</a></div></article><article class="pub-row" data-search="development of a noble-structured catalyst for methane decomposition to produce pure hydrogen chemistry letters" data-year="2017">
+
+<div class="pub-copy"><h3>Development of a noble-structured catalyst for methane decomposition to produce pure hydrogen</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.160962" rel="noopener" target="_blank">10.1246/cl.160962 ↗</a></div></article><article class="pub-row" data-search="a novel nickel-based structured catalyst for co2 methanation: a honeycomb-type ni/ceo2 catalyst to transform greenhouse gas into useful resources applied catalysis a: general" data-year="2017">
+
+<div class="pub-copy"><h3>A novel nickel-based structured catalyst for CO2 methanation: a honeycomb-type Ni/CeO2 catalyst to transform greenhouse gas into useful resources</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2016.11.036" rel="noopener" target="_blank">10.1016/j.apcata.2016.11.036 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2016"><div class="pub-year-heading"><strong>2016</strong><span>4 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="hydrothermal synthesis of iron oxide structured catalyst with microdisk-shape for water gas shift reaction chemistry letters" data-year="2016">
+
+<div class="pub-copy"><h3>Hydrothermal synthesis of iron oxide structured catalyst with microdisk-shape for water gas shift reaction</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.160670" rel="noopener" target="_blank">10.1246/cl.160670 ↗</a></div></article><article class="pub-row" data-search="effect of promoter addition on water gas shift property over structured-type iron oxide catalyst catalysis letters" data-year="2016">
+
+<div class="pub-copy"><h3>Effect of promoter addition on water gas shift property over structured-type iron oxide catalyst</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-016-1872-9" rel="noopener" target="_blank">10.1007/s10562-016-1872-9 ↗</a></div></article><article class="pub-row" data-search="performance of non-stoichiometric perovskite catalyst axcro3−δ (a: la, pr, nd) for dehydrogenation of propane under steam condition catalysis letters" data-year="2016">
+
+<div class="pub-copy"><h3>Performance of non-stoichiometric perovskite catalyst AxCrO3−δ (A: La, Pr, Nd) for dehydrogenation of propane under steam condition</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-016-1876-5" rel="noopener" target="_blank">10.1007/s10562-016-1876-5 ↗</a></div></article><article class="pub-row" data-search="dehydrogenation of methylcyclohexane over pt/tio2 catalyst catalysis letters" data-year="2016">
+
+<div class="pub-copy"><h3>Dehydrogenation of Methylcyclohexane over Pt/TiO2 Catalyst</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-015-1623-3" rel="noopener" target="_blank">10.1007/s10562-015-1623-3 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2015"><div class="pub-year-heading"><strong>2015</strong><span>4 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="enhancement of ethylbenzene dehydrogenation of perovskite-type bazro3 catalyst by a small amount of fe substitution in the b-site journal of molecular catalysis a: chemical" data-year="2015">
+
+<div class="pub-copy"><h3>Enhancement of ethylbenzene dehydrogenation of perovskite-type BaZrO3 catalyst by a small amount of Fe substitution in the B-site</h3><p class="journal">Journal of Molecular Catalysis A: Chemical</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.molcata.2015.04.010" rel="noopener" target="_blank">10.1016/j.molcata.2015.04.010 ↗</a></div></article><article class="pub-row" data-search="effect of water density on heterogeneous catalytic water gas shift reaction in the presence of ru/c, pd/lacoo3 and fe3o4 in supercritical water the journal of supercritical fluids" data-year="2015">
+
+<div class="pub-copy"><h3>Effect of water density on heterogeneous catalytic water gas shift reaction in the presence of Ru/C, Pd/LaCoO3 and Fe3O4 in supercritical water</h3><p class="journal">The Journal of Supercritical Fluids</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.supflu.2014.12.003" rel="noopener" target="_blank">10.1016/j.supflu.2014.12.003 ↗</a></div></article><article class="pub-row" data-search="high tolerance to coke deposition in methane steam reforming for yttria stabilized zirconia catalyst supported ni by electroless plating chemistry letters" data-year="2015">
+
+<div class="pub-copy"><h3>High tolerance to coke deposition in methane steam reforming for yttria stabilized zirconia catalyst supported Ni by electroless plating</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.140838" rel="noopener" target="_blank">10.1246/cl.140838 ↗</a></div></article><article class="pub-row" data-search="a metal-honeycomb-type structured catalyst for steam reforming of methane: effect of preparation condition change on reforming performance applied catalysis a: general" data-year="2015">
+
+<div class="pub-copy"><h3>A metal-honeycomb-type structured catalyst for steam reforming of methane: Effect of preparation condition change on reforming performance</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2014.11.040" rel="noopener" target="_blank">10.1016/j.apcata.2014.11.040 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2014"><div class="pub-year-heading"><strong>2014</strong><span>2 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="dehydrogenation of ethylbenzene over zirconium-based perovskite-type catalysts of azro3 (a: ca, sr, ba) applied catalysis a: general" data-year="2014">
+
+<div class="pub-copy"><h3>Dehydrogenation of ethylbenzene over zirconium-based perovskite-type catalysts of AZrO3 (A: Ca, Sr, Ba)</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2014.06.012" rel="noopener" target="_blank">10.1016/j.apcata.2014.06.012 ↗</a></div></article><article class="pub-row" data-search="pd-supporting lacoo3 catalyst with structured configuration for water gas shift reaction applied catalysis a: general" data-year="2014">
+
+<div class="pub-copy"><h3>Pd-supporting LaCoO3 catalyst with structured configuration for water gas shift reaction</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2014.03.005" rel="noopener" target="_blank">10.1016/j.apcata.2014.03.005 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2013"><div class="pub-year-heading"><strong>2013</strong><span>8 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="lanthanoid-free perovskite oxide catalyst for dehydrogenation of ethylbenzene working with redox mechanism frontiers in green and environmental chemistry" data-year="2013">
+
+<div class="pub-copy"><h3>Lanthanoid-free perovskite oxide catalyst for dehydrogenation of ethylbenzene working with redox mechanism</h3><p class="journal">Frontiers in Green and Environmental Chemistry</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.3389/fchem.2013.00021" rel="noopener" target="_blank">10.3389/fchem.2013.00021 ↗</a></div></article><article class="pub-row" data-search="a novel nickel-based catalyst for methane dry reforming: a metal honeycomb-type catalyst prepared by sol-gel method, and electroless plating applied catalysis a: general" data-year="2013">
+
+<div class="pub-copy"><h3>A Novel Nickel-Based Catalyst for Methane Dry Reforming: A Metal Honeycomb-Type Catalyst Prepared by Sol-Gel Method, and Electroless Plating</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2013.08.024" rel="noopener" target="_blank">10.1016/j.apcata.2013.08.024 ↗</a></div></article><article class="pub-row" data-search="stable and selective perovskite catalyst for dehydrogenation of propane working with redox mechanism journal of molecular catalysis a: chemical" data-year="2013">
+
+<div class="pub-copy"><h3>Stable and selective perovskite catalyst for dehydrogenation of propane working with redox mechanism</h3><p class="journal">Journal of Molecular Catalysis A: Chemical</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.molcata.2013.04.033" rel="noopener" target="_blank">10.1016/j.molcata.2013.04.033 ↗</a></div></article><article class="pub-row" data-search="dehydrogenation of ethylbenzene over la0.8ba0.2fe0.4mn0.6o3−δ perovskite oxide catalyst working by redox mechanism using steam and lattice oxygen applied catalysis a: general" data-year="2013">
+
+<div class="pub-copy"><h3>Dehydrogenation of ethylbenzene over La0.8Ba0.2Fe0.4Mn0.6O3−δ perovskite oxide catalyst working by redox mechanism using steam and lattice oxygen</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2013.04.041" rel="noopener" target="_blank">10.1016/j.apcata.2013.04.041 ↗</a></div></article><article class="pub-row" data-search="a combination of electroless plating and sol-gel methods as a novel technique for preparing a honeycomb-type-structured catalyst chemistry letters" data-year="2013">
+
+<div class="pub-copy"><h3>A Combination of Electroless Plating and Sol-Gel Methods as a Novel Technique for Preparing a Honeycomb-type-structured Catalyst</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.130011" rel="noopener" target="_blank">10.1246/cl.130011 ↗</a></div></article><article class="pub-row" data-search="role of alkali metal in a highly active pd/alkali/fe2o3 catalyst for water gas shift reaction applied catalysis a: general" data-year="2013">
+
+<div class="pub-copy"><h3>Role of alkali metal in a highly active Pd/alkali/Fe2O3 catalyst for water gas shift reaction</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2013.03.010" rel="noopener" target="_blank">10.1016/j.apcata.2013.03.010 ↗</a></div></article><article class="pub-row" data-search="hydrogen production by water gas shift reaction over pd–k impregnated co oxide catalyst catalysis letters" data-year="2013">
+
+<div class="pub-copy"><h3>Hydrogen Production by Water Gas Shift Reaction Over Pd–K Impregnated Co Oxide Catalyst</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-013-0974-x" rel="noopener" target="_blank">10.1007/s10562-013-0974-x ↗</a></div></article><article class="pub-row" data-search="oxidative dehydrogenation of ethylbenzene over la0.8ba0.2fe0.4mn0.6o3−δ perovskite oxide catalyst applied catalysis a: general" data-year="2013">
+
+<div class="pub-copy"><h3>Oxidative dehydrogenation of ethylbenzene over La0.8Ba0.2Fe0.4Mn0.6O3−δ perovskite oxide catalyst</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2013.02.029" rel="noopener" target="_blank">10.1016/j.apcata.2013.02.029 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2012"><div class="pub-year-heading"><strong>2012</strong><span>1 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="adsorption state of carbon monoxide on a structured copper-based catalyst prepared by electroless plating for low-temperature water gas shift reaction chemistry letters" data-year="2012">
+
+<div class="pub-copy"><h3>Adsorption State of Carbon Monoxide on a Structured Copper-based Catalyst Prepared by Electroless Plating for Low-temperature Water Gas Shift Reaction</h3><p class="journal">Chemistry Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1246/cl.2012.900" rel="noopener" target="_blank">10.1246/cl.2012.900 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2011"><div class="pub-year-heading"><strong>2011</strong><span>1 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="dehydrogenation of ethylbenzene over highly active and stable perovskite oxide catalyst – effect of lattice oxygen on/in perovskite oxide and role of a/b site in perovskite oxide applied catalysis a: general" data-year="2011">
+
+<div class="pub-copy"><h3>Dehydrogenation of ethylbenzene over highly active and stable perovskite oxide catalyst – Effect of lattice oxygen on/in perovskite oxide and role of A/B site in perovskite oxide</h3><p class="journal">Applied Catalysis A: General</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1016/j.apcata.2011.03.016" rel="noopener" target="_blank">10.1016/j.apcata.2011.03.016 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2010"><div class="pub-year-heading"><strong>2010</strong><span>2 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="effect of loading potassium and palladium over iron-based catalyst for low temperature water–gas shift reaction catalysis letters" data-year="2010">
+
+<div class="pub-copy"><h3>Effect of Loading Potassium and Palladium over Iron-Based Catalyst for Low Temperature Water–Gas Shift Reaction</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-010-0444-7" rel="noopener" target="_blank">10.1007/s10562-010-0444-7 ↗</a></div></article><article class="pub-row" data-search="pt and/or pd supported/incorporated catalyst on perovskite-type oxide for water gas shift reaction topics in catalysis" data-year="2010">
+
+<div class="pub-copy"><h3>Pt and/or Pd Supported/Incorporated Catalyst on Perovskite-Type Oxide for Water Gas Shift Reaction</h3><p class="journal">Topics in Catalysis</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s11244-010-9496-6" rel="noopener" target="_blank">10.1007/s11244-010-9496-6 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2009"><div class="pub-year-heading"><strong>2009</strong><span>1 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="novel perovskite-type oxide catalysts for dehydrogenation of ethylbenzene to styrene catalysis letters" data-year="2009">
+
+<div class="pub-copy"><h3>Novel Perovskite-Type Oxide Catalysts for Dehydrogenation of Ethylbenzene to Styrene</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-009-0028-6" rel="noopener" target="_blank">10.1007/s10562-009-0028-6 ↗</a></div></article></div></section><section class="pub-year-group" data-year-group="2008"><div class="pub-year-heading"><strong>2008</strong><span>1 publications</span></div><div class="pub-year-items"><article class="pub-row" data-search="high performance of fe–k oxide catalysts for dehydrogenation of ethylbenzene to styrene with an aid of ppm-order pd catalysis letters" data-year="2008">
+
+<div class="pub-copy"><h3>High Performance of Fe–K Oxide Catalysts for Dehydrogenation of Ethylbenzene to Styrene with an aid of ppm-order Pd</h3><p class="journal">Catalysis Letters</p></div>
+
+<div class="pub-doi-wrap"><span class="pub-doi-label">DOI</span><a class="pub-doi" href="https://doi.org/10.1007/s10562-008-9580-8" rel="noopener" target="_blank">10.1007/s10562-008-9580-8 ↗</a></div></article></div></section></div>
+<p class="pub-note">注：DOIが付与されている掲載物は、確認できたDOIをすべて表示しています。「格子硫黄を活用するアルカンのredox型脱水素」「物質変換プロセスにおける電化の最新動向」「Solid steps towards carbon capture」の3件は、発行元・研究成果報告書等でDOIが付与されていないことを確認したため「DOIなし」とし、確認用の掲載元リンクを付けています。掲載年は研究者データベース上の年を基本としています。</p>
 </section>
 </main>
 <footer class="site-footer"><div><b>Watanabe Laboratory</b><span>渡部研究室 · Shizuoka University, Hamamatsu</span></div><p>© <span id="year"></span> Watanabe Laboratory.</p></footer>
 <script src="js/main.js"></script>
 <script>
 (() => {
-  const rows=[...document.querySelectorAll('.pub-row')]; const input=document.getElementById('pubSearch'); const count=document.getElementById('visibleCount'); let filter='all';
-  function apply(){const q=input.value.trim().toLowerCase();let n=0;rows.forEach(r=>{const okYear=filter==='all'||r.dataset.year===filter;const okQ=!q||r.dataset.search.includes(q);const show=okYear&&okQ;r.hidden=!show;if(show)n++;});count.textContent=n;}
-  input.addEventListener('input',apply); document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');apply();}));
+  const rows=[...document.querySelectorAll('.pub-row')];
+  const groups=[...document.querySelectorAll('.pub-year-group')];
+  const input=document.getElementById('pubSearch');
+  const count=document.getElementById('visibleCount');
+  let filter='all';
+  function apply(){
+    const q=input.value.trim().toLowerCase();
+    let n=0;
+    rows.forEach(r=>{
+      const okYear=filter==='all'||r.dataset.year===filter;
+      const okQ=!q||r.dataset.search.includes(q);
+      const show=okYear&&okQ;
+      r.hidden=!show;
+      if(show)n++;
+    });
+    groups.forEach(g=>{g.hidden=![...g.querySelectorAll('.pub-row')].some(r=>!r.hidden);});
+    count.textContent=n;
+  }
+  input.addEventListener('input',apply);
+  document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{
+    filter=b.dataset.filter;
+    document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    apply();
+  }));
 })();
 </script>
 </body></html>
