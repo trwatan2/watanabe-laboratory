@@ -1,7 +1,16 @@
-Upload every file/folder in this package to:
+ChemTree v42 ROOT FIX
+
+Upload ALL files in this package to the ROOT of:
 trwatan2/watanabe-laboratory
-at the repository root, then Commit changes.
 
-No Settings / Pages / Actions operation is required.
+Then Commit changes.
 
-This is intentionally lightweight. Existing assets/photos/videos in the repository are reused.
+No Settings / Pages / Actions changes are needed.
+
+Fixes:
+- /chemtree/ 404 redirects to /chemtree-app.html
+- ChemTree itself runs directly from root-level files
+- no chemtree/ folder upload is required
+- PC: actual ChemTree opens
+- smartphone/tablet: red "PC ONLY" notice
+- paper links included in the app

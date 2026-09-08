@@ -1,40 +1,111 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="index,follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="ChemTree — an interactive 3D map for exploring recent chemistry literature from JACS, Chem, and chemistry-related papers in Nature and Science." />
+  <meta name="theme-color" content="#030a13" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>ChemTree | Watanabe Laboratory</title>
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@19.2.8",
+      "react/jsx-runtime": "https://esm.sh/react@19.2.8/jsx-runtime",
+      "react-dom": "https://esm.sh/react-dom@19.2.8",
+      "react-dom/client": "https://esm.sh/react-dom@19.2.8/client",
+      "three": "https://esm.sh/three@0.185.1",
+      "@react-three/fiber": "https://esm.sh/@react-three/fiber@9.7.0?bundle&external=react,react-dom,three",
+      "@react-three/drei": "https://esm.sh/@react-three/drei@10.7.8?bundle&external=react,react-dom,three,@react-three/fiber",
+      "fflate": "./chemtree-fflate.js"
+    }
+  }
+  </script>
   <style>
-    html,body{margin:0;min-height:100%;background:#080c12;color:#f4f7fb;font-family:Arial,"Yu Gothic",Meiryo,sans-serif}
-    main{max-width:760px;margin:0 auto;padding:9vh 22px}
-    h1{font-size:clamp(36px,8vw,72px);margin:0 0 18px}.warn{border:2px solid #ff3b30;background:#2b0808;color:#ff625a;padding:18px;border-radius:14px;font-weight:800;line-height:1.7;margin:24px 0}.pc{color:#d7ff45;font-weight:800}.go{display:inline-block;background:#d7ff45;color:#10130a;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:800}.muted{color:#aab3bf;line-height:1.7}
+    html, body, #root {
+      width: 100%; height: 100%; min-height: 100%;
+      margin: 0; padding: 0; overflow: hidden; background: #02050a;
+      overscroll-behavior: none; -webkit-text-size-adjust: 100%;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    button, input, a { font: inherit; }
+    canvas { touch-action: none; }
+    .lab-back {
+      position: fixed; left: max(10px, env(safe-area-inset-left)); top: max(10px, env(safe-area-inset-top)); z-index: 1000;
+      display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px; border-radius: 999px;
+      color: #b8dfff; background: rgba(2, 8, 16, .72); border: 1px solid rgba(113, 223, 255, .22);
+      text-decoration: none; font: 700 10px/1.2 Arial, sans-serif; backdrop-filter: blur(10px);
+      opacity: .72; transition: opacity .2s, border-color .2s;
+    }
+    .lab-back:hover, .lab-back:focus { opacity: 1; border-color: rgba(113,223,255,.62); color: #fff; }
+    @media (max-width: 820px) {
+      .lab-back { top: auto; bottom: calc(58px + env(safe-area-inset-bottom)); left: 10px; padding: 6px 9px; font-size: 9px; }
+    }
+    .loading-note {
+      position: fixed; inset: 0; z-index: 900; display: grid; place-items: center; padding: 24px;
+      color: #9ec7df; text-align: center;
+      background: radial-gradient(circle at 50% 42%, #0a2239 0%, #040c16 48%, #02050a 100%);
+      font: 700 14px/1.6 Arial, sans-serif; letter-spacing: .03em;
+    }
   </style>
+
+  <style id="pc-only-mobile-block-style">
+    #pcOnlyMobileBlock{
+      display:none; position:fixed; inset:0; z-index:99999;
+      background:#090909; color:#fff; padding:28px 22px;
+      font-family:Arial,"Yu Gothic",Meiryo,sans-serif;
+      align-items:center; justify-content:center; text-align:center;
+    }
+    #pcOnlyMobileBlock .box{
+      max-width:680px; border:3px solid #ff2d2d; background:#210707;
+      border-radius:16px; padding:24px 18px;
+    }
+    #pcOnlyMobileBlock strong{
+      display:block; color:#ff3b30; font-size:clamp(28px,8vw,46px);
+      margin-bottom:14px;
+    }
+    #pcOnlyMobileBlock p{font-size:17px;line-height:1.7;margin:8px 0}
+    #pcOnlyMobileBlock a{color:#d7ff45;font-weight:800}
+  </style>
+
 </head>
 <body>
-<main>
-  <h1>ChemTree</h1>
-  <div id="mobileNotice" class="warn" hidden>
-    動作環境：PCのみ<br>
-    <span>PC ONLY — ChemTree is currently supported on desktop/laptop browsers only.</span><br>
-    <span>スマートフォン・タブレットでは本体をサポートしていません。</span>
+
+  <div id="pcOnlyMobileBlock">
+    <div class="box">
+      <strong>動作環境：PCのみ</strong>
+      <p>ChemTree本体は現在、Windows / macOS のPCブラウザ向けです。</p>
+      <p><b>PC ONLY — Smartphone / tablet access is currently unsupported.</b></p>
+      <p><a href="playground.html">← Playgroundへ戻る</a></p>
+    </div>
   </div>
-  <div id="pcNotice">
-    <p class="pc">PC environment detected.</p>
-    <p class="muted">ChemTreeを開いています。自動的に移動しない場合は下のボタンを押してください。</p>
-    <a class="go" href="./chemtree/">OPEN CHEMTREE →</a>
-  </div>
-</main>
-<script>
-(function(){
-  const mobile = /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(navigator.userAgent) || Math.min(screen.width,screen.height) < 720;
-  if (mobile) {
-    document.getElementById('mobileNotice').hidden = false;
-    document.getElementById('pcNotice').hidden = true;
-    return;
-  }
-  location.replace('./chemtree/' + location.search + location.hash);
-})();
-</script>
+
+  <div id="root"><div class="loading-note">Loading ChemTree dataset…<br><small>Mobile devices may take a few seconds on the first load.</small></div></div>
+  <a class="lab-back" href="playground.html">← Watanabe Laboratory / Playground</a>
+  <script type="module">
+    const isMobile =
+      /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(navigator.userAgent) ||
+      Math.min(screen.width || 9999, screen.height || 9999) < 720;
+
+    if (isMobile) {
+      document.getElementById('pcOnlyMobileBlock').style.display = 'flex';
+      document.getElementById('root').style.display = 'none';
+      const back = document.querySelector('.lab-back');
+      if (back) back.style.display = 'none';
+    } else {
+      const [{ StrictMode }, { createRoot }, { jsx }, { default: App }] = await Promise.all([
+        import('react'),
+        import('react-dom/client'),
+        import('react/jsx-runtime'),
+        import('./chemtree-App.js')
+      ]);
+      createRoot(document.getElementById('root')).render(
+        jsx(StrictMode, { children: jsx(App, {}) })
+      );
+    }
+  </script>
 </body>
 </html>

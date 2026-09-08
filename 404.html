@@ -72,6 +72,15 @@
 
     .sulfur-detail .kicker, .sulfur-feature .kicker{color:#d29b18!important}
   </style>
+<script>
+(function () {
+  var p = location.pathname.replace(/\/+$/, '');
+  if (p.endsWith('/chemtree')) {
+    location.replace('../chemtree-app.html' + location.search + location.hash);
+  }
+})();
+</script>
+
 </head>
 <body class="subpage">
 <header class="site-header scrolled">
