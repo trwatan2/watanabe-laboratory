@@ -1,0 +1,38 @@
+ChemTree automatic update v2 — SAFE branch mode
+
+IMPORTANT RECOVERY FIRST
+========================
+The previous v1 package changed GitHub Pages Source to "GitHub Actions".
+That was unnecessarily risky for the existing laboratory website.
+
+Restore Pages FIRST:
+1. Repository: trwatan2/watanabe-laboratory
+2. Settings -> Pages
+3. Build and deployment -> Source: "Deploy from a branch"
+4. Branch: main
+5. Folder: /(root)
+6. Save
+
+Then upload this package's TWO folders to the repository root:
+- .github
+- chemtree-source
+
+The workflow file uses the SAME filename:
+.github/workflows/chemtree-pages.yml
+so it replaces the previous dangerous workflow.
+
+What v2 does every day:
+- update ChemTree data
+- build ChemTree
+- replace ONLY:
+  * /chemtree/
+  * /chemtree-app.html
+- commit those ChemTree files to main
+
+What v2 NEVER does:
+- it does not deploy a separate GitHub Pages artifact
+- it does not change or replace index.html
+- it does not touch Research / People / Publications / Playground / Contact pages
+- it does not change the GitHub Pages Source setting
+
+If update/build fails, nothing is committed, so the current public site remains intact.

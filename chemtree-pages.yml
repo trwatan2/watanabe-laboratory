@@ -1,30 +1,28 @@
-name: ChemTree Daily Update + GitHub Pages
+name: ChemTree Daily Update
 
 on:
   workflow_dispatch:
   schedule:
-    # 21:10 UTC = 06:10 JST (next day)
+    # 21:10 UTC = 06:10 JST
     - cron: '10 21 * * *'
-  push:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: github-pages
+  group: chemtree-daily-update
   cancel-in-progress: false
 
 jobs:
-  build:
-    if: github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+  update:
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
     steps:
-      - name: Checkout repository
+      - name: Checkout laboratory website repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
@@ -34,7 +32,6 @@ jobs:
           cache-dependency-path: chemtree-source/package-lock.json
 
       - name: Restore OpenAlex caches
-        id: openalex-cache
         uses: actions/cache@v6
         with:
           path: |
@@ -44,7 +41,7 @@ jobs:
           restore-keys: |
             chemtree-openalex-${{ runner.os }}-
 
-      - name: Seed OpenAlex caches on first run
+      - name: Seed caches on first run
         shell: bash
         run: |
           mkdir -p chemtree-source/public/data
@@ -55,7 +52,7 @@ jobs:
         working-directory: chemtree-source
         run: npm ci
 
-      - name: Update literature data (365 days, retry up to 3 times)
+      - name: Update literature data
         working-directory: chemtree-source
         shell: bash
         run: |
@@ -70,7 +67,7 @@ jobs:
           done
           exit 1
 
-      - name: Prepare deploy-only data
+      - name: Prepare deploy data
         working-directory: chemtree-source
         run: npm run prepare-deploy
 
@@ -78,59 +75,30 @@ jobs:
         working-directory: chemtree-source
         run: npm run build
 
-      - name: Assemble entire Watanabe Laboratory site
+      - name: Replace ONLY the public ChemTree files
         shell: bash
         run: |
-          rm -rf _site
-          mkdir -p _site
+          rm -rf chemtree
+          cp -a chemtree-source/dist chemtree
+          cp chemtree-source/redirect/chemtree-app.html chemtree-app.html
 
-          # Keep the laboratory website exactly as stored in the repository,
-          # but do not publish build/source internals or obsolete ChemTree bundles.
-          rsync -a ./ _site/ \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            --exclude='_site/' \
-            --exclude='chemtree-source/' \
-            --exclude='node_modules/' \
-            --exclude='chemtree-app.html' \
-            --exclude='chemtree-App.js' \
-            --exclude='chemtree-CameraFocus.js' \
-            --exclude='chemtree-GrowthGlow.js' \
-            --exclude='chemtree-fflate.js' \
-            --exclude='chemtree-1y.json.gz' \
-            --exclude='chemtree-mobile*.html' \
-            --exclude='chemtree-mobile*.json'
+          # IMPORTANT:
+          # index.html, research.html, people.html, publications.html, etc.
+          # are NOT touched by this workflow.
 
-          rm -rf _site/chemtree
-          cp -a chemtree-source/dist _site/chemtree
-          cp chemtree-source/redirect/chemtree-app.html _site/chemtree-app.html
+      - name: Commit updated ChemTree to the existing website branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Avoid Jekyll processing; this is a pure static deployment.
-          touch _site/.nojekyll
+          git add -A chemtree chemtree-app.html
 
-          echo 'Published ChemTree status:'
-          cat chemtree-source/deploy-public/data/public-status.json
-          echo
-          du -sh _site
+          if git diff --cached --quiet; then
+            echo "No public ChemTree changes to commit."
+            exit 0
+          fi
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: _site
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          git commit -m "Auto-update ChemTree $(date -u +'%Y-%m-%d')"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
