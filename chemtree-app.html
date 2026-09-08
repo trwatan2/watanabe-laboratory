@@ -1,20 +1,153 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#020711" />
-  <title>ChemTree | Watanabe Laboratory</title>
-  <style>html,body{margin:0;width:100%;height:100%;background:#020711;color:#9fdfff;font:700 14px Arial,sans-serif;display:grid;place-items:center}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111d">
+<title>ChemTree Mobile | Watanabe Laboratory</title>
+<style>
+:root{
+  --bg:#07111d; --panel:#0c1a29; --panel2:#102235; --line:#284057;
+  --text:#eef7ff; --muted:#9cb0c2; --acid:#d7ff45; --cyan:#5fe4ff;
+  --catalysis:#ff8f70; --materials:#6fd2ff; --synthesis:#cb8cff;
+  --bio:#72dfa9; --analytical:#ffd66f; --physical:#7fa7ff; --theory:#9ca9bd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#143049 0,#07111d 42%,#050b13 100%);color:var(--text);font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,system-ui,sans-serif;min-height:100vh;padding-bottom:78px}
+button,input,select{font:inherit}
+a{color:inherit}
+.header{position:sticky;top:0;z-index:20;padding:12px 14px 10px;background:rgba(5,11,19,.94);backdrop-filter:blur(14px);border-bottom:1px solid #173047}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand-left{display:flex;align-items:center;gap:10px;min-width:0}
+.flask{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#1a405d,#0c1a29);border:1px solid #315a78;display:grid;place-items:center;font-weight:900;color:var(--acid);font-size:13px;box-shadow:0 0 24px rgba(95,228,255,.13)}
+.brand h1{font-family:"Helvetica Neue",Arial,sans-serif;margin:0;font-size:20px;letter-spacing:-.02em}.brand p{margin:2px 0 0;font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.home-link{font-size:11px;text-decoration:none;color:#c7d6e3;border:1px solid #294157;border-radius:999px;padding:7px 9px;white-space:nowrap}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.select,.search{appearance:none;width:100%;border:1px solid #2a455e;background:#0b1826;color:#f1f8ff;border-radius:11px;padding:10px 11px;font-size:13px;outline:none}.search{grid-column:1/-1}.select:focus,.search:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(95,228,255,.10)}
+.wrap{width:min(760px,100%);margin:auto;padding:14px}
+.hero{padding:12px 2px 14px}.hero .kicker{margin:0 0 7px;color:var(--acid);font-size:11px;letter-spacing:.12em;font-weight:800}.hero h2{font-family:"Helvetica Neue",Arial,sans-serif;font-size:clamp(32px,9vw,50px);line-height:.94;letter-spacing:-.055em;margin:0 0 10px}.hero p{margin:0;color:#b6c7d5;font-size:13px;line-height:1.75}.status{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.chip{font-size:10px;color:#bad0df;border:1px solid #26445b;background:#0c1b29;padding:5px 8px;border-radius:999px}.chip strong{color:#fff}
+.section{scroll-margin-top:150px;background:linear-gradient(180deg,rgba(14,31,47,.92),rgba(8,20,32,.92));border:1px solid #1b354b;border-radius:17px;overflow:hidden;margin-bottom:14px;box-shadow:0 16px 40px rgba(0,0,0,.20)}
+.section-head{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-bottom:1px solid #1e384e}.section-head h3{font-family:"Helvetica Neue",Arial,sans-serif;margin:0;font-size:18px}.section-head small{color:var(--muted)}
+.tree{padding:7px 8px 14px;overflow:hidden}.tree-node{position:relative}.node-row{display:flex;align-items:center;min-height:43px;border-radius:10px;margin:2px 0}.node-row.selected{background:#173149;box-shadow:inset 3px 0 0 var(--acid)}.toggle{flex:0 0 32px;width:32px;height:38px;border:0;background:none;color:#9cb0c2;font-size:16px;padding:0}.toggle.blank{opacity:0}.node-btn{min-width:0;flex:1;border:0;background:none;color:var(--text);text-align:left;padding:7px 8px 7px 2px;display:flex;align-items:center;justify-content:space-between;gap:8px}.node-label{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;font-weight:700}.node-label span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;background:#7f93a5;box-shadow:0 0 10px currentColor}.node-count{font-variant-numeric:tabular-nums;color:#a8bac8;font-size:11px;border:1px solid #29445a;padding:3px 6px;border-radius:999px;min-width:36px;text-align:center}.children{margin-left:19px;padding-left:9px;border-left:1px solid #243f56}.children[hidden]{display:none}.root-node>.node-row .node-label{font-size:16px}.root-node>.node-row{background:#0c2133}.root-node>.node-row.selected{background:#173149}
+.c-catalysis .dot{background:var(--catalysis)}.c-materials .dot{background:var(--materials)}.c-synthesis .dot{background:var(--synthesis)}.c-biochem .dot{background:var(--bio)}.c-analytical .dot{background:var(--analytical)}.c-physical .dot{background:var(--physical)}.c-theory .dot{background:var(--theory)}
+.paper-area{padding:13px}.selected-meta{display:flex;justify-content:space-between;gap:12px;align-items:flex-end;padding:1px 1px 12px}.selected-meta h4{font-family:"Helvetica Neue",Arial,sans-serif;font-size:24px;letter-spacing:-.04em;margin:0}.selected-meta p{font-size:11px;color:var(--muted);margin:4px 0 0}.paper-total{font-size:12px;color:var(--acid);font-weight:800;white-space:nowrap}
+.paper-list{display:grid;gap:9px}.paper{display:block;text-decoration:none;background:#0b1927;border:1px solid #203c53;border-radius:13px;padding:12px;transition:.15s transform,.15s border-color}.paper:active{transform:scale(.985);border-color:var(--cyan)}.paper-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:6px}.paper-journal{font-size:10px;color:var(--cyan);font-weight:800;text-transform:uppercase}.paper-date{font-size:10px;color:#8298aa}.paper-title{font-family:"Helvetica Neue",Arial,"Yu Gothic",sans-serif;font-size:14px;line-height:1.48;font-weight:700;margin:0}.paper-link{display:inline-block;margin-top:8px;color:var(--acid);font-size:10px;font-weight:800}.empty{padding:30px 12px;text-align:center;color:var(--muted);font-size:13px}.more{width:100%;border:1px solid #39536a;color:#fff;background:#10273b;border-radius:12px;padding:12px;margin-top:10px;font-weight:800}.more[hidden]{display:none}
+.loading{padding:60px 20px;text-align:center}.spinner{width:34px;height:34px;border:3px solid #24425a;border-top-color:var(--acid);border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.error{color:#ff9b9b}.bottom{position:fixed;z-index:30;bottom:0;left:0;right:0;padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));background:rgba(5,11,19,.96);border-top:1px solid #1d384e;display:grid;grid-template-columns:1fr 1fr;gap:8px}.bottom button{border:1px solid #2a455e;background:#0e1d2c;color:#eaf4fb;border-radius:12px;padding:11px 8px;font-weight:800}.bottom button:last-child{background:var(--acid);border-color:var(--acid);color:#132006}
+.note{font-size:10px;line-height:1.7;color:#7890a3;padding:2px 3px 10px}
+@media(min-width:700px){.controls{grid-template-columns:180px 180px 1fr}.search{grid-column:auto}.wrap{padding:20px}.paper-title{font-size:16px}.node-label{font-size:15px}}
+</style>
 </head>
-<body>Opening ChemTree…
+<body>
+<header class="header">
+  <div class="brand">
+    <div class="brand-left"><div class="flask">CT</div><div><h1>ChemTree</h1><p>Mobile chemistry literature tree</p></div></div>
+    <a class="home-link" href="playground.html">← Playground</a>
+  </div>
+  <div class="controls">
+    <select class="select" id="period" aria-label="Period"><option value="1M">1 month</option><option value="3M">3 months</option><option value="6M">6 months</option><option value="1Y" selected>1 year</option></select>
+    <select class="select" id="journal" aria-label="Journal"><option value="all">All journals</option><option value="jacs">JACS</option><option value="nature">Nature</option><option value="science">Science</option><option value="chem">Chem</option></select>
+    <input class="search" id="search" placeholder="Search papers in selected topic…" autocomplete="off">
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <p class="kicker">JACS · NATURE · SCIENCE · CHEM</p>
+    <h2>Tap the tree.<br>Open the paper.</h2>
+    <p>スマホ専用の軽量版です。枝をタップして分野をたどり、下の論文タイトルから原著論文へ直接移動できます。</p>
+    <div class="status"><span class="chip"><strong id="paperCount">—</strong> papers</span><span class="chip">data: <strong id="dataDate">—</strong></span><span class="chip">no WebGL</span></div>
+  </section>
+
+  <section class="section" id="treeSection">
+    <div class="section-head"><h3>Research tree</h3><small>tap a node</small></div>
+    <div id="tree" class="tree"><div class="loading"><div class="spinner"></div>Loading ChemTree…</div></div>
+  </section>
+
+  <section class="section" id="papersSection">
+    <div class="section-head"><h3>Papers</h3><small>tap to open DOI</small></div>
+    <div class="paper-area">
+      <div class="selected-meta"><div><h4 id="selectedLabel">CHEMISTRY</h4><p id="filterText">All journals · 1 year</p></div><div class="paper-total" id="selectedCount">—</div></div>
+      <div id="papers" class="paper-list"><div class="empty">Select a topic from the tree.</div></div>
+      <button id="more" class="more" hidden>Show more papers</button>
+    </div>
+  </section>
+  <p class="note">ChemTree uses bibliographic metadata for literature exploration. Article full text and publisher figures are not redistributed. Paper links open the DOI/publisher page.</p>
+</div>
+
+<nav class="bottom"><button id="goTree">TREE ↑</button><button id="goPapers">PAPERS ↓</button></nav>
+
 <script>
-(function(){
-  const params=new URLSearchParams(location.search);
-  const forceDesktop=params.get('desktop')==='1';
-  const mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)||matchMedia('(max-width:900px)').matches;
-  const target=(mobile&&!forceDesktop)?'./chemtree-mobile3d.html?v=35':'./chemtree-desktop.html?v=35';
-  location.replace(target);
+(() => {
+  const $=s=>document.querySelector(s);
+  const state={data:null,selected:'chemistry',period:'1Y',journal:'all',query:'',limit:20,expanded:new Set(['chemistry','catalysis'])};
+  const periodDays={"1M":31,"3M":92,"6M":183,"1Y":370};
+  const majorColors={catalysis:'c-catalysis',materials:'c-materials',synthesis:'c-synthesis',biochem:'c-biochem',analytical:'c-analytical',physical:'c-physical',theory:'c-theory'};
+  let byId={},children={},maxDate=null;
+
+  function major(id){
+    let n=byId[id]; if(!n) return '';
+    while(n && n.parent && n.parent!=='chemistry') n=byId[n.parent];
+    return n && n.id!=='chemistry' ? n.id : '';
+  }
+  function setData(d){
+    state.data=d; byId=Object.fromEntries(d.tree.map(x=>[x.id,x])); children={}; d.tree.forEach(n=>(children[n.parent||'_root']??=[]).push(n.id));
+    const dates=d.papers.map(p=>p.d).filter(Boolean).sort(); maxDate=dates.length?new Date(dates[dates.length-1]+'T00:00:00Z'):new Date();
+    $('#paperCount').textContent=d.papers.length.toLocaleString(); $('#dataDate').textContent=(d.generatedAt||'').slice(0,10)||dates[dates.length-1]||'—';
+    render();
+  }
+  function passesBase(p){
+    if(state.journal!=='all' && p.jid!==state.journal) return false;
+    if(p.d){ const dd=(maxDate-new Date(p.d+'T00:00:00Z'))/86400000; if(dd>periodDays[state.period]) return false; }
+    return true;
+  }
+  function topicPapers(includeSearch=true){
+    const q=state.query.trim().toLowerCase();
+    return state.data.papers.filter(p=>passesBase(p)&&p.n.includes(state.selected)&&(!includeSearch||!q||p.t.toLowerCase().includes(q)||p.j.toLowerCase().includes(q)));
+  }
+  function countMap(){
+    const c={}; state.data.tree.forEach(n=>c[n.id]=0);
+    state.data.papers.forEach(p=>{if(!passesBase(p))return; p.n.forEach(n=>{if(n in c)c[n]++})});
+    return c;
+  }
+  function renderTree(){
+    const counts=countMap();
+    function nodeHTML(id,depth=0){
+      const n=byId[id],kids=children[id]||[],open=state.expanded.has(id),sel=state.selected===id,maj=major(id),cls=majorColors[maj]||'';
+      return `<div class="tree-node ${id==='chemistry'?'root-node':''} ${cls}" data-id="${id}">
+        <div class="node-row ${sel?'selected':''}">
+          <button class="toggle ${kids.length?'':'blank'}" data-toggle="${id}" aria-label="toggle">${kids.length?(open?'▾':'▸'):'•'}</button>
+          <button class="node-btn" data-select="${id}"><span class="node-label"><i class="dot"></i><span>${escapeHtml(n.label)}</span></span><span class="node-count">${counts[id]||0}</span></button>
+        </div>
+        ${kids.length?`<div class="children" ${open?'':'hidden'}>${kids.map(k=>nodeHTML(k,depth+1)).join('')}</div>`:''}
+      </div>`;
+    }
+    $('#tree').innerHTML=nodeHTML('chemistry');
+    document.querySelectorAll('[data-toggle]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=b.dataset.toggle; state.expanded.has(id)?state.expanded.delete(id):state.expanded.add(id); renderTree()});
+    document.querySelectorAll('[data-select]').forEach(b=>b.onclick=()=>{const id=b.dataset.select; state.selected=id; state.limit=20; let p=byId[id]; while(p&&p.parent){state.expanded.add(p.parent);p=byId[p.parent]} renderTree(); renderPapers()});
+  }
+  function renderPapers(){
+    const all=topicPapers(true), n=byId[state.selected]; $('#selectedLabel').textContent=n?n.label:'CHEMISTRY'; $('#selectedCount').textContent=all.length.toLocaleString()+' papers';
+    $('#filterText').textContent=`${state.journal==='all'?'All journals':state.journal.toUpperCase()} · ${state.period}${state.query?' · search':''}`;
+    const items=all.slice(0,state.limit);
+    $('#papers').innerHTML=items.length?items.map(p=>{
+      const url=p.u|| (p.doi?'https://doi.org/'+p.doi:''); const tag=p.doi?`DOI: ${escapeHtml(p.doi)}`:'OPEN PAPER';
+      return `<a class="paper" href="${escapeAttr(url||'#')}" ${url?'target="_blank" rel="noopener"':''}>
+        <div class="paper-top"><span class="paper-journal">${escapeHtml(p.j||p.jid)}</span><span class="paper-date">${escapeHtml(p.d||'')}</span></div>
+        <p class="paper-title">${escapeHtml(p.t)}</p><span class="paper-link">${tag} ↗</span></a>`
+    }).join(''):'<div class="empty">No papers found for this filter.</div>';
+    $('#more').hidden=all.length<=state.limit; $('#more').textContent=`Show more (${all.length-state.limit>0?all.length-state.limit:0})`;
+    $('#goPapers').textContent=`PAPERS ${all.length} ↓`;
+  }
+  function render(){renderTree();renderPapers()}
+  function escapeHtml(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+  function escapeAttr(s){return escapeHtml(s)}
+  $('#period').onchange=e=>{state.period=e.target.value;state.limit=20;render()};
+  $('#journal').onchange=e=>{state.journal=e.target.value;state.limit=20;render()};
+  $('#search').oninput=e=>{state.query=e.target.value;state.limit=20;renderPapers()};
+  $('#more').onclick=()=>{state.limit+=20;renderPapers()};
+  $('#goTree').onclick=()=>$('#treeSection').scrollIntoView({behavior:'smooth'});
+  $('#goPapers').onclick=()=>$('#papersSection').scrollIntoView({behavior:'smooth'});
+  fetch('chemtree-mobile-lite-data.json?v=36',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(setData).catch(err=>{$('#tree').innerHTML=`<div class="loading error"><b>Could not load ChemTree data.</b><br><small>${escapeHtml(err.message)}</small><br><br>Please reload the page.</div>`;console.error(err)});
 })();
 </script>
 </body>
