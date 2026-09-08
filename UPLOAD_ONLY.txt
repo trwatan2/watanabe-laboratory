@@ -1,16 +1,19 @@
-ChemTree v42 ROOT FIX
+ChemTree v44 — smartphone Literature Explorer
 
 Upload ALL files in this package to the ROOT of:
 trwatan2/watanabe-laboratory
 
 Then Commit changes.
 
-No Settings / Pages / Actions changes are needed.
-
-Fixes:
-- /chemtree/ 404 redirects to /chemtree-app.html
-- ChemTree itself runs directly from root-level files
-- no chemtree/ folder upload is required
-- PC: actual ChemTree opens
-- smartphone/tablet: red "PC ONLY" notice
-- paper links included in the app
+Behavior:
+- PC: full 3D ChemTree
+- Smartphone/tablet: only the 3D visualization is disabled; the Literature Explorer remains available
+  * JACS / Nature / Science / Chem filter
+  * 1M / 3M / 6M / 1Y filter
+  * research-topic browser
+  * country distribution
+  * fast-growing topics
+  * paper-title search
+  * DOI / publisher links
+- wording is "PC recommended", not "PC only"
+- mobile literature data is embedded directly in chemtree-app.html, so it does not depend on loading a separate JSON file
