@@ -1,20 +1,17 @@
-ChemTree v45 — PC + smartphone DAILY AUTO UPDATE
+Watanabe Laboratory v46 — Links tab
 
-UPLOAD ONLY:
-1. Open: trwatan2/watanabe-laboratory
-2. Add file -> Upload files
-3. Extract this ZIP and upload ALL contents to the repository root.
-4. Commit changes.
+Upload ALL HTML files in this package to the ROOT of:
+trwatan2/watanabe-laboratory
 
-No Settings / Pages / Actions operation is required.
+Then Commit changes.
 
-After the upload:
-- the workflow runs once automatically because the updater/workflow files changed
-- then it runs every day at 06:10 JST
-- PC data file updated: chemtree-1y.json.gz
-- smartphone Literature Explorer updated: chemtree-mobile-data.js
-- status file updated: chemtree-update-status.json
-- the workflow commits ONLY those ChemTree data files
-- if the update fails, the existing public files are not replaced
-
-The laboratory HOME / Research / People / Publications / Contact HTML files are not modified by the updater.
+Changes:
+- Adds "Links" to the right of Contact in the global navigation.
+- Adds links.html with:
+  * 2026 Lecture
+  * High-pressure gas cylinder management
+  * Laboratory order ledger
+  * Shizuoka University Faculty of Engineering
+  * Hamamatsu Campus map
+  * Academic society links
+- Existing ChemTree auto-update files are not changed.
