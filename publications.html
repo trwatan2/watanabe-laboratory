@@ -106,12 +106,53 @@
 
     .sulfur-detail .kicker, .sulfur-feature .kicker{color:#d29b18!important}
   </style>
+
+<style id="multilingual-language-menu">
+  .language-menu{position:relative;flex:0 0 auto}
+  .language-menu summary{
+    list-style:none;cursor:pointer;opacity:.84;font-size:12px;
+    text-transform:none;letter-spacing:.08em;white-space:nowrap
+  }
+  .language-menu summary::-webkit-details-marker{display:none}
+  .language-menu summary::after{content:" ▾";color:#d7ff45}
+  .language-menu[open] summary{color:#d7ff45;opacity:1}
+  .language-menu-panel{
+    position:absolute;right:0;top:28px;min-width:180px;padding:10px;
+    display:grid;gap:2px;background:#0b0d0e;border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 16px 45px rgba(0,0,0,.28);z-index:300
+  }
+  .language-menu-panel a{
+    display:block!important;padding:8px 10px!important;opacity:.86!important;
+    text-transform:none!important;letter-spacing:.03em!important;font-size:12px!important
+  }
+  .language-menu-panel a:hover{background:rgba(215,255,69,.08);color:#d7ff45!important}
+  @media(max-width:960px){
+    .language-menu{width:100%;margin-top:6px}
+    .language-menu summary{font-size:14px}
+    .language-menu-panel{
+      position:static;margin-top:10px;min-width:0;width:min(100%,360px);
+      box-shadow:none;background:#111516
+    }
+  }
+</style>
+
 </head>
 <body class="subpage">
 <header class="site-header scrolled">
 <a aria-label="Watanabe Laboratory home" class="brand" href="index.html"><span class="brand-mark">WL</span><span class="brand-name"><b>Watanabe Laboratory</b><small>渡部研究室</small></span></a>
 <button aria-expanded="false" aria-label="メニューを開く" class="menu-button" type="button"><span></span><span></span></button>
-<nav aria-label="Main navigation" class="global-nav"><a href="research.html">Research</a><a href="about.html">About</a><a href="people.html">People</a><a href="career.html">Career</a><a href="news.html">News</a><a href="publications.html">Publications</a><a href="playground.html">Playground</a><a href="contact.html">Contact</a><a href="links.html">Links</a></nav>
+<nav aria-label="Main navigation" class="global-nav"><a href="research.html">Research</a><a href="about.html">About</a><a href="people.html">People</a><a href="career.html">Career</a><a href="news.html">News</a><a href="publications.html">Publications</a><a href="playground.html">Playground</a><a href="contact.html">Contact</a><a href="links.html">Links</a><details class="language-menu">
+  <summary>Language</summary>
+  <div class="language-menu-panel">
+    <a href="index.html" lang="ja">日本語</a>
+    <a href="en.html" lang="en">English</a>
+    <a href="zh.html" lang="zh-CN">中文</a>
+    <a href="ko.html" lang="ko">한국어</a>
+    <a href="de.html" lang="de">Deutsch</a>
+    <a href="fr.html" lang="fr">Français</a>
+    <a href="es.html" lang="es">Español</a>
+  </div>
+</details></nav>
 </header>
 <main>
 <section class="page-hero compact-hero">

@@ -1,17 +1,21 @@
-Watanabe Laboratory v46 — Links tab
+Watanabe Laboratory v47 — Multilingual international pages
 
-Upload ALL HTML files in this package to the ROOT of:
+Upload ALL files in this package to the ROOT of:
 trwatan2/watanabe-laboratory
 
 Then Commit changes.
 
-Changes:
-- Adds "Links" to the right of Contact in the global navigation.
-- Adds links.html with:
-  * 2026 Lecture
-  * High-pressure gas cylinder management
-  * Laboratory order ledger
-  * Shizuoka University Faculty of Engineering
-  * Hamamatsu Campus map
-  * Academic society links
-- Existing ChemTree auto-update files are not changed.
+Added:
+- Language selector on the existing Japanese site
+- en.html  English
+- zh.html  Simplified Chinese
+- ko.html  Korean
+- de.html  German
+- fr.html  French
+- es.html  Spanish
+- hreflang metadata
+- sitemap.xml
+- robots.txt
+
+ChemTree automatic-update files are NOT changed by this package.
+All files are root-level; no folder upload is required.

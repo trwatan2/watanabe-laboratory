@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trwatan2.github.io/watanabe-laboratory/sitemap.xml
