@@ -128,6 +128,19 @@ img,video{max-width:100%}
 <link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/es.html" />
 <link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/en.html" />
 
+
+<style id="global-visitors-style">
+.global-visitors{max-width:1180px;margin:0 auto;padding:52px 42px 62px;border-top:1px solid rgba(12,17,18,.14)}
+.gv-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+.gv-head h2{margin:0;font-size:clamp(32px,4vw,54px)}.gv-kicker{color:#6a8720;font-size:12px;font-weight:800;letter-spacing:.14em}
+.gv-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.gv-card{background:#fff;border:1px solid rgba(12,17,18,.12);padding:24px 26px}
+.gv-total{font-size:clamp(46px,7vw,78px);font-weight:800;line-height:1;letter-spacing:-.045em}.gv-label{margin-top:8px;color:#626a65;font-size:13px}
+.gv-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.gv-mini{padding:14px;background:#fafbf8;border:1px solid rgba(12,17,18,.1)}
+.gv-mini b{display:block;font-size:25px;margin-top:4px}.gv-mini span{font-size:12px;color:#626a65}.gv-countries{margin-top:14px;display:grid;gap:7px}
+.gv-country{display:flex;justify-content:space-between;padding-bottom:6px;border-bottom:1px solid rgba(12,17,18,.08)}.gv-note{margin-top:14px;color:#737a75;font-size:12px;line-height:1.6}
+.gv-live{color:#587300;font-weight:800;font-size:12px}@media(max-width:760px){.global-visitors{padding:42px 20px 52px}.gv-head{display:block}.gv-grid{grid-template-columns:1fr}}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="top">
@@ -166,8 +179,65 @@ img,video{max-width:100%}
     <section class="publications teaser publication-teaser"><div class="section-label">05 / PUBLICATIONS</div><div class="teaser-inner reveal"><p class="kicker">PUBLICATIONS</p><h2>Ideas made visible.</h2><p>CO₂変換、構造体触媒、固体炭素固定化を中心に、最近の研究成果を掲載しています。</p><a class="button button-light" href="publications.html">View publications</a></div></section>
     <section class="contact"><div class="contact-inner reveal"><p class="kicker">CONTACT</p><h2>Work with us.</h2><p>共同研究、研究室見学、進学相談などはこちらから。</p><a class="button button-solid" href="contact.html">Contact</a></div></section>
   </main>
+
+<section class="global-visitors" aria-labelledby="global-visitors-title">
+  <div class="gv-head"><h2 id="global-visitors-title">Global Visitors</h2><div class="gv-kicker">RESEARCH LAB WEBSITE ONLY</div></div>
+  <div class="gv-grid">
+    <div class="gv-card">
+      <div class="gv-live">● GoatCounter analytics</div>
+      <div class="gv-total" id="gvTotal">—</div>
+      <div class="gv-label">Visitor sessions since tracking started</div>
+      <div class="gv-split">
+        <div class="gv-mini"><span>Japan</span><b id="gvJapan">集計中</b></div>
+        <div class="gv-mini"><span>International</span><b id="gvInternational">集計中</b></div>
+      </div>
+      <div class="gv-note">国・地域はアクセス元IPから推定されます。講義サイトは計測対象に含みません。</div>
+    </div>
+    <div class="gv-card">
+      <strong>Top countries</strong>
+      <div class="gv-countries" id="gvCountries"><div class="gv-country"><span>データ収集中</span><span>—</span></div></div>
+      <div class="gv-note" id="gvUpdated">国別ランキングはアクセスデータ蓄積後に表示します。</div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+ fetch('https://watanabe-lab.goatcounter.com/counter/'+encodeURIComponent('/site-total')+'.json',{cache:'no-store'})
+ .then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){document.getElementById('gvTotal').textContent=d.count||'0'})
+ .catch(function(){document.getElementById('gvTotal').textContent='—'});
+ fetch('visitor-country-stats.json?v='+Math.floor(Date.now()/3600000),{cache:'no-store'})
+ .then(function(r){return r.json()}).then(function(d){
+   if(!d||d.status!=='ready')return;
+   document.getElementById('gvJapan').textContent=String(d.japan??0);
+   document.getElementById('gvInternational').textContent=String(d.international??0);
+   var box=document.getElementById('gvCountries');box.innerHTML='';
+   (d.topCountries||[]).slice(0,6).forEach(function(c){var row=document.createElement('div');row.className='gv-country';row.innerHTML='<span></span><span></span>';row.children[0].textContent=c.name||c.code||'';row.children[1].textContent=String(c.count??0);box.appendChild(row)});
+   if(d.updatedAt)document.getElementById('gvUpdated').textContent='Country statistics updated: '+new Date(d.updatedAt).toLocaleString();
+ }).catch(function(){});
+})();
+</script>
+
 <footer class="site-footer">
   <div><b>Watanabe Laboratory</b><span>渡部研究室 · Shizuoka University, Hamamatsu</span></div>
   <p>© <span id="year"></span> Watanabe Laboratory.</p>
 </footer>
-<script src="js/main.js"></script></body></html>
+<script src="js/main.js"></script>
+<script>
+(function(){
+ if(location.hostname!=='trwatan2.github.io'||!location.pathname.startsWith('/watanabe-laboratory/'))return;
+ window.goatcounter=window.goatcounter||{};
+ var s=document.createElement('script');
+ s.async=true;s.src='https://gc.zgo.at/count.js';
+ s.setAttribute('data-goatcounter','https://watanabe-lab.goatcounter.com/count');
+ document.head.appendChild(s);
+ var n=0,t=setInterval(function(){
+   n++;
+   if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+     clearInterval(t);
+     setTimeout(function(){window.goatcounter.count({path:'/site-total',title:'Watanabe Laboratory — all pages'});},250);
+   } else if(n>120){clearInterval(t);}
+ },100);
+})();
+</script>
+
+</body></html>

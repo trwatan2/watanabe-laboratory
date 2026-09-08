@@ -1,21 +1,14 @@
-Watanabe Laboratory v47 — Multilingual international pages
+Watanabe Laboratory v48 — GoatCounter
 
-Upload ALL files in this package to the ROOT of:
+Upload ALL files to the ROOT of:
 trwatan2/watanabe-laboratory
+then Commit changes.
 
-Then Commit changes.
+Starts immediately:
+- research-lab website analytics only (not the lecture site)
+- all multilingual pages + ChemTree launcher
+- visible site-wide visitor-session counter on HOME
+- GoatCounter collects Country/Region
 
-Added:
-- Language selector on the existing Japanese site
-- en.html  English
-- zh.html  Simplified Chinese
-- ko.html  Korean
-- de.html  German
-- fr.html  French
-- es.html  Spanish
-- hreflang metadata
-- sitemap.xml
-- robots.txt
-
-ChemTree automatic-update files are NOT changed by this package.
-All files are root-level; no folder upload is required.
+Japan / International / Top countries:
+The display area is already included. It will remain "collecting" until a secure daily country-summary job is connected. No API key is exposed in HTML.

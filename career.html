@@ -197,5 +197,24 @@
 <p>© <span id="year"></span> Watanabe Laboratory.</p>
 </footer>
 <script src="js/main.js"></script>
+
+<script>
+(function(){
+ if(location.hostname!=='trwatan2.github.io'||!location.pathname.startsWith('/watanabe-laboratory/'))return;
+ window.goatcounter=window.goatcounter||{};
+ var s=document.createElement('script');
+ s.async=true;s.src='https://gc.zgo.at/count.js';
+ s.setAttribute('data-goatcounter','https://watanabe-lab.goatcounter.com/count');
+ document.head.appendChild(s);
+ var n=0,t=setInterval(function(){
+   n++;
+   if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+     clearInterval(t);
+     setTimeout(function(){window.goatcounter.count({path:'/site-total',title:'Watanabe Laboratory — all pages'});},250);
+   } else if(n>120){clearInterval(t);}
+ },100);
+})();
+</script>
+
 </body>
 </html>

@@ -194,11 +194,7 @@
     <button id="mxGoPapers">PAPERS ↓</button>
   </nav>
 </div>
-<script>
-  // Load the mobile literature dataset with an hourly cache-buster.
-  // This keeps the smartphone view in sync with the daily GitHub update.
-  document.write('<script src="./chemtree-mobile-data.js?v=' + Math.floor(Date.now()/3600000) + '"><\/script>');
-</script>
+<script src="./chemtree-mobile-data.js"></script>
 
 <div id="root"><div class="loading-note">Loading ChemTree dataset…<br><small>Mobile devices may take a few seconds on the first load.</small></div></div>
   <a class="lab-back" href="playground.html">← Watanabe Laboratory / Playground</a>
@@ -354,5 +350,24 @@
     createRoot(document.getElementById('root')).render(jsx(StrictMode,{children:jsx(App,{})}));
   }
 </script>
+
+<script>
+(function(){
+ if(location.hostname!=='trwatan2.github.io'||!location.pathname.startsWith('/watanabe-laboratory/'))return;
+ window.goatcounter=window.goatcounter||{};
+ var s=document.createElement('script');
+ s.async=true;s.src='https://gc.zgo.at/count.js';
+ s.setAttribute('data-goatcounter','https://watanabe-lab.goatcounter.com/count');
+ document.head.appendChild(s);
+ var n=0,t=setInterval(function(){
+   n++;
+   if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+     clearInterval(t);
+     setTimeout(function(){window.goatcounter.count({path:'/site-total',title:'Watanabe Laboratory — all pages'});},250);
+   } else if(n>120){clearInterval(t);}
+ },100);
+})();
+</script>
+
 </body>
 </html>
