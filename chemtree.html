@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="ChemTree — JACS, Chem, Nature, Science の最近の化学論文を3D樹形図として探索する実験的な研究可視化ツール。" />
+  <meta name="theme-color" content="#0b0d0e" />
+  <title>ChemTree | Watanabe Laboratory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=29" />
+  <style>
+    html,body,body *,body *::before,body *::after{font-family:"BIZ UDPGothic",sans-serif!important}
+    body h1,body h2{font-family:"Helvetica Neue",Arial,"Yu Gothic",Meiryo,sans-serif!important}
+    :root{--ct-lime:#d7ff45;--ct-olive:#6a8720;--ct-link:#587300;--ct-ink:#0b0d0e;--ct-paper:#f3f1eb}
+    .chemtree-page{background:var(--ct-paper);color:#111}
+    .chemtree-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:start}
+    .chemtree-intro h2,.chemtree-section h2{font-size:clamp(42px,5vw,78px);line-height:1;letter-spacing:-.05em;margin:8px 0 26px}
+    .chemtree-intro p,.chemtree-section p{font-size:18px;line-height:1.9}
+    .chemtree-mini{font-size:13px!important;letter-spacing:.08em;text-transform:uppercase;color:#68706a}
+    .chemtree-note{border-left:4px solid var(--ct-olive);padding:4px 0 4px 22px}
+    .chemtree-note b{display:block;font-size:18px;margin-bottom:10px}
+    .journal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+    .journal-card{background:#fff;border:1px solid #cbd0ca;padding:28px 24px;min-height:190px}
+    .journal-card b{display:block;font-size:28px;margin-bottom:14px}
+    .journal-card span{display:block;font-size:13px;line-height:1.7;color:#59615c}
+    .dark-ct{background:#0b0d0e!important;color:#fff}
+    .dark-ct .section-label,.dark-ct .kicker{color:var(--ct-lime)!important}
+    .dark-ct .journal-card{background:#131718;border-color:#2c3332;color:#fff}
+    .dark-ct .journal-card span{color:#b5beb9}
+    .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+    .how-card{background:#fff;border:1px solid #cbd0ca;padding:28px;min-height:220px}
+    .how-card em{font-style:normal;font-weight:800;font-size:13px;color:var(--ct-olive);letter-spacing:.12em}
+    .how-card h3{font-size:22px;margin:18px 0 12px}
+    .how-card p{font-size:15.5px;line-height:1.8;margin:0;color:#4d5651}
+    .window-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+    .window-card{background:var(--ct-lime);color:#111;padding:24px;min-height:130px}
+    .window-card b{font-size:34px;display:block;margin-bottom:10px}
+    .window-card span{font-size:14px;line-height:1.6}
+    .data-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px}
+    .data-item{border-top:1px solid #c8cdc8;padding-top:18px}
+    .data-item b{display:block;font-size:18px;margin-bottom:10px}
+    .data-item p{font-size:15.5px;line-height:1.8;margin:0}
+    .chemtree-en{background:#e8eadf}
+    .chemtree-en .en-copy{max-width:960px}
+    .chemtree-en h3{font-size:26px;margin:30px 0 10px}
+    .chemtree-en p{font-size:17px;line-height:1.85}
+    .launch-box{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;background:#0b0d0e;color:#fff;padding:42px 46px;margin-top:34px}
+    .launch-box h3{font-size:28px;margin:0 0 10px}
+    .launch-box p{margin:0;color:#bcc5c0;font-size:15px;line-height:1.75}
+    .launch-disabled{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid #5d6662;color:#b8c0bc;font-size:14px;font-weight:700;white-space:nowrap}
+    .chemtree-section .section-label,.chemtree-intro .section-label{color:var(--ct-olive)!important}
+    @media(max-width:900px){
+      .chemtree-intro,.journal-grid,.how-grid,.window-grid,.data-list,.launch-box{grid-template-columns:1fr}
+      .journal-grid{grid-template-columns:repeat(2,1fr)}
+      .how-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:620px){
+      .journal-grid,.how-grid{grid-template-columns:1fr}
+      .launch-box{padding:30px 24px}
+    }
+  </style>
+</head>
+<body class="subpage chemtree-page">
+<header class="site-header scrolled">
+  <a class="brand" href="index.html" aria-label="Watanabe Laboratory home">
+    <span class="brand-mark">WL</span>
+    <span class="brand-name"><b>Watanabe Laboratory</b><small>渡部研究室</small></span>
+  </a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+  <nav class="global-nav" aria-label="Main navigation">
+    <a href="research.html">Research</a>
+    <a href="about.html">About</a>
+    <a href="people.html">People</a>
+    <a href="career.html">Career</a>
+    <a href="news.html">News</a>
+    <a href="publications.html">Publications</a>
+    <a href="playground.html">Playground</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero compact-hero">
+  <p class="eyebrow">WATANABE LABORATORY / CHEMTREE</p>
+  <h1>Explore chemistry.<br>See where it grows.</h1>
+  <p>最新論文を「一覧」ではなく、研究テーマが枝分かれしていく3D樹形図として眺めるための、渡部個人の実験的な研究探索ツールです。</p>
+</section>
+
+<section class="content-section chemtree-intro">
+  <div>
+    <p class="section-label">01 / WHAT IS CHEMTREE?</p>
+    <h2>ChemTreeとは</h2>
+  </div>
+  <div>
+    <p>ChemTreeは、最近の化学論文を研究テーマやキーワードのつながりとして可視化し、研究分野の広がりや隣接領域を直感的に探索するための3D文献マップです。</p>
+    <p>論文を一件ずつ読む前に、「今どのテーマが伸びているのか」「自分の研究の隣には何があるのか」「どの研究分野同士がつながっているのか」を俯瞰することを目的としています。</p>
+    <div class="chemtree-note">
+      <b>論文検索の代替ではなく、読むべき論文を見つけるための入口。</b>
+      <p class="chemtree-mini">A visual starting point for literature exploration.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section dark-ct chemtree-section">
+  <div class="section-head">
+    <div><p class="section-label">02 / JOURNAL COVERAGE</p><h2>対象誌</h2></div>
+    <p>現在は、主要な化学・総合科学誌の最近の論文を中心に可視化しています。</p>
+  </div>
+  <div class="journal-grid">
+    <article class="journal-card"><b>JACS</b><span>Journal of the American Chemical Society。最近の化学研究を広く探索する主要ソース。</span></article>
+    <article class="journal-card"><b>Chem</b><span>Cell Pressの化学総合誌。新しい概念、反応、材料、エネルギー研究などを探索。</span></article>
+    <article class="journal-card"><b>Nature</b><span>Nature掲載論文のうち、化学・材料・触媒・エネルギーに関連する研究を抽出して利用。</span></article>
+    <article class="journal-card"><b>Science</b><span>Science掲載論文のうち、化学関連研究を抽出し、他誌と同じ研究マップ上で比較。</span></article>
+  </div>
+</section>
+
+<section class="content-section chemtree-section">
+  <div class="section-head">
+    <div><p class="section-label">03 / HOW TO USE</p><h2>使い方</h2></div>
+    <p>「どの論文が有名か」ではなく、「どの方向へ研究が伸びているか」を眺める使い方を想定しています。</p>
+  </div>
+  <div class="how-grid">
+    <article class="how-card"><em>01</em><h3>Journalを選ぶ</h3><p>JACS、Nature、Science、Chemから、探索したい雑誌・分野を切り替えます。</p></article>
+    <article class="how-card"><em>02</em><h3>期間を選ぶ</h3><p>1M / 3M / 6M / 1Yを切り替え、短期の変化と1年間の傾向を比較します。</p></article>
+    <article class="how-card"><em>03</em><h3>3Dツリーを動かす</h3><p>回転、拡大、縮小を使い、枝分かれした研究テーマやキーワードを探索します。</p></article>
+    <article class="how-card"><em>04</em><h3>テーマをたどる</h3><p>興味のあるノードから隣接テーマへ移動し、普段読まない分野まで探索します。</p></article>
+    <article class="how-card"><em>05</em><h3>論文へ移動する</h3><p>気になった論文はタイトル・DOI等から原著論文へ移動し、実際の内容を確認します。</p></article>
+    <article class="how-card"><em>06</em><h3>Reset View</h3><p>表示位置を見失ったときはReset Viewで全体表示へ戻し、別の枝から探索を再開します。</p></article>
+  </div>
+</section>
+
+<section class="content-section dark-ct chemtree-section">
+  <div class="section-head">
+    <div><p class="section-label">04 / TIME WINDOWS</p><h2>研究の「速度」を見る</h2></div>
+    <p>期間を変えることで、一時的な話題と継続的に伸びている研究領域を見分けやすくします。</p>
+  </div>
+  <div class="window-grid">
+    <div class="window-card"><b>1M</b><span>直近1か月。ごく最近出てきた話題を見る。</span></div>
+    <div class="window-card"><b>3M</b><span>直近3か月。短期的な研究トレンドを見る。</span></div>
+    <div class="window-card"><b>6M</b><span>半年。新しいテーマが継続しているかを見る。</span></div>
+    <div class="window-card"><b>1Y</b><span>過去1年間。分野全体の方向性を俯瞰する。</span></div>
+  </div>
+</section>
+
+<section class="content-section chemtree-section">
+  <div class="section-head">
+    <div><p class="section-label">05 / DATA & UPDATE</p><h2>データと更新</h2></div>
+    <p>論文本文を再配布するサービスではなく、書誌情報と独自の分類・可視化を用いる研究探索ツールです。</p>
+  </div>
+  <div class="data-list">
+    <div class="data-item"><b>Recent 365 days</b><p>プロトタイプでは直近365日の論文を取得し、1M / 3M / 6M / 1Yで集計します。</p></div>
+    <div class="data-item"><b>OpenAlex metadata</b><p>OpenAlex等の公開書誌情報を用いて、論文情報の取得・補完・分析を行います。</p></div>
+    <div class="data-item"><b>Original classification</b><p>取得した論文をChemTree独自の研究テーマ分類にかけ、3D樹形図として可視化します。</p></div>
+    <div class="data-item"><b>No full-text redistribution</b><p>論文本文や出版社の図を再配布せず、タイトル、DOI、書誌情報、独自集計・可視化を中心に扱います。</p></div>
+    <div class="data-item"><b>Regular refresh</b><p>現在のプロトタイプ更新処理は毎朝の自動更新を想定しています。公開版の鮮度は、最後に反映されたデータセットに依存します。</p></div>
+    <div class="data-item"><b>Exploration, not evaluation</b><p>発光や枝の大きさは研究動向の可視化であり、論文や研究者の学術的価値をランキングするものではありません。</p></div>
+  </div>
+</section>
+
+<section class="content-section chemtree-en">
+  <div class="en-copy">
+    <p class="section-label">06 / ENGLISH</p>
+    <h2>Watanabe’s Research Explorer</h2>
+    <p><b>ChemTree</b> is an experimental 3D literature-exploration tool designed to visualize how research topics in chemistry are connected and how they change over time.</p>
+    <p>It currently focuses on recent papers from <b>JACS</b> and <b>Chem</b>, together with chemistry-related papers selected from <b>Nature</b> and <b>Science</b>. Users can compare activity across 1 month, 3 months, 6 months, and 1 year, and explore neighboring topics through an interactive tree.</p>
+    <h3>What is it for?</h3>
+    <p>ChemTree is intended as a starting point for literature exploration. It helps users identify emerging topics, move across neighboring disciplines, and find papers worth reading in full.</p>
+    <h3>Data policy</h3>
+    <p>Bibliographic metadata, including information from OpenAlex, is used for analysis and visualization. ChemTree does not redistribute article full text or copyrighted figures. Users should consult the original publication through DOI and bibliographic links.</p>
+  </div>
+  <div class="launch-box">
+    <div>
+      <h3>Public ChemTree application</h3>
+      <p>外部公開用URLの準備ができたら、ここから3Dアプリへ直接アクセスできるようにします。</p>
+    </div>
+    <span class="launch-disabled">PUBLIC URL COMING SOON</span>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div><b>Watanabe Laboratory</b><span>渡部研究室 · Shizuoka University, Hamamatsu</span></div>
+  <p>© <span id="year"></span> Watanabe Laboratory.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
