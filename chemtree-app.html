@@ -2,74 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="ChemTree — an interactive 3D map for exploring recent chemistry literature from JACS, Chem, and chemistry-related papers in Nature and Science." />
-  <meta name="theme-color" content="#030a13" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#020711" />
   <title>ChemTree | Watanabe Laboratory</title>
-  <script>
-    (function () {
-      var forceDesktop = /(?:\?|&)desktop=1(?:&|$)/.test(location.search);
-      var mobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || window.matchMedia('(max-width: 900px)').matches;
-      if (mobile && !forceDesktop) {
-        location.replace('./chemtree-mobile.html?v=34');
-      }
-    })();
-  </script>
-  <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js"></script>
-  <script type="importmap">
-  {
-    "imports": {
-      "react": "https://esm.sh/react@19.2.8",
-      "react/jsx-runtime": "https://esm.sh/react@19.2.8/jsx-runtime",
-      "react-dom": "https://esm.sh/react-dom@19.2.8",
-      "react-dom/client": "https://esm.sh/react-dom@19.2.8/client",
-      "three": "https://esm.sh/three@0.185.1",
-      "@react-three/fiber": "https://esm.sh/@react-three/fiber@9.7.0?bundle&external=react,react-dom,three",
-      "@react-three/drei": "https://esm.sh/@react-three/drei@10.7.8?bundle&external=react,react-dom,three,@react-three/fiber",
-      "fflate": "./chemtree-fflate.js"
-    }
-  }
-  </script>
-  <style>
-    html, body, #root {
-      width: 100%; height: 100%; min-height: 100%;
-      margin: 0; padding: 0; overflow: hidden; background: #02050a;
-      overscroll-behavior: none; -webkit-text-size-adjust: 100%;
-    }
-    * { box-sizing: border-box; }
-    body { font-family: Arial, Helvetica, sans-serif; }
-    button, input, a { font: inherit; }
-    canvas { touch-action: none; }
-    .lab-back {
-      position: fixed; left: max(10px, env(safe-area-inset-left)); top: max(10px, env(safe-area-inset-top)); z-index: 1000;
-      display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px; border-radius: 999px;
-      color: #b8dfff; background: rgba(2, 8, 16, .72); border: 1px solid rgba(113, 223, 255, .22);
-      text-decoration: none; font: 700 10px/1.2 Arial, sans-serif; backdrop-filter: blur(10px);
-      opacity: .72; transition: opacity .2s, border-color .2s;
-    }
-    .lab-back:hover, .lab-back:focus { opacity: 1; border-color: rgba(113,223,255,.62); color: #fff; }
-    @media (max-width: 820px) {
-      .lab-back { top: auto; bottom: calc(58px + env(safe-area-inset-bottom)); left: 10px; padding: 6px 9px; font-size: 9px; }
-    }
-    .loading-note {
-      position: fixed; inset: 0; z-index: 900; display: grid; place-items: center; padding: 24px;
-      color: #9ec7df; text-align: center;
-      background: radial-gradient(circle at 50% 42%, #0a2239 0%, #040c16 48%, #02050a 100%);
-      font: 700 14px/1.6 Arial, sans-serif; letter-spacing: .03em;
-    }
-  </style>
+  <style>html,body{margin:0;width:100%;height:100%;background:#020711;color:#9fdfff;font:700 14px Arial,sans-serif;display:grid;place-items:center}</style>
 </head>
-<body>
-  <div id="root"><div class="loading-note">Loading ChemTree dataset…<br><small>Mobile devices may take a few seconds on the first load.</small></div></div>
-  <a class="lab-back" href="playground.html">← Watanabe Laboratory / Playground</a>
-  <script type="module">
-    import { StrictMode } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import { jsx } from 'react/jsx-runtime';
-    import App from './chemtree-App.js';
-    createRoot(document.getElementById('root')).render(jsx(StrictMode, { children: jsx(App, {}) }));
-  </script>
+<body>Opening ChemTree…
+<script>
+(function(){
+  const params=new URLSearchParams(location.search);
+  const forceDesktop=params.get('desktop')==='1';
+  const mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)||matchMedia('(max-width:900px)').matches;
+  const target=(mobile&&!forceDesktop)?'./chemtree-mobile3d.html?v=35':'./chemtree-desktop.html?v=35';
+  location.replace(target);
+})();
+</script>
 </body>
 </html>
