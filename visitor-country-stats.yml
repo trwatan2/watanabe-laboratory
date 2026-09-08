@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: visitor-country-stats
@@ -40,6 +41,7 @@ jobs:
           fi
 
           node <<'NODE'
+          (async () => {
           const fs = require('fs');
 
           const token = process.env.GOATCOUNTER_API_KEY;
@@ -66,11 +68,12 @@ jobs:
               });
 
               if (!r.ok) {
-                throw new Error('GoatCounter HTTP ' + r.status + ': ' + await r.text());
+                throw new Error('GoatCounter HTTP ' + r.status);
               }
 
               const d = await r.json();
-              const stats = Array.isArray(d.stats) ? d.stats : [];
+              if (!Array.isArray(d.stats)) throw new Error('Unexpected GoatCounter response');
+          const stats = d.stats;
               all.push(...stats);
 
               if (!d.more || stats.length === 0) break;
@@ -122,6 +125,7 @@ jobs:
 
           fs.writeFileSync('visitor-country-stats.json', JSON.stringify(result, null, 2) + '\n');
           console.log(result);
+          })().catch(err => { console.error(err.message); process.exit(1); });
           NODE
 
       - name: Commit public country summary
@@ -140,3 +144,9 @@ jobs:
           git commit -m "Update visitor country statistics"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Rebuild GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
+
