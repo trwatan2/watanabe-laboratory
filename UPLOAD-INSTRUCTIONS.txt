@@ -1,0 +1,12 @@
+Watanabe Laboratory Career update v17
+
+IMPORTANT
+Upload these HTML files ONLY to this repository:
+https://github.com/trwatan2/watanabe-laboratory
+
+DO NOT upload them to trwatan2/trwatan2.github.io (lecture site).
+
+The public research laboratory site is:
+https://trwatan2.github.io/watanabe-laboratory/
+
+career.html contains employment / graduate-school destinations for 2007–2024.
