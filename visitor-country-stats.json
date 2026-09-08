@@ -1,6 +1,7 @@
 {
-  "status": "collecting",
-  "updatedAt": null,
+  "status": "ready",
+  "updatedAt": "2026-09-08T18:32:31.534Z",
+  "since": "2026-09-08T15:00:00Z",
   "japan": 0,
   "international": 0,
   "unknown": 0,
