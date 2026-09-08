@@ -1,0 +1,143 @@
+name: ChemTree Daily Public Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 21:10 UTC = 06:10 JST
+    - cron: '10 21 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/chemtree-daily-update.yml'
+      - 'chemtree-updater/**'
+      - 'chemtree-app.html'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: chemtree-daily-public-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+
+    steps:
+      - name: Checkout current laboratory website
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Restore OpenAlex cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            chemtree-updater/public/data/openalex-filter-cache-1y.json
+            chemtree-updater/public/data/openalex-tree-cache-1y.json
+          key: chemtree-openalex-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            chemtree-openalex-${{ runner.os }}-
+
+      - name: Seed cache on first run
+        shell: bash
+        run: |
+          mkdir -p chemtree-updater/public/data
+          if [ ! -f chemtree-updater/public/data/openalex-filter-cache-1y.json ]; then
+            gzip -dc chemtree-updater/seed/openalex-filter-cache-1y.json.gz \
+              > chemtree-updater/public/data/openalex-filter-cache-1y.json
+          fi
+          if [ ! -f chemtree-updater/public/data/openalex-tree-cache-1y.json ]; then
+            gzip -dc chemtree-updater/seed/openalex-tree-cache-1y.json.gz \
+              > chemtree-updater/public/data/openalex-tree-cache-1y.json
+          fi
+
+      - name: Update 365-day literature dataset
+        working-directory: chemtree-updater
+        shell: bash
+        run: |
+          set -e
+          ok=0
+          for attempt in 1 2 3; do
+            echo "ChemTree update attempt ${attempt}/3"
+            if node update-chemtree.mjs; then
+              ok=1
+              break
+            fi
+            sleep $((attempt * 90))
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo "Update failed after 3 attempts; existing public files remain untouched."
+            exit 1
+          fi
+
+      - name: Generate PC + smartphone public data
+        working-directory: chemtree-updater
+        run: node build-public-data.mjs
+
+      - name: Validate generated public files
+        shell: bash
+        run: |
+          test -s chemtree-1y.json.gz
+          test -s chemtree-mobile-data.js
+          test -s chemtree-update-status.json
+          gzip -t chemtree-1y.json.gz
+          node -e "const fs=require('fs'),vm=require('vm'); const s=fs.readFileSync('chemtree-mobile-data.js','utf8'); const sandbox={window:{}}; vm.runInNewContext(s,sandbox); const d=sandbox.window.CHEMTREE_MOBILE_DATA; if(!d||!Array.isArray(d.papers)||d.papers.length<1000) process.exit(1); console.log('mobile papers',d.papers.length);"
+
+      - name: Commit ONLY ChemTree public data
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add chemtree-1y.json.gz chemtree-mobile-data.js chemtree-update-status.json
+
+          if git diff --cached --quiet; then
+            echo "No ChemTree data changes."
+          else
+            git commit -m "Auto-update ChemTree data $(date -u +'%Y-%m-%d')"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      # If the repository currently uses GitHub Actions for Pages, this publishes
+      # the exact current repository snapshot. If it uses branch deployment,
+      # the commit above is already sufficient; these steps are harmless on failure.
+      - name: Assemble current website snapshot
+        shell: bash
+        run: |
+          rm -rf _site
+          mkdir _site
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='_site/' \
+            --exclude='chemtree-updater/' \
+            --exclude='*.zip' \
+            ./ _site/
+          touch _site/.nojekyll
+
+      - name: Configure Pages
+        id: configure
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        id: upload
+        continue-on-error: true
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy Pages when Actions-based Pages is enabled
+        if: steps.upload.outcome == 'success'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4

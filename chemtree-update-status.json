@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "updatedAt": "2026-09-08T07:24:13.627Z",
+  "generatedAt": "2026-09-06T21:01:29.399Z",
+  "papers": 5862,
+  "journals": [
+    "JACS",
+    "Nature",
+    "Science",
+    "Chem"
+  ],
+  "period": {
+    "start": "2025-09-07",
+    "end": "2026-09-07",
+    "days": 365
+  }
+}
