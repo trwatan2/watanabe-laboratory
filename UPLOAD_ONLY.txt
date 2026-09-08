@@ -1,12 +1,17 @@
-v50 — Global Visitors slim strip
+Watanabe Laboratory v51 — visitor country auto-update
 
-Upload ONLY index.html to the ROOT of:
+Before uploading this package, create ONE GitHub repository secret:
+Name: GOATCOUNTER_API_KEY
+Value: your GoatCounter API key
+
+Then upload ALL contents of this package to the ROOT of:
 trwatan2/watanabe-laboratory
 
-Then Commit changes.
+Commit changes.
 
-The old two-box visitor section is removed.
-It is now a thin single strip:
-Global Visitors | Total | Japan | International | Top countries
-
-No other page, multilingual page, GoatCounter setting, or ChemTree setting is changed.
+After upload:
+- visitor statistics strip has black background with white text and no box
+- Total is read from the public GoatCounter counter
+- Japan / International / Top countries are updated automatically every day at 06:25 JST
+- the country workflow reads ONLY /site-total, so repeated page browsing does not inflate the site-wide country summary
+- GoatCounter API key is never placed in HTML or JSON

@@ -1,7 +1,8 @@
 {
   "status": "collecting",
   "updatedAt": null,
-  "japan": null,
-  "international": null,
+  "japan": 0,
+  "international": 0,
+  "unknown": 0,
   "topCountries": []
 }
