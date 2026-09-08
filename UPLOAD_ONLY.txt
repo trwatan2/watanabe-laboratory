@@ -1,14 +1,11 @@
-Watanabe Laboratory v48 — GoatCounter
+v49 Compact Global Visitors
 
-Upload ALL files to the ROOT of:
+Upload ONLY index.html to the ROOT of:
 trwatan2/watanabe-laboratory
-then Commit changes.
 
-Starts immediately:
-- research-lab website analytics only (not the lecture site)
-- all multilingual pages + ChemTree launcher
-- visible site-wide visitor-session counter on HOME
-- GoatCounter collects Country/Region
+Then Commit changes.
 
-Japan / International / Top countries:
-The display area is already included. It will remain "collecting" until a secure daily country-summary job is connected. No API key is exposed in HTML.
+Changes:
+- Global Visitors box is much smaller.
+- "集計中" is shown explicitly for Total / Japan / International / Top countries until data is available.
+- No other page or ChemTree setting is changed.
