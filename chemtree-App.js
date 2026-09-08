@@ -1,10 +1,34 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { Canvas, useFrame, } from '@react-three/fiber';
 import { OrbitControls, Sparkles, Text, } from '@react-three/drei';
 import { useEffect, useMemo, useRef, useState, } from 'react';
 import * as THREE from 'three';
-import CameraFocus from './chemtree-CameraFocus.js';
-import { GrowthNodeGlow, GrowthBranchGlow, } from './chemtree-GrowthGlow.js';
+import { gunzipSync, strFromU8 } from 'fflate';
+import CameraFocus from './CameraFocus.js';
+import { GrowthNodeGlow, GrowthBranchGlow, } from './GrowthGlow.js';
+function getPaperHref(paper) {
+    if (paper.url)
+        return paper.url;
+    if (paper.doi) {
+        const doi = paper.doi.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+        return `https://doi.org/${doi}`;
+    }
+    return '';
+}
+function useMobileLayout() {
+    const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 820);
+    useEffect(() => {
+        const update = () => setIsMobile(window.innerWidth <= 820);
+        update();
+        window.addEventListener('resize', update);
+        window.addEventListener('orientationchange', update);
+        return () => {
+            window.removeEventListener('resize', update);
+            window.removeEventListener('orientationchange', update);
+        };
+    }, []);
+    return isMobile;
+}
 // ============================================
 // 色
 // ============================================
@@ -514,7 +538,7 @@ function RealTree({ data, selectedId, onSelect, }) {
 // ============================================
 // 右側パネル
 // ============================================
-function RightPanel({ data, selectedId, }) {
+function RightPanel({ data, selectedId, isMobile = false, onClose, }) {
     const node = data.treeDefinition.find((item) => item.id ===
         selectedId);
     const count = data.counts[selectedId] ?? 0;
@@ -525,20 +549,33 @@ function RightPanel({ data, selectedId, }) {
     const maxCountry = Math.max(1, ...countries.map(([, value]) => value));
     return (_jsxs("div", { style: {
             position: 'absolute',
-            top: 82,
-            right: 14,
-            bottom: 16,
-            width: 330,
-            zIndex: 30,
+            top: isMobile ? 154 : 82,
+            right: isMobile ? 10 : 14,
+            left: isMobile ? 10 : undefined,
+            bottom: isMobile ? 62 : 16,
+            width: isMobile ? 'auto' : 330,
+            zIndex: isMobile ? 55 : 30,
             background: 'rgba(5,14,25,0.84)',
             border: '1px solid rgba(120,190,255,0.18)',
-            borderRadius: 18,
-            padding: 18,
+            borderRadius: isMobile ? 14 : 18,
+            padding: isMobile ? 16 : 18,
             color: 'white',
             backdropFilter: 'blur(16px)',
             overflowY: 'auto',
             boxSizing: 'border-box',
-        }, children: [_jsx("div", { style: {
+        }, children: [isMobile && onClose && (_jsx("button", { onClick: onClose, "aria-label": "Close papers panel", style: {
+                    position: 'absolute',
+                    top: 10,
+                    right: 10,
+                    width: 34,
+                    height: 34,
+                    borderRadius: 17,
+                    border: '1px solid rgba(120,190,255,0.24)',
+                    background: 'rgba(4,18,31,0.86)',
+                    color: '#d8efff',
+                    fontSize: 18,
+                    cursor: 'pointer',
+                }, children: "\u00D7" })), _jsx("div", { style: {
                     fontSize: 10,
                     color: '#75cfff',
                     letterSpacing: 1.3,
@@ -564,7 +601,7 @@ function RightPanel({ data, selectedId, }) {
                             color: '#ffffff',
                         }, children: count }), _jsx("div", { style: {
                             marginTop: 3,
-                            fontSize: 11,
+                            fontSize: isMobile ? 10 : 11,
                             color: '#9bb2c7',
                         }, children: "papers in current view" })] }), _jsx(SectionTitle, { children: "COUNTRY DISTRIBUTION" }), _jsx("div", { style: {
                     marginTop: 12,
@@ -596,40 +633,67 @@ function RightPanel({ data, selectedId, }) {
                     marginTop: 12,
                 }, children: papers
                     .slice(0, 8)
-                    .map((paper, index) => (_jsxs("div", { style: {
-                        padding: '11px 0',
-                        borderBottom: '1px solid rgba(255,255,255,0.07)',
-                    }, children: [_jsx("div", { style: {
-                                fontSize: 12,
-                                lineHeight: 1.45,
-                                color: '#e1edf7',
-                            }, children: paper.title }), _jsx("div", { style: {
-                                marginTop: 5,
-                                fontSize: 10,
-                                color: '#7893aa',
-                            }, children: paper.published })] }, paper.doi ||
-                    index))) })] }));
+                    .map((paper, index) => ((() => {
+                    const href = getPaperHref(paper);
+                    const content = (_jsxs(_Fragment, { children: [_jsx("div", { style: {
+                                    fontSize: isMobile ? 13.5 : 12,
+                                    lineHeight: 1.5,
+                                    color: '#e1edf7',
+                                    fontWeight: 600,
+                                }, children: paper.title }), _jsxs("div", { style: {
+                                    marginTop: 6,
+                                    display: 'flex',
+                                    gap: 10,
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    fontSize: 10.5,
+                                    color: '#7893aa',
+                                }, children: [_jsx("span", { children: paper.published }), href && _jsx("span", { style: { color: '#71dfff', fontWeight: 800 }, children: "OPEN PAPER \u2197" })] })] }));
+                    return href ? (_jsx("a", { href: href, target: "_blank", rel: "noopener noreferrer", style: {
+                            display: 'block',
+                            padding: isMobile ? '14px 2px' : '11px 0',
+                            borderBottom: '1px solid rgba(255,255,255,0.07)',
+                            textDecoration: 'none',
+                            WebkitTapHighlightColor: 'transparent',
+                        }, children: content }, paper.doi || index)) : (_jsx("div", { style: {
+                            padding: isMobile ? '14px 2px' : '11px 0',
+                            borderBottom: '1px solid rgba(255,255,255,0.07)',
+                        }, children: content }, paper.doi || index));
+                })())) })] }));
 }
 // ============================================
 // 左側パネル
 // ============================================
-function LeftPanel({ data, selectedId, onSelect, }) {
+function LeftPanel({ data, selectedId, onSelect, isMobile = false, onClose, }) {
     return (_jsxs("div", { style: {
             position: 'absolute',
-            top: 82,
-            left: 14,
-            bottom: 16,
-            width: 230,
-            zIndex: 30,
+            top: isMobile ? 154 : 82,
+            left: isMobile ? 10 : 14,
+            right: isMobile ? 10 : undefined,
+            bottom: isMobile ? 62 : 16,
+            width: isMobile ? 'auto' : 230,
+            zIndex: isMobile ? 55 : 30,
             background: 'rgba(5,14,25,0.84)',
             border: '1px solid rgba(120,190,255,0.18)',
-            borderRadius: 18,
-            padding: 15,
+            borderRadius: isMobile ? 14 : 18,
+            padding: isMobile ? 16 : 15,
             color: 'white',
             backdropFilter: 'blur(16px)',
             overflowY: 'auto',
             boxSizing: 'border-box',
-        }, children: [_jsx("div", { style: {
+        }, children: [isMobile && onClose && (_jsx("button", { onClick: onClose, "aria-label": "Close topics panel", style: {
+                    position: 'absolute',
+                    top: 10,
+                    right: 10,
+                    width: 34,
+                    height: 34,
+                    borderRadius: 17,
+                    border: '1px solid rgba(120,190,255,0.24)',
+                    background: 'rgba(4,18,31,0.86)',
+                    color: '#d8efff',
+                    fontSize: 18,
+                    cursor: 'pointer',
+                }, children: "\u00D7" })), _jsx("div", { style: {
                     fontSize: 10,
                     color: '#7897b0',
                     fontWeight: 700,
@@ -868,31 +932,36 @@ function buildPeriodJournalView(data, period, journal) {
 // App
 // ============================================
 function App() {
+    const isMobile = useMobileLayout();
+    const [mobilePanel, setMobilePanel] = useState(null);
     const [data, setData] = useState(null);
     const [selectedId, setSelectedId,] = useState('catalysis');
     const [error, setError,] = useState('');
     const [query, setQuery,] = useState('');
     const [journalFilter, setJournalFilter,] = useState('All');
     useEffect(() => {
-        const loadData = async () => {
+        let cancelled = false;
+        async function loadData() {
             try {
                 const response = await fetch('./chemtree-1y.json.gz', { cache: 'no-store' });
                 if (!response.ok) {
-                    throw new Error('ChemTree dataset を読み込めませんでした');
+                    throw new Error(`ChemTree dataset could not be loaded (${response.status})`);
                 }
-                if (!response.body) {
-                    throw new Error('ChemTree dataset の読み込みストリームを取得できませんでした');
-                }
-                const decompressed = response.body.pipeThrough(new DecompressionStream('gzip'));
-                const text = await new Response(decompressed).text();
-                const result = JSON.parse(text);
-                setData(result);
+                const compressed = new Uint8Array(await response.arrayBuffer());
+                const decoded = strFromU8(gunzipSync(compressed));
+                const result = JSON.parse(decoded);
+                if (!cancelled)
+                    setData(result);
             }
             catch (err) {
-                setError(String(err));
+                if (!cancelled)
+                    setError(String(err));
             }
+        }
+        loadData();
+        return () => {
+            cancelled = true;
         };
-        void loadData();
     }, []);
     const [periodFilter, setPeriodFilter,] = useState('1Y');
     const viewData = useMemo(() => data
@@ -902,6 +971,11 @@ function App() {
         periodFilter,
         journalFilter,
     ]);
+    const selectNode = (id, openPapers = false) => {
+        setSelectedId(id);
+        if (isMobile && openPapers)
+            setMobilePanel('papers');
+    };
     const runSearch = () => {
         if (!data)
             return;
@@ -915,7 +989,7 @@ function App() {
             .toLowerCase()
             .includes(cleaned));
         if (node) {
-            setSelectedId(node.id);
+            selectNode(node.id, true);
             return;
         }
         const paper = data.nodePapers
@@ -925,8 +999,7 @@ function App() {
             .includes(cleaned));
         if (paper?.classification
             ?.branch) {
-            setSelectedId(paper.classification
-                .branch);
+            selectNode(paper.classification.branch, true);
         }
     };
     if (error) {
@@ -947,7 +1020,7 @@ function App() {
                 color: '#80d8ff',
                 fontFamily: 'Arial, sans-serif',
                 fontSize: 18,
-            }, children: "Loading real JACS data..." }));
+            }, children: "Loading ChemTree data..." }));
     }
     return (_jsxs("div", { style: {
             position: 'fixed',
@@ -961,30 +1034,31 @@ function App() {
                     top: 0,
                     left: 0,
                     right: 0,
-                    height: 70,
+                    height: isMobile ? 70 : 70,
                     zIndex: 40,
                     display: 'flex',
                     alignItems: 'center',
-                    padding: '0 18px',
+                    padding: isMobile ? '0 8px' : '0 18px',
                     background: 'rgba(3,10,19,0.76)',
                     backdropFilter: 'blur(14px)',
                     borderBottom: '1px solid rgba(120,190,255,0.12)',
                 }, children: [_jsxs("div", { style: {
-                            width: 240,
+                            width: isMobile ? 96 : 240,
                         }, children: [_jsx("div", { style: {
-                                    fontSize: 28,
+                                    fontSize: isMobile ? 18 : 28,
                                     fontWeight: 800,
                                     letterSpacing: '-1px',
                                 }, children: "ChemTree" }), _jsx("div", { style: {
                                     fontSize: 10,
                                     color: '#8faac2',
+                                    display: isMobile ? 'none' : 'block',
                                 }, children: "Real-time Chemistry Intelligence" })] }), _jsx("div", { style: {
                             flex: 1,
                             display: 'flex',
                             justifyContent: 'center',
                         }, children: _jsxs("div", { style: {
                                 position: 'relative',
-                                width: 'min(600px,44vw)',
+                                width: isMobile ? 'calc(100vw - 112px)' : 'min(600px,44vw)',
                             }, children: [_jsx("input", { value: query, onChange: (event) => setQuery(event.target
                                         .value), onKeyDown: (event) => {
                                         if (event.key ===
@@ -993,8 +1067,8 @@ function App() {
                                         }
                                     }, placeholder: "Search topic or paper...", style: {
                                         width: '100%',
-                                        height: 40,
-                                        padding: '0 95px 0 16px',
+                                        height: isMobile ? 38 : 40,
+                                        padding: isMobile ? '0 78px 0 12px' : '0 95px 0 16px',
                                         boxSizing: 'border-box',
                                         borderRadius: 22,
                                         border: '1px solid rgba(120,190,255,0.18)',
@@ -1006,15 +1080,15 @@ function App() {
                                         top: 4,
                                         right: 4,
                                         height: 32,
-                                        padding: '0 15px',
+                                        padding: isMobile ? '0 11px' : '0 15px',
                                         border: 0,
                                         borderRadius: 18,
                                         background: 'linear-gradient(90deg,#178cff,#40dcff)',
                                         color: 'white',
                                         cursor: 'pointer',
                                     }, children: "Search" })] }) }), _jsxs("div", { style: {
-                            width: 240,
-                            display: 'flex',
+                            width: isMobile ? 0 : 240,
+                            display: isMobile ? 'none' : 'flex',
                             justifyContent: 'flex-end',
                             alignItems: 'center',
                             gap: 10,
@@ -1036,13 +1110,16 @@ function App() {
                                     whiteSpace: 'nowrap',
                                 }, children: "MULTI-JOURNAL \u00B7 REAL DATA" })] })] }), _jsx("div", { style: {
                     position: 'absolute',
-                    top: 80,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
+                    top: isMobile ? 76 : 80,
+                    left: isMobile ? 8 : '50%',
+                    right: isMobile ? 8 : undefined,
+                    transform: isMobile ? 'none' : 'translateX(-50%)',
                     zIndex: 38,
                     display: 'flex',
                     gap: 6,
                     padding: 5,
+                    overflowX: isMobile ? 'auto' : 'visible',
+                    scrollbarWidth: 'none',
                     borderRadius: 24,
                     background: 'rgba(4,14,25,0.86)',
                     border: '1px solid rgba(120,190,255,0.16)',
@@ -1055,6 +1132,7 @@ function App() {
                             setSelectedId('chemistry');
                         }, style: {
                             height: 30,
+                            flex: isMobile ? '0 0 auto' : undefined,
                             padding: '0 13px',
                             borderRadius: 16,
                             border: active
@@ -1077,11 +1155,13 @@ function App() {
                         }, children: journal }, journal));
                 }) }), _jsx("div", { style: {
                     position: 'absolute',
-                    top: 120,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
+                    top: isMobile ? 116 : 120,
+                    left: isMobile ? 8 : '50%',
+                    right: isMobile ? 8 : undefined,
+                    transform: isMobile ? 'none' : 'translateX(-50%)',
                     zIndex: 38,
                     display: 'flex',
+                    justifyContent: isMobile ? 'center' : undefined,
                     gap: 6,
                     padding: 5,
                     borderRadius: 24,
@@ -1117,19 +1197,15 @@ function App() {
                                 ? '0 0 14px rgba(60,220,170,0.22)'
                                 : 'none',
                         }, children: period }, period));
-                }) }), _jsx(LeftPanel, { data: viewData ?? data, selectedId: selectedId, onSelect: setSelectedId }), _jsx(RightPanel, { data: viewData ?? data, selectedId: selectedId }), _jsxs("div", { style: {
+                }) }), (!isMobile || mobilePanel === 'topics') && (_jsx(LeftPanel, { data: viewData ?? data, selectedId: selectedId, onSelect: (id) => selectNode(id, isMobile), isMobile: isMobile, onClose: isMobile ? () => setMobilePanel(null) : undefined })), (!isMobile || mobilePanel === 'papers') && (_jsx(RightPanel, { data: viewData ?? data, selectedId: selectedId, isMobile: isMobile, onClose: isMobile ? () => setMobilePanel(null) : undefined })), _jsxs("div", { style: {
                     position: 'absolute',
-                    top: 70,
-                    left: 245,
-                    right: 345,
-                    bottom: 0,
-                }, children: [_jsxs(Canvas, { camera: {
-                            position: [
-                                0,
-                                0.6,
-                                11.8,
-                            ],
-                            fov: 47,
+                    top: isMobile ? 154 : 70,
+                    left: isMobile ? 0 : 245,
+                    right: isMobile ? 0 : 345,
+                    bottom: isMobile ? 56 : 0,
+                }, children: [_jsxs(Canvas, { dpr: isMobile ? [1, 1.25] : [1, 2], gl: { antialias: !isMobile, powerPreference: 'high-performance' }, camera: {
+                            position: [0, 0.6, isMobile ? 13.5 : 11.8],
+                            fov: isMobile ? 58 : 47,
                         }, children: [_jsx("fog", { attach: "fog", args: [
                                     '#020711',
                                     11,
@@ -1146,13 +1222,13 @@ function App() {
                                     0,
                                     -2,
                                     6,
-                                ], intensity: 45, color: "#af7eff" }), _jsx(Sparkles, { count: 240, scale: [
+                                ], intensity: 45, color: "#af7eff" }), _jsx(Sparkles, { count: isMobile ? 80 : 240, scale: [
                                     16,
                                     12,
                                     12,
-                                ], size: 1.5, speed: 0.3, opacity: 0.65 }), _jsx(RealTree, { data: viewData ?? data, selectedId: selectedId, onSelect: setSelectedId }), _jsx(OrbitControls, { makeDefault: true, enableRotate: true, enableZoom: true, enablePan: true, minDistance: 3, maxDistance: 20 })] }), _jsx("div", { style: {
+                                ], size: 1.5, speed: 0.3, opacity: 0.65 }), _jsx(RealTree, { data: viewData ?? data, selectedId: selectedId, onSelect: (id) => selectNode(id, isMobile) }), _jsx(OrbitControls, { makeDefault: true, enableRotate: true, enableZoom: true, enablePan: !isMobile, minDistance: 3, maxDistance: 20 })] }), _jsx("div", { style: {
                             position: 'absolute',
-                            bottom: 18,
+                            bottom: isMobile ? 8 : 18,
                             left: '50%',
                             transform: 'translateX(-50%)',
                             padding: '9px 15px',
@@ -1162,6 +1238,21 @@ function App() {
                             color: '#cceaff',
                             fontSize: 11,
                             pointerEvents: 'none',
-                        }, children: "Drag: Rotate\u3000/ Wheel: Zoom\u3000/ Click: Explore" })] })] }));
+                        }, children: isMobile ? '1 finger: Rotate  /  Pinch: Zoom  /  Tap: Explore' : 'Drag: Rotate  /  Wheel: Zoom  /  Click: Explore' })] }), isMobile && (_jsxs("div", { style: {
+                    position: 'absolute',
+                    left: 8,
+                    right: 8,
+                    bottom: 7,
+                    height: 44,
+                    zIndex: 60,
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr 1fr',
+                    gap: 7,
+                    padding: 4,
+                    borderRadius: 16,
+                    background: 'rgba(3,12,22,0.92)',
+                    border: '1px solid rgba(120,190,255,0.18)',
+                    backdropFilter: 'blur(14px)',
+                }, children: [_jsx("button", { onClick: () => setMobilePanel(mobilePanel === 'topics' ? null : 'topics'), style: { border: 0, borderRadius: 12, background: mobilePanel === 'topics' ? 'rgba(25,145,210,.55)' : 'rgba(20,45,67,.75)', color: '#d9f3ff', fontWeight: 800 }, children: "Topics" }), _jsx("button", { onClick: () => setMobilePanel(mobilePanel === 'papers' ? null : 'papers'), style: { border: 0, borderRadius: 12, background: mobilePanel === 'papers' ? 'rgba(25,145,210,.55)' : 'rgba(20,45,67,.75)', color: '#d9f3ff', fontWeight: 800 }, children: "Papers" }), _jsx("button", { onClick: () => { selectNode('chemistry'); setMobilePanel(null); }, style: { border: 0, borderRadius: 12, background: 'rgba(20,45,67,.75)', color: '#a8e8ff', fontWeight: 800 }, children: "Reset" })] }))] }));
 }
 export default App;
