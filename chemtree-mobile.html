@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#020711" />
+<meta name="description" content="ChemTree mobile literature explorer — browse recent chemistry papers and research topics." />
+<title>ChemTree Mobile | Watanabe Laboratory</title>
+<style>
+:root{--bg:#020711;--panel:#071727;--panel2:#0a2034;--line:rgba(117,203,255,.16);--cyan:#71dfff;--text:#e9f6ff;--muted:#87a7bd}
+*{box-sizing:border-box}html{background:var(--bg);-webkit-text-size-adjust:100%}body{margin:0;background:linear-gradient(180deg,#020711,#061522 58%,#020711);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100dvh}button,input,a{font:inherit}.top{position:sticky;top:0;z-index:50;padding:calc(10px + env(safe-area-inset-top)) 12px 10px;background:rgba(2,7,17,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:23px;font-weight:900;letter-spacing:-.03em}.sub{font-size:9px;color:#82a7c0;letter-spacing:.12em;font-weight:700}.back{color:#a9e7ff;font-size:11px;text-decoration:none}.search{display:flex;gap:6px;margin-top:10px}.search input{min-width:0;flex:1;height:42px;border-radius:12px;border:1px solid var(--line);background:#06131f;color:white;padding:0 12px;outline:none}.search button,.primary{height:42px;border:0;border-radius:12px;padding:0 14px;background:linear-gradient(90deg,#178cff,#3cd9ff);color:white;font-weight:800}.wrap{padding:12px 12px calc(34px + env(safe-area-inset-bottom));max-width:760px;margin:auto}.scroll{display:flex;gap:6px;overflow-x:auto;padding:0 0 8px;scrollbar-width:none}.scroll::-webkit-scrollbar{display:none}.chip{flex:0 0 auto;border:1px solid rgba(112,200,255,.2);background:rgba(7,29,48,.82);color:#cfefff;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:700}.chip.active{background:linear-gradient(90deg,#176bbd,#1597ac);border-color:rgba(113,223,255,.6)}.chip.period.active{background:linear-gradient(90deg,#6946bb,#3a79c4)}.card{border:1px solid var(--line);border-radius:18px;background:rgba(7,22,37,.82);padding:16px}.eyebrow{font-size:10px;color:var(--cyan);font-weight:800;letter-spacing:.12em}.topic-title{font-size:29px;line-height:1.08;margin:8px 0 5px;letter-spacing:-.03em}.muted{color:var(--muted);font-size:12px;line-height:1.6}.section{margin-top:18px}.section-title{font-size:11px;color:#8ba9bf;font-weight:800;letter-spacing:.08em;margin-bottom:8px}.topic-grid{display:flex;flex-wrap:wrap;gap:7px}.country{display:grid;gap:7px}.country-row{display:flex;justify-content:space-between;padding:9px 11px;border-radius:10px;background:rgba(255,255,255,.04);font-size:13px}.paper-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-end}.paper-list{display:grid;gap:8px;margin-top:9px}.paper{display:block;padding:13px;border-radius:13px;border:1px solid rgba(112,200,255,.12);background:rgba(8,26,43,.82);color:#e8f5ff;text-decoration:none}.paper.nolink{opacity:.74}.paper-title{font-size:14px;line-height:1.48;font-weight:700}.paper-meta{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-size:10px;color:#7893aa}.open{color:var(--cyan);font-weight:900;white-space:nowrap}.status{padding:42px 16px;text-align:center;color:#9dcee8}.error{color:#ff9ca9}.count{color:var(--cyan);font-size:17px}.more{width:100%;height:44px;margin-top:10px;border:1px solid var(--line);border-radius:12px;background:#091c2c;color:#bdeaff;font-weight:800}.desktop-link{display:block;text-align:center;margin-top:22px;color:#6f9ab5;font-size:11px;text-decoration:none}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brandrow"><div><div class="brand">ChemTree</div><div class="sub">MOBILE LITERATURE EXPLORER</div></div><a class="back" href="playground.html">Watanabe Lab ↗</a></div>
+  <div class="search"><input id="q" type="search" placeholder="Search topic or paper..." autocomplete="off"><button id="searchBtn">Search</button></div>
+</header>
+<div class="wrap">
+  <div id="loading" class="status">Loading ChemTree…<br><small>Optimized mobile dataset</small></div>
+  <div id="app" hidden>
+    <div class="scroll" id="journals"></div>
+    <div class="scroll" id="periods"></div>
+    <section class="card"><div class="eyebrow">SELECTED TOPIC</div><h1 id="topicTitle" class="topic-title"></h1><div id="topicCount" class="muted"></div><button id="parentBtn" class="chip" style="margin-top:12px;display:none">← Parent topic</button></section>
+    <section class="section"><div class="section-title">EXPLORE TOPICS</div><div id="topics" class="topic-grid"></div></section>
+    <section class="section"><div class="section-title">COUNTRY DISTRIBUTION</div><div id="countries" class="country"></div></section>
+    <section class="section"><div class="paper-head"><div><div class="section-title" style="margin-bottom:2px">RECENT PAPERS</div><div class="muted">Tap a title to open its DOI / publisher page.</div></div><b id="paperCount" class="count"></b></div><div id="papers" class="paper-list"></div><button id="moreBtn" class="more" style="display:none">Show more papers</button></section>
+    <a class="desktop-link" href="chemtree-app.html?desktop=1">Try the 3D desktop view</a>
+  </div>
+</div>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  let data=null, selected='chemistry', journal='All', period='1Y', visiblePapers=30, searchPapers=null;
+  const periods=['1M','3M','6M','1Y'], journals=['All','JACS','Nature','Science','Chem'];
+  const periodDays={ '1M':30,'3M':90,'6M':180,'1Y':365 };
+  const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  function href(p){ if(p.url) return p.url; if(p.doi){const doi=String(p.doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i,'');return 'https://doi.org/'+doi} return '' }
+  function inPeriod(p){ if(period==='1Y') return true; const end=Date.parse(String(data.period?.end||new Date().toISOString().slice(0,10))+'T23:59:59Z'); const t=Date.parse(String(p.published||'')+'T00:00:00Z'); return Number.isFinite(t)&&t>=end-periodDays[period]*86400000&&t<=end }
+  function paperMatches(p){return (journal==='All'||String(p.journal||'')===journal)&&inPeriod(p)}
+  function aggregate(){return data.viewAggregates?.[period]?.[journal]||null}
+  function countFor(id){const a=aggregate(); return a?.counts?.[id] ?? (data.nodePapers[id]||[]).filter(paperMatches).length}
+  function countriesFor(id){const a=aggregate(); const obj=a?.countryCounts?.[id]||data.countryCounts?.[id]||{}; return Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,6)}
+  function papersFor(id){ if(searchPapers) return searchPapers; return (data.nodePapers[id]||[]).filter(paperMatches).sort((a,b)=>String(b.published||'').localeCompare(String(a.published||''))) }
+  function node(id){return data.treeDefinition.find(n=>n.id===id)}
+  function renderFilters(){
+    $('journals').innerHTML=journals.map(j=>`<button class="chip ${j===journal?'active':''}" data-j="${j}">${j}</button>`).join('');
+    $('periods').innerHTML=periods.map(p=>`<button class="chip period ${p===period?'active':''}" data-p="${p}">${p}</button>`).join('');
+    $('journals').querySelectorAll('button').forEach(b=>b.onclick=()=>{journal=b.dataset.j;selected='chemistry';searchPapers=null;visiblePapers=30;render()});
+    $('periods').querySelectorAll('button').forEach(b=>b.onclick=()=>{period=b.dataset.p;selected='chemistry';searchPapers=null;visiblePapers=30;render()});
+  }
+  function renderTopics(){
+    const n=node(selected)||node('chemistry'); const parent=n?.parent||'chemistry';
+    const children=data.treeDefinition.filter(x=>x.parent===selected&&countFor(x.id)>0);
+    const siblings=data.treeDefinition.filter(x=>x.parent===parent&&countFor(x.id)>0);
+    const list=(children.length?children:siblings).slice(0,30);
+    $('topics').innerHTML=list.map(x=>`<button class="chip" data-id="${esc(x.id)}">${esc(x.label)} <span style="color:#789bb1">(${countFor(x.id)})</span></button>`).join('')||'<div class="muted">No child topics in this view.</div>';
+    $('topics').querySelectorAll('button').forEach(b=>b.onclick=()=>{selected=b.dataset.id;searchPapers=null;visiblePapers=30;render()});
+    const pb=$('parentBtn'); if(selected!=='chemistry'){pb.style.display='inline-flex';pb.onclick=()=>{selected=parent;searchPapers=null;visiblePapers=30;render()}} else pb.style.display='none';
+  }
+  function renderPapers(){
+    const list=papersFor(selected); $('paperCount').textContent=list.length; const show=list.slice(0,visiblePapers);
+    $('papers').innerHTML=show.map((p,i)=>{const h=href(p);const tag=h?'a':'div';const attrs=h?`href="${esc(h)}" target="_blank" rel="noopener noreferrer"`:'';return `<${tag} class="paper ${h?'':'nolink'}" ${attrs}><div class="paper-title">${esc(p.title)}</div><div class="paper-meta"><span>${esc(p.published)}${p.journal?' · '+esc(p.journal):''}</span><span class="open">${h?'OPEN ↗':'NO LINK'}</span></div></${tag}>`}).join('')||'<div class="muted">No papers found for this selection.</div>';
+    const more=$('moreBtn'); if(list.length>visiblePapers){more.style.display='block';more.onclick=()=>{visiblePapers+=30;renderPapers()}}else more.style.display='none';
+  }
+  function render(){
+    renderFilters(); const n=node(selected)||node('chemistry'); $('topicTitle').textContent=searchPapers?'Search results':(n?.label||selected); $('topicCount').textContent=searchPapers?`${searchPapers.length} matching papers`:`${countFor(selected)} papers in current view`;
+    renderTopics(); $('countries').innerHTML=countriesFor(selected).map(([c,n])=>`<div class="country-row"><span>${esc(c)}</span><b>${n}</b></div>`).join('')||'<div class="muted">No country data.</div>'; renderPapers();
+  }
+  function search(){const q=$('q').value.trim().toLowerCase(); if(!q){searchPapers=null;render();return} const n=data.treeDefinition.find(x=>String(x.label).toLowerCase().includes(q)); if(n){selected=n.id;searchPapers=null;visiblePapers=30;render();return} searchPapers=(data.papers||[]).filter(p=>paperMatches(p)&&String(p.title||'').toLowerCase().includes(q)).sort((a,b)=>String(b.published||'').localeCompare(String(a.published||''))); visiblePapers=30;render()}
+  $('searchBtn').onclick=search; $('q').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+  fetch('./chemtree-mobile.json?v=34',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(d=>{data=d;$('loading').remove();$('app').hidden=false;render()}).catch(e=>{$('loading').innerHTML='<div class="error">ChemTree could not be loaded.<br>'+esc(e.message)+'</div><div class="muted" style="margin-top:12px">Please reload this page or check the GitHub upload.</div>'});
+})();
+</script>
+</body>
+</html>
