@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap");
 
 :root{
   --ink:#0b0d0e;
@@ -238,4 +237,9 @@ body{font-size:18px;line-height:1.75}
   .people-page .member-photo{width:170px}
   .people-page .member-info h3{font-size:25px}
   .people-page .member-meta dd{font-size:15.5px}
+}
+
+/* v21 — force BIZ UDPGothic across the research-lab website */
+html, body, button, input, textarea, select, option, a, p, span, div, section, article, nav, header, footer, h1, h2, h3, h4, h5, h6, b, strong, em, small, time, label {
+  font-family: "BIZ UDPGothic", "BIZ UDP Gothic", "Yu Gothic", Meiryo, sans-serif !important;
 }
