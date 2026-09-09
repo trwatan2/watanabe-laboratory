@@ -46,7 +46,7 @@ jobs:
 
           const token = process.env.GOATCOUNTER_API_KEY;
           const base = 'https://watanabe-lab.goatcounter.com/api/v0';
-          const start = '2026-09-08T15:00:00Z'; // tracking began 2026-09-09 JST
+          const start = '2026-08-31T00:00:00Z'; // tracking began 2026-09-09 JST
 
           async function apiGet(u) {
             const r = await fetch(u, {headers: {
