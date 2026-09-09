@@ -1,0 +1,45 @@
+/* Full multilingual editions share the Japanese site's layout, media and typography. */
+body.international-full,body.international-full *{font-family:"Helvetica Neue",Arial,sans-serif!important}
+.international-full:lang(zh-CN),.international-full:lang(zh-CN) *{font-family:"Microsoft YaHei","PingFang SC",sans-serif!important}
+.international-full:lang(ko),.international-full:lang(ko) *{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif!important}
+.international-full h1,.international-full h2,.international-full h3{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+.international-full .hero h1{hyphens:none;overflow-wrap:normal}
+.international-full .hero-jp{letter-spacing:.06em}
+.international-full .hero-lead{line-height:1.6;max-width:760px}
+.international-full .global-nav{gap:16px;font-size:12px;letter-spacing:.04em}
+.international-full .global-nav a[aria-current="page"]{color:#d7ff45;opacity:1}
+.international-full .language-menu summary{font-size:13px}
+.international-full .statement h2{font-size:clamp(38px,4.8vw,76px);line-height:1.2;letter-spacing:-.035em}
+.international-full .vision-line,.international-full .sulfur-title-line{display:inline;white-space:normal}
+.international-full .research-copy h3,.international-full .detail-copy h2{font-size:clamp(30px,3.2vw,52px);line-height:1.18}
+.international-full .research-copy p,.international-full .detail-copy p,.international-full .content-section p{font-size:16px;line-height:1.8}
+.international-full .page-hero h1{font-size:clamp(48px,7vw,104px);line-height:1.06;max-width:1200px}
+.international-full .section-head h2,.international-full .teaser h2,.international-full .contact h2{font-size:clamp(36px,4.7vw,72px);line-height:1.15}
+.international-full .news-list a b{line-height:1.7}
+.international-full .member-card h3 small{font-size:14px;display:block;letter-spacing:0;line-height:1.5;margin-top:8px}
+.international-full .member-card dd,.international-full .member-card p{overflow-wrap:anywhere;line-height:1.7}
+.international-full .text-link,.international-full .button{font-size:14px;letter-spacing:.025em;line-height:1.5}
+.international-full .button{padding:14px 24px;text-align:center}
+.international-full .career-chip,.international-full .career-tags a{white-space:normal}
+.international-full .gv-countries{white-space:normal}
+.international-full .contact-card h2{font-size:clamp(24px,3vw,46px);overflow-wrap:anywhere}
+.international-full .contact-card h3{overflow-wrap:anywhere}
+.international-full .project-copy h3,.international-full .playground-copy h3{hyphens:none}
+.international-full .research-jump{flex-wrap:wrap}
+@media(max-width:1250px){
+ .international-full .menu-button{display:block}
+ .international-full .global-nav{position:fixed;inset:72px 0 auto 0;display:none;flex-direction:column;align-items:flex-start;padding:24px 6vw;background:#0b0d0e;max-height:calc(100dvh - 72px);overflow:auto;font-size:16px;gap:14px}
+ .international-full .global-nav.open{display:flex}
+ .international-full .site-header{height:72px}
+ .international-full .language-menu{width:100%}
+ .international-full .language-menu-panel{position:static;margin-top:12px;min-width:0;max-width:300px}
+}
+@media(max-width:760px){
+ .international-full .hero h1{font-size:clamp(58px,16vw,110px)}
+ .international-full .hero-lead{font-size:16px}
+ .international-full .statement h2{font-size:38px}
+ .international-full .page-hero h1{font-size:clamp(40px,10vw,66px)}
+ .international-full .research-copy h3,.international-full .detail-copy h2{font-size:30px}
+ .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
+}
+@media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}

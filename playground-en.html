@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="We connect catalysis, reaction engineering and electrified reactions to develop new processes for CO₂, methane, hydrogen, carbon resources and sulfur compounds.">
+  <meta name="theme-color" content="#0b0d0e">
+  <title>Playground | Watanabe Laboratory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=21">
+  <style>
+    html,body,body *,body *::before,body *::after{font-family:"BIZ UDPGothic",sans-serif!important}
+    body h1,body h2{font-family:"Helvetica Neue",Arial,"Yu Gothic",Meiryo,sans-serif!important}
+    .play-wrap{background:#f3f1eb;color:#111;padding:90px max(32px,calc((100vw - 1180px)/2)) 120px}
+    .play-intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:70px;align-items:end;padding-bottom:58px;border-bottom:1px solid #c8cdc8}
+    .play-intro h2{font-size:clamp(48px,6vw,88px);line-height:.98;letter-spacing:-.05em;margin:10px 0 20px}
+    .play-intro p{font-size:18px;line-height:1.9;color:#444c46;margin:0;max-width:760px}
+    .play-note{font-size:14px!important;color:#6c746e!important}
+    .project-grid{display:grid;grid-template-columns:1fr;gap:30px;padding-top:58px}
+    .project-card{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);border:1px solid #c8cdc8;background:#fff;min-height:380px;overflow:hidden}
+    .project-visual{position:relative;background:#0b0d0e;min-height:380px;display:flex;align-items:center;justify-content:center;padding:42px}
+    .tree-mark{width:min(330px,86%);aspect-ratio:1/1;position:relative}
+    .tree-mark::before,.tree-mark::after{content:"";position:absolute;inset:10%;border:1px solid rgba(215,255,69,.35);border-radius:50%}
+    .tree-mark::after{inset:26%;border-color:rgba(215,255,69,.7)}
+    .tree-core{position:absolute;inset:42%;background:#d7ff45;border-radius:50%;box-shadow:0 0 35px rgba(215,255,69,.6)}
+    .branch{position:absolute;height:2px;background:linear-gradient(90deg,#d7ff45,rgba(215,255,69,.15));transform-origin:left center;left:50%;top:50%;width:42%}
+    .b1{transform:rotate(18deg)}.b2{transform:rotate(72deg)}.b3{transform:rotate(140deg)}.b4{transform:rotate(205deg)}.b5{transform:rotate(268deg)}.b6{transform:rotate(326deg)}
+    .project-copy{padding:48px 52px;display:flex;flex-direction:column;justify-content:center}
+    .project-kicker{font-size:12px;letter-spacing:.16em;font-weight:700;color:#6a8720;margin:0 0 13px}
+    .project-copy h3{font-family:"Helvetica Neue",Arial,"Yu Gothic",Meiryo,sans-serif!important;font-size:clamp(36px,4vw,58px);line-height:1;margin:0 0 18px;letter-spacing:-.04em}
+    .project-copy p{font-size:17px;line-height:1.85;color:#454d47;margin:0 0 16px}
+    .project-meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 28px}
+    .project-meta span{font-size:12px;border:1px solid #bbc2bc;padding:7px 10px;border-radius:999px;background:#f6f7f3}
+    .project-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .project-actions a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;text-decoration:none;font-weight:700;border:1px solid #111;color:#111}
+    .project-actions a.primary{background:#111;color:#fff}
+    .future{padding:58px 0 0;margin-top:18px;border-top:1px solid #c8cdc8;display:grid;grid-template-columns:1fr 2fr;gap:60px}
+    .future h3{font-family:"Helvetica Neue",Arial,"Yu Gothic",Meiryo,sans-serif!important;font-size:34px;margin:0}
+    .future p{font-size:17px;line-height:1.85;color:#505852;margin:0;max-width:760px}
+    .atlas-mark{position:relative;width:min(360px,92%);aspect-ratio:4/3;border:1px solid rgba(215,255,69,.32);overflow:hidden;background:radial-gradient(circle at 58% 42%,rgba(58,151,141,.32),transparent 38%),#091923}
+    .atlas-mark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(117,185,177,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(117,185,177,.12) 1px,transparent 1px);background-size:30px 30px}
+    .atlas-orbit{position:absolute;inset:17% 20%;border:1px solid rgba(215,255,69,.4);border-radius:50%;transform:rotate(-17deg)}
+    .atlas-orbit.second{inset:27% 31%;border-color:rgba(117,185,177,.55);transform:rotate(23deg)}
+    .atlas-pin{position:absolute;width:9px;height:9px;border:2px solid #091923;border-radius:50%;background:#d7ff45;box-shadow:0 0 13px rgba(215,255,69,.85)}
+    .ap1{left:68%;top:17%}.ap2{left:58%;top:27%}.ap3{left:69%;top:35%}.ap4{left:55%;top:43%}.ap5{left:64%;top:51%}.ap6{left:48%;top:58%}.ap7{left:38%;top:65%}.ap8{left:27%;top:74%}.ap9{left:19%;top:62%}
+    .atlas-title{position:absolute;left:20px;top:18px;color:#d7ff45;font:700 12px/1.35 "Helvetica Neue",Arial,sans-serif!important;letter-spacing:.16em}
+    .atlas-number{position:absolute;right:18px;bottom:13px;color:#fff;font:700 clamp(28px,4vw,48px)/1 "Helvetica Neue",Arial,sans-serif!important;letter-spacing:-.04em}
+    .atlas-number small{display:block;margin-top:5px;color:#91aaa6;font-size:9px;letter-spacing:.15em;text-align:right}
+    @media(max-width:820px){.play-wrap{padding:64px 24px 90px}.play-intro,.project-card,.future{grid-template-columns:1fr}.play-intro{gap:30px}.project-copy{padding:34px 28px}.project-visual{min-height:300px}.future{gap:20px}}
+    /* light background accents */
+    .play-wrap .section-label,.play-wrap .project-kicker,.play-wrap a:not(.primary){color:#6a8720!important}
+    .page-hero .eyebrow{color:#d7ff45!important}
+  </style>
+
+<style id="chemtree-pc-only-notice">
+.chemtree-pc-only{
+  margin:14px 0 4px;
+  padding:11px 13px;
+  border:2px solid #8fae31;
+  background:#f7faef;
+  color:#4d6500;
+  font-weight:800;
+  line-height:1.55;
+  border-radius:10px;
+}
+.chemtree-pc-only small{
+  display:block;
+  margin-top:3px;
+  color:#587300;
+  font-weight:700;
+}
+</style>
+
+
+<style id="multilingual-language-menu">
+  .language-menu{position:relative;flex:0 0 auto}
+  .language-menu summary{
+    list-style:none;cursor:pointer;opacity:.84;font-size:12px;
+    text-transform:none;letter-spacing:.08em;white-space:nowrap
+  }
+  .language-menu summary::-webkit-details-marker{display:none}
+  .language-menu summary::after{content:" ▾";color:#d7ff45}
+  .language-menu[open] summary{color:#d7ff45;opacity:1}
+  .language-menu-panel{
+    position:absolute;right:0;top:28px;min-width:180px;padding:10px;
+    display:grid;gap:2px;background:#0b0d0e;border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 16px 45px rgba(0,0,0,.28);z-index:300
+  }
+  .language-menu-panel a{
+    display:block!important;padding:8px 10px!important;opacity:.86!important;
+    text-transform:none!important;letter-spacing:.03em!important;font-size:12px!important
+  }
+  .language-menu-panel a:hover{background:rgba(215,255,69,.08);color:#d7ff45!important}
+  @media(max-width:960px){
+    .language-menu{width:100%;margin-top:6px}
+    .language-menu summary{font-size:14px}
+    .language-menu-panel{
+      position:static;margin-top:10px;min-width:0;width:min(100%,360px);
+      box-shadow:none;background:#111516
+    }
+  }
+</style>
+
+<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/playground-en.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/playground.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/playground-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/playground-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/playground-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/playground-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/playground-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/playground-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/playground-en.html"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
+body.international-full,body.international-full *{font-family:"Helvetica Neue",Arial,sans-serif!important}
+.international-full:lang(zh-CN),.international-full:lang(zh-CN) *{font-family:"Microsoft YaHei","PingFang SC",sans-serif!important}
+.international-full:lang(ko),.international-full:lang(ko) *{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif!important}
+.international-full h1,.international-full h2,.international-full h3{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+.international-full .hero h1{hyphens:none;overflow-wrap:normal}
+.international-full .hero-jp{letter-spacing:.06em}
+.international-full .hero-lead{line-height:1.6;max-width:760px}
+.international-full .global-nav{gap:16px;font-size:12px;letter-spacing:.04em}
+.international-full .global-nav a[aria-current="page"]{color:#d7ff45;opacity:1}
+.international-full .language-menu summary{font-size:13px}
+.international-full .statement h2{font-size:clamp(38px,4.8vw,76px);line-height:1.2;letter-spacing:-.035em}
+.international-full .vision-line,.international-full .sulfur-title-line{display:inline;white-space:normal}
+.international-full .research-copy h3,.international-full .detail-copy h2{font-size:clamp(30px,3.2vw,52px);line-height:1.18}
+.international-full .research-copy p,.international-full .detail-copy p,.international-full .content-section p{font-size:16px;line-height:1.8}
+.international-full .page-hero h1{font-size:clamp(48px,7vw,104px);line-height:1.06;max-width:1200px}
+.international-full .section-head h2,.international-full .teaser h2,.international-full .contact h2{font-size:clamp(36px,4.7vw,72px);line-height:1.15}
+.international-full .news-list a b{line-height:1.7}
+.international-full .member-card h3 small{font-size:14px;display:block;letter-spacing:0;line-height:1.5;margin-top:8px}
+.international-full .member-card dd,.international-full .member-card p{overflow-wrap:anywhere;line-height:1.7}
+.international-full .text-link,.international-full .button{font-size:14px;letter-spacing:.025em;line-height:1.5}
+.international-full .button{padding:14px 24px;text-align:center}
+.international-full .career-chip,.international-full .career-tags a{white-space:normal}
+.international-full .gv-countries{white-space:normal}
+.international-full .contact-card h2{font-size:clamp(24px,3vw,46px);overflow-wrap:anywhere}
+.international-full .contact-card h3{overflow-wrap:anywhere}
+.international-full .project-copy h3,.international-full .playground-copy h3{hyphens:none}
+.international-full .research-jump{flex-wrap:wrap}
+@media(max-width:1250px){
+ .international-full .menu-button{display:block}
+ .international-full .global-nav{position:fixed;inset:72px 0 auto 0;display:none;flex-direction:column;align-items:flex-start;padding:24px 6vw;background:#0b0d0e;max-height:calc(100dvh - 72px);overflow:auto;font-size:16px;gap:14px}
+ .international-full .global-nav.open{display:flex}
+ .international-full .site-header{height:72px}
+ .international-full .language-menu{width:100%}
+ .international-full .language-menu-panel{position:static;margin-top:12px;min-width:0;max-width:300px}
+}
+@media(max-width:760px){
+ .international-full .hero h1{font-size:clamp(58px,16vw,110px)}
+ .international-full .hero-lead{font-size:16px}
+ .international-full .statement h2{font-size:38px}
+ .international-full .page-hero h1{font-size:clamp(40px,10vw,66px)}
+ .international-full .research-copy h3,.international-full .detail-copy h2{font-size:30px}
+ .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
+}
+@media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}
+</style></head>
+<body class="subpage international-full">
+<header class="site-header scrolled">
+  <a class="brand" href="en.html" aria-label="Watanabe Laboratory home"><span class="brand-mark">WL</span><span class="brand-name"><b>Watanabe Laboratory</b><small>Watanabe Laboratory</small></span></a>
+  <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  <nav class="global-nav" aria-label="Main navigation"><a href="research-en.html">Research</a><a href="news-en.html">News</a><a href="about-en.html">About</a><a href="people-en.html">People</a><a href="career-en.html">Graduate destinations</a><a href="publications-en.html">Publications</a><a href="playground-en.html" aria-current="page">Playground</a><a href="contact-en.html">Contact</a><a href="links-en.html">Links</a><details class="language-menu">
+  <summary>Language</summary>
+  <div class="language-menu-panel">
+    <a href="playground.html" lang="ja">日本語</a>
+    <a href="playground-en.html" lang="en" aria-current="page">English</a>
+    <a href="playground-zh.html" lang="zh-CN">中文</a>
+    <a href="playground-ko.html" lang="ko">한국어</a>
+    <a href="playground-de.html" lang="de">Deutsch</a>
+    <a href="playground-fr.html" lang="fr">Français</a>
+    <a href="playground-es.html" lang="es">Español</a>
+  </div>
+</details></nav>
+</header>
+<main>
+  <section class="page-hero compact-hero">
+    <p class="eyebrow">WATANABE LABORATORY / PLAYGROUND</p>
+    <h1>Ideas beyond<br>the papers.</h1>
+    <p>Web tools, visualizations and prototype applications developed for research and education.</p>
+  </section>
+
+  <section class="play-wrap">
+    <div class="play-intro">
+      <div>
+        <p class="section-label">WATANABE'S PLAYGROUND</p>
+        <h2>Explore.<br>Build. Share.</h2>
+        <p>Explore experimental tools created in our laboratory for research and learning: view research fields, visualize data and discover new ideas alongside our publication list.</p>
+      </div>
+      <p class="play-note">Experimental tools and visualizations created for research and education. More projects will be added over time.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-visual" aria-hidden="true">
+          <div class="tree-mark"><span class="tree-core"></span><span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span><span class="branch b4"></span><span class="branch b5"></span><span class="branch b6"></span></div>
+        </div>
+        <div class="project-copy">
+          <p class="project-kicker">PROJECT 01 / LITERATURE EXPLORATION</p>
+          <h3>ChemTree</h3>
+          <p>Explore recent papers in JACS, Chem, Nature and Science through a 3D tree of connected research topics.</p>
+          <p>Explore recent chemistry papers as an interactive research landscape rather than a conventional list.</p>
+          <div class="project-meta"><span>JACS</span><span>Chem</span><span>Nature</span><span>Science</span><span>1M / 3M / 6M / 1Y</span><span>OpenAlex metadata</span></div>
+          <div class="chemtree-pc-only">
+Recommended: desktop computer
+<small>For the 3D tree, use Chrome or Edge on Windows or macOS. On smartphones, the 3D view is disabled, while paper search, journal and time filters, research fields, country trends, highlighted topics and paper links remain available.<br>PC recommended for the 3D tree. Smartphone users can use the Literature Explorer.</small>
+</div>
+<div class="project-actions"><a class="primary" href="chemtree-app.html">Open ChemTree →</a><a href="chemtree.html">About &amp; how to use →</a></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-visual" aria-hidden="true">
+          <div class="atlas-mark"><span class="atlas-title">CATALYST RESEARCH<br>ACROSS JAPAN</span><span class="atlas-orbit"></span><span class="atlas-orbit second"></span><i class="atlas-pin ap1"></i><i class="atlas-pin ap2"></i><i class="atlas-pin ap3"></i><i class="atlas-pin ap4"></i><i class="atlas-pin ap5"></i><i class="atlas-pin ap6"></i><i class="atlas-pin ap7"></i><i class="atlas-pin ap8"></i><i class="atlas-pin ap9"></i><span class="atlas-number">2,000+<small>RESEARCHERS / MONTHLY UPDATED</small></span></div>
+        </div>
+        <div class="project-copy">
+          <p class="project-kicker">PROJECT 02 / RESEARCHER EXPLORATION</p>
+          <h3>Catalyst Atlas</h3>
+          <p>Find catalysis researchers across Japan using a 3D map, prefectures, institutions and research keywords. Profiles include photos, research areas and links to official profiles, papers and achievements.</p>
+          <p>A public tool for researchers, engineers and companies to find connections for research, collaboration and consultation.</p>
+          <div class="project-meta"><span>47 Prefectures</span><span>Universities</span><span>KOSEN</span><span>National Institutes</span><span>Research Keywords</span><span>Monthly update</span></div>
+          <p class="play-note">Official university and laboratory pages and public sources such as KAKEN are checked on the first of each month to update affiliations, positions and research fields.</p>
+          <div class="project-actions"><a class="primary" href="https://catalyst-atlas-japan.ryo04280603.chatgpt.site" target="_blank" rel="noopener noreferrer">Open Catalyst Atlas →</a></div>
+        </div>
+      </article>
+
+      <article class="project-card" id="project-03">
+        <div class="project-visual" aria-hidden="true">
+          <div style="width:100%;max-width:340px">
+            <p style="color:#d7ff45;font-size:12px;letter-spacing:.16em">CO₂ + 4H₂ → CH₄ + 2H₂O</p>
+            <div style="height:150px;margin:28px 0;border:1px solid #6a8691;border-radius:4px;background:radial-gradient(ellipse at 32% 50%,#ffdf6b 0%,#f17b3b 16%,#a44267 32%,#255f91 58%,#123449 85%)"></div>
+            <p style="color:#adbdc4;font-size:12px;letter-spacing:.12em">METHANATION / THERMAL MAP</p>
+          </div>
+        </div>
+        <div class="project-copy">
+          <p class="project-kicker">PROJECT 03 / REACTION SIMULATION</p>
+          <h3>Methanation Lab</h3>
+          <p>Visualize temperature distributions in a packed catalyst bed during CO₂ methanation. Adjust kinetics and heat-transfer conditions to explore temperature maps and CO₂ conversion.</p>
+          <div class="project-meta"><span>CO₂ Methanation</span><span>2D Thermal Map</span><span>Reaction Engineering</span></div>
+          <p class="play-note">A password is required. Contact Watanabe Laboratory to request access.</p>
+          <div class="project-actions"><a class="primary" href="https://methanation-thermal-map.ryo04280603.chatgpt.site" target="_blank" rel="noopener noreferrer">Open Methanation Lab →</a><a href="contact-en.html">Contact us →</a></div>
+        </div>
+      </article>
+
+      <article class="project-card" id="project-04">
+        <div class="project-visual" style="padding:24px">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 480 560" width="480" height="560" style="display:block;width:100%;height:auto;max-width:480px" role="img" aria-label="Network of research fields across four faculties">
+<defs><radialgradient id="rt-halo"><stop stop-color="#8aac55" stop-opacity=".20"></stop><stop offset="1" stop-color="#0b0d0e" stop-opacity="0"></stop></radialgradient><radialgradient id="rt-ball" cx="30%" cy="25%"><stop stop-color="#fff"></stop><stop offset=".35" stop-color="#ecffaf"></stop><stop offset="1" stop-color="#8baa24"></stop></radialgradient></defs><circle cx="240" cy="275" r="220" fill="url(#rt-halo)"></circle><g fill="none" stroke="#799283" stroke-opacity=".18"><ellipse cx="240" cy="300" rx="207" ry="80" transform="rotate(-25 240 300)"></ellipse><ellipse cx="240" cy="300" rx="193" ry="93" transform="rotate(42 240 300)"></ellipse><ellipse cx="240" cy="300" rx="146" ry="194" transform="rotate(35 240 300)"></ellipse></g>
+<path d="M 136.0 204.0 L 181.2 204.0" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 136.0 204.0 L 111.1 221.4" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 136.0 204.0 L 140.8 161.9" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 136.0 204.0 L 169.2 236.7" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 136.0 204.0 L 73.2 195.7" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 111.1 221.4 L 191.9 176.7" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 140.8 161.9 L 118.4 255.1" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 169.2 236.7 L 120.5 181.7" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 73.2 195.7 L 195.7 220.2" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 191.9 176.7 L 81.0 221.7" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 118.4 255.1 L 147.7 184.5" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 120.5 181.7 L 144.3 223.3" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 195.7 220.2 L 75.4 178.0" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 81.0 221.7 L 197.8 193.0" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 147.7 184.5 L 118.2 223.8" fill="none" stroke="#d7ff45" stroke-width=".9" opacity=".48"></path>
+<path d="M 238 292 Q 136 270 136 204" fill="none" stroke="#d7ff45" stroke-width="1.6" opacity=".75"></path>
+<path d="M 346.0 230.0 L 377.6 230.0" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 346.0 230.0 L 300.7 261.6" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 346.0 230.0 L 348.4 208.9" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 346.0 230.0 L 381.3 264.8" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 346.0 230.0 L 311.9 225.5" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 300.7 261.6 L 404.8 201.3" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 348.4 208.9 L 337.7 254.1" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 381.3 264.8 L 324.3 198.7" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 311.9 225.5 L 394.2 243.1" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 404.8 201.3 L 321.9 237.7" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 337.7 254.1 L 366.5 195.9" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 324.3 198.7 L 360.7 264.4" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 394.2 243.1 L 299.3 210.0" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 321.9 237.7 L 404.2 219.7" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 366.5 195.9 L 327.7 250.3" fill="none" stroke="#70d9ef" stroke-width=".9" opacity=".48"></path>
+<path d="M 238 292 Q 346 270 346 230" fill="none" stroke="#70d9ef" stroke-width="1.6" opacity=".75"></path>
+<path d="M 142.0 368.0 L 169.1 368.0" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 142.0 368.0 L 89.4 404.7" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 142.0 368.0 L 144.6 344.7" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 142.0 368.0 L 161.4 387.1" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 142.0 368.0 L 83.1 360.3" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 89.4 404.7 L 190.2 344.5" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 144.6 344.7 L 124.2 419.4" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 161.4 387.1 L 124.3 342.6" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 83.1 360.3 L 202.2 384.3" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 190.2 344.5 L 98.9 381.8" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 124.2 419.4 L 173.7 315.3" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 124.3 342.6 L 153.2 394.2" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 202.2 384.3 L 107.4 353.2" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 98.9 381.8 L 183.2 360.7" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 173.7 315.3 L 116.5 396.3" fill="none" stroke="#b8a1ff" stroke-width=".9" opacity=".48"></path>
+<path d="M 238 292 Q 142 270 142 368" fill="none" stroke="#b8a1ff" stroke-width="1.6" opacity=".75"></path>
+<path d="M 335.0 385.0 L 399.8 385.0" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 335.0 385.0 L 308.2 403.7" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 335.0 385.0 L 337.3 364.8" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 335.0 385.0 L 371.8 421.3" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 335.0 385.0 L 298.0 380.1" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 308.2 403.7 L 362.9 371.3" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 337.3 364.8 L 325.6 412.3" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 371.8 421.3 L 320.4 364.0" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 298.0 380.1 L 388.4 399.5" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 362.9 371.3 L 285.0 401.1" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 325.6 412.3 L 366.7 332.1" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 320.4 364.0 L 356.2 434.6" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 388.4 399.5 L 286.0 364.0" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 285.0 401.1 L 392.3 374.9" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 366.7 332.1 L 301.5 422.3" fill="none" stroke="#6fe0ad" stroke-width=".9" opacity=".48"></path>
+<path d="M 238 292 Q 335 270 335 385" fill="none" stroke="#6fe0ad" stroke-width="1.6" opacity=".75"></path>
+<path d="M140.8 161.9 Q240 275 404.8 201.3" stroke="#d4eeb0" fill="none" stroke-width=".8" opacity=".36"></path>
+<path d="M140.8 161.9 Q240 275 190.2 344.5" stroke="#d4eeb0" fill="none" stroke-width=".8" opacity=".36"></path>
+<path d="M348.4 208.9 Q240 275 362.9 371.3" stroke="#d4eeb0" fill="none" stroke-width=".8" opacity=".36"></path>
+<path d="M144.6 344.7 Q240 275 362.9 371.3" stroke="#d4eeb0" fill="none" stroke-width=".8" opacity=".36"></path>
+<path d="M140.8 161.9 Q240 275 362.9 371.3" stroke="#d4eeb0" fill="none" stroke-width=".8" opacity=".36"></path>
+<path d="M348.4 208.9 Q240 275 190.2 344.5" stroke="#d4eeb0" fill="none" stroke-width=".8" opacity=".36"></path>
+<circle cx="136.0" cy="204.0" r="15.4" fill="#d7ff45" opacity=".07"></circle><circle cx="136.0" cy="204.0" r="7.0" fill="#d7ff45"></circle><circle cx="134.2" cy="201.9" r="2.1" fill="#fff" opacity=".65"></circle>
+<circle cx="181.2" cy="204.0" r="5.8" fill="#d7ff45" opacity=".07"></circle><circle cx="181.2" cy="204.0" r="2.6" fill="#d7ff45"></circle><circle cx="180.5" cy="203.2" r="0.8" fill="#fff" opacity=".65"></circle>
+<circle cx="111.1" cy="221.4" r="9.8" fill="#d7ff45" opacity=".07"></circle><circle cx="111.1" cy="221.4" r="4.5" fill="#d7ff45"></circle><circle cx="110.0" cy="220.0" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="140.8" cy="161.9" r="8.5" fill="#d7ff45" opacity=".07"></circle><circle cx="140.8" cy="161.9" r="3.9" fill="#d7ff45"></circle><circle cx="139.8" cy="160.7" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="169.2" cy="236.7" r="6.7" fill="#d7ff45" opacity=".07"></circle><circle cx="169.2" cy="236.7" r="3.0" fill="#d7ff45"></circle><circle cx="168.4" cy="235.8" r="0.9" fill="#fff" opacity=".65"></circle>
+<circle cx="73.2" cy="195.7" r="7.8" fill="#d7ff45" opacity=".07"></circle><circle cx="73.2" cy="195.7" r="3.6" fill="#d7ff45"></circle><circle cx="72.3" cy="194.7" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="191.9" cy="176.7" r="8.3" fill="#d7ff45" opacity=".07"></circle><circle cx="191.9" cy="176.7" r="3.8" fill="#d7ff45"></circle><circle cx="190.9" cy="175.6" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="118.4" cy="255.1" r="7.0" fill="#d7ff45" opacity=".07"></circle><circle cx="118.4" cy="255.1" r="3.2" fill="#d7ff45"></circle><circle cx="117.6" cy="254.1" r="1.0" fill="#fff" opacity=".65"></circle>
+<circle cx="120.5" cy="181.7" r="5.3" fill="#d7ff45" opacity=".07"></circle><circle cx="120.5" cy="181.7" r="2.4" fill="#d7ff45"></circle><circle cx="119.9" cy="181.0" r="0.7" fill="#fff" opacity=".65"></circle>
+<circle cx="195.7" cy="220.2" r="5.4" fill="#d7ff45" opacity=".07"></circle><circle cx="195.7" cy="220.2" r="2.5" fill="#d7ff45"></circle><circle cx="195.0" cy="219.4" r="0.7" fill="#fff" opacity=".65"></circle>
+<circle cx="81.0" cy="221.7" r="8.1" fill="#d7ff45" opacity=".07"></circle><circle cx="81.0" cy="221.7" r="3.7" fill="#d7ff45"></circle><circle cx="80.1" cy="220.6" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="147.7" cy="184.5" r="9.1" fill="#d7ff45" opacity=".07"></circle><circle cx="147.7" cy="184.5" r="4.1" fill="#d7ff45"></circle><circle cx="146.7" cy="183.3" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="144.3" cy="223.3" r="9.5" fill="#d7ff45" opacity=".07"></circle><circle cx="144.3" cy="223.3" r="4.3" fill="#d7ff45"></circle><circle cx="143.2" cy="222.0" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="75.4" cy="178.0" r="5.7" fill="#d7ff45" opacity=".07"></circle><circle cx="75.4" cy="178.0" r="2.6" fill="#d7ff45"></circle><circle cx="74.8" cy="177.2" r="0.8" fill="#fff" opacity=".65"></circle>
+<circle cx="197.8" cy="193.0" r="8.8" fill="#d7ff45" opacity=".07"></circle><circle cx="197.8" cy="193.0" r="4.0" fill="#d7ff45"></circle><circle cx="196.8" cy="191.9" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="118.2" cy="223.8" r="8.4" fill="#d7ff45" opacity=".07"></circle><circle cx="118.2" cy="223.8" r="3.8" fill="#d7ff45"></circle><circle cx="117.2" cy="222.7" r="1.1" fill="#fff" opacity=".65"></circle>
+<text x="65" y="116" fill="#d7ff45" font-size="17" font-family="sans-serif" letter-spacing="2">Engineering</text>
+<circle cx="346.0" cy="230.0" r="15.4" fill="#70d9ef" opacity=".07"></circle><circle cx="346.0" cy="230.0" r="7.0" fill="#70d9ef"></circle><circle cx="344.2" cy="227.9" r="2.1" fill="#fff" opacity=".65"></circle>
+<circle cx="377.6" cy="230.0" r="9.8" fill="#70d9ef" opacity=".07"></circle><circle cx="377.6" cy="230.0" r="4.5" fill="#70d9ef"></circle><circle cx="376.4" cy="228.7" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="300.7" cy="261.6" r="10.2" fill="#70d9ef" opacity=".07"></circle><circle cx="300.7" cy="261.6" r="4.6" fill="#70d9ef"></circle><circle cx="299.5" cy="260.2" r="1.4" fill="#fff" opacity=".65"></circle>
+<circle cx="348.4" cy="208.9" r="6.3" fill="#70d9ef" opacity=".07"></circle><circle cx="348.4" cy="208.9" r="2.9" fill="#70d9ef"></circle><circle cx="347.7" cy="208.1" r="0.9" fill="#fff" opacity=".65"></circle>
+<circle cx="381.3" cy="264.8" r="8.0" fill="#70d9ef" opacity=".07"></circle><circle cx="381.3" cy="264.8" r="3.6" fill="#70d9ef"></circle><circle cx="380.4" cy="263.7" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="311.9" cy="225.5" r="9.7" fill="#70d9ef" opacity=".07"></circle><circle cx="311.9" cy="225.5" r="4.4" fill="#70d9ef"></circle><circle cx="310.8" cy="224.2" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="404.8" cy="201.3" r="6.2" fill="#70d9ef" opacity=".07"></circle><circle cx="404.8" cy="201.3" r="2.8" fill="#70d9ef"></circle><circle cx="404.1" cy="200.4" r="0.8" fill="#fff" opacity=".65"></circle>
+<circle cx="337.7" cy="254.1" r="8.4" fill="#70d9ef" opacity=".07"></circle><circle cx="337.7" cy="254.1" r="3.8" fill="#70d9ef"></circle><circle cx="336.7" cy="252.9" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="324.3" cy="198.7" r="8.3" fill="#70d9ef" opacity=".07"></circle><circle cx="324.3" cy="198.7" r="3.8" fill="#70d9ef"></circle><circle cx="323.3" cy="197.6" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="394.2" cy="243.1" r="6.7" fill="#70d9ef" opacity=".07"></circle><circle cx="394.2" cy="243.1" r="3.1" fill="#70d9ef"></circle><circle cx="393.4" cy="242.1" r="0.9" fill="#fff" opacity=".65"></circle>
+<circle cx="321.9" cy="237.7" r="5.2" fill="#70d9ef" opacity=".07"></circle><circle cx="321.9" cy="237.7" r="2.4" fill="#70d9ef"></circle><circle cx="321.3" cy="237.0" r="0.7" fill="#fff" opacity=".65"></circle>
+<circle cx="366.5" cy="195.9" r="8.7" fill="#70d9ef" opacity=".07"></circle><circle cx="366.5" cy="195.9" r="4.0" fill="#70d9ef"></circle><circle cx="365.5" cy="194.7" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="360.7" cy="264.4" r="8.8" fill="#70d9ef" opacity=".07"></circle><circle cx="360.7" cy="264.4" r="4.0" fill="#70d9ef"></circle><circle cx="359.7" cy="263.2" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="299.3" cy="210.0" r="9.6" fill="#70d9ef" opacity=".07"></circle><circle cx="299.3" cy="210.0" r="4.4" fill="#70d9ef"></circle><circle cx="298.2" cy="208.7" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="404.2" cy="219.7" r="6.3" fill="#70d9ef" opacity=".07"></circle><circle cx="404.2" cy="219.7" r="2.9" fill="#70d9ef"></circle><circle cx="403.4" cy="218.8" r="0.9" fill="#fff" opacity=".65"></circle>
+<circle cx="327.7" cy="250.3" r="4.8" fill="#70d9ef" opacity=".07"></circle><circle cx="327.7" cy="250.3" r="2.2" fill="#70d9ef"></circle><circle cx="327.2" cy="249.7" r="0.7" fill="#fff" opacity=".65"></circle>
+<text x="322" y="131" fill="#70d9ef" font-size="17" font-family="sans-serif" letter-spacing="2">Informatics</text>
+<circle cx="142.0" cy="368.0" r="15.4" fill="#b8a1ff" opacity=".07"></circle><circle cx="142.0" cy="368.0" r="7.0" fill="#b8a1ff"></circle><circle cx="140.2" cy="365.9" r="2.1" fill="#fff" opacity=".65"></circle>
+<circle cx="169.1" cy="368.0" r="9.5" fill="#b8a1ff" opacity=".07"></circle><circle cx="169.1" cy="368.0" r="4.3" fill="#b8a1ff"></circle><circle cx="168.0" cy="366.7" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="89.4" cy="404.7" r="8.9" fill="#b8a1ff" opacity=".07"></circle><circle cx="89.4" cy="404.7" r="4.0" fill="#b8a1ff"></circle><circle cx="88.4" cy="403.5" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="144.6" cy="344.7" r="8.3" fill="#b8a1ff" opacity=".07"></circle><circle cx="144.6" cy="344.7" r="3.8" fill="#b8a1ff"></circle><circle cx="143.7" cy="343.5" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="161.4" cy="387.1" r="9.7" fill="#b8a1ff" opacity=".07"></circle><circle cx="161.4" cy="387.1" r="4.4" fill="#b8a1ff"></circle><circle cx="160.3" cy="385.8" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="83.1" cy="360.3" r="8.9" fill="#b8a1ff" opacity=".07"></circle><circle cx="83.1" cy="360.3" r="4.0" fill="#b8a1ff"></circle><circle cx="82.1" cy="359.1" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="190.2" cy="344.5" r="6.9" fill="#b8a1ff" opacity=".07"></circle><circle cx="190.2" cy="344.5" r="3.1" fill="#b8a1ff"></circle><circle cx="189.4" cy="343.5" r="0.9" fill="#fff" opacity=".65"></circle>
+<circle cx="124.2" cy="419.4" r="10.1" fill="#b8a1ff" opacity=".07"></circle><circle cx="124.2" cy="419.4" r="4.6" fill="#b8a1ff"></circle><circle cx="123.1" cy="418.1" r="1.4" fill="#fff" opacity=".65"></circle>
+<circle cx="124.3" cy="342.6" r="7.0" fill="#b8a1ff" opacity=".07"></circle><circle cx="124.3" cy="342.6" r="3.2" fill="#b8a1ff"></circle><circle cx="123.6" cy="341.6" r="1.0" fill="#fff" opacity=".65"></circle>
+<circle cx="202.2" cy="384.3" r="8.4" fill="#b8a1ff" opacity=".07"></circle><circle cx="202.2" cy="384.3" r="3.8" fill="#b8a1ff"></circle><circle cx="201.2" cy="383.1" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="98.9" cy="381.8" r="7.1" fill="#b8a1ff" opacity=".07"></circle><circle cx="98.9" cy="381.8" r="3.2" fill="#b8a1ff"></circle><circle cx="98.1" cy="380.9" r="1.0" fill="#fff" opacity=".65"></circle>
+<circle cx="173.7" cy="315.3" r="6.0" fill="#b8a1ff" opacity=".07"></circle><circle cx="173.7" cy="315.3" r="2.7" fill="#b8a1ff"></circle><circle cx="173.0" cy="314.4" r="0.8" fill="#fff" opacity=".65"></circle>
+<circle cx="153.2" cy="394.2" r="8.5" fill="#b8a1ff" opacity=".07"></circle><circle cx="153.2" cy="394.2" r="3.9" fill="#b8a1ff"></circle><circle cx="152.2" cy="393.0" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="107.4" cy="353.2" r="9.7" fill="#b8a1ff" opacity=".07"></circle><circle cx="107.4" cy="353.2" r="4.4" fill="#b8a1ff"></circle><circle cx="106.3" cy="351.9" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="183.2" cy="360.7" r="9.9" fill="#b8a1ff" opacity=".07"></circle><circle cx="183.2" cy="360.7" r="4.5" fill="#b8a1ff"></circle><circle cx="182.0" cy="359.4" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="116.5" cy="396.3" r="9.7" fill="#b8a1ff" opacity=".07"></circle><circle cx="116.5" cy="396.3" r="4.4" fill="#b8a1ff"></circle><circle cx="115.4" cy="395.0" r="1.3" fill="#fff" opacity=".65"></circle>
+<text x="58" y="440" fill="#b8a1ff" font-size="17" font-family="sans-serif" letter-spacing="2">Science</text>
+<circle cx="335.0" cy="385.0" r="15.4" fill="#6fe0ad" opacity=".07"></circle><circle cx="335.0" cy="385.0" r="7.0" fill="#6fe0ad"></circle><circle cx="333.2" cy="382.9" r="2.1" fill="#fff" opacity=".65"></circle>
+<circle cx="399.8" cy="385.0" r="8.7" fill="#6fe0ad" opacity=".07"></circle><circle cx="399.8" cy="385.0" r="4.0" fill="#6fe0ad"></circle><circle cx="398.8" cy="383.8" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="308.2" cy="403.7" r="5.4" fill="#6fe0ad" opacity=".07"></circle><circle cx="308.2" cy="403.7" r="2.4" fill="#6fe0ad"></circle><circle cx="307.6" cy="403.0" r="0.7" fill="#fff" opacity=".65"></circle>
+<circle cx="337.3" cy="364.8" r="5.5" fill="#6fe0ad" opacity=".07"></circle><circle cx="337.3" cy="364.8" r="2.5" fill="#6fe0ad"></circle><circle cx="336.7" cy="364.1" r="0.7" fill="#fff" opacity=".65"></circle>
+<circle cx="371.8" cy="421.3" r="4.8" fill="#6fe0ad" opacity=".07"></circle><circle cx="371.8" cy="421.3" r="2.2" fill="#6fe0ad"></circle><circle cx="371.3" cy="420.7" r="0.7" fill="#fff" opacity=".65"></circle>
+<circle cx="298.0" cy="380.1" r="7.8" fill="#6fe0ad" opacity=".07"></circle><circle cx="298.0" cy="380.1" r="3.5" fill="#6fe0ad"></circle><circle cx="297.1" cy="379.1" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="362.9" cy="371.3" r="6.4" fill="#6fe0ad" opacity=".07"></circle><circle cx="362.9" cy="371.3" r="2.9" fill="#6fe0ad"></circle><circle cx="362.2" cy="370.5" r="0.9" fill="#fff" opacity=".65"></circle>
+<circle cx="325.6" cy="412.3" r="8.4" fill="#6fe0ad" opacity=".07"></circle><circle cx="325.6" cy="412.3" r="3.8" fill="#6fe0ad"></circle><circle cx="324.6" cy="411.1" r="1.1" fill="#fff" opacity=".65"></circle>
+<circle cx="320.4" cy="364.0" r="10.3" fill="#6fe0ad" opacity=".07"></circle><circle cx="320.4" cy="364.0" r="4.7" fill="#6fe0ad"></circle><circle cx="319.2" cy="362.6" r="1.4" fill="#fff" opacity=".65"></circle>
+<circle cx="388.4" cy="399.5" r="8.6" fill="#6fe0ad" opacity=".07"></circle><circle cx="388.4" cy="399.5" r="3.9" fill="#6fe0ad"></circle><circle cx="387.5" cy="398.3" r="1.2" fill="#fff" opacity=".65"></circle>
+<circle cx="285.0" cy="401.1" r="7.4" fill="#6fe0ad" opacity=".07"></circle><circle cx="285.0" cy="401.1" r="3.3" fill="#6fe0ad"></circle><circle cx="284.2" cy="400.1" r="1.0" fill="#fff" opacity=".65"></circle>
+<circle cx="366.7" cy="332.1" r="9.7" fill="#6fe0ad" opacity=".07"></circle><circle cx="366.7" cy="332.1" r="4.4" fill="#6fe0ad"></circle><circle cx="365.6" cy="330.8" r="1.3" fill="#fff" opacity=".65"></circle>
+<circle cx="356.2" cy="434.6" r="4.6" fill="#6fe0ad" opacity=".07"></circle><circle cx="356.2" cy="434.6" r="2.1" fill="#6fe0ad"></circle><circle cx="355.7" cy="433.9" r="0.6" fill="#fff" opacity=".65"></circle>
+<circle cx="286.0" cy="364.0" r="10.0" fill="#6fe0ad" opacity=".07"></circle><circle cx="286.0" cy="364.0" r="4.5" fill="#6fe0ad"></circle><circle cx="284.9" cy="362.6" r="1.4" fill="#fff" opacity=".65"></circle>
+<circle cx="392.3" cy="374.9" r="7.4" fill="#6fe0ad" opacity=".07"></circle><circle cx="392.3" cy="374.9" r="3.4" fill="#6fe0ad"></circle><circle cx="391.4" cy="373.8" r="1.0" fill="#fff" opacity=".65"></circle>
+<circle cx="301.5" cy="422.3" r="5.5" fill="#6fe0ad" opacity=".07"></circle><circle cx="301.5" cy="422.3" r="2.5" fill="#6fe0ad"></circle><circle cx="300.9" cy="421.6" r="0.7" fill="#fff" opacity=".65"></circle>
+<text x="324" y="465" fill="#6fe0ad" font-size="17" font-family="sans-serif" letter-spacing="2">Agriculture</text>
+<circle cx="238" cy="292" r="31" fill="#d7ff45" opacity=".04"></circle><circle cx="238" cy="292" r="21" fill="none" stroke="#d7ff45" opacity=".35"></circle><circle cx="238" cy="292" r="11" fill="url(#rt-ball)"></circle><text x="240" y="39" text-anchor="middle" font-family="sans-serif" font-size="11" letter-spacing="3" fill="#b7c5bc">SHIZUOKA UNIVERSITY</text><text x="240" y="520" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="2.4" fill="#cad8cb">RESEARCH CONNECTIONS</text><text x="240" y="546" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#83938a">Illustration of connections between research fields</text></svg>
+        </div>
+        <div class="project-copy">
+          <p class="project-kicker">PROJECT 04 / CAMPUS COLLABORATION</p>
+          <h3>Research Tree</h3>
+          <p>A 3D researcher map for Shizuoka University faculty to explore research and collaboration connections within the university. Based on research themes, KAKEN projects and papers in the faculty database, it explains connections and provides public contact details.</p>
+          <div class="project-meta"><span>University faculty</span><span>Password required</span><span>Four faculties</span><span>Collaboration connections</span></div>
+          <p style="padding:14px;border-left:3px solid #6a8720;background:#f3f6ec;font-size:16px">Connections are generated automatically from research keywords. Use them for reference only.</p>
+          <p class="play-note">Some collaboration suggestions are supplemented by comparing public information. Coauthorship and KAKEN records are distinguished from future suggestions. Suggestions do not guarantee willingness to collaborate or feasibility.</p>
+          <details style="margin:0 0 20px;font-size:16px;line-height:1.9">
+            <summary style="cursor:pointer;font-weight:700">How to use</summary>
+            <ol style="padding-left:1.4em">
+              <li>Select “Open research map” and enter the password provided within the university.</li>
+              <li>Search by name or keyword, or expand a faculty or research-field branch.</li>
+              <li>Select a researcher to view research topics, KAKEN projects, papers and public contact details.</li>
+              <li>Select a connected researcher to see the basis for the connection and possible discussion topics. Switch between new partners, new topics with existing partners and past collaborations.</li>
+              <li>If public email or telephone details are available, use the detail view to contact the researcher.</li>
+            </ol>
+            <p class="play-note">Drag to rotate the 3D map and scroll to zoom. You can also use the list view. Add specially appointed staff, executives and post-retirement positions through the display filters.</p>
+          </details>
+          <p class="play-note">Passwords are provided individually to university faculty. Do not forward or repost them outside the university. Interested faculty should contact Watanabe Laboratory.</p>
+          <div class="project-actions"><a class="primary" href="https://shizuoka-research-tree.ryo04280603.chatgpt.site" target="_blank" rel="noopener noreferrer">Open research map →</a><a href="contact-en.html">Contact us →</a></div>
+        </div>
+      </article>
+
+
+      <article class="project-card" id="project-05">
+        <div class="project-visual" style="padding:0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 360 360" role="img" aria-label="Compass for exploring work and employers" style="display:block;width:76%;max-width:330px;height:auto">
+<circle cx="180" cy="180" r="124" fill="none" stroke="#d7ff45" stroke-opacity=".35"></circle>
+<circle cx="180" cy="180" r="94" fill="none" stroke="#d7ff45" stroke-opacity=".6"></circle>
+<path d="M180 44v30M316 180h-30M180 316v-30M44 180h30" stroke="#d7ff45" stroke-opacity=".45"></path>
+<path d="M237 94L198 198L94 237L162 162Z" fill="#d7ff45" fill-opacity=".22"></path>
+<path d="M237 94L198 198L180 180L162 162Z" fill="#d7ff45"></path>
+<circle cx="180" cy="180" r="12" fill="#d7ff45"></circle>
+</svg>
+        </div>
+        <div class="project-copy">
+          <p class="project-kicker">PROJECT 05 / CAREER EXPLORATION</p>
+          <h3>Career Compass</h3>
+          <p>A career-exploration tool to help students consider their selection criteria. Answers identify work of interest; filters for fields, products and technologies narrow the list to at most 20 companies for further investigation.</p>
+          <div class="project-meta"><span>Public access</span><span>Explore work and employers</span><span>Up to 20 candidates</span></div>
+          <p style="padding:14px;border-left:3px solid #6a8720;background:#f3f6ec;font-size:16px"><strong>For reference only. This tool does not recommend specific employers or occupations.</strong></p>
+          <p class="play-note">No guarantee of suitability or recruitment prospects is implied. Data were collected at different times. Check official company websites for current activities, vacancies and employment terms.</p>
+          <div class="project-actions"><a class="primary" href="https://career-compass-students.ryo04280603.chatgpt.site" target="_blank" rel="noopener noreferrer">Open Career Compass →</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="future">
+      <h3>More to come.</h3>
+      <p>We will continue adding laboratory projects for research-data visualization, catalysis and reaction-engineering education, and literature exploration.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div><b>Watanabe Laboratory</b><span>Watanabe Laboratory · Shizuoka University, Hamamatsu</span></div><p>© <span id="year"></span> Watanabe Laboratory.</p></footer>
+<script src="js/main.js"></script>
+
+<script>
+(function(){
+ if(location.hostname!=='trwatan2.github.io'||!location.pathname.startsWith('/watanabe-laboratory/'))return;
+ window.goatcounter=window.goatcounter||{};
+ var s=document.createElement('script');
+ s.async=true;s.src='https://gc.zgo.at/count.js';
+ s.setAttribute('data-goatcounter','https://watanabe-lab.goatcounter.com/count');
+ document.head.appendChild(s);
+ var n=0,t=setInterval(function(){
+   n++;
+   if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+     clearInterval(t);
+     setTimeout(function(){window.goatcounter.count({path:'/site-total',title:'Watanabe Laboratory — all pages'});},250);
+   } else if(n>120){clearInterval(t);}
+ },100);
+})();
+</script>
+
+</body>
+</html>

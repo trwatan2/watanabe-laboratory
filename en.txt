@@ -1,0 +1,241 @@
+[index]
+0|Watanabe Laboratory
+3|Watanabe Laboratory · Hamamatsu
+4|Turning reactions into
+5|technologies for real-world use
+6|.
+7|We connect catalysis, reaction engineering and electrified reactions to develop new processes for CO₂, methane, hydrogen, carbon resources and sulfur compounds.
+8|Five research themes connecting materials, structures, reactors and energy supply.
+9|Driving catalytic reactions with electricity.
+10|We combine structured catalysts with electrical heating to control the reaction environment efficiently.
+11|Turning CO₂ into resources.
+12|We combine CO₂ conversion, syngas production and solid-carbon fixation in reaction systems for carbon circulation.
+13|Making catalyst geometry work.
+14|We use spiral structures, porous metals and washcoats to build catalytic reactors that account for heat and mass transfer.
+15|Changing chemical processes through heat delivery.
+16|We introduce electrical energy directly into reactors and catalysts, exploiting rapid response, local heating and compact equipment.
+17|Using lattice sulfur
+18|as a reactive species.
+19|We study redox catalytic processes in which sulfur is released from sulfide lattices and reinserted from H₂S, repeatedly using lattice sulfur through sulfur vacancies.
+20|Our team connects materials, structures, fluid flow and electrified reactions through catalysis and reaction engineering.
+21|Career Compass is now publicly available for students exploring careers. For reference only; it does not recommend specific employers or occupations.
+22|Research Tree explores research connections within the university. For reference only. Shizuoka University faculty interested in access should contact Ryo Watanabe.
+23|Methanation Lab, a CO₂ methanation temperature-distribution simulator, is now available with restricted access. Contact us for a password.
+24|ChemTree and Catalyst Atlas are now available for exploring literature and finding catalysis researchers across Japan.
+25|Recent publications on CO₂ conversion, structured catalysts and solid-carbon fixation.
+26|Contact us about collaboration, laboratory visits and graduate study.
+27|Watanabe Laboratory · Shizuoka University, Hamamatsu
+[research]
+3|We connect molecular transformations to processes through catalysts, reaction environments, energy supply and material circulation.
+4|Creating reaction environments with electricity.
+5|We supply power directly to catalyst structures to deliver heat where it is needed. For high-temperature reactions such as dry reforming, we study catalytic reactions together with heat transport.
+6|Efficient local heating · Reaction-environment control · Energy utilization
+7|From CO₂ to reusable carbon.
+8|We develop reaction systems that convert CO₂ into syngas and solid carbon for carbon circulation. By combining reaction equilibrium, carbon deposition, separation and recovery, we investigate CO₂ conversion at the reactor scale.
+9|Syngas production · Solid-carbon recovery · Carbon circulation
+10|Turning catalyst geometry into reaction performance.
+11|We build reactors using spiral structures, porous metals and washcoats, considering fluid flow and heat and mass transfer alongside catalyst materials. Visualizing structure–flow interactions helps us actively control the reaction environment.
+12|Enhanced flow · Improved heat transfer · Higher space velocities
+13|Changing chemical processes through heat delivery.
+14|We investigate processes that introduce electrical energy directly into reactors and catalysts. Rapid response, local heating and compact equipment enabled by electrification support new modes of reaction operation.
+15|Direct heating · Rapid response · On-site reaction processes
+16|Using lattice sulfur as a reactant in catalysis.
+17|Sulfur in sulfide lattices acts as a reactive species that takes up hydrogen from hydrocarbons and leaves as H₂S. Sulfur from H₂S is then reinserted into the resulting vacancies, enabling redox cycles that repeatedly use lattice sulfur.
+18|We control exchangeable surface lattice sulfur, vacancy formation and regeneration, and metal–sulfur interfaces to explore dehydrogenation and new catalytic processes involving sulfur compounds.
+19|Our approach connects materials chemistry with reaction engineering, structured catalysts and energy supply.
+[about]
+3|We connect chemical reactions to processes by considering fluid flow, heat and mass transfer, and energy supply alongside catalyst materials.
+4|About Watanabe Laboratory
+5|Based at Shizuoka University’s Hamamatsu Campus, our laboratory studies catalysis and reaction engineering involving CO₂, CH₄, hydrogen, carbon resources and sulfur species.
+6|Beyond evaluating catalyst activity, we combine structured catalysts, fluid flow, heat and mass transfer, and electrical energy to develop research that can be applied to practical reactors and processes.
+7|We examine each reaction through four perspectives: chemistry, structure, energy and circulation.
+8|Understand reaction pathways through catalyst surfaces, lattice species and redox behavior.
+9|Build reaction environments using spirals, porous structures and washcoats.
+10|Supply electricity directly to catalysts and reactors to heat the required locations.
+11|Cycle CO₂, solid carbon and sulfur species to keep using them as resources.
+12|Selected externally funded research projects.
+13|Developing innovative catalytic processes for large-scale production of valuable resources through carbon cultivation from CO₂
+14|Principal investigator
+15|Creating carbon-neutral CO₂ conversion environments through highly efficient e-reactions
+[people]
+3|Our team brings together different specialties in catalysis, reaction engineering, structured reactors and carbon circulation.
+4|Ryo Watanabe
+5|Professor, Chemical and Biological Engineering, Faculty of Engineering, Shizuoka University
+6|Research areas: catalysis, reaction engineering, catalytic processes and resource conversion. Current interests include structured catalysts, CO₂ conversion, electrified reactions and redox catalysis using lattice sulfur.
+7|Alumnus of Yasushi Sekine’s laboratory at Waseda University.
+8|He studied applied chemistry from undergraduate through doctoral level. In the Sekine laboratory, he investigated redox catalysis involving interactions between lattice oxygen and steam. This experience led to his current work on lattice sulfur, CO₂ conversion and electrified catalytic processes.
+9|Building on applied chemistry and catalysis, his research expanded from redox catalysis to structured catalysts, CO₂ utilization and electrified reactions.
+10|School of Advanced Science and Engineering, Waseda University
+11|Department of Applied Chemistry
+12|Graduate School, Waseda University
+13|Applied Chemistry
+14|Yasushi Sekine Laboratory
+15|BSc, Department of Applied Chemistry, School of Science and Engineering, Waseda University
+16|Developed a foundation in applied chemistry and a research focus on catalysis and reaction engineering.
+17|Master’s degree, Applied Chemistry, Graduate School of Science and Engineering, Waseda University
+18|Continued research in catalysis and redox reactions.
+19|Research Associate, Applied Chemistry, School of Advanced Science and Engineering, Waseda University / Yasushi Sekine Laboratory
+20|Studied redox catalytic reactions involving interactions between lattice oxygen and steam in the Sekine laboratory.
+21|Doctoral degree, Applied Chemistry, Graduate School of Advanced Science and Engineering, Waseda University
+22|Doctor of Engineering. Dissertation: “Redox reactions involving interactions between catalyst lattice oxygen and steam.”
+23|Assistant Professor, Department of Materials Science and Chemical Engineering, Shizuoka University
+24|Combined functional composite-oxide catalysts with chemical reaction systems.
+25|Associate Professor, Chemical and Biological Engineering, Faculty of Engineering, Shizuoka University
+26|Expanded research into sulfide redox chemistry, structured catalysts, CO₂ conversion and multistage reaction systems.
+27|Advancing carbon circulation and process electrification through catalysis and reaction engineering.
+28|Doctoral and master’s students, grouped by year of study.
+30|Ethanol steam reforming over Co-based structured catalysts
+31|Shimada, Shizuoka, Japan
+32|“Better to regret trying than not trying!”
+34|Catalytic reaction systems for converting C1 compounds into solid carbon
+35|Aichi, Japan
+36|“A treasure trove of experiences you can only have now! Let’s do our best together!”
+38|Direct methanation of biogas using multistage spiral-structured catalyst systems
+39|Iwate, Japan
+40|“I have never met anyone with my unusual name, but recently discovered it apparently matches Yahoo’s Chinese name. I will work diligently on my project to achieve results and grow as a researcher.”
+42|Ammonia decomposition
+43|Toyota, Aichi, Japan
+44|“I’ve had enough of gambling and drinking.”
+46|Cu–Fe/Zn spiral-structured catalysts for accelerating low-temperature reverse water–gas shift
+47|“Working hard toward graduation.”
+49|CO₂ methanation using electrically heated structured catalysts
+50|Shizuoka, Japan
+51|“A laboratory with a welcoming, family-like atmosphere.”
+53|Methane dry reforming using directly electrically heated structured catalysts
+54|“Team Kinoko!” (mushroom-shaped chocolate biscuits)
+56|Electrically heated bioethanol reforming
+57|Tokoname, Aichi, Japan
+58|“Campaigning against Kinoko no Yama!” (chocolate biscuits)
+60|Solid-carbon production from C1 compounds
+61|Kyoto, Japan
+62|“I’ve been really into TV dramas lately.”
+64|Developing carbon-looping systems for large-scale CO₂ fixation
+65|“Aiming for 100% carbon capture!”
+67|Ammonia synthesis using structured catalysts
+68|Kanagawa, Japan
+69|“My catalysts and I are both growing. Nice to meet you!”
+71|Fuel production from C1 compounds using structured catalytic reaction environments
+72|Kofu, Yamanashi, Japan
+73|“I’ve been watching ONE PIECE since last year.”
+75|Effects of electrical current configuration on e-dry-reforming performance
+76|Saitama, Japan
+77|“I enjoy games, especially League of Legends.”
+79|Heat and mass transfer in methanol reforming with electrically heated structured catalysts
+80|Gifu, Japan
+81|“Live wholeheartedly.”
+83|Production of odorants from syngas
+84|“I think I’m getting into fishing.”
+85|Selected recent student awards recorded in Shizuoka University’s faculty database.
+86|91st Annual Meeting of SCEJ: “Performance of a multistage carbon-looping system for large-scale CO₂ fixation”
+87|28th SCEJ Student Presentation Meeting: “Effect of Co content on solid-carbon production from CO over Fe–Co–K catalysts”
+88|91st Annual Meeting of SCEJ: “Promotion of CO conversion and fibrous-carbon formation over Fe-based structured catalysts by Co and K addition”
+89|Please use the Contact page for laboratory visits, admissions and collaboration enquiries.
+[career]
+3|Selected employment and further-study destinations of graduates from 2007 to 2026, including companies, graduate schools, doctoral programs and public institutions.
+4|Graduate destinations
+5|Destinations are listed by year, covering employment and doctoral study after graduate programs, and employment and graduate study after undergraduate programs. Experience in catalysis, reaction engineering and process engineering leads to careers in chemicals, mobility, energy and engineering.
+6|Numbers in parentheses indicate the number of graduates in the same year. Click a company, institution or graduate school to open its website in a new tab. Historical company names are retained; some links lead to their current successors.
+7|Numbers in parentheses indicate the number of graduates in the same year. Names follow the records for each year.
+8|Master’s graduates
+13|Bachelor’s graduates
+17|Graduate students
+23|Undergraduates
+93|Selected destinations known to the laboratory. Names follow each year’s records. Entries without an identifiable website have no link.
+[publications]
+3|From our latest papers to the laboratory’s early studies, follow the development of our research.
+4|Based on the researcher record linked to ORCID 0000-0003-1132-0096, with updates from Shizuoka University’s faculty database and publisher information.
+5|No DOI assigned
+8|Journal ↗
+11|Researcher database ↗
+12|All verified DOIs are shown. The publications “格子硫黄を活用するアルカンのredox型脱水素”, “物質変換プロセスにおける電化の最新動向” and “Solid steps towards carbon capture” are marked “No DOI assigned” based on publisher and research-report records, with source links for verification. Years generally follow the faculty database. Publication titles are retained in their original language.
+[news]
+3|Research results, conference presentations, student awards and laboratory announcements.
+4|Career Compass is now publicly available for students exploring careers.
+5|This web tool helps students reflect on their career-selection criteria and explore work and employers of interest. Answers and filters for fields, products and technologies narrow the list to at most 20 companies to investigate. Find it under Playground, Project 05.
+6|For reference only. This tool does not recommend specific companies or occupations.
+7|Check each company’s official website for current activities, vacancies and employment terms.
+8|Open Career Compass ↗
+9|Research Tree explores research and collaboration connections within the university.
+10|This 3D tool covers Shizuoka University’s Engineering, Informatics, Science and Agriculture faculties, using research themes, KAKEN projects and papers from the faculty database to explore research and potential collaborations. Find it under Playground, Project 04.
+11|Connections are generated automatically from research keywords and are for reference only. They do not guarantee a collaboration record or feasibility.
+12|Password-protected access is provided for university faculty. To request access,
+13|please contact Ryo Watanabe
+14|About Research Tree ↗
+15|Methanation Lab, a CO₂ methanation temperature-distribution simulator, is now available.
+16|Change reaction kinetics and heat-transfer conditions to examine 2D temperature maps in a packed catalyst bed and changes in CO₂ conversion. Find it under Playground, Project 03.
+17|Access is restricted. To request a password,
+18|please contact Watanabe Laboratory
+19|About Methanation Lab ↗
+20|ChemTree explores recent chemistry papers through a 3D tree, while Catalyst Atlas locates catalysis researchers throughout Japan by prefecture, institution and research keywords. Researchers, engineers and companies can use these Playground tools to explore technology trends and collaborators. Catalyst Atlas checks and updates public information on the first day of each month.
+21|Our laboratory website is now online, introducing research through videos and visuals.
+22|“Low-Temperature RWGS Process with a Two-Stage Cu-Fe/Zn Spiral-structured Catalyst” was published in Catalysis Science & Technology.
+23|Student work on carbon looping, Fe–Co–K catalysts and fibrous-carbon formation received conference awards in 2026.
+24|We presented research on low-temperature RWGS using Cu/Zn spiral catalysts.
+25|We presented work on CO₂ utilization and solid-carbon fixation using structured catalysts.
+[playground]
+3|Web tools, visualizations and prototype applications developed for research and education.
+4|Explore experimental tools created in our laboratory for research and learning: view research fields, visualize data and discover new ideas alongside our publication list.
+5|Explore recent papers in JACS, Chem, Nature and Science through a 3D tree of connected research topics.
+6|Recommended: desktop computer
+7|For the 3D tree, use Chrome or Edge on Windows or macOS. On smartphones, the 3D view is disabled, while paper search, journal and time filters, research fields, country trends, highlighted topics and paper links remain available.
+8|Find catalysis researchers across Japan using a 3D map, prefectures, institutions and research keywords. Profiles include photos, research areas and links to official profiles, papers and achievements.
+9|A public tool for researchers, engineers and companies to find connections for research, collaboration and consultation.
+10|Official university and laboratory pages and public sources such as KAKEN are checked on the first of each month to update affiliations, positions and research fields.
+11|Visualize temperature distributions in a packed catalyst bed during CO₂ methanation. Adjust kinetics and heat-transfer conditions to explore temperature maps and CO₂ conversion.
+12|A password is required. Contact Watanabe Laboratory to request access.
+13|Contact us →
+14|Engineering
+15|Informatics
+16|Science
+17|Agriculture
+18|Illustration of connections between research fields
+19|A 3D researcher map for Shizuoka University faculty to explore research and collaboration connections within the university. Based on research themes, KAKEN projects and papers in the faculty database, it explains connections and provides public contact details.
+20|University faculty
+21|Password required
+22|Four faculties
+23|Collaboration connections
+24|Connections are generated automatically from research keywords. Use them for reference only.
+25|Some collaboration suggestions are supplemented by comparing public information. Coauthorship and KAKEN records are distinguished from future suggestions. Suggestions do not guarantee willingness to collaborate or feasibility.
+26|How to use
+27|Select “Open research map” and enter the password provided within the university.
+28|Search by name or keyword, or expand a faculty or research-field branch.
+29|Select a researcher to view research topics, KAKEN projects, papers and public contact details.
+30|Select a connected researcher to see the basis for the connection and possible discussion topics. Switch between new partners, new topics with existing partners and past collaborations.
+31|If public email or telephone details are available, use the detail view to contact the researcher.
+32|Drag to rotate the 3D map and scroll to zoom. You can also use the list view. Add specially appointed staff, executives and post-retirement positions through the display filters.
+33|Passwords are provided individually to university faculty. Do not forward or repost them outside the university. Interested faculty should contact Watanabe Laboratory.
+34|Open research map →
+35|A career-exploration tool to help students consider their selection criteria. Answers identify work of interest; filters for fields, products and technologies narrow the list to at most 20 companies for further investigation.
+36|Public access
+37|Explore work and employers
+38|Up to 20 candidates
+39|For reference only. This tool does not recommend specific employers or occupations.
+40|No guarantee of suitability or recruitment prospects is implied. Data were collected at different times. Check official company websites for current activities, vacancies and employment terms.
+41|Open Career Compass →
+42|We will continue adding laboratory projects for research-data visualization, catalysis and reaction-engineering education, and literature exploration.
+[contact]
+3|Contact us about collaboration, laboratory visits and graduate study.
+4|Replace [at] with @ when sending email.
+5|3-5-1 Johoku, Chuo-ku, Hamamatsu, Shizuoka, Japan
+6|Room 233, Engineering Building 3
+7|Contact details for the faculty office and laboratory.
+8|From bus stops 15 or 16 at the north exit of JR Hamamatsu Station, take a bus to “Shizuoka Daigaku”.
+9|We welcome enquiries about collaboration, technical consultation, laboratory visits, undergraduate research and graduate admissions.
+[links]
+3|Links to teaching, laboratory tools, Shizuoka University and professional societies.
+4|Frequently used laboratory pages and external resources for students and collaborators. External links open in a new tab.
+5|Laboratory and teaching
+6|2026 Lectures
+7|Gas cylinder management
+8|Laboratory order ledger
+9|Shizuoka University
+10|Faculty of Engineering, Shizuoka University
+11|Hamamatsu Campus map
+12|Professional societies
+13|The Society of Chemical Engineers, Japan
+14|SCEJ Reaction Engineering Division — Young Researchers Group
+15|Catalysis Society of Japan
+16|Catalysis Society of Japan — Young Researchers Group
+17|The Japan Petroleum Institute
+18|The Chemical Society of Japan
+19|Linked content and services are managed by the respective institutions and societies.

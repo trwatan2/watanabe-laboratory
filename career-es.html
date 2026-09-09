@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<meta content="Conectamos catálisis, ingeniería de reacciones y procesos electrificados para convertir CO₂, metano, hidrógeno, recursos de carbono y compuestos de azufre." name="description">
+<meta content="#0b0d0e" name="theme-color">
+<title>Trayectorias | Watanabe Laboratory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="css/style.css?v=27" rel="stylesheet">
+<style>
+    .career-page .page-hero{padding-bottom:90px}
+    .career-page .page-hero h1{font-size:clamp(68px,9vw,142px);max-width:1100px}
+    .career-page .page-hero>p:last-child{max-width:820px}
+    .career-intro{background:#d7ff45!important;color:#0b0d0e;padding-top:70px!important;padding-bottom:70px!important}
+    .career-intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:70px;align-items:start}
+    .career-intro h2{font-size:clamp(40px,5vw,76px);line-height:.98;letter-spacing:-.05em;margin:10px 0 0}
+    .career-intro p{font-size:19px;line-height:1.9;margin:0;max-width:720px}
+    .career-timeline{background:#f3f1eb;padding-top:90px!important;padding-bottom:120px!important}
+    .career-timeline-header{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+    .career-timeline-header h2{font-size:clamp(42px,5.5vw,78px);line-height:1;letter-spacing:-.05em;margin:10px 0 0}
+    .career-timeline-header p{font-size:15px;color:#677069;max-width:430px;line-height:1.8;margin:0}
+    .career-year{display:grid;grid-template-columns:150px 1fr;border-top:1px solid #c8cdc8;padding:38px 0 42px;gap:42px}
+    .career-year:last-child{border-bottom:1px solid #c8cdc8}
+    .career-year-number{font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1;color:#111}
+    .career-year-body{display:grid;gap:28px}
+    .career-track{display:grid;grid-template-columns:190px 1fr;gap:28px;align-items:start}
+    .career-track-title b{display:block;font-size:18px;line-height:1.2}
+    .career-track-title small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#737b75;margin-top:6px}
+    .career-chips{display:flex;flex-wrap:wrap;gap:9px}
+    .career-chips span{display:inline-flex;align-items:center;min-height:38px;padding:7px 13px;border:1px solid #bdc4bd;background:#fff;font-size:15.5px;line-height:1.35;border-radius:999px}
+    .career-note{margin-top:34px!important;font-size:14px!important;color:#69716b;line-height:1.8!important}
+    @media(max-width:900px){
+      .career-intro-grid{grid-template-columns:1fr;gap:26px}
+      .career-year{grid-template-columns:1fr;gap:22px}
+      .career-year-number{font-size:34px}
+      .career-track{grid-template-columns:1fr;gap:12px}
+      .career-timeline-header{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:600px){
+      .career-chips span,.career-chips a{font-size:14px}
+      .career-year{padding:30px 0 34px}
+    }
+  
+    .career-chips a{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:7px 13px;border:1px solid #bdc4bd;background:#fff;color:#111;text-decoration:none;font-size:15.5px;line-height:1.35;border-radius:999px;transition:transform .16s ease,border-color .16s ease,background .16s ease}
+    .career-chips a:hover{transform:translateY(-1px);border-color:#0b0d0e;background:#d7ff45}
+    .career-chips a:focus-visible{outline:3px solid #0b0d0e;outline-offset:2px}
+    .career-chips .external-mark{font-size:12px;line-height:1;opacity:.58}
+</style>
+  <style id="v28-accent-fix">
+    /* v29: brighter olive-lime accents on light surfaces — inline so GitHub folder/CSS cache cannot block it */
+    :root{--accent-light:#6a8720;--accent-link:#587300}
+    .statement .kicker,
+    .statement .section-label,
+    .news .section-label,
+    .news .text-link,
+    .content-section:not(.dark-section):not(.light-outro) .kicker,
+    .content-section:not(.dark-section):not(.light-outro) .section-label,
+    .content-section:not(.dark-section):not(.light-outro) .text-link,
+    .content-section:not(.dark-section):not(.light-outro) .member-year,
+    .research-detail:not(.sulfur-detail) .kicker,
+    .research-detail:not(.sulfur-detail) .research-no,
+    .pub-page .section-label,
+    .pub-page .pub-doi,
+    .pub-page .pub-links a,
+    .career-timeline .section-label,
+    .career-timeline .external-mark,
+    .contact-card:not(.primary-contact) .kicker,
+    .contact-card:not(.primary-contact) .text-link,
+    .academic-links span,
+    .people-page .member-year{color:var(--accent-light)!important}
+
+    /* Links use a slightly deeper olive-lime for readability; labels stay brighter. */
+    .statement .text-link,
+    .news .text-link,
+    .content-section:not(.dark-section):not(.light-outro) .text-link,
+    .pub-page .pub-doi,
+    .pub-page .pub-links a,
+    .career-timeline .external-mark,
+    .contact-card:not(.primary-contact) .text-link,
+    .academic-links span{color:var(--accent-link)!important}
+
+    .statement .text-link:hover,
+    .news .text-link:hover,
+    .content-section:not(.dark-section):not(.light-outro) .text-link:hover,
+    .pub-page a:hover,
+    .contact-card:not(.primary-contact) .text-link:hover{color:#3f5700!important}
+
+    /* Keep the original bright lime only on genuinely dark backgrounds. */
+    .hero .eyebrow,
+    .page-hero .eyebrow,
+    .dark-section .kicker,
+    .research-outro .kicker,
+    .research-jump b,
+    .info-card span,
+    .profile-monogram,
+    .video-placeholder>span{color:#d7ff45!important}
+
+    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#d29b18!important}
+  </style>
+
+<style id="multilingual-language-menu">
+  .language-menu{position:relative;flex:0 0 auto}
+  .language-menu summary{
+    list-style:none;cursor:pointer;opacity:.84;font-size:12px;
+    text-transform:none;letter-spacing:.08em;white-space:nowrap
+  }
+  .language-menu summary::-webkit-details-marker{display:none}
+  .language-menu summary::after{content:" ▾";color:#d7ff45}
+  .language-menu[open] summary{color:#d7ff45;opacity:1}
+  .language-menu-panel{
+    position:absolute;right:0;top:28px;min-width:180px;padding:10px;
+    display:grid;gap:2px;background:#0b0d0e;border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 16px 45px rgba(0,0,0,.28);z-index:300
+  }
+  .language-menu-panel a{
+    display:block!important;padding:8px 10px!important;opacity:.86!important;
+    text-transform:none!important;letter-spacing:.03em!important;font-size:12px!important
+  }
+  .language-menu-panel a:hover{background:rgba(215,255,69,.08);color:#d7ff45!important}
+  @media(max-width:960px){
+    .language-menu{width:100%;margin-top:6px}
+    .language-menu summary{font-size:14px}
+    .language-menu-panel{
+      position:static;margin-top:10px;min-width:0;width:min(100%,360px);
+      box-shadow:none;background:#111516
+    }
+  }
+</style>
+
+<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/career-es.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/career.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/career-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/career-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/career-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/career-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/career-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/career-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/career-en.html"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
+body.international-full,body.international-full *{font-family:"Helvetica Neue",Arial,sans-serif!important}
+.international-full:lang(zh-CN),.international-full:lang(zh-CN) *{font-family:"Microsoft YaHei","PingFang SC",sans-serif!important}
+.international-full:lang(ko),.international-full:lang(ko) *{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif!important}
+.international-full h1,.international-full h2,.international-full h3{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+.international-full .hero h1{hyphens:none;overflow-wrap:normal}
+.international-full .hero-jp{letter-spacing:.06em}
+.international-full .hero-lead{line-height:1.6;max-width:760px}
+.international-full .global-nav{gap:16px;font-size:12px;letter-spacing:.04em}
+.international-full .global-nav a[aria-current="page"]{color:#d7ff45;opacity:1}
+.international-full .language-menu summary{font-size:13px}
+.international-full .statement h2{font-size:clamp(38px,4.8vw,76px);line-height:1.2;letter-spacing:-.035em}
+.international-full .vision-line,.international-full .sulfur-title-line{display:inline;white-space:normal}
+.international-full .research-copy h3,.international-full .detail-copy h2{font-size:clamp(30px,3.2vw,52px);line-height:1.18}
+.international-full .research-copy p,.international-full .detail-copy p,.international-full .content-section p{font-size:16px;line-height:1.8}
+.international-full .page-hero h1{font-size:clamp(48px,7vw,104px);line-height:1.06;max-width:1200px}
+.international-full .section-head h2,.international-full .teaser h2,.international-full .contact h2{font-size:clamp(36px,4.7vw,72px);line-height:1.15}
+.international-full .news-list a b{line-height:1.7}
+.international-full .member-card h3 small{font-size:14px;display:block;letter-spacing:0;line-height:1.5;margin-top:8px}
+.international-full .member-card dd,.international-full .member-card p{overflow-wrap:anywhere;line-height:1.7}
+.international-full .text-link,.international-full .button{font-size:14px;letter-spacing:.025em;line-height:1.5}
+.international-full .button{padding:14px 24px;text-align:center}
+.international-full .career-chip,.international-full .career-tags a{white-space:normal}
+.international-full .gv-countries{white-space:normal}
+.international-full .contact-card h2{font-size:clamp(24px,3vw,46px);overflow-wrap:anywhere}
+.international-full .contact-card h3{overflow-wrap:anywhere}
+.international-full .project-copy h3,.international-full .playground-copy h3{hyphens:none}
+.international-full .research-jump{flex-wrap:wrap}
+@media(max-width:1250px){
+ .international-full .menu-button{display:block}
+ .international-full .global-nav{position:fixed;inset:72px 0 auto 0;display:none;flex-direction:column;align-items:flex-start;padding:24px 6vw;background:#0b0d0e;max-height:calc(100dvh - 72px);overflow:auto;font-size:16px;gap:14px}
+ .international-full .global-nav.open{display:flex}
+ .international-full .site-header{height:72px}
+ .international-full .language-menu{width:100%}
+ .international-full .language-menu-panel{position:static;margin-top:12px;min-width:0;max-width:300px}
+}
+@media(max-width:760px){
+ .international-full .hero h1{font-size:clamp(58px,16vw,110px)}
+ .international-full .hero-lead{font-size:16px}
+ .international-full .statement h2{font-size:38px}
+ .international-full .page-hero h1{font-size:clamp(40px,10vw,66px)}
+ .international-full .research-copy h3,.international-full .detail-copy h2{font-size:30px}
+ .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
+}
+@media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}
+</style></head>
+<body class="subpage career-page international-full">
+<header class="site-header scrolled">
+<a aria-label="Watanabe Laboratory home" class="brand" href="es.html">
+<span class="brand-mark">WL</span>
+<span class="brand-name"><b>Watanabe Laboratory</b><small>Laboratorio Watanabe</small></span>
+</a>
+<button aria-expanded="false" aria-label="Abrir menú" class="menu-button" type="button"><span></span><span></span></button>
+<nav aria-label="Navegación principal" class="global-nav">
+<a href="research-es.html">Investigación</a><a href="news-es.html">Noticias</a>
+<a href="about-es.html">Acerca de</a>
+<a href="people-es.html">Equipo</a>
+<a href="career-es.html" aria-current="page">Trayectorias</a>
+<a href="publications-es.html">Publicaciones</a>
+<a href="playground-es.html">Playground</a>
+<a href="contact-es.html">Contacto</a><a href="links-es.html">Enlaces</a>
+<details class="language-menu">
+  <summary>Idioma</summary>
+  <div class="language-menu-panel">
+    <a href="career.html" lang="ja">日本語</a>
+    <a href="career-en.html" lang="en">English</a>
+    <a href="career-zh.html" lang="zh-CN">中文</a>
+    <a href="career-ko.html" lang="ko">한국어</a>
+    <a href="career-de.html" lang="de">Deutsch</a>
+    <a href="career-fr.html" lang="fr">Français</a>
+    <a href="career-es.html" lang="es" aria-current="page">Español</a>
+  </div>
+</details></nav>
+</header>
+<main>
+<section class="page-hero compact-hero">
+<p class="eyebrow">WATANABE LABORATORY / CAREER</p>
+<h1>Los destinos de<br>nuestros graduados.</h1>
+<p>Principales destinos laborales y académicos de graduados entre 2007 y 2026: empresas, posgrados, doctorados e instituciones públicas.</p>
+</section>
+<section class="content-section career-intro">
+<div class="career-intro-grid">
+<div><p class="section-label">01 / CAREER PATHS</p><h2>Trayectorias de graduados</h2></div>
+<div><p>Se presentan por año empleos y doctorados tras el máster, y empleos y posgrados tras el grado. La experiencia en catálisis e ingeniería de reacciones y procesos se aplica a química, movilidad, energía e ingeniería.</p></div>
+</div>
+</section>
+<section class="content-section career-timeline">
+<div class="career-timeline-header"><div><p class="section-label">Las cifras entre paréntesis indican personas del mismo año. Los nombres abren los sitios correspondientes en otra pestaña. Se conservan nombres históricos; algunos enlaces llevan a sucesores actuales.</p><h2>Destinos por promoción</h2></div><p>Las cifras entre paréntesis indican personas del mismo año. Los nombres siguen los registros anuales.</p></div>
+<section class="career-year"><div class="career-year-number">2026</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Graduados de máster</b><small>Master’s graduates</small></div><div class="career-chips"><a href="https://www.shinko.co.jp/" rel="noopener noreferrer" target="_blank" title="新光電気工業 のWebサイトを開く">Shinko Electric Industries<span class="external-mark">↗</span></a><a href="https://www.toray.co.jp/" rel="noopener noreferrer" target="_blank" title="東レ のWebサイトを開く">Toray<span class="external-mark">↗</span></a><a href="https://www.yazaki-group.com/" rel="noopener noreferrer" target="_blank" title="矢崎総業 のWebサイトを開く">Yazaki<span class="external-mark">↗</span></a><a href="https://global.yamaha-motor.com/jp/" rel="noopener noreferrer" target="_blank" title="ヤマハ発動機 のWebサイトを開く">Yamaha Motor<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Graduados de grado</b><small>Bachelor’s graduates</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (4)<span class="external-mark">↗</span></a></div></article></div></section>
+<section class="career-year"><div class="career-year-number">2025</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Graduados de máster</b><small>Master’s graduates</small></div><div class="career-chips"><a href="https://jpn.nec.com/" rel="noopener noreferrer" target="_blank" title="NEC のWebサイトを開く">NEC<span class="external-mark">↗</span></a><a href="https://www.chuden.co.jp/" rel="noopener noreferrer" target="_blank" title="中部電力 のWebサイトを開く">Chubu Electric Power (2)<span class="external-mark">↗</span></a><a href="https://www.toray.co.jp/" rel="noopener noreferrer" target="_blank" title="東レ のWebサイトを開く">Toray<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Graduados de grado</b><small>Bachelor’s graduates</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (6)<span class="external-mark">↗</span></a></div></article></div></section>
+<section class="career-year"><div class="career-year-number">2024</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://global.toyota/jp/" rel="noopener noreferrer" target="_blank" title="トヨタ自動車 のWebサイトを開く">Toyota Motor<span class="external-mark">↗</span></a><a href="https://www.nissan-global.com/JP/" rel="noopener noreferrer" target="_blank" title="日産自動車 のWebサイトを開く">Nissan Motor<span class="external-mark">↗</span></a><a href="https://www.chuden.co.jp/" rel="noopener noreferrer" target="_blank" title="中部電力 のWebサイトを開く">Chubu Electric Power<span class="external-mark">↗</span></a><a href="https://www.terumo.co.jp/" rel="noopener noreferrer" target="_blank" title="テルモ のWebサイトを開く">Terumo<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院博士課程 のWebサイトを開く">Shizuoka University — Doctoral Program<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (5)<span class="external-mark">↗</span></a><a href="https://www.kyoto-u.ac.jp/ja/international/students1/study1/graduate/list" rel="noopener noreferrer" target="_blank" title="京都大学大学院 のWebサイトを開く">Kyoto University — Graduate School<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2023</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://global.toyota/jp/" rel="noopener noreferrer" target="_blank" title="トヨタ自動車 のWebサイトを開く">Toyota Motor<span class="external-mark">↗</span></a><a href="https://www.toray.co.jp/" rel="noopener noreferrer" target="_blank" title="東レ のWebサイトを開く">Toray<span class="external-mark">↗</span></a><a href="https://www.ne-chemcat.co.jp/" rel="noopener noreferrer" target="_blank" title="エヌ・イー・ケムキャット のWebサイトを開く">N.E. Chemcat<span class="external-mark">↗</span></a><a href="https://www.toyo-eng.com/jp/ja/" rel="noopener noreferrer" target="_blank" title="東洋エンジニアリング のWebサイトを開く">Toyo Engineering<span class="external-mark">↗</span></a><a href="https://www.toyoda-gosei.co.jp/" rel="noopener noreferrer" target="_blank" title="豊田合成 のWebサイトを開く">Toyoda Gosei<span class="external-mark">↗</span></a><a href="https://www.yazaki-group.com/" rel="noopener noreferrer" target="_blank" title="矢崎総業 のWebサイトを開く">Yazaki<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.sankyu.co.jp/" rel="noopener noreferrer" target="_blank" title="山九 のWebサイトを開く">Sankyu<span class="external-mark">↗</span></a><a href="https://www.rohm.co.jp/" rel="noopener noreferrer" target="_blank" title="ローム のWebサイトを開く">ROHM<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (4)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2022</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.mcgc.com/" rel="noopener noreferrer" target="_blank" title="三菱ケミカル のWebサイトを開く">Mitsubishi Chemical<span class="external-mark">↗</span></a><a href="https://www.rohm.co.jp/" rel="noopener noreferrer" target="_blank" title="ローム のWebサイトを開く">ROHM<span class="external-mark">↗</span></a><a href="https://www.ngk.co.jp/" rel="noopener noreferrer" target="_blank" title="日本ガイシ のWebサイトを開く">NGK Insulators<span class="external-mark">↗</span></a><a href="https://www.nagase.co.jp/" rel="noopener noreferrer" target="_blank" title="長瀬産業 のWebサイトを開く">Nagase<span class="external-mark">↗</span></a><a href="https://www.accenture.com/jp-ja" rel="noopener noreferrer" target="_blank" title="アクセンチュア のWebサイトを開く">Accenture<span class="external-mark">↗</span></a><a href="https://www.city.koshigaya.saitama.jp/" rel="noopener noreferrer" target="_blank" title="越谷市役所 のWebサイトを開く">Koshigaya City Office<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.ac.daikin.co.jp/group/dkhvac-tokai" rel="noopener noreferrer" target="_blank" title="ダイキン東海 のWebサイトを開く">Daikin Tokai<span class="external-mark">↗</span></a><a href="https://www.kantodenka.co.jp/" rel="noopener noreferrer" target="_blank" title="関東電化工業 のWebサイトを開く">Kanto Denka Kogyo<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (4)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2021</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.asahi-kasei.com/jp/" rel="noopener noreferrer" target="_blank" title="旭化成 のWebサイトを開く">Asahi Kasei<span class="external-mark">↗</span></a><a href="https://www.gunze.co.jp/" rel="noopener noreferrer" target="_blank" title="グンゼ のWebサイトを開く">Gunze<span class="external-mark">↗</span></a><a href="https://www.ngk.co.jp/" rel="noopener noreferrer" target="_blank" title="日本ガイシ のWebサイトを開く">NGK Insulators<span class="external-mark">↗</span></a><a href="https://www.kioxia-holdings.com/ja-jp/top.html" rel="noopener noreferrer" target="_blank" title="キオクシア のWebサイトを開く">Kioxia<span class="external-mark">↗</span></a><a href="https://www.kobelco-eco.co.jp/" rel="noopener noreferrer" target="_blank" title="神鋼環境ソリューション のWebサイトを開く">Kobelco Eco-Solutions<span class="external-mark">↗</span></a><a href="https://www.nof.co.jp/" rel="noopener noreferrer" target="_blank" title="日油 のWebサイトを開く">NOF<span class="external-mark">↗</span></a><a href="https://www.n-eco.co.jp/" rel="noopener noreferrer" target="_blank" title="日本液炭 のWebサイトを開く">Nippon Ekitan<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (6)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2020</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.sumitomo-chem.co.jp/" rel="noopener noreferrer" target="_blank" title="住友化学 のWebサイトを開く">Sumitomo Chemical<span class="external-mark">↗</span></a><a href="https://www.shinetsu.co.jp/jp/" rel="noopener noreferrer" target="_blank" title="信越化学工業 のWebサイトを開く">Shin-Etsu Chemical<span class="external-mark">↗</span></a><a href="https://www.jfe-pt.co.jp/" rel="noopener noreferrer" target="_blank" title="住友ケミカルエンジニアリング のWebサイトを開く">Sumitomo Chemical Engineering<span class="external-mark">↗</span></a><a href="https://www.kioxia-holdings.com/ja-jp/top.html" rel="noopener noreferrer" target="_blank" title="キオクシア のWebサイトを開く">Kioxia<span class="external-mark">↗</span></a><a href="https://www.koeichem.com/" rel="noopener noreferrer" target="_blank" title="広栄化学 のWebサイトを開く">Koei Chemical<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.nikkan-ind.co.jp/" rel="noopener noreferrer" target="_blank" title="ニッカン工業 のWebサイトを開く">Nikkan Industries<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (5)<span class="external-mark">↗</span></a><a href="https://admissions.isct.ac.jp/ja/013/graduate" rel="noopener noreferrer" target="_blank" title="東京工業大学大学院 のWebサイトを開く">Tokyo Institute of Technology — Graduate School<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2019</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.mcgc.com/" rel="noopener noreferrer" target="_blank" title="三菱ケミカル のWebサイトを開く">Mitsubishi Chemical<span class="external-mark">↗</span></a><a href="https://www.daikin.co.jp/" rel="noopener noreferrer" target="_blank" title="ダイキン工業 のWebサイトを開く">Daikin Industries<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (7)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2018</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.mcgc.com/group/history.html" rel="noopener noreferrer" target="_blank" title="日本合成化学 のWebサイトを開く">Nippon Synthetic Chemical Industry<span class="external-mark">↗</span></a><a href="https://www.mcgc.com/" rel="noopener noreferrer" target="_blank" title="三菱ケミカル のWebサイトを開く">Mitsubishi Chemical<span class="external-mark">↗</span></a><a href="https://www.yazaki-group.com/" rel="noopener noreferrer" target="_blank" title="矢崎総業 のWebサイトを開く">Yazaki<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.toyota-battery.com/" rel="noopener noreferrer" target="_blank" title="プライムアースEVエナジー のWebサイトを開く">Primearth EV Energy<span class="external-mark">↗</span></a><a href="https://www.mhi.com/jp/group/mhiair/" rel="noopener noreferrer" target="_blank" title="三菱重工冷熱 のWebサイトを開く">MHI Air-Conditioning &amp; Refrigeration<span class="external-mark">↗</span></a><a href="https://www.unitika.co.jp/" rel="noopener noreferrer" target="_blank" title="ユニチカ のWebサイトを開く">Unitika<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (4)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2017</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.yazaki-group.com/" rel="noopener noreferrer" target="_blank" title="矢崎総業 のWebサイトを開く">Yazaki<span class="external-mark">↗</span></a><a href="https://www.mcgc.com/" rel="noopener noreferrer" target="_blank" title="三菱ケミカル のWebサイトを開く">Mitsubishi Chemical (2)<span class="external-mark">↗</span></a><a href="https://www.kajima.co.jp/" rel="noopener noreferrer" target="_blank" title="鹿島建設 のWebサイトを開く">Kajima<span class="external-mark">↗</span></a><a href="https://www.n-u.co.jp/" rel="noopener noreferrer" target="_blank" title="日揮ユニバーサル のWebサイトを開く">JGC Catalysts and Chemicals<span class="external-mark">↗</span></a><a href="https://www.purpose.co.jp/" rel="noopener noreferrer" target="_blank" title="パーパス のWebサイトを開く">Purpose<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://home.chubuplant.co.jp/" rel="noopener noreferrer" target="_blank" title="中部プラントサービス のWebサイトを開く">Chubu Plant Service<span class="external-mark">↗</span></a><a href="https://www.kyowale.co.jp/" rel="noopener noreferrer" target="_blank" title="共和レザー のWebサイトを開く">Kyowa Leather Cloth<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (2)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2016</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.mcgc.com/" rel="noopener noreferrer" target="_blank" title="三菱ケミカル のWebサイトを開く">Mitsubishi Chemical<span class="external-mark">↗</span></a><a href="https://www.kline.co.jp/ja/" rel="noopener noreferrer" target="_blank" title="川崎汽船 のWebサイトを開く">Kawasaki Kisen Kaisha<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.fukukobo-shizuoka.net/" rel="noopener noreferrer" target="_blank" title="福工房 のWebサイトを開く">Fukukobo<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (3)<span class="external-mark">↗</span></a><a href="https://www.u-tokyo.ac.jp/ja/general/contact_02.html" rel="noopener noreferrer" target="_blank" title="東京大学大学院 のWebサイトを開く">The University of Tokyo — Graduate School<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2015</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.mcgc.com/group/history.html" rel="noopener noreferrer" target="_blank" title="三菱レイヨン のWebサイトを開く">Mitsubishi Rayon<span class="external-mark">↗</span></a><a href="https://www.jfe-pt.co.jp/" rel="noopener noreferrer" target="_blank" title="住友ケミカルエンジニアリング のWebサイトを開く">Sumitomo Chemical Engineering<span class="external-mark">↗</span></a><a href="https://www.tohogas-energyengineering.jp/" rel="noopener noreferrer" target="_blank" title="東邦ガスエンジニアリング のWebサイトを開く">Toho Gas Engineering<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.fujikogyo.co.jp/" rel="noopener noreferrer" target="_blank" title="富士鋼業 のWebサイトを開く">Fuji Kogyo<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (6)<span class="external-mark">↗</span></a><a href="https://www.kyoto-u.ac.jp/ja/international/students1/study1/graduate/list" rel="noopener noreferrer" target="_blank" title="京都大学大学院 のWebサイトを開く">Kyoto University — Graduate School<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2014</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.mc-fluoro.co.jp/" rel="noopener noreferrer" target="_blank" title="三井・デュポンフロロケミカル のWebサイトを開く">Mitsui DuPont Fluorochemicals<span class="external-mark">↗</span></a><a href="https://www.usui.co.jp/" rel="noopener noreferrer" target="_blank" title="臼井国際産業 のWebサイトを開く">Usui Kokusai Sangyo<span class="external-mark">↗</span></a><a href="https://www.sumitomo-chem.co.jp/" rel="noopener noreferrer" target="_blank" title="住友化学 のWebサイトを開く">Sumitomo Chemical<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院博士課程 のWebサイトを開く">Shizuoka University — Doctoral Program<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.cta.chiyoda.co.jp/" rel="noopener noreferrer" target="_blank" title="千代田テクノエース のWebサイトを開く">Chiyoda TechnoAce<span class="external-mark">↗</span></a><a href="https://www.osg.co.jp/" rel="noopener noreferrer" target="_blank" title="オーエスジー のWebサイトを開く">OSG<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (2)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2013</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.purpose.co.jp/" rel="noopener noreferrer" target="_blank" title="パーパス のWebサイトを開く">Purpose<span class="external-mark">↗</span></a><a href="https://www.j-trec.co.jp/" rel="noopener noreferrer" target="_blank" title="総合車両製作所 のWebサイトを開く">Japan Transport Engineering Company<span class="external-mark">↗</span></a><a href="https://www.atengineer.com/pr/furnace-eng/company" rel="noopener noreferrer" target="_blank" title="ファーネスエンジニアリング のWebサイトを開く">Furnace Engineering<span class="external-mark">↗</span></a><span>Fujiwara</span></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.jndi.com/" rel="noopener noreferrer" target="_blank" title="日本非破壊検査株式会社 のWebサイトを開く">Japan Non-Destructive Inspection<span class="external-mark">↗</span></a><a href="https://www.nvk.co.jp/" rel="noopener noreferrer" target="_blank" title="日本ビニロン のWebサイトを開く">Nippon Vinylon<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (3)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2012</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.jsr.co.jp/" rel="noopener noreferrer" target="_blank" title="JSR のWebサイトを開く">JSR<span class="external-mark">↗</span></a><a href="https://www.mcgc.com/group/history.html" rel="noopener noreferrer" target="_blank" title="三菱化学 のWebサイトを開く">Mitsubishi Chemical<span class="external-mark">↗</span></a><a href="https://www.taikisha.co.jp/" rel="noopener noreferrer" target="_blank" title="大気社 のWebサイトを開く">Taikisha<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.futabasangyo.com/" rel="noopener noreferrer" target="_blank" title="フタバ産業 のWebサイトを開く">Futaba Industrial<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (4)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2011</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.ngk.co.jp/" rel="noopener noreferrer" target="_blank" title="日本ガイシ のWebサイトを開く">NGK Insulators<span class="external-mark">↗</span></a><a href="https://www.tomoegawa.co.jp/" rel="noopener noreferrer" target="_blank" title="トモエガワ製紙 のWebサイトを開く">Tomoegawa<span class="external-mark">↗</span></a><a href="https://www.hamanetsu.co.jp/" rel="noopener noreferrer" target="_blank" title="ハマネツ のWebサイトを開く">Hamanetsu<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (5)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2010</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.toyota-body.co.jp/" rel="noopener noreferrer" target="_blank" title="トヨタ車体 のWebサイトを開く">Toyota Auto Body<span class="external-mark">↗</span></a><a href="https://www.toyota-ej.co.jp/" rel="noopener noreferrer" target="_blank" title="関東自動車工業 のWebサイトを開く">Kanto Auto Works<span class="external-mark">↗</span></a><a href="https://www.tokai-rika.co.jp/" rel="noopener noreferrer" target="_blank" title="東海理化 のWebサイトを開く">Tokai Rika<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (5)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2009</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.mcgc.com/group/history.html" rel="noopener noreferrer" target="_blank" title="三菱化学 のWebサイトを開く">Mitsubishi Chemical<span class="external-mark">↗</span></a><a href="https://www.kurita-water.com/" rel="noopener noreferrer" target="_blank" title="栗田工業 のWebサイトを開く">Kurita Water Industries<span class="external-mark">↗</span></a><a href="https://www.kanadevia.com/" rel="noopener noreferrer" target="_blank" title="日立造船 のWebサイトを開く">Hitachi Zosen<span class="external-mark">↗</span></a><a href="https://www.ne-chemcat.co.jp/" rel="noopener noreferrer" target="_blank" title="エヌ・イー・ケムキャット のWebサイトを開く">N.E. Chemcat<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (4)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2008</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de posgrado</b><small>Graduate students</small></div><div class="career-chips"><a href="https://www.jtekt.co.jp/" rel="noopener noreferrer" target="_blank" title="ジェイテクト のWebサイトを開く">JTEKT<span class="external-mark">↗</span></a></div></article><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.toyota-boshoku.com/jp/" rel="noopener noreferrer" target="_blank" title="豊田紡織 のWebサイトを開く">Toyota Boshoku<span class="external-mark">↗</span></a><a href="https://www.city.hamamatsu.shizuoka.jp/bosai/shobo/soshiki/index.html" rel="noopener noreferrer" target="_blank" title="浜松消防署 のWebサイトを開く">Hamamatsu Fire Department<span class="external-mark">↗</span></a><a href="https://www.roki-jp.com/" rel="noopener noreferrer" target="_blank" title="ROKI のWebサイトを開く">ROKI<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (3)<span class="external-mark">↗</span></a></div></article></div></section><section class="career-year"><div class="career-year-number">2007</div><div class="career-year-body"><article class="career-track"><div class="career-track-title"><b>Estudiantes de grado</b><small>Undergraduate students</small></div><div class="career-chips"><a href="https://www.mhi.com/jp/group/mhimsb/" rel="noopener noreferrer" target="_blank" title="三菱造船 のWebサイトを開く">Mitsubishi Shipbuilding<span class="external-mark">↗</span></a><a href="https://www.shizuoka.ac.jp/subject/graduate/" rel="noopener noreferrer" target="_blank" title="静岡大学大学院 のWebサイトを開く">Shizuoka University — Graduate School (4)<span class="external-mark">↗</span></a></div></article></div></section>
+<p class="career-note">Principales destinos conocidos por el laboratorio. Nombres según los registros de cada año. Las entidades sin sitio identificable aparecen sin enlace.</p>
+</section>
+</main>
+<footer class="site-footer">
+<div><b>Watanabe Laboratory</b><span>Laboratorio Watanabe · Universidad de Shizuoka · Hamamatsu</span></div>
+<p>© <span id="year"></span> Watanabe Laboratory.</p>
+</footer>
+<script src="js/main.js"></script>
+
+<script>
+(function(){
+ if(location.hostname!=='trwatan2.github.io'||!location.pathname.startsWith('/watanabe-laboratory/'))return;
+ window.goatcounter=window.goatcounter||{};
+ var s=document.createElement('script');
+ s.async=true;s.src='https://gc.zgo.at/count.js';
+ s.setAttribute('data-goatcounter','https://watanabe-lab.goatcounter.com/count');
+ document.head.appendChild(s);
+ var n=0,t=setInterval(function(){
+   n++;
+   if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+     clearInterval(t);
+     setTimeout(function(){window.goatcounter.count({path:'/site-total',title:'Watanabe Laboratory — all pages'});},250);
+   } else if(n>120){clearInterval(t);}
+ },100);
+})();
+</script>
+
+</body>
+</html>

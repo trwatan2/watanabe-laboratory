@@ -1,0 +1,722 @@
+{
+  "Research": [
+    "Research",
+    "研究",
+    "연구",
+    "Forschung",
+    "Recherche",
+    "Investigación"
+  ],
+  "News": [
+    "News",
+    "动态",
+    "소식",
+    "Aktuelles",
+    "Actualités",
+    "Noticias"
+  ],
+  "About": [
+    "About",
+    "关于我们",
+    "연구실 소개",
+    "Über uns",
+    "À propos",
+    "Acerca de"
+  ],
+  "People": [
+    "People",
+    "团队",
+    "구성원",
+    "Team",
+    "Équipe",
+    "Equipo"
+  ],
+  "Career": [
+    "Graduate destinations",
+    "毕业去向",
+    "졸업 후 진로",
+    "Berufswege",
+    "Parcours",
+    "Trayectorias"
+  ],
+  "Publications": [
+    "Publications",
+    "论文",
+    "논문",
+    "Publikationen",
+    "Publications",
+    "Publicaciones"
+  ],
+  "Playground": [
+    "Playground",
+    "Playground",
+    "Playground",
+    "Playground",
+    "Playground",
+    "Playground"
+  ],
+  "Contact": [
+    "Contact",
+    "联系",
+    "연락처",
+    "Kontakt",
+    "Contact",
+    "Contacto"
+  ],
+  "Links": [
+    "Links",
+    "链接",
+    "링크",
+    "Links",
+    "Liens",
+    "Enlaces"
+  ],
+  "Language": [
+    "Language",
+    "语言",
+    "언어",
+    "Sprache",
+    "Langue",
+    "Idioma"
+  ],
+  "メニューを開く": [
+    "Open menu",
+    "打开菜单",
+    "메뉴 열기",
+    "Menü öffnen",
+    "Ouvrir le menu",
+    "Abrir menú"
+  ],
+  "Visionへスクロール": [
+    "Scroll to our vision",
+    "查看研究愿景",
+    "연구 비전 보기",
+    "Zu unserer Vision",
+    "Voir notre vision",
+    "Ver nuestra visión"
+  ],
+  "Main navigation": [
+    "Main navigation",
+    "主导航",
+    "주 메뉴",
+    "Hauptnavigation",
+    "Navigation principale",
+    "Navegación principal"
+  ],
+  "Explore Research": [
+    "Explore research",
+    "探索研究",
+    "연구 살펴보기",
+    "Forschung entdecken",
+    "Explorer nos recherches",
+    "Explorar investigación"
+  ],
+  "About the Lab": [
+    "About the lab",
+    "研究室介绍",
+    "연구실 소개",
+    "Über das Labor",
+    "Notre laboratoire",
+    "Nuestro laboratorio"
+  ],
+  "View research": [
+    "Research details",
+    "研究详情",
+    "연구 상세",
+    "Forschungsdetails",
+    "En savoir plus",
+    "Detalles"
+  ],
+  "View publications": [
+    "All publications",
+    "全部论文",
+    "전체 논문",
+    "Alle Publikationen",
+    "Toutes les publications",
+    "Todas las publicaciones"
+  ],
+  "Meet the team": [
+    "Meet the team",
+    "认识团队",
+    "구성원 소개",
+    "Unser Team",
+    "Notre équipe",
+    "Nuestro equipo"
+  ],
+  "All news": [
+    "All news",
+    "全部动态",
+    "전체 소식",
+    "Alle Meldungen",
+    "Toutes les actualités",
+    "Todas las noticias"
+  ],
+  "Latest": [
+    "Latest",
+    "最新动态",
+    "최근 소식",
+    "Aktuelles",
+    "Actualités",
+    "Novedades"
+  ],
+  "Research in motion.": [
+    "Research in motion.",
+    "研究进行时。",
+    "진행 중인 연구.",
+    "Forschung in Bewegung.",
+    "La recherche en action.",
+    "Investigación en acción."
+  ],
+  "Different expertise.": [
+    "Different expertise.",
+    "多元专长，",
+    "다양한 전문성.",
+    "Vielfältige Expertise.",
+    "Des expertises variées.",
+    "Experiencias diversas."
+  ],
+  "One laboratory.": [
+    "One laboratory.",
+    "共同的研究室。",
+    "하나의 연구실.",
+    "Ein Labor.",
+    "Un même laboratoire.",
+    "Un laboratorio."
+  ],
+  "Ideas made visible.": [
+    "Ideas made visible.",
+    "让想法成为成果。",
+    "아이디어를 성과로.",
+    "Ideen werden sichtbar.",
+    "Des idées concrétisées.",
+    "Ideas hechas visibles."
+  ],
+  "Ideas made": [
+    "Ideas made",
+    "让想法",
+    "아이디어를",
+    "Ideen werden",
+    "Des idées",
+    "Ideas hechas"
+  ],
+  "visible.": [
+    "visible.",
+    "成为成果。",
+    "성과로.",
+    "sichtbar.",
+    "concrétisées.",
+    "visibles."
+  ],
+  "Work with us.": [
+    "Work with us.",
+    "与我们合作。",
+    "함께 연구하세요.",
+    "Mit uns arbeiten.",
+    "Travaillons ensemble.",
+    "Trabaje con nosotros."
+  ],
+  "Work": [
+    "Work",
+    "一起",
+    "함께",
+    "Arbeiten",
+    "Travaillons",
+    "Trabaje"
+  ],
+  "with us.": [
+    "with us.",
+    "合作。",
+    "연구하세요.",
+    "Sie mit uns.",
+    "ensemble.",
+    "con nosotros."
+  ],
+  "Four lenses.": [
+    "Four perspectives.",
+    "四种研究视角。",
+    "네 가지 관점.",
+    "Vier Perspektiven.",
+    "Quatre perspectives.",
+    "Cuatro perspectivas."
+  ],
+  "Selected projects": [
+    "Selected projects",
+    "主要项目",
+    "주요 프로젝트",
+    "Ausgewählte Projekte",
+    "Projets sélectionnés",
+    "Proyectos destacados"
+  ],
+  "See the research": [
+    "See our research",
+    "查看研究",
+    "연구를",
+    "Unsere Forschung",
+    "Découvrez la recherche",
+    "Vea la investigación"
+  ],
+  "in motion.": [
+    "in motion.",
+    "进展。",
+    "살펴보세요.",
+    "in Bewegung.",
+    "en action.",
+    "en acción."
+  ],
+  "From Waseda": [
+    "From Waseda",
+    "从早稻田",
+    "와세다에서",
+    "Von Waseda",
+    "De Waseda",
+    "De Waseda"
+  ],
+  "to Shizuoka.": [
+    "to Shizuoka.",
+    "到静冈。",
+    "시즈오카로.",
+    "nach Shizuoka.",
+    "à Shizuoka.",
+    "a Shizuoka."
+  ],
+  "Lab members": [
+    "Lab members",
+    "研究室成员",
+    "연구실 구성원",
+    "Labormitglieder",
+    "Membres du laboratoire",
+    "Miembros del laboratorio"
+  ],
+  "Recent recognition": [
+    "Recent awards",
+    "近期获奖",
+    "최근 수상",
+    "Aktuelle Auszeichnungen",
+    "Prix récents",
+    "Premios recientes"
+  ],
+  "Interested in": [
+    "Interested in",
+    "对我们的",
+    "우리 연구에",
+    "Interesse an",
+    "Intéressé par",
+    "¿Le interesa"
+  ],
+  "our research?": [
+    "our research?",
+    "研究感兴趣？",
+    "관심이 있으신가요?",
+    "unserer Forschung?",
+    "nos recherches ?",
+    "nuestra investigación?"
+  ],
+  "Career history": [
+    "Graduate destinations by year",
+    "历年毕业去向",
+    "연도별 졸업 진로",
+    "Wege nach Abschlussjahr",
+    "Parcours par promotion",
+    "Destinos por promoción"
+  ],
+  "Where our": [
+    "Where our",
+    "我们的",
+    "구성원들의",
+    "Wohin unsere",
+    "Les parcours de",
+    "Los destinos de"
+  ],
+  "members go.": [
+    "members go.",
+    "毕业生去向。",
+    "진로.",
+    "Mitglieder gehen.",
+    "nos diplômés.",
+    "nuestros graduados."
+  ],
+  "Explore.": [
+    "Explore.",
+    "探索。",
+    "탐색.",
+    "Entdecken.",
+    "Explorer.",
+    "Explorar."
+  ],
+  "Build. Share.": [
+    "Build. Share.",
+    "创造。分享。",
+    "만들고 나누기.",
+    "Entwickeln. Teilen.",
+    "Créer. Partager.",
+    "Crear. Compartir."
+  ],
+  "Ideas beyond": [
+    "Ideas beyond",
+    "论文之外的",
+    "논문 너머의",
+    "Ideen jenseits",
+    "Des idées au-delà",
+    "Ideas más allá de"
+  ],
+  "the papers.": [
+    "the papers.",
+    "想法。",
+    "아이디어.",
+    "der Publikationen.",
+    "des articles.",
+    "los artículos."
+  ],
+  "More to come.": [
+    "More to come.",
+    "更多项目即将推出。",
+    "계속 추가됩니다.",
+    "Weitere Projekte folgen.",
+    "D’autres projets à venir.",
+    "Próximos proyectos."
+  ],
+  "Collaboration": [
+    "Collaboration",
+    "合作研究",
+    "공동연구",
+    "Zusammenarbeit",
+    "Collaboration",
+    "Colaboración"
+  ],
+  "& students.": [
+    "& students.",
+    "与学生。",
+    "및 학생.",
+    "und Studium.",
+    "et étudiants.",
+    "y estudiantes."
+  ],
+  "Send email": [
+    "Send email",
+    "发送邮件",
+    "이메일 보내기",
+    "E-Mail senden",
+    "Envoyer un courriel",
+    "Enviar correo"
+  ],
+  "University access ↗": [
+    "Campus access ↗",
+    "校区交通 ↗",
+    "캠퍼스 교통 ↗",
+    "Anreise zum Campus ↗",
+    "Accès au campus ↗",
+    "Acceso al campus ↗"
+  ],
+  "Lab & Lecture": [
+    "Lab & teaching",
+    "研究室与课程",
+    "연구실·강의",
+    "Labor und Lehre",
+    "Laboratoire et cours",
+    "Laboratorio y cursos"
+  ],
+  "Academic Societies": [
+    "Academic societies",
+    "学术团体",
+    "관련 학회",
+    "Fachgesellschaften",
+    "Sociétés savantes",
+    "Sociedades científicas"
+  ],
+  "Useful": [
+    "Useful",
+    "常用",
+    "유용한",
+    "Nützliche",
+    "Liens",
+    "Enlaces"
+  ],
+  "links.": [
+    "links.",
+    "链接。",
+    "링크.",
+    "Links.",
+    "utiles.",
+    "útiles."
+  ],
+  "From": [
+    "From",
+    "来自",
+    "출신",
+    "Herkunft",
+    "Origine",
+    "Origen"
+  ],
+  "Email": [
+    "Email",
+    "邮箱",
+    "이메일",
+    "E-Mail",
+    "Courriel",
+    "Correo"
+  ],
+  "Doctoral Course": [
+    "Doctoral program",
+    "博士课程",
+    "박사과정",
+    "Promotion",
+    "Doctorat",
+    "Doctorado"
+  ],
+  "Master's Course": [
+    "Master’s program",
+    "硕士课程",
+    "석사과정",
+    "Masterstudium",
+    "Master",
+    "Máster"
+  ],
+  "Undergraduate": [
+    "Undergraduate",
+    "本科",
+    "학부",
+    "Bachelorstudium",
+    "Licence",
+    "Grado"
+  ],
+  "Unavailable": [
+    "Unavailable",
+    "暂时无法获取",
+    "불러올 수 없습니다",
+    "Nicht verfügbar",
+    "Indisponible",
+    "No disponible"
+  ],
+  "No records": [
+    "No records",
+    "暂无记录",
+    "기록 없음",
+    "Keine Einträge",
+    "Aucune donnée",
+    "Sin registros"
+  ],
+  "Updated": [
+    "Updated",
+    "更新时间",
+    "업데이트",
+    "Aktualisiert",
+    "Mise à jour",
+    "Actualizado"
+  ],
+  "collecting": [
+    "Loading",
+    "载入中",
+    "불러오는 중",
+    "Wird geladen",
+    "Chargement",
+    "Cargando"
+  ],
+  "Total": [
+    "Total",
+    "合计",
+    "합계",
+    "Gesamt",
+    "Total",
+    "Total"
+  ],
+  "Japan": [
+    "Japan",
+    "日本",
+    "일본",
+    "Japan",
+    "Japon",
+    "Japón"
+  ],
+  "International": [
+    "International",
+    "海外",
+    "해외",
+    "International",
+    "International",
+    "Internacional"
+  ],
+  "Top countries:": [
+    "Top countries:",
+    "主要国家：",
+    "주요 국가:",
+    "Häufigste Länder:",
+    "Principaux pays :",
+    "Principales países:"
+  ],
+  "Open ChemTree →": [
+    "Open ChemTree →",
+    "打开ChemTree →",
+    "ChemTree 열기 →",
+    "ChemTree öffnen →",
+    "Ouvrir ChemTree →",
+    "Abrir ChemTree →"
+  ],
+  "Open Catalyst Atlas →": [
+    "Open Catalyst Atlas →",
+    "打开Catalyst Atlas →",
+    "Catalyst Atlas 열기 →",
+    "Catalyst Atlas öffnen →",
+    "Ouvrir Catalyst Atlas →",
+    "Abrir Catalyst Atlas →"
+  ],
+  "Open Methanation Lab →": [
+    "Open Methanation Lab →",
+    "打开Methanation Lab →",
+    "Methanation Lab 열기 →",
+    "Methanation Lab öffnen →",
+    "Ouvrir Methanation Lab →",
+    "Abrir Methanation Lab →"
+  ],
+  "Open Playground ↗": [
+    "Open Playground ↗",
+    "打开Playground ↗",
+    "Playground 열기 ↗",
+    "Playground öffnen ↗",
+    "Ouvrir Playground ↗",
+    "Abrir Playground ↗"
+  ],
+  "About & How to use →": [
+    "About & how to use →",
+    "介绍与使用方法 →",
+    "소개·사용 방법 →",
+    "Überblick und Anleitung →",
+    "Présentation et mode d’emploi →",
+    "Presentación e instrucciones →"
+  ],
+  "Monthly update": [
+    "Monthly update",
+    "每月更新",
+    "월간 업데이트",
+    "Monatliche Aktualisierung",
+    "Mise à jour mensuelle",
+    "Actualización mensual"
+  ],
+  "Shizuoka University": [
+    "Shizuoka University",
+    "静冈大学",
+    "시즈오카대학교",
+    "Universität Shizuoka",
+    "Université de Shizuoka",
+    "Universidad de Shizuoka"
+  ],
+  "Hamamatsu Campus": [
+    "Hamamatsu Campus",
+    "滨松校区",
+    "하마마쓰 캠퍼스",
+    "Hamamatsu-Campus",
+    "Campus de Hamamatsu",
+    "Campus de Hamamatsu"
+  ],
+  "Collaboration& students.": [
+    "Collaboration and study",
+    "合作与升学",
+    "협력과 진학",
+    "Zusammenarbeit und Studium",
+    "Collaboration et études",
+    "Colaboración y estudios"
+  ],
+  "論文タイトル・雑誌名で検索": [
+    "Search paper titles or journals",
+    "搜索论文题目或期刊",
+    "논문 제목·학술지 검색",
+    "Nach Titel oder Zeitschrift suchen",
+    "Rechercher un titre ou une revue",
+    "Buscar título o revista"
+  ],
+  "論文を検索": [
+    "Search publications",
+    "搜索论文",
+    "논문 검색",
+    "Publikationen suchen",
+    "Rechercher des publications",
+    "Buscar publicaciones"
+  ],
+  "ALL": [
+    "ALL",
+    "全部",
+    "전체",
+    "ALLE",
+    "TOUT",
+    "TODAS"
+  ],
+  "records shown": [
+    "records shown",
+    "条结果",
+    "개 결과",
+    "Einträge angezeigt",
+    "résultats affichés",
+    "resultados mostrados"
+  ],
+  "ChemTree and Catalyst Atlas are now available.": [
+    "ChemTree and Catalyst Atlas are now available.",
+    "ChemTree和Catalyst Atlas现已上线。",
+    "ChemTree와 Catalyst Atlas를 공개했습니다.",
+    "ChemTree und Catalyst Atlas sind verfügbar.",
+    "ChemTree et Catalyst Atlas sont disponibles.",
+    "ChemTree y Catalyst Atlas ya están disponibles."
+  ],
+  "Watanabe Laboratory website launched.": [
+    "Watanabe Laboratory website launched.",
+    "渡部研究室网站上线。",
+    "와타나베 연구실 웹사이트 개설.",
+    "Die Website des Watanabe Laboratory ist online.",
+    "Lancement du site du laboratoire Watanabe.",
+    "Lanzamiento del sitio del Laboratorio Watanabe."
+  ],
+  "Two-stage Cu-Fe/Zn spiral-structured catalyst study published.": [
+    "Two-stage Cu–Fe/Zn spiral-catalyst study published.",
+    "两段式Cu–Fe/Zn螺旋催化剂论文发表。",
+    "2단 Cu–Fe/Zn 나선형 촉매 논문 게재.",
+    "Studie zum zweistufigen Cu–Fe/Zn-Spiralkatalysator veröffentlicht.",
+    "Publication sur le catalyseur spiralé Cu–Fe/Zn à deux étages.",
+    "Publicación sobre el catalizador espiral Cu–Fe/Zn de dos etapas."
+  ],
+  "Student research recognized at SCEJ.": [
+    "Student research recognized at SCEJ.",
+    "学生研究获化学工程学会表彰。",
+    "학생 연구가 화학공학회에서 수상했습니다.",
+    "Studentische Forschung bei SCEJ ausgezeichnet.",
+    "Prix SCEJ pour des travaux étudiants.",
+    "Premios SCEJ para investigaciones estudiantiles."
+  ],
+  "RWGS with spiral catalyst presented at the 137th Catalysis Society Meeting.": [
+    "Spiral-catalyst RWGS at the 137th Catalysis Society Meeting.",
+    "在第137届催化学会会议报告螺旋催化剂RWGS研究。",
+    "제137회 촉매학회에서 나선형 촉매 RWGS 발표.",
+    "Spiralkatalysator-RWGS bei der 137. Katalysetagung vorgestellt.",
+    "RWGS sur catalyseur spiralé présentée à la 137e réunion de catalyse.",
+    "RWGS con catalizador espiral en la 137.ª reunión de catálisis."
+  ],
+  "Carbon Looping using structured catalysts presented.": [
+    "Carbon looping using structured catalysts presented.",
+    "报告结构化催化剂碳循环研究。",
+    "구조체 촉매 탄소 루핑 연구 발표.",
+    "Carbon Looping mit strukturierten Katalysatoren vorgestellt.",
+    "Présentation du bouclage du carbone avec des catalyseurs structurés.",
+    "Presentación de ciclos de carbono con catalizadores estructurados."
+  ],
+  "Carbon Looping and carbon formation studies received student awards.": [
+    "Student awards for carbon looping and carbon formation.",
+    "碳循环及碳生成研究获学生奖。",
+    "탄소 루핑 및 탄소 생성 연구 수상.",
+    "Studentenpreise für Carbon Looping und Kohlenstoffbildung.",
+    "Prix étudiants pour le bouclage et la formation du carbone.",
+    "Premios estudiantiles por ciclos y formación de carbono."
+  ],
+  "4学部の研究分野が交差する立体的なネットワークのイメージ図": [
+    "Network of research fields across four faculties",
+    "四个学部研究领域联系示意图",
+    "4개 학부 연구 분야의 연결 그림",
+    "Netzwerk der Forschungsgebiete von vier Fakultäten",
+    "Réseau des domaines de quatre facultés",
+    "Red de áreas de cuatro facultades"
+  ],
+  "仕事と企業を探索するコンパス": [
+    "Compass for exploring work and employers",
+    "探索工作与企业的指南针",
+    "업무와 기업을 탐색하는 나침반",
+    "Kompass für Tätigkeiten und Unternehmen",
+    "Boussole des métiers et entreprises",
+    "Brújula de tareas y empresas"
+  ]
+}

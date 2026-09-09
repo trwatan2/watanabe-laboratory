@@ -1,0 +1,241 @@
+[index]
+0|Watanabe Laboratory
+3|Watanabe Laboratory · Hamamatsu
+4|Aus Reaktionen werden
+5|Technologien für die Praxis
+6|.
+7|Wir verbinden Katalyse, Reaktionstechnik und elektrifizierte Reaktionen für neue Verfahren mit CO₂, Methan, Wasserstoff, Kohlenstoffressourcen und Schwefelverbindungen.
+8|Fünf Forschungsthemen verbinden Materialien, Strukturen, Reaktoren und Energiezufuhr.
+9|Katalytische Reaktionen elektrisch antreiben.
+10|Wir kombinieren strukturierte Katalysatoren mit elektrischer Beheizung, um Reaktionsbedingungen effizient zu steuern.
+11|CO₂ in Ressourcen umwandeln.
+12|Wir verbinden CO₂-Umwandlung, Synthesegasproduktion und Festlegung als fester Kohlenstoff zu Systemen der Kohlenstoffzirkulation.
+13|Katalysatorform funktional nutzen.
+14|Spiralen, poröse Metalle und Beschichtungen ermöglichen Reaktoren, die Wärme- und Stofftransport berücksichtigen.
+15|Chemische Prozesse durch Wärmezufuhr verändern.
+16|Elektrische Energie wird direkt in Reaktoren und Katalysatoren eingebracht, um schnelle Reaktion, lokale Beheizung und kompakte Anlagen zu nutzen.
+17|Gitterschwefel
+18|als reaktive Spezies nutzen.
+19|Wir untersuchen Redoxprozesse mit Schwefelfreisetzung aus Sulfiden und Wiedereinbau aus H₂S, sodass Gitterschwefel über Schwefelleerstellen wiederholt genutzt wird.
+20|Unser Team verbindet Materialien, Strukturen, Strömung und elektrifizierte Reaktionen durch Katalyse und Reaktionstechnik.
+21|Career Compass ist für Studierende öffentlich zugänglich. Nur zur Orientierung; keine Empfehlung bestimmter Unternehmen oder Berufe.
+22|Research Tree erkundet Forschungsbezüge innerhalb der Universität. Nur zur Orientierung. Interessierte Lehrende der Universität Shizuoka kontaktieren bitte Ryo Watanabe.
+23|Methanation Lab simuliert Temperaturverteilungen bei der CO₂-Methanisierung. Der Zugang ist beschränkt; Passwörter erhalten Sie auf Anfrage.
+24|ChemTree und Catalyst Atlas ermöglichen Literaturerkundung und die Suche nach Katalyseforschenden in Japan.
+25|Aktuelle Publikationen zur CO₂-Umwandlung, zu strukturierten Katalysatoren und zur Fixierung festen Kohlenstoffs.
+26|Kontakt für Zusammenarbeit, Laborbesuche und weiterführendes Studium.
+27|Watanabe Laboratory · Universität Shizuoka · Hamamatsu
+[research]
+3|Wir verbinden molekulare Umwandlungen mit Prozessen durch Katalysatoren, Reaktionsbedingungen, Energiezufuhr und Stoffkreisläufe.
+4|Reaktionsbedingungen elektrisch gestalten.
+5|Wir führen Katalysatorstrukturen direkt Strom zu, um Wärme dort bereitzustellen, wo sie gebraucht wird. Bei Hochtemperaturreaktionen wie der Trockenreformierung untersuchen wir katalytische Reaktion und Wärmetransport gemeinsam.
+6|Effiziente lokale Beheizung · Steuerung der Reaktionsbedingungen · Energienutzung
+7|Von CO₂ zu wiederverwendbarem Kohlenstoff.
+8|Wir entwickeln Reaktionssysteme, die CO₂ in Synthesegas und festen Kohlenstoff umwandeln. Reaktionsgleichgewicht, Kohlenstoffabscheidung, Trennung und Rückgewinnung werden auf Reaktorebene für Kreislaufprozesse untersucht.
+9|Synthesegasproduktion · Rückgewinnung festen Kohlenstoffs · Kohlenstoffkreisläufe
+10|Katalysatorgeometrie in Leistung umsetzen.
+11|Wir bauen Reaktoren mit Spiralstrukturen, porösen Metallen und Washcoats und berücksichtigen neben Katalysatormaterialien auch Strömung sowie Wärme- und Stofftransport. Die Visualisierung der Wechselwirkung von Struktur und Strömung unterstützt die aktive Steuerung des Reaktionsraums.
+12|Verbesserte Strömung · Verstärkter Wärmeübergang · Höhere Raumgeschwindigkeit
+13|Chemische Prozesse durch Wärmezufuhr verändern.
+14|Wir untersuchen die direkte elektrische Energiezufuhr in Reaktoren und Katalysatoren. Schnelles Ansprechen, lokale Beheizung und kompakte Anlagen ermöglichen neue Betriebsweisen.
+15|Direkte Beheizung · Schnelles Ansprechen · Reaktionsprozesse vor Ort
+16|Gitterschwefel als Reaktand in der Katalyse.
+17|Schwefel im Sulfidgitter nimmt Wasserstoff aus Kohlenwasserstoffen auf und verlässt das Gitter als H₂S. Anschließend wird Schwefel aus H₂S in die entstandenen Leerstellen eingebaut. So entstehen Redoxzyklen zur wiederholten Nutzung des Gitterschwefels.
+18|Wir steuern austauschbaren Gitterschwefel an Oberflächen, Bildung und Regeneration von Schwefelleerstellen sowie Metall–Schwefel-Grenzflächen, um Dehydrierung und neue Verfahren mit Schwefelverbindungen zu untersuchen.
+19|Unsere Arbeitsweise verbindet Materialchemie mit Reaktionstechnik, strukturierten Katalysatoren und Energiezufuhr.
+[about]
+3|Wir verbinden chemische Reaktionen mit Prozessen und berücksichtigen Strömung, Wärme- und Stofftransport sowie Energiezufuhr neben den Katalysatormaterialien.
+4|Über das Watanabe Laboratory
+5|Am Hamamatsu-Campus der Universität Shizuoka erforschen wir Katalyse und Reaktionstechnik für CO₂, CH₄, Wasserstoff, Kohlenstoffressourcen und Schwefelspezies.
+6|Neben der Materialaktivität betrachten wir strukturierte Katalysatoren, Strömung, Wärme- und Stofftransport sowie elektrische Energie, um Ergebnisse für reale Reaktoren und Prozesse nutzbar zu machen.
+7|Eine Reaktion, vier Perspektiven: Chemie, Struktur, Energie und Kreislauf.
+8|Reaktionswege über Oberflächen, Gitterspezies und Redoxverhalten verstehen.
+9|Reaktionsräume mit Spiralen, porösen Strukturen und Washcoats aufbauen.
+10|Katalysatoren und Reaktoren direkt elektrisch versorgen und gezielt beheizen.
+11|CO₂, festen Kohlenstoff und Schwefelspezies im Kreislauf als Ressourcen nutzen.
+12|Ausgewählte extern geförderte Forschungsprojekte.
+13|Innovative katalytische Prozesse zur großtechnischen Herstellung wertvoller Ressourcen durch „Kohlenstoffkultivierung“ aus CO₂
+14|Projektleitung
+15|Kohlenstoffneutrale CO₂-Umwandlungsräume durch hocheffiziente e-Reaktionen
+[people]
+3|Unser Team verbindet unterschiedliche Fachkenntnisse in Katalyse, Reaktionstechnik, Strukturen und Kohlenstoffkreisläufen.
+4|Ryo Watanabe
+5|Professor für Chemie- und Bioingenieurwesen, Fakultät für Ingenieurwissenschaften, Universität Shizuoka
+6|Forschungsgebiete: Katalyse, Reaktionstechnik, katalytische Prozesse und Ressourcenumwandlung. Schwerpunkte sind strukturierte Katalysatoren, CO₂-Umwandlung, elektrifizierte Reaktionen und Redoxkatalyse mit Gitterschwefel.
+7|Alumnus der Arbeitsgruppe Yasushi Sekine an der Waseda-Universität.
+8|Er studierte angewandte Chemie bis zur Promotion und untersuchte in der Sekine-Gruppe Redoxreaktionen unter Beteiligung von Gittersauerstoff und Wasserdampf. Daraus entwickelten sich seine heutigen Arbeiten zu Gitterschwefel, CO₂-Umwandlung und elektrifizierten Katalyseprozessen.
+9|Auf der Grundlage angewandter Chemie und Katalyse erweiterte er seine Forschung von Redoxkatalyse zu strukturierten Katalysatoren, CO₂-Nutzung und elektrifizierten Reaktionen.
+10|School of Advanced Science and Engineering, Waseda-Universität
+11|Fachbereich Angewandte Chemie
+12|Graduiertenschule der Waseda-Universität
+13|Angewandte Chemie
+14|Arbeitsgruppe Yasushi Sekine
+15|Bachelor in Angewandter Chemie, School of Science and Engineering, Waseda-Universität
+16|Grundlagen der angewandten Chemie und Ausrichtung auf Katalyse und Reaktionstechnik.
+17|Master in Angewandter Chemie, Graduate School of Science and Engineering, Waseda-Universität
+18|Fortsetzung der Forschung zu Katalyse und Redoxreaktionen.
+19|Wissenschaftlicher Assistent für Angewandte Chemie, Waseda-Universität / Arbeitsgruppe Yasushi Sekine
+20|Untersuchung katalytischer Redoxreaktionen mit Gittersauerstoff und Wasserdampf in der Sekine-Gruppe.
+21|Promotion in Angewandter Chemie, Graduate School of Advanced Science and Engineering, Waseda-Universität
+22|Doktor der Ingenieurwissenschaften. Dissertation: „Redoxreaktionen mit Wechselwirkungen zwischen Gittersauerstoff von Katalysatoren und Wasserdampf“.
+23|Assistant Professor, Fachbereich Materialwissenschaften und Chemieingenieurwesen, Universität Shizuoka
+24|Verknüpfung funktioneller Mischoxidkatalysatoren mit chemischen Reaktionssystemen.
+25|Associate Professor für Chemie- und Bioingenieurwesen, Universität Shizuoka
+26|Erweiterung auf Sulfid-Redoxchemie, strukturierte Katalysatoren, CO₂-Umwandlung und mehrstufige Reaktionssysteme.
+27|Förderung der Kohlenstoffzirkulation und Prozesselektrifizierung durch Katalyse und Reaktionstechnik.
+28|Promovierende und Masterstudierende nach Studienjahr.
+30|Ethanol-Dampfreformierung an strukturierten Co-Katalysatoren
+31|Shimada, Shizuoka, Japan
+32|„Lieber bereuen, es versucht zu haben, als es nicht versucht zu haben!“
+34|Katalytische Systeme zur Umwandlung von C1-Verbindungen in festen Kohlenstoff
+35|Aichi, Japan
+36|„Ein Schatz an Erfahrungen, die nur jetzt möglich sind! Geben wir gemeinsam unser Bestes!“
+38|Direkte Biogasmethanisierung mit mehrstufigen Spiralkatalysatorsystemen
+39|Iwate, Japan
+40|„Ich habe noch niemanden mit meinem ungewöhnlichen Namen getroffen, aber er scheint dem chinesischen Namen von Yahoo zu entsprechen. Ich möchte engagiert forschen, Ergebnisse erzielen und als Forscher wachsen.“
+42|Ammoniakspaltung
+43|Toyota, Aichi, Japan
+44|„Von Glücksspiel und Alkohol habe ich genug.“
+46|Cu–Fe/Zn-Spiralkatalysatoren zur Beschleunigung der Niedertemperatur-RWGS
+47|„Ich arbeite auf meinen Abschluss hin.“
+49|CO₂-Methanisierung an elektrisch beheizten strukturierten Katalysatoren
+50|Shizuoka, Japan
+51|„Ein Labor mit familiärer Atmosphäre.“
+53|Methan-Trockenreformierung an direkt elektrisch beheizten strukturierten Katalysatoren
+54|„Team Kinoko!“ (pilzförmige Schokoladenkekse)
+56|Elektrisch beheizte Bioethanolreformierung
+57|Tokoname, Aichi, Japan
+58|„Aktivist gegen Kinoko-no-Yama-Kekse!“
+60|Herstellung festen Kohlenstoffs aus C1-Verbindungen
+61|Kyoto, Japan
+62|„In letzter Zeit begeistern mich Fernsehserien.“
+64|Entwicklung von Carbon-Looping-Systemen zur großtechnischen CO₂-Fixierung
+65|„Ziel: 100 % Kohlenstoffabscheidung!“
+67|Ammoniaksynthese an strukturierten Katalysatoren
+68|Kanagawa, Japan
+69|„Meine Katalysatoren und ich entwickeln uns weiter. Schön, Sie kennenzulernen!“
+71|Kraftstoffherstellung aus C1-Verbindungen in strukturierten katalytischen Reaktionsräumen
+72|Kofu, Yamanashi, Japan
+73|„Seit letztem Jahr schaue ich ONE PIECE.“
+75|Einfluss der Stromführung auf die Leistung der elektrifizierten Trockenreformierung
+76|Saitama, Japan
+77|„Ich mag Spiele, besonders League of Legends.“
+79|Wärme- und Stofftransport bei der Methanolreformierung an elektrisch beheizten strukturierten Katalysatoren
+80|Gifu, Japan
+81|„Mit ganzem Herzen leben.“
+83|Herstellung von Odoriermitteln aus Synthesegas
+84|„Ich glaube, Angeln wird mein neues Hobby.“
+85|Ausgewählte aktuelle studentische Auszeichnungen aus der Personaldatenbank der Universität Shizuoka.
+86|91. SCEJ-Jahrestagung: „Leistungsbewertung eines mehrstufigen Carbon-Looping-Systems zur großtechnischen CO₂-Fixierung“
+87|28. SCEJ-Studierendentagung: „Einfluss des Co-Gehalts auf die Festkohlenstoffherstellung aus CO an Fe–Co–K-Katalysatoren“
+88|91. SCEJ-Jahrestagung: „Förderung der CO-Umwandlung und faserförmigen Kohlenstoffbildung an strukturierten Fe-Katalysatoren durch Co und K“
+89|Für Laborbesuche, Studieninteresse und Zusammenarbeit nutzen Sie bitte die Kontaktseite.
+[career]
+3|Ausgewählte Berufs- und Studienwege der Absolventen von 2007 bis 2026: Unternehmen, weiterführendes Studium, Promotion und öffentliche Einrichtungen.
+4|Wege nach dem Abschluss
+5|Die Jahresübersicht zeigt Berufseinstieg und Promotion nach dem Master sowie Berufseinstieg und weiterführendes Studium nach dem Bachelor. Erfahrungen in Katalyse, Reaktions- und Verfahrenstechnik eröffnen Wege in Chemie, Mobilität, Energie und Engineering.
+6|Zahlen in Klammern geben die Personenanzahl im jeweiligen Jahr an. Namen öffnen die zugehörigen Websites in einem neuen Tab. Historische Firmennamen bleiben erhalten; manche Links führen zu heutigen Nachfolgeunternehmen.
+7|Zahlen in Klammern geben die Personenanzahl im jeweiligen Jahr an. Namen folgen den Jahresaufzeichnungen.
+8|Masterabsolventen
+13|Bachelorabsolventen
+17|Masterstudierende und Promovierende
+23|Bachelorstudierende
+93|Dem Labor bekannte Hauptziele nach dem Abschluss. Namen entsprechen den Jahresaufzeichnungen. Nicht eindeutig zuordenbare Websites werden nicht verlinkt.
+[publications]
+3|Von aktuellen Veröffentlichungen bis zu frühen Arbeiten: die Entwicklung unserer Forschung.
+4|Grundlage ist das mit ORCID 0000-0003-1132-0096 verknüpfte Profil, ergänzt durch die Universität Shizuoka und Verlagsinformationen.
+5|Keine DOI vergeben
+8|Zeitschrift ↗
+11|Forscherdatenbank ↗
+12|Alle verifizierten DOIs sind angegeben. „格子硫黄を活用するアルカンのredox型脱水素“, „物質変換プロセスにおける電化の最新動向“ und „Solid steps towards carbon capture“ sind laut Verlagen und Forschungsberichten ohne DOI; Quellenlinks ermöglichen die Prüfung. Jahreszahlen folgen im Allgemeinen der Universitätsdatenbank. Titel bleiben in der Veröffentlichungssprache.
+[news]
+3|Forschungsergebnisse, Konferenzbeiträge, studentische Auszeichnungen und Labornachrichten.
+4|Career Compass ist jetzt für Studierende öffentlich zugänglich.
+5|Das Werkzeug hilft bei der Reflexion über Berufswahlkriterien und bei der Suche nach Tätigkeiten und Unternehmen. Antworten sowie Filter für Branchen, Produkte und Technologien begrenzen die Auswahl auf maximal 20 Unternehmen zur weiteren Recherche. Playground, Projekt 05.
+6|Nur zur Orientierung. Keine Empfehlung bestimmter Unternehmen oder Berufe.
+7|Aktuelle Geschäftsfelder, Stellen und Arbeitsbedingungen finden Sie auf den offiziellen Unternehmenswebsites.
+8|Career Compass öffnen ↗
+9|Research Tree erkundet Forschungs- und Kooperationsbezüge innerhalb der Universität.
+10|Die 3D-Karte umfasst Ingenieurwissenschaften, Informatik, Naturwissenschaften und Agrarwissenschaften der Universität Shizuoka. Themen, KAKEN-Projekte und Publikationen aus der Personaldatenbank dienen zur Erkundung möglicher Kooperationen. Playground, Projekt 04.
+11|Verbindungen entstehen automatisch aus Forschungsschlagwörtern und dienen nur zur Orientierung. Sie garantieren weder bisherige Kooperationen noch Durchführbarkeit.
+12|Passwortgeschützter Zugang für Hochschullehrende. Für Zugang,
+13|kontaktieren Sie Ryo Watanabe
+14|Informationen zu Research Tree ↗
+15|Methanation Lab simuliert Temperaturverteilungen bei der CO₂-Methanisierung.
+16|Variieren Sie Kinetik und Wärmeübertragungsbedingungen, um 2D-Temperaturkarten eines Katalysatorbetts und die CO₂-Umsetzung zu untersuchen. Playground, Projekt 03.
+17|Der Zugang ist beschränkt. Für ein Passwort,
+18|kontaktieren Sie das Watanabe Laboratory
+19|Informationen zu Methanation Lab ↗
+20|ChemTree zeigt aktuelle Chemieartikel als 3D-Baum; Catalyst Atlas findet Katalyseforschende in Japan nach Präfektur, Einrichtung und Stichwort. Forschende, Ingenieure und Unternehmen können Technologietrends und Partner erkunden. Öffentliche Angaben im Catalyst Atlas werden am ersten Tag jedes Monats geprüft und aktualisiert.
+21|Unsere Website stellt die Forschung mit Videos und visuellen Inhalten vor.
+22|„Low-Temperature RWGS Process with a Two-Stage Cu-Fe/Zn Spiral-structured Catalyst“ wurde in Catalysis Science & Technology veröffentlicht.
+23|Studentische Arbeiten zu Carbon Looping, Fe–Co–K-Katalysatoren und faserförmigem Kohlenstoff wurden 2026 auf Tagungen ausgezeichnet.
+24|Präsentation von Ergebnissen zur Niedertemperatur-RWGS mit Cu/Zn-Spiralkatalysatoren.
+25|Präsentation von Arbeiten zur CO₂-Nutzung und Fixierung festen Kohlenstoffs mit strukturierten Katalysatoren.
+[playground]
+3|Webwerkzeuge, Visualisierungen und Prototypen für Forschung und Lehre.
+4|Hier veröffentlichen wir experimentelle Werkzeuge aus unserer Forschung und Lehre: Forschungsgebiete erkunden, Daten visualisieren und neue Ideen gewinnen, ergänzend zur Publikationsliste.
+5|Aktuelle Artikel aus JACS, Chem, Nature und Science als 3D-Baum verbundener Forschungsthemen erkunden.
+6|Desktop-Computer empfohlen
+7|Für die 3D-Ansicht empfehlen wir Chrome oder Edge unter Windows/macOS. Auf Smartphones ist nur 3D deaktiviert; Suche, Zeitschriften- und Zeitfilter, Forschungsgebiete, Ländertrends, Themen und Artikellinks bleiben verfügbar.
+8|Katalyseforschende in Japan per 3D-Karte, Präfektur, Einrichtung und Stichwort finden. Mit Fotos, Forschungsgebieten und Links zu offiziellen Profilen, Artikeln und Leistungen.
+9|Ein öffentliches Werkzeug für Forschende, Ingenieure und Unternehmen, um Kontakte für Forschung, Zusammenarbeit und Beratung zu finden.
+10|Universitäts- und Laborwebsites sowie KAKEN werden am Monatsersten geprüft, um Zugehörigkeit, Position und Forschungsgebiete zu aktualisieren.
+11|Temperaturverteilungen bei der CO₂-Methanisierung im Katalysatorbett in 2D darstellen. Variieren Sie Kinetik und Wärmeübertragung und untersuchen Sie Temperatur und CO₂-Umsetzung.
+12|Ein Passwort ist erforderlich. Bitte fragen Sie beim Labor nach Zugang.
+13|Kontakt →
+14|Ingenieurwissenschaften
+15|Informatik
+16|Naturwissenschaften
+17|Agrarwissenschaften
+18|Darstellung von Verbindungen zwischen Forschungsgebieten
+19|3D-Forscherkarte für Lehrende der Universität Shizuoka zur Erkundung interner Forschung und Kooperationsbezüge. Themen, KAKEN-Projekte und Publikationen erklären Verbindungen und liefern öffentliche Kontaktdaten.
+20|Für Hochschullehrende
+21|Passwort erforderlich
+22|Vier Fakultäten
+23|Kooperationsbezüge
+24|Verbindungen werden automatisch aus Stichwörtern erzeugt und dienen nur zur Orientierung.
+25|Einige Vorschläge werden durch den Vergleich öffentlicher Quellen ergänzt. Koautorschaft und KAKEN-Projekte sind von zukünftigen Vorschlägen getrennt. Kooperationsbereitschaft und Durchführbarkeit sind nicht garantiert.
+26|Anleitung
+27|Wählen Sie „Forschungskarte öffnen“ und geben Sie das intern mitgeteilte Passwort ein.
+28|Suchen Sie nach Namen oder Stichworten oder öffnen Sie einen Fakultäts- oder Themenzweig.
+29|Wählen Sie eine Person, um Themen, KAKEN-Projekte, Publikationen und öffentliche Kontaktdaten anzuzeigen.
+30|Wählen Sie eine verbundene Person, um Begründung und mögliche Gesprächsthemen zu sehen. Wechseln Sie zwischen neuen Partnern, neuen Themen mit bestehenden Partnern und bisherigen Kooperationen.
+31|Öffentliche E-Mail-Adressen und Telefonnummern ermöglichen die Kontaktaufnahme aus der Detailansicht.
+32|Ziehen dreht die 3D-Karte, das Mausrad zoomt. Auch eine Listenansicht ist vorhanden. Sonderpositionen, Leitungspersonal und Positionen nach Ruhestand lassen sich im Anzeigefilter ergänzen.
+33|Passwörter werden Lehrenden individuell mitgeteilt. Nicht außerhalb der Universität weiterleiten oder veröffentlichen. Interessierte Lehrende kontaktieren bitte das Labor.
+34|Forschungskarte öffnen →
+35|Ein Werkzeug zur beruflichen Orientierung. Antworten helfen, interessante Tätigkeiten zu finden; Filter für Branchen, Produkte und Technologien grenzen die Recherche auf höchstens 20 Unternehmen ein.
+36|Öffentlich zugänglich
+37|Tätigkeiten und Unternehmen erkunden
+38|Bis zu 20 Unternehmen
+39|Nur zur Orientierung; keine Empfehlung bestimmter Arbeitgeber oder Berufe.
+40|Keine Garantie für Eignung oder Einstellungschancen. Daten stammen aus unterschiedlichen Zeitpunkten. Aktuelle Tätigkeiten, Stellen und Arbeitsbedingungen bitte auf offiziellen Websites prüfen.
+41|Career Compass öffnen →
+42|Weitere Laborprojekte zur Datenvisualisierung, Lehre in Katalyse und Reaktionstechnik sowie Literaturerkundung folgen.
+[contact]
+3|Kontaktieren Sie uns für Kooperation, Laborbesuche und weiterführendes Studium.
+4|Ersetzen Sie beim E-Mail-Versand [at] durch @.
+5|3-5-1 Johoku, Chuo-ku, Hamamatsu, Shizuoka, Japan
+6|Raum 233, Ingenieurgebäude 3
+7|Kontaktdaten des Professorenbüros und des Labors.
+8|Nehmen Sie am Busbahnhof am Nordausgang des JR-Bahnhofs Hamamatsu ab Haltestelle 15 oder 16 einen Bus bis „Shizuoka Daigaku“.
+9|Anfragen zu Kooperationen, technischer Beratung, Laborbesuchen, Abschlussarbeiten und weiterführendem Studium sind willkommen.
+[links]
+3|Links zu Lehrveranstaltungen, Laborwerkzeugen, Universität Shizuoka und Fachgesellschaften.
+4|Häufig genutzte Laborseiten und externe Quellen für Studierende und Kooperationspartner. Externe Links öffnen in einem neuen Tab.
+5|Labor und Lehre
+6|Lehrveranstaltungen 2026
+7|Gasflaschenverwaltung
+8|Bestellbuch des Labors
+9|Universität Shizuoka
+10|Fakultät für Ingenieurwissenschaften, Universität Shizuoka
+11|Karte des Hamamatsu-Campus
+12|Fachgesellschaften
+13|Japanische Gesellschaft für Chemieingenieurwesen
+14|SCEJ-Fachbereich Reaktionstechnik — Nachwuchsgruppe
+15|Japanische Katalysegesellschaft
+16|Japanische Katalysegesellschaft — Nachwuchsgruppe
+17|Japanisches Erdölinstitut
+18|Chemische Gesellschaft Japans
+19|Inhalte und Betrieb der verlinkten Seiten liegen bei den jeweiligen Einrichtungen und Gesellschaften.

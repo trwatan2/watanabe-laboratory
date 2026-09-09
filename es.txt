@@ -1,0 +1,241 @@
+[index]
+0|Laboratorio Watanabe
+3|Laboratorio Watanabe · Hamamatsu
+4|Convertir las reacciones en
+5|tecnologías útiles para la sociedad
+6|.
+7|Conectamos catálisis, ingeniería de reacciones y procesos electrificados para convertir CO₂, metano, hidrógeno, recursos de carbono y compuestos de azufre.
+8|Cinco líneas conectan materiales, estructuras, reactores y suministro de energía.
+9|Impulsar las reacciones catalíticas con electricidad.
+10|Combinamos catalizadores estructurados y calentamiento eléctrico para controlar eficazmente el entorno de reacción.
+11|Convertir el CO₂ en recursos.
+12|Combinamos conversión de CO₂, producción de gas de síntesis y fijación de carbono sólido en sistemas de circulación del carbono.
+13|Dar una función a la forma del catalizador.
+14|Usamos espirales, metales porosos y recubrimientos para construir reactores que integran la transferencia de calor y materia.
+15|Cambiar los procesos mediante el suministro de calor.
+16|Introducimos energía eléctrica directamente en reactores y catalizadores para aprovechar la respuesta rápida, el calentamiento local y los equipos compactos.
+17|Utilizar el azufre reticular
+18|como especie reactiva.
+19|Estudiamos ciclos redox en los que el azufre de los sulfuros se libera y se reinserta desde H₂S, reutilizando el azufre reticular a través de sus vacantes.
+20|Nuestro equipo conecta materiales, estructuras, flujo y reacciones electrificadas mediante catálisis e ingeniería de reacciones.
+21|Career Compass ya es público para estudiantes que exploran su carrera. Es orientativo y no recomienda empresas ni profesiones concretas.
+22|Research Tree explora conexiones de investigación dentro de la universidad. Es orientativo; el profesorado de Shizuoka interesado debe contactar con Ryo Watanabe.
+23|Methanation Lab simula la distribución de temperatura en la metanación de CO₂. Acceso restringido; solicite la contraseña al laboratorio.
+24|ChemTree y Catalyst Atlas permiten explorar publicaciones y localizar investigadores de catálisis en Japón.
+25|Publicaciones recientes sobre conversión de CO₂, catalizadores estructurados y fijación de carbono sólido.
+26|Contáctenos para colaboración, visitas y estudios de posgrado.
+27|Laboratorio Watanabe · Universidad de Shizuoka · Hamamatsu
+[research]
+3|Conectamos transformaciones moleculares y procesos mediante catalizadores, entornos de reacción, suministro energético y ciclos de materia.
+4|Crear el entorno de reacción con electricidad.
+5|Suministramos electricidad directamente a las estructuras catalíticas para aportar calor donde se necesita. En reacciones de alta temperatura, como el reformado seco, estudiamos conjuntamente la reacción catalítica y el transporte térmico.
+6|Calentamiento local eficiente · Control del entorno de reacción · Uso de la energía
+7|Del CO₂ al carbono reutilizable.
+8|Desarrollamos sistemas que convierten CO₂ en gas de síntesis y carbono sólido para procesos de circulación del carbono. Combinamos equilibrio, deposición de carbono, separación y recuperación a escala de reactor.
+9|Gas de síntesis · Recuperación de carbono sólido · Circulación del carbono
+10|Convertir la geometría en rendimiento catalítico.
+11|Construimos reactores con espirales, metales porosos y recubrimientos, considerando flujo y transferencia de calor y materia junto con los materiales catalíticos. Visualizamos las interacciones entre estructura y flujo para controlar activamente el entorno de reacción.
+12|Mejora del flujo · Mayor transferencia térmica · Velocidades espaciales elevadas
+13|Cambiar los procesos mediante el suministro de calor.
+14|Investigamos la introducción directa de energía eléctrica en reactores y catalizadores. La respuesta rápida, el calentamiento local y la reducción del tamaño de los equipos permiten nuevas formas de operación.
+15|Calentamiento directo · Respuesta rápida · Procesos en el lugar de uso
+16|El azufre reticular como reactivo catalítico.
+17|El azufre de los sulfuros toma hidrógeno de los hidrocarburos y abandona la red como H₂S. Después, el azufre del H₂S se reinserta en las vacantes generadas, formando ciclos redox que reutilizan el azufre reticular.
+18|Controlamos el azufre superficial intercambiable, la formación y regeneración de vacantes y las interfaces metal–azufre para explorar la deshidrogenación y nuevos procesos con compuestos de azufre.
+19|Nuestro enfoque conecta química de materiales, ingeniería de reacciones, catalizadores estructurados y suministro de energía.
+[about]
+3|Conectamos reacciones y procesos considerando flujo, transferencia de calor y materia y energía, además de los materiales catalíticos.
+4|Acerca del Laboratorio Watanabe
+5|Desde el campus de Hamamatsu de la Universidad de Shizuoka, investigamos catálisis e ingeniería de reacciones para CO₂, CH₄, hidrógeno, recursos de carbono y especies de azufre.
+6|Además de evaluar la actividad, combinamos catalizadores estructurados, flujo, transferencia y electricidad para desarrollar investigación aplicable a reactores y procesos reales.
+7|Una reacción, cuatro perspectivas: química, estructura, energía y circulación.
+8|Comprender las rutas mediante superficies catalíticas, especies reticulares y comportamiento redox.
+9|Construir entornos de reacción con espirales, estructuras porosas y recubrimientos.
+10|Suministrar electricidad directamente a catalizadores y reactores para calentar las zonas necesarias.
+11|Recircular CO₂, carbono sólido y especies de azufre para seguir utilizándolos como recursos.
+12|Selección de proyectos con financiación externa.
+13|Desarrollar procesos catalíticos innovadores para producir recursos valiosos a gran escala mediante el «cultivo de carbono» a partir de CO₂
+14|Investigador principal
+15|Crear entornos de conversión de CO₂ neutros en carbono mediante e-reactions de alta eficiencia
+[people]
+3|Nuestro equipo reúne especialidades en catálisis, ingeniería de reacciones, estructuras y circulación del carbono.
+4|Ryo Watanabe
+5|Profesor de Ingeniería Química y Biológica, Facultad de Ingeniería, Universidad de Shizuoka
+6|Áreas: catálisis, ingeniería de reacciones, procesos catalíticos y conversión de recursos. Investiga catalizadores estructurados, conversión de CO₂, reacciones electrificadas y catálisis redox con azufre reticular.
+7|Antiguo miembro del laboratorio de Yasushi Sekine en la Universidad Waseda.
+8|Estudió química aplicada desde el grado hasta el doctorado. En el laboratorio Sekine investigó reacciones redox que implican oxígeno reticular y vapor de agua. Esta experiencia dio lugar a sus trabajos actuales sobre azufre reticular, conversión de CO₂ y procesos catalíticos electrificados.
+9|A partir de química aplicada y catálisis, amplió su investigación desde catálisis redox hacia catalizadores estructurados, valorización de CO₂ y reacciones electrificadas.
+10|Escuela de Ciencias e Ingeniería Avanzadas, Universidad Waseda
+11|Departamento de Química Aplicada
+12|Escuela de Posgrado de la Universidad Waseda
+13|Química Aplicada
+14|Laboratorio Yasushi Sekine
+15|Grado en Química Aplicada, Escuela de Ciencias e Ingeniería, Universidad Waseda
+16|Formación en química aplicada y orientación hacia catálisis e ingeniería de reacciones.
+17|Máster en Química Aplicada, Escuela de Posgrado de Ciencias e Ingeniería, Universidad Waseda
+18|Continuación de la investigación en catálisis y reacciones redox.
+19|Asistente de investigación en Química Aplicada, Universidad Waseda / Laboratorio Yasushi Sekine
+20|Investigación de reacciones catalíticas redox con interacciones entre oxígeno reticular y vapor de agua en el laboratorio Sekine.
+21|Doctorado en Química Aplicada, Escuela de Posgrado de Ciencias e Ingeniería Avanzadas, Universidad Waseda
+22|Doctor en Ingeniería. Tesis: «Reacciones redox que implican interacciones entre el oxígeno reticular de catalizadores y el vapor de agua».
+23|Profesor asistente, Departamento de Materiales e Ingeniería Química, Universidad de Shizuoka
+24|Combinación de catalizadores de óxidos compuestos funcionales y sistemas de reacción química.
+25|Profesor asociado de Ingeniería Química y Biológica, Universidad de Shizuoka
+26|Ampliación hacia química redox de sulfuros, catalizadores estructurados, conversión de CO₂ y sistemas multietapa.
+27|Impulso de la circulación del carbono y la electrificación de procesos mediante catálisis e ingeniería de reacciones.
+28|Estudiantes de doctorado y máster por año de estudios.
+30|Reformado de etanol con vapor sobre catalizadores estructurados de Co
+31|Shimada, Shizuoka, Japón
+32|«¡Mejor arrepentirse de intentarlo que de no hacerlo!»
+34|Sistemas catalíticos para convertir compuestos C1 en carbono sólido
+35|Aichi, Japón
+36|«¡Un tesoro de experiencias que solo se pueden vivir ahora! ¡Esforcémonos juntos!»
+38|Metanación directa de biogás con sistemas multietapa de catalizadores espirales
+39|Iwate, Japón
+40|«Nunca he conocido a alguien con mi nombre poco común, pero parece coincidir con el nombre chino de Yahoo. Trabajaré con dedicación para obtener resultados y crecer como investigador.»
+42|Descomposición del amoníaco
+43|Toyota, Aichi, Japón
+44|«Ya he tenido suficiente de apuestas y alcohol.»
+46|Catalizadores espirales Cu–Fe/Zn para acelerar la RWGS a baja temperatura
+47|«Me esfuerzo para graduarme.»
+49|Metanación de CO₂ con catalizadores estructurados calentados eléctricamente
+50|Shizuoka, Japón
+51|«Un laboratorio con ambiente familiar.»
+53|Reformado seco de metano con catalizadores estructurados calentados directamente por corriente eléctrica
+54|«¡Equipo Kinoko!» (galletas de chocolate en forma de seta)
+56|Reformado de bioetanol mediante calentamiento eléctrico
+57|Tokoname, Aichi, Japón
+58|«¡Activista contra las galletas Kinoko no Yama!»
+60|Producción de carbono sólido a partir de compuestos C1
+61|Kioto, Japón
+62|«Últimamente me encantan las series de televisión.»
+64|Desarrollo de sistemas de ciclos de carbono para fijar CO₂ a gran escala
+65|«¡Objetivo: capturar el 100 % del carbono!»
+67|Síntesis de amoníaco con catalizadores estructurados
+68|Kanagawa, Japón
+69|«Mis catalizadores y yo estamos creciendo. ¡Encantado!»
+71|Producción de combustibles a partir de compuestos C1 en entornos catalíticos estructurados
+72|Kofu, Yamanashi, Japón
+73|«Estoy viendo ONE PIECE desde el año pasado.»
+75|Efecto de la configuración de corriente en el rendimiento del reformado seco electrificado
+76|Saitama, Japón
+77|«Me gustan los videojuegos, especialmente League of Legends.»
+79|Transferencia de calor y materia en el reformado de metanol con catalizadores estructurados calentados eléctricamente
+80|Gifu, Japón
+81|«Vivir con dedicación.»
+83|Producción de odorizantes a partir de gas de síntesis
+84|«Creo que me voy a aficionar a la pesca.»
+85|Selección de premios estudiantiles registrados en la base de profesores de la Universidad de Shizuoka.
+86|91.ª reunión anual de SCEJ: «Evaluación de un sistema multietapa de ciclos de carbono para fijar CO₂ a gran escala»
+87|28.ª reunión estudiantil de SCEJ: «Efecto del contenido de Co en la producción de carbono sólido a partir de CO sobre catalizadores Fe–Co–K»
+88|91.ª reunión anual de SCEJ: «Promoción de la conversión de CO y la formación de carbono fibroso mediante Co y K en catalizadores estructurados de Fe»
+89|Para visitas, admisiones y colaboración, consulte la página de contacto.
+[career]
+3|Principales destinos laborales y académicos de graduados entre 2007 y 2026: empresas, posgrados, doctorados e instituciones públicas.
+4|Trayectorias de graduados
+5|Se presentan por año empleos y doctorados tras el máster, y empleos y posgrados tras el grado. La experiencia en catálisis e ingeniería de reacciones y procesos se aplica a química, movilidad, energía e ingeniería.
+6|Las cifras entre paréntesis indican personas del mismo año. Los nombres abren los sitios correspondientes en otra pestaña. Se conservan nombres históricos; algunos enlaces llevan a sucesores actuales.
+7|Las cifras entre paréntesis indican personas del mismo año. Los nombres siguen los registros anuales.
+8|Graduados de máster
+13|Graduados de grado
+17|Estudiantes de posgrado
+23|Estudiantes de grado
+93|Principales destinos conocidos por el laboratorio. Nombres según los registros de cada año. Las entidades sin sitio identificable aparecen sin enlace.
+[publications]
+3|Desde las publicaciones recientes hasta los primeros trabajos: la evolución de nuestra investigación.
+4|Basado en el perfil asociado a ORCID 0000-0003-1132-0096, actualizado con la base de profesores de Shizuoka y la información editorial.
+5|Sin DOI asignado
+8|Revista ↗
+11|Base de investigadores ↗
+12|Se muestran todos los DOI verificados. «格子硫黄を活用するアルカンのredox型脱水素», «物質変換プロセスにおける電化の最新動向» y «Solid steps towards carbon capture» figuran sin DOI según las editoriales y los informes de investigación, con enlaces de comprobación. Los años siguen generalmente la base universitaria. Los títulos se conservan en su idioma de publicación.
+[news]
+3|Resultados, ponencias, premios estudiantiles y noticias del laboratorio.
+4|Career Compass ya está disponible públicamente para estudiantes.
+5|Esta herramienta ayuda a reflexionar sobre criterios de elección profesional y explorar tareas y empresas. Las respuestas y filtros por sector, producto y tecnología reducen la selección a un máximo de 20 empresas para investigar. Playground, proyecto 05.
+6|Solo orientativo; no recomienda empresas ni profesiones concretas.
+7|Compruebe actividades, vacantes y condiciones laborales actuales en los sitios oficiales de las empresas.
+8|Abrir Career Compass ↗
+9|Research Tree explora conexiones de investigación y colaboración dentro de la universidad.
+10|El mapa 3D incluye Ingeniería, Informática, Ciencias y Agricultura de Shizuoka. Utiliza temas, proyectos KAKEN y artículos de la base de profesores para explorar investigaciones y posibles colaboraciones. Playground, proyecto 04.
+11|Las conexiones se generan automáticamente a partir de palabras clave y son orientativas. No garantizan colaboración previa ni viabilidad.
+12|Acceso con contraseña para el profesorado de la universidad. Para solicitarlo,
+13|contacte con Ryo Watanabe
+14|Acerca de Research Tree ↗
+15|Methanation Lab simula la distribución de temperatura en la metanación de CO₂.
+16|Cambie cinética y transferencia térmica para estudiar mapas 2D de temperatura en un lecho catalítico y variaciones de conversión de CO₂. Playground, proyecto 03.
+17|Acceso restringido. Para solicitar contraseña,
+18|contacte con el Laboratorio Watanabe
+19|Acerca de Methanation Lab ↗
+20|ChemTree explora artículos recientes como árbol 3D; Catalyst Atlas localiza investigadores de catálisis en Japón por prefectura, institución y palabras clave. Investigadores, ingenieros y empresas pueden explorar tendencias y colaboradores. Catalyst Atlas revisa y actualiza información pública el primer día de cada mes.
+21|Nuestro sitio presenta la investigación mediante vídeos y contenidos visuales.
+22|«Low-Temperature RWGS Process with a Two-Stage Cu-Fe/Zn Spiral-structured Catalyst» se publicó en Catalysis Science & Technology.
+23|Trabajos estudiantiles sobre ciclos de carbono, catalizadores Fe–Co–K y carbono fibroso recibieron premios en congresos de 2026.
+24|Presentamos resultados de RWGS a baja temperatura con catalizadores espirales Cu/Zn.
+25|Presentamos investigaciones sobre valorización de CO₂ y fijación de carbono sólido mediante catalizadores estructurados.
+[playground]
+3|Herramientas web, visualizaciones y prototipos para investigación y educación.
+4|Publicamos herramientas experimentales del laboratorio para investigar y aprender: explorar áreas, visualizar datos y encontrar ideas, junto con nuestra lista de publicaciones.
+5|Explore artículos recientes de JACS, Chem, Nature y Science en un árbol 3D de temas conectados.
+6|Se recomienda ordenador
+7|Use Chrome o Edge en Windows/macOS para la vista 3D. En móviles solo se desactiva el 3D; siguen disponibles búsquedas, filtros, áreas, tendencias por país, temas y enlaces.
+8|Localice investigadores de catálisis en Japón mediante mapa 3D, prefectura, institución y palabras clave. Incluye fotos, áreas y enlaces a perfiles oficiales, artículos y resultados.
+9|Una herramienta pública para encontrar contactos de investigación, colaboración y consulta, dirigida a investigadores, ingenieros y empresas.
+10|El primer día de cada mes se revisan sitios universitarios, laboratorios y KAKEN para actualizar afiliaciones, cargos y áreas.
+11|Visualice en 2D las temperaturas del lecho catalítico en la metanación de CO₂. Ajuste cinética y transferencia térmica para estudiar temperatura y conversión.
+12|Se necesita contraseña. Contacte con el laboratorio para solicitar acceso.
+13|Contacto →
+14|Ingeniería
+15|Informática
+16|Ciencias
+17|Agricultura
+18|Ilustración de conexiones entre áreas de investigación
+19|Mapa 3D para el profesorado de Shizuoka que explora investigaciones y conexiones internas. Los temas, proyectos KAKEN y artículos explican los vínculos entre investigadores y ofrecen contactos públicos.
+20|Profesorado universitario
+21|Contraseña necesaria
+22|Cuatro facultades
+23|Conexiones de colaboración
+24|Conexiones generadas automáticamente por palabras clave. Solo para referencia.
+25|Algunas propuestas se complementan comparando información pública. Se distinguen coautorías y proyectos KAKEN de propuestas futuras. No se garantiza disposición a colaborar ni viabilidad.
+26|Cómo usar
+27|Seleccione «Abrir mapa de investigación» e introduzca la contraseña facilitada en la universidad.
+28|Busque por nombre o palabra clave, o expanda una rama de facultad o área.
+29|Seleccione un investigador para ver temas, proyectos KAKEN, artículos y contacto público.
+30|Seleccione un investigador conectado para ver el fundamento del vínculo y temas de consulta. Alterne entre nuevos socios, nuevos temas con socios existentes y colaboraciones anteriores.
+31|Si hay correo o teléfono público, contacte desde la ficha detallada.
+32|Arrastre para girar el mapa y use la rueda para ampliar. También hay una lista. Los filtros permiten añadir puestos especiales, directivos y cargos posteriores a la jubilación.
+33|Las contraseñas se facilitan individualmente al profesorado. No las reenvíe ni publique fuera de la universidad. El profesorado interesado debe contactar con el laboratorio.
+34|Abrir mapa de investigación →
+35|Herramienta de exploración profesional para reflexionar sobre criterios de elección. Las respuestas identifican tareas de interés y los filtros por sector, producto y tecnología seleccionan hasta 20 empresas para investigar.
+36|Acceso público
+37|Explorar tareas y empresas
+38|Hasta 20 empresas
+39|Solo orientativo; no recomienda empresas ni profesiones concretas.
+40|No garantiza adecuación ni posibilidades de contratación. Los datos se recogieron en momentos distintos. Compruebe actividades, puestos y condiciones actuales en los sitios oficiales.
+41|Abrir Career Compass →
+42|Seguiremos añadiendo proyectos de visualización de datos, enseñanza de catálisis e ingeniería de reacciones y exploración bibliográfica.
+[contact]
+3|Contáctenos para colaboración, visitas y estudios de posgrado.
+4|Sustituya [at] por @ al enviar un correo.
+5|3-5-1 Johoku, Chuo-ku, Hamamatsu, Shizuoka, Japón
+6|Despacho 233, edificio de Ingeniería 3
+7|Contacto del despacho del profesor y del laboratorio.
+8|Desde las paradas 15 o 16 de la terminal de autobuses en la salida norte de la estación JR Hamamatsu, tome un autobús hasta «Shizuoka Daigaku».
+9|Atendemos consultas de colaboración, asesoramiento técnico, visitas, proyectos de fin de grado y admisión de posgrado.
+[links]
+3|Enlaces a cursos, herramientas, Universidad de Shizuoka y sociedades científicas.
+4|Páginas habituales y recursos externos para estudiantes y colaboradores. Los enlaces externos se abren en otra pestaña.
+5|Laboratorio y enseñanza
+6|Cursos 2026
+7|Gestión de botellas de gas
+8|Registro de pedidos del laboratorio
+9|Universidad de Shizuoka
+10|Facultad de Ingeniería de Shizuoka
+11|Mapa del campus de Hamamatsu
+12|Sociedades científicas
+13|Sociedad de Ingenieros Químicos de Japón
+14|División de Ingeniería de Reacciones de SCEJ — Jóvenes Investigadores
+15|Sociedad de Catálisis de Japón
+16|Sociedad de Catálisis de Japón — Jóvenes Investigadores
+17|Instituto del Petróleo de Japón
+18|Sociedad Química de Japón
+19|Los contenidos y servicios enlazados dependen de las instituciones y sociedades correspondientes.
