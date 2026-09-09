@@ -39,6 +39,15 @@
     .future{padding:58px 0 0;margin-top:18px;border-top:1px solid #c8cdc8;display:grid;grid-template-columns:1fr 2fr;gap:60px}
     .future h3{font-family:"Helvetica Neue",Arial,"Yu Gothic",Meiryo,sans-serif!important;font-size:34px;margin:0}
     .future p{font-size:17px;line-height:1.85;color:#505852;margin:0;max-width:760px}
+    .atlas-mark{position:relative;width:min(360px,92%);aspect-ratio:4/3;border:1px solid rgba(215,255,69,.32);overflow:hidden;background:radial-gradient(circle at 58% 42%,rgba(58,151,141,.32),transparent 38%),#091923}
+    .atlas-mark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(117,185,177,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(117,185,177,.12) 1px,transparent 1px);background-size:30px 30px}
+    .atlas-orbit{position:absolute;inset:17% 20%;border:1px solid rgba(215,255,69,.4);border-radius:50%;transform:rotate(-17deg)}
+    .atlas-orbit.second{inset:27% 31%;border-color:rgba(117,185,177,.55);transform:rotate(23deg)}
+    .atlas-pin{position:absolute;width:9px;height:9px;border:2px solid #091923;border-radius:50%;background:#d7ff45;box-shadow:0 0 13px rgba(215,255,69,.85)}
+    .ap1{left:68%;top:17%}.ap2{left:58%;top:27%}.ap3{left:69%;top:35%}.ap4{left:55%;top:43%}.ap5{left:64%;top:51%}.ap6{left:48%;top:58%}.ap7{left:38%;top:65%}.ap8{left:27%;top:74%}.ap9{left:19%;top:62%}
+    .atlas-title{position:absolute;left:20px;top:18px;color:#d7ff45;font:700 12px/1.35 "Helvetica Neue",Arial,sans-serif!important;letter-spacing:.16em}
+    .atlas-number{position:absolute;right:18px;bottom:13px;color:#fff;font:700 clamp(28px,4vw,48px)/1 "Helvetica Neue",Arial,sans-serif!important;letter-spacing:-.04em}
+    .atlas-number small{display:block;margin-top:5px;color:#91aaa6;font-size:9px;letter-spacing:.15em;text-align:right}
     @media(max-width:820px){.play-wrap{padding:64px 24px 90px}.play-intro,.project-card,.future{grid-template-columns:1fr}.play-intro{gap:30px}.project-copy{padding:34px 28px}.project-visual{min-height:300px}.future{gap:20px}}
     /* light background accents */
     .play-wrap .section-label,.play-wrap .project-kicker,.play-wrap a:not(.primary){color:#6a8720!important}
@@ -147,11 +156,26 @@
 <div class="project-actions"><a class="primary" href="chemtree-app.html">Open ChemTree →</a><a href="chemtree.html">About &amp; How to use →</a></div>
         </div>
       </article>
+
+      <article class="project-card">
+        <div class="project-visual" aria-hidden="true">
+          <div class="atlas-mark"><span class="atlas-title">CATALYST RESEARCH<br>ACROSS JAPAN</span><span class="atlas-orbit"></span><span class="atlas-orbit second"></span><i class="atlas-pin ap1"></i><i class="atlas-pin ap2"></i><i class="atlas-pin ap3"></i><i class="atlas-pin ap4"></i><i class="atlas-pin ap5"></i><i class="atlas-pin ap6"></i><i class="atlas-pin ap7"></i><i class="atlas-pin ap8"></i><i class="atlas-pin ap9"></i><span class="atlas-number">2,000+<small>RESEARCHERS / MONTHLY UPDATED</small></span></div>
+        </div>
+        <div class="project-copy">
+          <p class="project-kicker">PROJECT 02 / RESEARCHER EXPLORATION</p>
+          <h3>Catalyst Atlas</h3>
+          <p>日本全国の触媒研究者を、3D日本地図、都道府県、所属機関、研究キーワードから探せる研究者マップです。顔写真、研究分野、公式プロフィール、論文・研究業績へのリンクを掲載しています。</p>
+          <p>研究者・技術者・企業の方が、新しい研究、共同研究、相談先との接点を見つけるための公開ツールです。</p>
+          <div class="project-meta"><span>47 Prefectures</span><span>Universities</span><span>KOSEN</span><span>National Institutes</span><span>Research Keywords</span><span>Monthly update</span></div>
+          <p class="play-note">大学・研究室の公式ページとKAKEN等の公開情報を毎月1日に確認し、所属・職位・研究分野を更新します。</p>
+          <div class="project-actions"><a class="primary" href="https://catalyst-atlas-japan.ryo04280603.chatgpt.site" target="_blank" rel="noopener noreferrer">Open Catalyst Atlas →</a></div>
+        </div>
+      </article>
     </div>
 
     <div class="future">
       <h3>More to come.</h3>
-      <p>今後、研究データの可視化、触媒・反応工学の教育ツール、文献探索ツールなど、研究室内で作ったプロジェクトを順次追加していきます。ChemTreeはその最初の一つです。</p>
+      <p>今後も、研究データの可視化、触媒・反応工学の教育ツール、文献探索ツールなど、研究室で作ったプロジェクトを順次追加していきます。</p>
     </div>
   </section>
 </main>
@@ -178,3 +202,4 @@
 
 </body>
 </html>
+
