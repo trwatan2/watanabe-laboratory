@@ -243,25 +243,43 @@ img,video{max-width:100%}
   </div>
 </section>
 <script>
-(function(){
-  fetch('https://watanabe-lab.goatcounter.com/counter/'+encodeURIComponent('/site-total')+'.json',{cache:'no-store'})
-    .then(function(r){if(!r.ok)throw 0;return r.json()})
-    .then(function(d){document.getElementById('gvTotal').textContent=d.count||'0'})
-    .catch(function(){document.getElementById('gvTotal').textContent='collecting'});
-
-  fetch('visitor-country-stats.json?v='+Math.floor(Date.now()/3600000),{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(d){
-      if(!d||d.status!=='ready')return;
-      document.getElementById('gvJapan').textContent=String(d.japan??0);
-      document.getElementById('gvInternational').textContent=String(d.international??0);
-      var top=(d.topCountries||[]).slice(0,4)
-        .map(function(c){return (c.name||c.code||'')+' '+String(c.count??0)})
-        .join(' / ');
-      document.getElementById('gvCountries').textContent=top||'collecting';
-    })
-    .catch(function(){});
-})();
+(async function(){
+  var ids=['gvTotal','gvJapan','gvInternational','gvCountries'];
+  function unavailable(){ids.forEach(function(id){document.getElementById(id).textContent='取得できません';});}
+  var stamp=Date.now();
+  var urls=[
+    'visitor-country-stats.json?v='+stamp,
+    'https://raw.githubusercontent.com/trwatan2/watanabe-laboratory/main/visitor-country-stats.json?v='+stamp
+  ];
+  var results=await Promise.allSettled(urls.map(async function(url){
+    var r=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(10000)});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    var d=await r.json();
+    if(d.status!=='ready'||!Number.isFinite(Date.parse(d.updatedAt)))throw new Error('Invalid summary');
+    ['japan','international','unknown'].forEach(function(k){
+      if(!Number.isInteger(d[k])||d[k]<0)throw new Error('Invalid count');
+    });
+    if(!Array.isArray(d.topCountries))throw new Error('Invalid countries');
+    return d;
+  }));
+  var data=results.filter(function(r){return r.status==='fulfilled';})
+    .map(function(r){return r.value;})
+    .sort(function(a,b){return Date.parse(b.updatedAt)-Date.parse(a.updatedAt);})[0];
+  if(!data){unavailable();return;}
+  document.getElementById('gvTotal').textContent=String(data.japan+data.international+data.unknown);
+  document.getElementById('gvJapan').textContent=String(data.japan);
+  document.getElementById('gvInternational').textContent=String(data.international);
+  document.getElementById('gvCountries').textContent=data.topCountries.slice(0,4)
+    .map(function(c){return (c.name||c.code)+' '+c.count;}).join(' / ')||'記録なし';
+  var updated=document.createElement('small');
+  updated.style.cssText='font-size:10px;color:#aaa;margin-left:12px';
+  updated.textContent='更新 '+new Date(data.updatedAt).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'});
+  document.querySelector('.gv-strip').appendChild(updated);
+})().catch(function(){
+  ['gvTotal','gvJapan','gvInternational','gvCountries'].forEach(function(id){
+    document.getElementById(id).textContent='取得できません';
+  });
+});
 </script>
 
 <footer class="site-footer">
