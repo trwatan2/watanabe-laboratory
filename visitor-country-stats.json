@@ -1,9 +1,15 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-08T21:33:54.689Z",
-  "since": "2026-09-08T15:00:00Z",
-  "japan": 0,
+  "updatedAt": "2026-09-09T01:18:38.979Z",
+  "since": "2026-08-31T00:00:00Z",
+  "japan": 5,
   "international": 0,
   "unknown": 0,
-  "topCountries": []
+  "topCountries": [
+    {
+      "code": "JP",
+      "name": "Japan",
+      "count": 5
+    }
+  ]
 }
