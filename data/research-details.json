@@ -1,0 +1,90 @@
+{
+  "carbon": {
+    "nav": "炭素循環",
+    "caption": "CO₂の変換、合成ガス製造、固体炭素固定化をつなぐ炭素循環のイメージ。",
+    "overview": [
+      "CO₂やメタンを炭素源として、燃料・化学品の原料となる合成ガスや、回収して利用できる固体炭素へ変換する反応プロセスを研究しています。触媒による分子変換に加え、反応器の組合せと生成物の分離・回収を検討し、炭素の行き先を制御します。",
+      "産業排ガスをオンサイトで資源へ変えるために、ガス組成、反応温度、流量、反応平衡の関係を調べています。触媒材料の性能とプロセス全体の炭素収支を結び付け、連続的な変換と回収を目指します。"
+    ],
+    "topics": [
+      {"title": "CO₂から合成ガスへ", "text": "逆水性ガスシフト反応（RWGS）やメタンのドライリフォーミング（DRM）を用い、CO₂を一酸化炭素へ変換します。水素と一酸化炭素からなる合成ガスについて、反応条件と触媒の組合せが組成や生成量に及ぼす影響を調べます。"},
+      {"title": "固体炭素への変換と回収", "text": "RWGSと一酸化炭素から固体炭素を生成する反応、メタン化と改質・分解などを組み合わせます。炭素が生成する場所や形態、触媒上への蓄積、回収方法を検討し、反応を継続しながら炭素を取り出すプロセスへ展開します。"},
+      {"title": "多段反応と物質循環", "text": "複数の反応段を接続し、各段の温度、ガス組成、水分除去などを調整します。各反応の役割と段間の物質移動を把握し、CO₂変換、生成物回収、炭素利用の関係を反応器全体で評価します。"}
+    ],
+    "keywords": "CO₂ conversion / syngas / RWGS / DRM / solid carbon / carbon circulation",
+    "focus": "合成ガス製造・固体炭素回収・多段反応・オンサイト資源化",
+    "papers": [
+      {"title": "Performance of integrated multi-stage catalytic conversion of CO2 to solid carbon via RWGS–Boudouard coupling", "journal": "Reaction Chemistry & Engineering, 2025", "doi": "10.1039/D5RE00285K"},
+      {"title": "Enhancing CO2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor", "journal": "New Journal of Chemistry, 2025", "doi": "10.1039/D5NJ02716K"}
+    ],
+    "additional_sections": [],
+    "figures": [],
+    "results": []
+  },
+  "structured": {
+    "nav": "構造体触媒",
+    "caption": "構造体の形状と流れの関係を示すシミュレーション。",
+    "overview": [
+      "触媒反応器では、触媒材料の活性だけでなく、反応ガスの流れ方、熱の伝わり方、触媒表面までの物質移動が反応性能を左右します。当研究室では、スパイラルや金属多孔体を基材とする構造体触媒を用い、材料と形状の両面から反応場をつくります。",
+      "基材へのウォッシュコートやめっきによって触媒成分を付与し、担持状態と流路の形状を調整します。反応実験と流動・伝熱の解析を結び付け、ガスが触媒へ到達する過程から反応熱の移動まで検討します。"
+    ],
+    "topics": [
+      {"title": "スパイラル・金属多孔体の形状", "text": "スパイラルのねじれや金属多孔体の流路が、ガスの混合、滞留、触媒との接触に与える影響を調べます。流量を増やしたときの反応性能と圧力損失の関係を検討し、処理量に適した反応器形状を探ります。"},
+      {"title": "触媒層の形成と担持方法", "text": "ウォッシュコートや無電解めっきなどを用いて、金属基材に触媒層を形成します。触媒の担持量、分布、密着性と反応性能の関係を調べ、基材の伝熱性と触媒材料の機能を活用します。"},
+      {"title": "熱・物質移動と反応性能", "text": "実験と数値流体解析（CFD）によって、反応器内の流れと温度分布を検討します。CO₂メタン化などの反応を通じて、構造体の形状が発熱の分散や反応ガスの供給にどう寄与するかを評価します。"}
+    ],
+    "keywords": "structured catalyst / spiral / porous metal / washcoat / CFD / heat & mass transfer",
+    "focus": "触媒担持・流動促進・伝熱・物質移動・高流量への展開",
+    "papers": [
+      {"title": "High-throughput CO2 methanation in a two-stage reactor system with spiral-structured catalysts", "journal": "Reaction Chemistry & Engineering, 2026", "doi": "10.1039/D5RE00477B"},
+      {"title": "Enhanced thermal management in CO2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems", "journal": "Sustainable Energy & Fuels, 2025", "doi": "10.1039/D5SE00718F"}
+    ],
+    "additional_sections": [],
+    "figures": [],
+    "results": []
+  },
+  "ereaction": {
+    "nav": "電化反応",
+    "caption": "金属スパイラルへの通電によるジュール加熱のイメージ。",
+    "overview": [
+      "金属製の触媒構造体へ直接通電し、電気抵抗によって生じるジュール熱を反応に利用します。触媒が担持された構造体で熱を発生させることで、エネルギーを与える位置と反応が進む位置の関係を制御し、加熱方法から化学プロセスを検討します。",
+      "電化触媒の材料・発熱特性と、反応器の温度分布・熱移動をつなげて研究しています。投入電力、ガス流量、反応組成の変化に対する応答を調べ、CO₂メタン化や改質を含む電化反応プロセスへ展開します。"
+    ],
+    "topics": [
+      {"title": "直接通電と触媒の温度状態", "text": "電流経路、構造体の電気抵抗、触媒層の配置と発熱の関係を検討します。投入電力と反応温度を測定し、外部加熱との比較を通じて、熱の供給方法が触媒反応に及ぼす影響を評価します。"},
+      {"title": "e-Methanation・e-DRM", "text": "電化したCO₂メタン化（e-Methanation）やメタンのドライリフォーミング（e-DRM）を対象に、反応率、生成物組成、触媒の状態を調べます。発熱反応と吸熱反応それぞれについて、直接加熱と反応熱の関係を検討します。"},
+      {"title": "複数の電化反応を接続する", "text": "メタン化と改質などを段階的に組み合わせ、各反応段への電力供給と操作条件を調整します。起動や条件変更への応答、合成ガス組成の制御、装置のコンパクト化を検討し、オンサイトで利用できる反応システムを目指します。"}
+    ],
+    "keywords": "e-Reaction / Joule heating / electrified catalysis / e-Methanation / e-DRM",
+    "focus": "直接加熱・温度分布・エネルギー利用・応答性・多段反応",
+    "papers": [
+      {"title": "Integrated electrically-driven CO2 methanation and dry reforming for efficient and flexible syngas production", "journal": "Chemistry Letters, 2025", "doi": "10.1093/chemle/upaf161"},
+      {"title": "e-Methanation with a spiral catalyst: optimized thermal management and long-term stability", "journal": "RSC Advances, 2025", "doi": "10.1039/D4RA08236B"}
+    ],
+    "additional_sections": [],
+    "figures": [],
+    "results": []
+  },
+  "sulfur": {
+    "nav": "格子硫黄触媒",
+    "caption": "格子Sの放出、硫黄欠陥の形成、硫黄の再挿入を示すレドックスサイクルのイメージ。",
+    "overview": [
+      "硫化物を構成する格子硫黄（格子S）を、反応に関与する化学種として利用します。炭化水素からの水素引抜きに格子Sが関わり、H₂Sとして離脱する過程と、硫黄欠陥へ硫黄が再挿入される過程に着目しています。",
+      "格子Sの消費と再生を繰り返すレドックスサイクルを通じて、アルカンの脱水素や含硫黄化合物の変換を研究しています。反応中の材料状態と生成物の関係を調べ、硫黄種を活用する触媒プロセスを検討します。"
+    ],
+    "topics": [
+      {"title": "格子Sと炭化水素の反応", "text": "硫化物中の格子Sが炭化水素の変換に関与する過程を調べます。アルカンからオレフィンへの脱水素などを対象に、触媒組成、反応温度、ガス組成と生成物選択性の関係を検討します。"},
+      {"title": "硫黄欠陥の生成と再生", "text": "格子Sが離脱した後の硫黄欠陥と、H₂Sによる硫黄の再挿入に着目します。反応と再生の条件、硫黄の移動、繰返し操作での触媒性能を評価し、格子Sを反復利用するための反応条件を探ります。"},
+      {"title": "含硫黄化合物と電化反応への展開", "text": "硫黄種を介した炭化水素変換や含硫黄化合物の反応を検討します。触媒表面の状態と加熱方法を関連付け、直接加熱などを用いた反応操作が反応性や生成物に及ぼす影響を調べます。"}
+    ],
+    "keywords": "lattice sulfur / sulfur vacancy / H₂S / redox cycle / dehydrogenation",
+    "focus": "格子Sの反応性・硫黄欠陥・再挿入・脱水素・含硫黄化合物",
+    "papers": [
+      {"title": "Redox mechanism by lattice sulphur in an Fe-based catalyst for propane dehydrogenation with H2S co-feeding", "journal": "RSC Sustainability, 2025", "doi": "10.1039/D5SU00447K"},
+      {"title": "Electric heating system for iso-C5 dehydrogenation in the presence of H2S", "journal": "Chemistry Letters, 2025", "doi": "10.1093/chemle/upae228"}
+    ],
+    "additional_sections": [],
+    "figures": [],
+    "results": []
+  }
+}
