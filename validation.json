@@ -1,302 +1,482 @@
 {
   "en.html": {
-    "articles": 5,
+    "source_sha256": "b15ba38c6fcbeff6eace67e824aed959b59c818742b48e54bfda407835ff8194",
+    "articles": 4,
     "images": 0,
+    "videos": 5,
+    "text_nodes": 133,
     "doi_links": 0
   },
   "research-en.html": {
-    "articles": 0,
+    "source_sha256": "860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6",
+    "articles": 12,
     "images": 0,
-    "doi_links": 0
+    "videos": 4,
+    "text_nodes": 149,
+    "doi_links": 8
   },
   "about-en.html": {
+    "source_sha256": "e929c876f0b1a9fabe3a418d34cf14d81fe26e058533d59756aa023eca364783",
     "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 62,
     "doi_links": 0
   },
   "people-en.html": {
-    "articles": 26,
-    "images": 16,
+    "source_sha256": "c988e1c9dde2561a0c2062834174d2b8106a81334851cd0677e33a6676ce79b0",
+    "articles": 28,
+    "images": 18,
+    "videos": 0,
+    "text_nodes": 269,
     "doi_links": 0
   },
   "career-en.html": {
+    "source_sha256": "adfed43506bed87b88ac6f5f5e9704a31c4bb3eee5ee88809e53f07a79da73a1",
     "articles": 39,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 368,
     "doi_links": 0
   },
   "publications-en.html": {
+    "source_sha256": "096bc239ede276ea1b008353ace70d9c5792d6aaa636a9adc23e038fd8496675",
     "articles": 96,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 481,
     "doi_links": 93
   },
   "news-en.html": {
-    "articles": 9,
+    "source_sha256": "1b1f08f1e237defe3ed16af092742d816b3a5d1c6380a00f0aacc110a36d0dff",
+    "articles": 10,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 84,
     "doi_links": 1
   },
   "playground-en.html": {
-    "articles": 5,
+    "source_sha256": "1b8ad66f6ad7ddf3f5ac604cdd4b538fa7302a3e472968bbb611307168b196a9",
+    "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 122,
     "doi_links": 0
   },
   "contact-en.html": {
+    "source_sha256": "ec58120fad9d003414cdc48929e9411e0af7c8abaab65ae7c4aaf05917b1922d",
     "articles": 4,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 52,
     "doi_links": 0
   },
   "links-en.html": {
+    "source_sha256": "b9461ad763a4cd1e444cdf386d98cba8e40411197b3c893cb1e8513abb60befc",
     "articles": 0,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 69,
     "doi_links": 0
   },
   "zh.html": {
-    "articles": 5,
+    "source_sha256": "b15ba38c6fcbeff6eace67e824aed959b59c818742b48e54bfda407835ff8194",
+    "articles": 4,
     "images": 0,
+    "videos": 5,
+    "text_nodes": 133,
     "doi_links": 0
   },
   "research-zh.html": {
-    "articles": 0,
+    "source_sha256": "860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6",
+    "articles": 12,
     "images": 0,
-    "doi_links": 0
+    "videos": 4,
+    "text_nodes": 149,
+    "doi_links": 8
   },
   "about-zh.html": {
+    "source_sha256": "e929c876f0b1a9fabe3a418d34cf14d81fe26e058533d59756aa023eca364783",
     "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 62,
     "doi_links": 0
   },
   "people-zh.html": {
-    "articles": 26,
-    "images": 16,
+    "source_sha256": "c988e1c9dde2561a0c2062834174d2b8106a81334851cd0677e33a6676ce79b0",
+    "articles": 28,
+    "images": 18,
+    "videos": 0,
+    "text_nodes": 269,
     "doi_links": 0
   },
   "career-zh.html": {
+    "source_sha256": "adfed43506bed87b88ac6f5f5e9704a31c4bb3eee5ee88809e53f07a79da73a1",
     "articles": 39,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 368,
     "doi_links": 0
   },
   "publications-zh.html": {
+    "source_sha256": "096bc239ede276ea1b008353ace70d9c5792d6aaa636a9adc23e038fd8496675",
     "articles": 96,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 481,
     "doi_links": 93
   },
   "news-zh.html": {
-    "articles": 9,
+    "source_sha256": "1b1f08f1e237defe3ed16af092742d816b3a5d1c6380a00f0aacc110a36d0dff",
+    "articles": 10,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 84,
     "doi_links": 1
   },
   "playground-zh.html": {
-    "articles": 5,
+    "source_sha256": "1b8ad66f6ad7ddf3f5ac604cdd4b538fa7302a3e472968bbb611307168b196a9",
+    "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 122,
     "doi_links": 0
   },
   "contact-zh.html": {
+    "source_sha256": "ec58120fad9d003414cdc48929e9411e0af7c8abaab65ae7c4aaf05917b1922d",
     "articles": 4,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 52,
     "doi_links": 0
   },
   "links-zh.html": {
+    "source_sha256": "b9461ad763a4cd1e444cdf386d98cba8e40411197b3c893cb1e8513abb60befc",
     "articles": 0,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 69,
     "doi_links": 0
   },
   "ko.html": {
-    "articles": 5,
+    "source_sha256": "b15ba38c6fcbeff6eace67e824aed959b59c818742b48e54bfda407835ff8194",
+    "articles": 4,
     "images": 0,
+    "videos": 5,
+    "text_nodes": 133,
     "doi_links": 0
   },
   "research-ko.html": {
-    "articles": 0,
+    "source_sha256": "860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6",
+    "articles": 12,
     "images": 0,
-    "doi_links": 0
+    "videos": 4,
+    "text_nodes": 149,
+    "doi_links": 8
   },
   "about-ko.html": {
+    "source_sha256": "e929c876f0b1a9fabe3a418d34cf14d81fe26e058533d59756aa023eca364783",
     "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 62,
     "doi_links": 0
   },
   "people-ko.html": {
-    "articles": 26,
-    "images": 16,
+    "source_sha256": "c988e1c9dde2561a0c2062834174d2b8106a81334851cd0677e33a6676ce79b0",
+    "articles": 28,
+    "images": 18,
+    "videos": 0,
+    "text_nodes": 269,
     "doi_links": 0
   },
   "career-ko.html": {
+    "source_sha256": "adfed43506bed87b88ac6f5f5e9704a31c4bb3eee5ee88809e53f07a79da73a1",
     "articles": 39,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 368,
     "doi_links": 0
   },
   "publications-ko.html": {
+    "source_sha256": "096bc239ede276ea1b008353ace70d9c5792d6aaa636a9adc23e038fd8496675",
     "articles": 96,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 481,
     "doi_links": 93
   },
   "news-ko.html": {
-    "articles": 9,
+    "source_sha256": "1b1f08f1e237defe3ed16af092742d816b3a5d1c6380a00f0aacc110a36d0dff",
+    "articles": 10,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 84,
     "doi_links": 1
   },
   "playground-ko.html": {
-    "articles": 5,
+    "source_sha256": "1b8ad66f6ad7ddf3f5ac604cdd4b538fa7302a3e472968bbb611307168b196a9",
+    "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 122,
     "doi_links": 0
   },
   "contact-ko.html": {
+    "source_sha256": "ec58120fad9d003414cdc48929e9411e0af7c8abaab65ae7c4aaf05917b1922d",
     "articles": 4,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 52,
     "doi_links": 0
   },
   "links-ko.html": {
+    "source_sha256": "b9461ad763a4cd1e444cdf386d98cba8e40411197b3c893cb1e8513abb60befc",
     "articles": 0,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 69,
     "doi_links": 0
   },
   "de.html": {
-    "articles": 5,
+    "source_sha256": "b15ba38c6fcbeff6eace67e824aed959b59c818742b48e54bfda407835ff8194",
+    "articles": 4,
     "images": 0,
+    "videos": 5,
+    "text_nodes": 133,
     "doi_links": 0
   },
   "research-de.html": {
-    "articles": 0,
+    "source_sha256": "860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6",
+    "articles": 12,
     "images": 0,
-    "doi_links": 0
+    "videos": 4,
+    "text_nodes": 149,
+    "doi_links": 8
   },
   "about-de.html": {
+    "source_sha256": "e929c876f0b1a9fabe3a418d34cf14d81fe26e058533d59756aa023eca364783",
     "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 62,
     "doi_links": 0
   },
   "people-de.html": {
-    "articles": 26,
-    "images": 16,
+    "source_sha256": "c988e1c9dde2561a0c2062834174d2b8106a81334851cd0677e33a6676ce79b0",
+    "articles": 28,
+    "images": 18,
+    "videos": 0,
+    "text_nodes": 269,
     "doi_links": 0
   },
   "career-de.html": {
+    "source_sha256": "adfed43506bed87b88ac6f5f5e9704a31c4bb3eee5ee88809e53f07a79da73a1",
     "articles": 39,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 368,
     "doi_links": 0
   },
   "publications-de.html": {
+    "source_sha256": "096bc239ede276ea1b008353ace70d9c5792d6aaa636a9adc23e038fd8496675",
     "articles": 96,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 481,
     "doi_links": 93
   },
   "news-de.html": {
-    "articles": 9,
+    "source_sha256": "1b1f08f1e237defe3ed16af092742d816b3a5d1c6380a00f0aacc110a36d0dff",
+    "articles": 10,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 84,
     "doi_links": 1
   },
   "playground-de.html": {
-    "articles": 5,
+    "source_sha256": "1b8ad66f6ad7ddf3f5ac604cdd4b538fa7302a3e472968bbb611307168b196a9",
+    "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 122,
     "doi_links": 0
   },
   "contact-de.html": {
+    "source_sha256": "ec58120fad9d003414cdc48929e9411e0af7c8abaab65ae7c4aaf05917b1922d",
     "articles": 4,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 52,
     "doi_links": 0
   },
   "links-de.html": {
+    "source_sha256": "b9461ad763a4cd1e444cdf386d98cba8e40411197b3c893cb1e8513abb60befc",
     "articles": 0,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 69,
     "doi_links": 0
   },
   "fr.html": {
-    "articles": 5,
+    "source_sha256": "b15ba38c6fcbeff6eace67e824aed959b59c818742b48e54bfda407835ff8194",
+    "articles": 4,
     "images": 0,
+    "videos": 5,
+    "text_nodes": 133,
     "doi_links": 0
   },
   "research-fr.html": {
-    "articles": 0,
+    "source_sha256": "860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6",
+    "articles": 12,
     "images": 0,
-    "doi_links": 0
+    "videos": 4,
+    "text_nodes": 149,
+    "doi_links": 8
   },
   "about-fr.html": {
+    "source_sha256": "e929c876f0b1a9fabe3a418d34cf14d81fe26e058533d59756aa023eca364783",
     "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 62,
     "doi_links": 0
   },
   "people-fr.html": {
-    "articles": 26,
-    "images": 16,
+    "source_sha256": "c988e1c9dde2561a0c2062834174d2b8106a81334851cd0677e33a6676ce79b0",
+    "articles": 28,
+    "images": 18,
+    "videos": 0,
+    "text_nodes": 269,
     "doi_links": 0
   },
   "career-fr.html": {
+    "source_sha256": "adfed43506bed87b88ac6f5f5e9704a31c4bb3eee5ee88809e53f07a79da73a1",
     "articles": 39,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 368,
     "doi_links": 0
   },
   "publications-fr.html": {
+    "source_sha256": "096bc239ede276ea1b008353ace70d9c5792d6aaa636a9adc23e038fd8496675",
     "articles": 96,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 481,
     "doi_links": 93
   },
   "news-fr.html": {
-    "articles": 9,
+    "source_sha256": "1b1f08f1e237defe3ed16af092742d816b3a5d1c6380a00f0aacc110a36d0dff",
+    "articles": 10,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 84,
     "doi_links": 1
   },
   "playground-fr.html": {
-    "articles": 5,
+    "source_sha256": "1b8ad66f6ad7ddf3f5ac604cdd4b538fa7302a3e472968bbb611307168b196a9",
+    "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 122,
     "doi_links": 0
   },
   "contact-fr.html": {
+    "source_sha256": "ec58120fad9d003414cdc48929e9411e0af7c8abaab65ae7c4aaf05917b1922d",
     "articles": 4,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 52,
     "doi_links": 0
   },
   "links-fr.html": {
+    "source_sha256": "b9461ad763a4cd1e444cdf386d98cba8e40411197b3c893cb1e8513abb60befc",
     "articles": 0,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 69,
     "doi_links": 0
   },
   "es.html": {
-    "articles": 5,
+    "source_sha256": "b15ba38c6fcbeff6eace67e824aed959b59c818742b48e54bfda407835ff8194",
+    "articles": 4,
     "images": 0,
+    "videos": 5,
+    "text_nodes": 133,
     "doi_links": 0
   },
   "research-es.html": {
-    "articles": 0,
+    "source_sha256": "860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6",
+    "articles": 12,
     "images": 0,
-    "doi_links": 0
+    "videos": 4,
+    "text_nodes": 149,
+    "doi_links": 8
   },
   "about-es.html": {
+    "source_sha256": "e929c876f0b1a9fabe3a418d34cf14d81fe26e058533d59756aa023eca364783",
     "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 62,
     "doi_links": 0
   },
   "people-es.html": {
-    "articles": 26,
-    "images": 16,
+    "source_sha256": "c988e1c9dde2561a0c2062834174d2b8106a81334851cd0677e33a6676ce79b0",
+    "articles": 28,
+    "images": 18,
+    "videos": 0,
+    "text_nodes": 269,
     "doi_links": 0
   },
   "career-es.html": {
+    "source_sha256": "adfed43506bed87b88ac6f5f5e9704a31c4bb3eee5ee88809e53f07a79da73a1",
     "articles": 39,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 368,
     "doi_links": 0
   },
   "publications-es.html": {
+    "source_sha256": "096bc239ede276ea1b008353ace70d9c5792d6aaa636a9adc23e038fd8496675",
     "articles": 96,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 481,
     "doi_links": 93
   },
   "news-es.html": {
-    "articles": 9,
+    "source_sha256": "1b1f08f1e237defe3ed16af092742d816b3a5d1c6380a00f0aacc110a36d0dff",
+    "articles": 10,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 84,
     "doi_links": 1
   },
   "playground-es.html": {
-    "articles": 5,
+    "source_sha256": "1b8ad66f6ad7ddf3f5ac604cdd4b538fa7302a3e472968bbb611307168b196a9",
+    "articles": 6,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 122,
     "doi_links": 0
   },
   "contact-es.html": {
+    "source_sha256": "ec58120fad9d003414cdc48929e9411e0af7c8abaab65ae7c4aaf05917b1922d",
     "articles": 4,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 52,
     "doi_links": 0
   },
   "links-es.html": {
+    "source_sha256": "b9461ad763a4cd1e444cdf386d98cba8e40411197b3c893cb1e8513abb60befc",
     "articles": 0,
     "images": 0,
+    "videos": 0,
+    "text_nodes": 69,
     "doi_links": 0
   }
 }

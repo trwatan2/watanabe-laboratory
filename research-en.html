@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="We connect catalysis, reaction engineering and electrified reactions to develop new processes for CO₂, methane, hydrogen, carbon resources and sulfur compounds.">
+  <meta name="description" content="The four research themes of Watanabe Laboratory: carbon circulation, structured catalysts, electrified reactions and lattice-sulfur catalysis, with research descriptions and related publications.">
   <title>Research | Watanabe Laboratory</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +90,8 @@
   }
 </style>
 
-<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/research.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/research-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/research-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/research-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
+<link rel="stylesheet" href="css/research-details.css?v=20260911">
+<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/research.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/research-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/research-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/research-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><meta name="translation-source-sha256" content="860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6"><meta name="translation-version" content="20260912-complete-1"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
 body.international-full,body.international-full *{font-family:"Helvetica Neue",Arial,sans-serif!important}
 .international-full:lang(zh-CN),.international-full:lang(zh-CN) *{font-family:"Microsoft YaHei","PingFang SC",sans-serif!important}
 .international-full:lang(ko),.international-full:lang(ko) *{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif!important}
@@ -135,9 +136,20 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
  .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
 }
 @media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}
-</style><link rel="stylesheet" href="visitor-counter.css?v=20260912-2">
-<script defer src="visitor-counter.js?v=20260912-2"></script>
-</head>
+/* Translated labels can be longer; preserve the source grids without clipping. */
+.international-full .research-jump a{min-width:0}
+.international-full .research-jump strong{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-back{max-width:100%;width:fit-content;white-space:normal}
+.international-full .detail-module>h3{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-topic p,.international-full .detail-module-body>p{line-height:1.9}
+.international-full .member-card,.international-full .detail-copy,.international-full .project-copy{min-width:0}
+@media(max-width:650px){
+ .international-full .research-jump strong{font-size:14px}
+ .international-full .research-jump small{font-size:10px;letter-spacing:0}
+ .international-full .research-jump a{flex-wrap:wrap;align-content:flex-start}
+ .international-full .detail-module>h3{hyphens:none}
+}
+</style></head>
 <body class="subpage research-page international-full">
   <header class="site-header scrolled">
   <a class="brand" href="en.html" aria-label="Watanabe Laboratory home">
@@ -168,109 +180,74 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
 </header>
 
   <main>
-    <section class="page-hero research-hero">
+<section class="page-hero research-hero" id="research-top">
       <p class="eyebrow">WATANABE LABORATORY / RESEARCH</p>
       <h1>Research<br>in motion.</h1>
-      <p>We connect molecular transformations to processes through catalysts, reaction environments, energy supply and material circulation.</p>
-      <div class="research-jump" aria-label="Research themes">
-        <a href="#electrified"><b>01</b><span>Electrified<br>Catalysis</span></a>
-        <a href="#carbon"><b>02</b><span>Carbon<br>Conversion</span></a>
-        <a href="#structured"><b>03</b><span>Structured<br>Catalysts</span></a>
-        <a href="#ereaction"><b>04</b><span>e-Reaction<br>Process</span></a>
-        <a href="#sulfur"><b>05</b><span>Lattice Sulfur<br>Catalysis</span></a>
-      </div>
+      <p>Four research themes spanning materials, structures, reactors and energy supply. We connect catalysis with reaction engineering to develop molecular transformations into processes.</p>
+      <nav class="research-jump" aria-label="Research themes"><a href="#carbon"><b>01</b><span><strong>Carbon circulation</strong><small>CARBON CIRCULATION</small></span></a><a href="#structured"><b>02</b><span><strong>Structured catalysts</strong><small>STRUCTURED CATALYSTS</small></span></a><a href="#ereaction"><b>03</b><span><strong>Electrified reactions</strong><small>e-REACTION PROCESS</small></span></a><a href="#sulfur"><b>04</b><span><strong>Lattice-sulfur catalysis</strong><small>LATTICE SULFUR CATALYSIS</small></span></a></nav>
     </section>
 
-    <section class="research-detail" id="electrified">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-electric">
-          <span>01</span><b>ELECTRIFIED<br>CATALYSIS</b><small>JOULE HEATING · e-DRM</small>
-          <i class="electric-ring ring-a"></i><i class="electric-ring ring-b"></i>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">01 / ELECTRIFIED CATALYSIS</p>
-        <h2>Creating reaction environments with electricity.</h2>
-        <p>We supply power directly to catalyst structures to deliver heat where it is needed. For high-temperature reactions such as dry reforming, we study catalytic reactions together with heat transport.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>Joule heating / e-DRM / process electrification</dd></div><div><dt>FOCUS</dt><dd>Efficient local heating · Reaction-environment control · Energy utilization</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail" id="carbon" aria-labelledby="carbon-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" poster="assets/images/research-carbon-ed6cd1ae1513.png" src="assets/videos/research-carbon-5e1f2d0470d8.mp4" aria-label="Carbon circulation animation"></video></div><figcaption>An illustration of carbon circulation connecting CO₂ conversion, syngas production and solid-carbon fixation.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">01 / CARBON CIRCULATION</p>
+            <h2 id="carbon-title">Turning CO₂ into resources.</h2>
+            <p>We combine CO₂ conversion, syngas production and solid-carbon fixation in reaction systems for carbon circulation.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>CO₂ conversion / syngas / RWGS / DRM / solid carbon / carbon circulation</dd></div><div><dt>FOCUS</dt><dd>Syngas production · Solid-carbon recovery · Multistage reactions · On-site resource conversion</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>Research aims</h3><div class="detail-module-body"><p>We study reaction processes that use CO₂ and methane as carbon sources to produce syngas for fuels and chemicals, or solid carbon that can be recovered and used. Alongside catalytic molecular transformations, we investigate combinations of reactors and the separation and recovery of products to control where carbon goes.</p>
+<p>To convert industrial exhaust gases into resources on site, we study the relationships between gas composition, reaction temperature, flow rate and reaction equilibrium. We connect catalyst performance with the carbon balance of the entire process, aiming for continuous conversion and recovery.</p></div></div><div class="detail-module "><h3>Main research topics</h3><div class="detail-module-body"><article class="research-topic"><h4>From CO₂ to syngas</h4><p>We convert CO₂ into carbon monoxide using the reverse water-gas shift reaction (RWGS) and dry reforming of methane (DRM). For syngas, which consists of hydrogen and carbon monoxide, we investigate how combinations of reaction conditions and catalysts affect its composition and production rate.</p></article><article class="research-topic"><h4>Conversion to and recovery of solid carbon</h4><p>We combine RWGS with reactions that produce solid carbon from carbon monoxide, as well as methanation with reforming and decomposition. We investigate where carbon forms, its morphology, its accumulation on catalysts and recovery methods, developing processes that extract carbon while reactions continue.</p></article><article class="research-topic"><h4>Multistage reactions and material circulation</h4><p>We connect multiple reaction stages and adjust temperature, gas composition and water removal at each stage. By examining the role of each reaction and material transfer between stages, we assess CO₂ conversion, product recovery and carbon use across the entire reactor system.</p></article></div></div>
+<!-- carbon: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>Related publications</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5RE00285K" target="_blank" rel="noopener noreferrer">Performance of integrated multi-stage catalytic conversion of CO2 to solid carbon via RWGS–Boudouard coupling ↗</a><small>Reaction Chemistry &amp; Engineering, 2025</small></li><li><a href="https://doi.org/10.1039/D5NJ02716K" target="_blank" rel="noopener noreferrer">Enhancing CO2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor ↗</a><small>New Journal of Chemistry, 2025</small></li></ul><a class="text-link" href="publications-en.html">View all laboratory publications <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">Back to research themes ↑</a></section>
 
-    <section class="research-detail alt" id="carbon">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-carbon">
-          <span>02</span><b>CARBON<br>CONVERSION</b><small>CO₂ → SYNGAS · SOLID CARBON</small>
-          <i class="carbon-orb orb-a">CO₂</i><i class="carbon-arrow">→</i><i class="carbon-orb orb-b">C</i>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">02 / CARBON CONVERSION &amp; FIXATION</p>
-        <h2>From CO₂ to reusable carbon.</h2>
-        <p>We develop reaction systems that convert CO₂ into syngas and solid carbon for carbon circulation. By combining reaction equilibrium, carbon deposition, separation and recovery, we investigate CO₂ conversion at the reactor scale.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>CO₂ conversion / DRM / RWGS / carbon fixation</dd></div><div><dt>FOCUS</dt><dd>Syngas production · Solid-carbon recovery · Carbon circulation</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail alt" id="structured" aria-labelledby="structured-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video aria-label="Making catalyst geometry work." controls autoplay muted loop playsinline preload="metadata"><source src="assets/videos/structured-catalyst.mp4" type="video/mp4"></source></video></div><figcaption>A simulation showing the relationship between structured-catalyst geometry and flow.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">02 / STRUCTURED CATALYSTS</p>
+            <h2 id="structured-title">Making catalyst geometry work.</h2>
+            <p>We use spiral structures, porous metals and washcoats to build catalytic reactors that account for heat and mass transfer.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>structured catalyst / spiral / porous metal / washcoat / CFD / heat &amp; mass transfer</dd></div><div><dt>FOCUS</dt><dd>Catalyst deposition · Flow enhancement · Heat transfer · Mass transfer · Higher flow rates</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>Research aims</h3><div class="detail-module-body"><p>In catalytic reactors, reaction performance depends on catalyst activity, gas flow, heat transfer and mass transfer to catalyst surfaces. We use structured catalysts based on spirals and porous metals to create reaction environments through both materials and geometry.</p>
+<p>We deposit catalytic components on substrates by washcoating and plating, adjusting the catalyst distribution and flow-channel geometry. We combine reaction experiments with flow and heat-transfer analysis to investigate gas transport to catalysts and the transfer of reaction heat.</p></div></div><div class="detail-module "><h3>Main research topics</h3><div class="detail-module-body"><article class="research-topic"><h4>Spiral and porous-metal geometry</h4><p>We study how spiral twisting and porous-metal flow channels affect gas mixing, residence and contact with catalysts. We examine the relationship between reaction performance and pressure drop as flow increases, seeking reactor geometries suited to the required throughput.</p></article><article class="research-topic"><h4>Catalyst-layer formation and deposition methods</h4><p>We form catalyst layers on metal substrates using methods including washcoating and electroless plating. We study how catalyst loading, distribution and adhesion relate to reaction performance, making use of substrate heat conduction and catalyst functionality.</p></article><article class="research-topic"><h4>Heat and mass transfer and reaction performance</h4><p>We study flow and temperature distributions inside reactors through experiments and computational fluid dynamics (CFD). Using reactions such as CO₂ methanation, we evaluate how structured-catalyst geometry contributes to distributing generated heat and supplying reaction gases.</p></article></div></div>
+<!-- structured: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>Related publications</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5RE00477B" target="_blank" rel="noopener noreferrer">High-throughput CO2 methanation in a two-stage reactor system with spiral-structured catalysts ↗</a><small>Reaction Chemistry &amp; Engineering, 2026</small></li><li><a href="https://doi.org/10.1039/D5SE00718F" target="_blank" rel="noopener noreferrer">Enhanced thermal management in CO2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems ↗</a><small>Sustainable Energy &amp; Fuels, 2025</small></li></ul><a class="text-link" href="publications-en.html">View all laboratory publications <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">Back to research themes ↑</a></section>
 
-    <section class="research-detail" id="structured">
-      <div class="detail-video reveal">
-        <video autoplay muted loop playsinline preload="metadata" aria-label="Structured catalyst simulation">
-          <source src="assets/videos/structured-catalyst.mp4" type="video/mp4"></source>
-        </video>
-        <div class="video-placeholder theme-structured"><span>03</span><b>STRUCTURED<br>CATALYSTS</b><small>SPIRAL · POROUS METAL · FLOW</small></div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">03 / STRUCTURED &amp; SPIRAL CATALYSTS</p>
-        <h2>Turning catalyst geometry into reaction performance.</h2>
-        <p>We build reactors using spiral structures, porous metals and washcoats, considering fluid flow and heat and mass transfer alongside catalyst materials. Visualizing structure–flow interactions helps us actively control the reaction environment.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>structured catalyst / spiral / CFD / heat &amp; mass transfer</dd></div><div><dt>FOCUS</dt><dd>Enhanced flow · Improved heat transfer · Higher space velocities</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail" id="ereaction" aria-labelledby="ereaction-title"><span id="electrified" class="legacy-anchor" aria-hidden="true"></span><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" aria-label="Spiral catalyst Joule heating animation" poster="assets/images/research-ereaction-025eee5caa9c.jpg" src="assets/videos/research-ereaction-a4347de3a74c.mp4"></video></div><figcaption>An illustration of Joule heating by passing current through a metal spiral.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">03 / e-REACTION PROCESS</p>
+            <h2 id="ereaction-title">Changing chemical processes through heat delivery.</h2>
+            <p>We introduce electrical energy directly into reactors and catalysts, exploiting rapid response, local heating and compact equipment.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>e-Reaction / Joule heating / electrified catalysis / e-Methanation / e-DRM</dd></div><div><dt>FOCUS</dt><dd>Direct heating · Temperature distribution · Energy utilization · Response · Multistage reactions</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>Research aims</h3><div class="detail-module-body"><p>We pass current directly through metal catalyst structures and use the Joule heat generated by electrical resistance for reactions. Generating heat in the catalyst-bearing structure allows us to control the relationship between energy-input locations and reaction locations, and to investigate chemical processes through their heating methods.</p>
+<p>We connect the materials and heat-generation properties of electrified catalysts with reactor temperature distributions and heat transfer. We investigate responses to changes in input power, gas flow and reaction composition, developing electrified reaction processes including CO₂ methanation and reforming.</p></div></div><div class="detail-module "><h3>Main research topics</h3><div class="detail-module-body"><article class="research-topic"><h4>Direct current heating and catalyst temperature</h4><p>We examine the relationships among current paths, structural electrical resistance, catalyst-layer placement and heat generation. We measure input power and reaction temperature and compare direct heating with external heating to evaluate how the heat-supply method affects catalytic reactions.</p></article><article class="research-topic"><h4>e-Methanation · e-DRM</h4><p>We study conversion, product composition and catalyst state in electrified CO₂ methanation (e-Methanation) and dry reforming of methane (e-DRM). For both exothermic and endothermic reactions, we examine the relationship between direct heating and reaction heat.</p></article><article class="research-topic"><h4>Connecting multiple electrified reactions</h4><p>We combine reactions such as methanation and reforming in stages, adjusting power supply and operating conditions for each stage. We investigate responses to startup and operating changes, control of syngas composition and compact equipment, aiming for reaction systems that can be used on site.</p></article></div></div>
+<!-- ereaction: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>Related publications</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1093/chemle/upaf161" target="_blank" rel="noopener noreferrer">Integrated electrically-driven CO2 methanation and dry reforming for efficient and flexible syngas production ↗</a><small>Chemistry Letters, 2025</small></li><li><a href="https://doi.org/10.1039/D4RA08236B" target="_blank" rel="noopener noreferrer">e-Methanation with a spiral catalyst: optimized thermal management and long-term stability ↗</a><small>RSC Advances, 2025</small></li></ul><a class="text-link" href="publications-en.html">View all laboratory publications <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">Back to research themes ↑</a></section>
 
-    <section class="research-detail alt" id="ereaction">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-ereaction">
-          <span>04</span><b>e-REACTION<br>PROCESS</b><small>ELECTRICITY → CHEMICAL TRANSFORMATION</small>
-          <div class="pulse-line"><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">04 / e-REACTION PROCESS</p>
-        <h2>Changing chemical processes through heat delivery.</h2>
-        <p>We investigate processes that introduce electrical energy directly into reactors and catalysts. Rapid response, local heating and compact equipment enabled by electrification support new modes of reaction operation.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>e-Reaction / electrification / process intensification</dd></div><div><dt>FOCUS</dt><dd>Direct heating · Rapid response · On-site reaction processes</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail sulfur-detail" id="sulfur" aria-labelledby="sulfur-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" aria-label="Animation of lattice-sulfur redox reactions in NiAs-type CoS" poster="assets/images/research-sulfur-b90cbe71aedc.webp" src="assets/videos/research-sulfur-11d3c034db78.mp4"></video></div><figcaption>An illustration of a redox cycle showing lattice-sulfur release, sulfur-vacancy formation and sulfur reinsertion.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">04 / LATTICE SULFUR CATALYSIS</p>
+            <h2 id="sulfur-title">Using lattice sulfur as a reactive species.</h2>
+            <p>We study redox catalytic processes in which sulfur is released from sulfide lattices and reinserted from H₂S, repeatedly using lattice sulfur through sulfur vacancies.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>lattice sulfur / sulfur vacancy / H₂S / redox cycle / dehydrogenation</dd></div><div><dt>FOCUS</dt><dd>Lattice-sulfur reactivity · Sulfur vacancies · Reinsertion · Dehydrogenation · Sulfur-containing compounds</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>Research aims</h3><div class="detail-module-body"><p>We use the lattice sulfur (lattice S) that forms sulfides as a chemical species participating in reactions. We focus on its involvement in hydrogen abstraction from hydrocarbons and release as H₂S, followed by sulfur reinsertion into sulfur vacancies.</p>
+<p>Through redox cycles that repeatedly consume and regenerate lattice sulfur, we study alkane dehydrogenation and the conversion of sulfur-containing compounds. We investigate relationships between material state during reactions and products to develop catalytic processes that use sulfur species.</p></div></div><div class="detail-module "><h3>Main research topics</h3><div class="detail-module-body"><article class="research-topic"><h4>Reactions between lattice sulfur and hydrocarbons</h4><p>We study how lattice sulfur in sulfides participates in hydrocarbon conversion. For reactions such as alkane dehydrogenation to olefins, we examine relationships between catalyst composition, reaction temperature, gas composition and product selectivity.</p></article><article class="research-topic"><h4>Sulfur-vacancy formation and regeneration</h4><p>We focus on sulfur vacancies left after lattice-sulfur release and sulfur reinsertion using H₂S. We evaluate reaction and regeneration conditions, sulfur transport and catalyst performance during repeated operation to find conditions for repeated use of lattice sulfur.</p></article><article class="research-topic"><h4>Extension to sulfur-containing compounds and electrified reactions</h4><p>We investigate hydrocarbon conversion mediated by sulfur species and reactions of sulfur-containing compounds. By relating catalyst-surface conditions to heating methods, we examine how operation using direct heating and other methods affects reactivity and products.</p></article></div></div>
+<!-- sulfur: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>Related publications</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5SU00447K" target="_blank" rel="noopener noreferrer">Redox mechanism by lattice sulphur in an Fe-based catalyst for propane dehydrogenation with H2S co-feeding ↗</a><small>RSC Sustainability, 2025</small></li><li><a href="https://doi.org/10.1093/chemle/upae228" target="_blank" rel="noopener noreferrer">Electric heating system for iso-C5 dehydrogenation in the presence of H2S ↗</a><small>Chemistry Letters, 2025</small></li></ul><a class="text-link" href="publications-en.html">View all laboratory publications <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">Back to research themes ↑</a></section>
 
-    <section class="research-detail sulfur-detail" id="sulfur">
-      <div class="detail-video lattice-visual reveal" aria-label="Lattice sulfur redox cycle illustration">
-        <div class="lattice-title"><span>05</span><b>LATTICE SULFUR<br>AS A REACTIVE SPECIES</b><small>S<sub>lattice</sub> ⇄ vacancy ⇄ S<sub>lattice</sub></small></div>
-        <div class="lattice-grid" aria-hidden="true">
-          <i></i><i></i><i class="s-node"></i><i></i><i></i><i class="s-node"></i>
-          <i></i><i class="s-node"></i><i></i><i class="vacancy"></i><i></i><i></i>
-          <i class="s-node"></i><i></i><i></i><i class="s-node"></i><i></i><i></i>
-          <i></i><i></i><i class="s-node"></i><i></i><i class="s-node"></i><i></i>
-        </div>
-        <div class="sulfur-cycle" aria-hidden="true"><span>Lattice S</span><b>→</b><span>S vacancy</span><b>→</b><span>H₂S<br>regeneration</span></div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">05 / LATTICE SULFUR CATALYSIS</p>
-        <h2>Using lattice sulfur as a reactant in catalysis.</h2>
-        <p>Sulfur in sulfide lattices acts as a reactive species that takes up hydrogen from hydrocarbons and leaves as H₂S. Sulfur from H₂S is then reinserted into the resulting vacancies, enabling redox cycles that repeatedly use lattice sulfur.</p>
-        <p>We control exchangeable surface lattice sulfur, vacancy formation and regeneration, and metal–sulfur interfaces to explore dehydrogenation and new catalytic processes involving sulfur compounds.</p>
-        <dl class="research-facts sulfur-facts"><div><dt>KEYWORDS</dt><dd>lattice sulfur / sulfur vacancy / H₂S / redox cycle</dd></div><div><dt>CONCEPT</dt><dd>S<sub>lattice</sub> release → vacancy → sulfur reinsertion</dd></div></dl>
-      </div>
-    </section>
-
-    <section class="research-outro">
+<section class="research-outro">
       <p class="kicker">FROM CATALYST TO PROCESS</p>
       <h2>Materials. Structures.<br>Reactions. Processes.</h2>
       <p>Our approach connects materials chemistry with reaction engineering, structured catalysts and energy supply.</p>
       <a class="button button-solid" href="contact-en.html">Collaborate with us</a>
     </section>
-  </main>
+</main>
 
-  <section id="visitor-counter" class="global-visitors" aria-label="Global Visitors"></section>
-<footer class="site-footer">
+  <footer class="site-footer">
     <div><b>Watanabe Laboratory</b><span>Watanabe Laboratory</span></div>
     <p>© <span id="year"></span> Watanabe Laboratory.</p>
   </footer>

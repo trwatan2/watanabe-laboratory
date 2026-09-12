@@ -43,3 +43,16 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
  .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
 }
 @media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}
+/* Translated labels can be longer; preserve the source grids without clipping. */
+.international-full .research-jump a{min-width:0}
+.international-full .research-jump strong{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-back{max-width:100%;width:fit-content;white-space:normal}
+.international-full .detail-module>h3{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-topic p,.international-full .detail-module-body>p{line-height:1.9}
+.international-full .member-card,.international-full .detail-copy,.international-full .project-copy{min-width:0}
+@media(max-width:650px){
+ .international-full .research-jump strong{font-size:14px}
+ .international-full .research-jump small{font-size:10px;letter-spacing:0}
+ .international-full .research-jump a{flex-wrap:wrap;align-content:flex-start}
+ .international-full .detail-module>h3{hyphens:none}
+}

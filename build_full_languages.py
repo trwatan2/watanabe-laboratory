@@ -1,11 +1,16 @@
 from pathlib import Path
 from lxml import html
 from urllib.parse import urlsplit
-import json,re,copy
+import json,re,copy,base64,hashlib,argparse
+from collections import Counter
+
+PARSER=argparse.ArgumentParser()
+PARSER.add_argument("--check",action="store_true",help="Verify generated pages without writing")
+ARGS=PARSER.parse_args()
 
 ROOT=Path(__file__).parent
-SOURCE=ROOT/'source'
-OUT=ROOT/'full-languages'
+SOURCE=ROOT
+OUT=ROOT
 OUT.mkdir(exist_ok=True)
 TEXT=json.loads((ROOT/'source-text.json').read_text())
 LANGS=['en','zh','ko','de','fr','es']
@@ -14,7 +19,7 @@ PAGES=list(TEXT)
 def filename(page,lang):return lang+'.html' if page=='index' else page+'-'+lang+'.html'
 def load_translation(lang):
     d={};section=None
-    for line in (ROOT/'translations'/(lang+'.txt')).read_text().splitlines():
+    for line in (ROOT/(lang+'.txt')).read_text().splitlines():
         if line.startswith('['):section=line[1:-1]
         elif '|' in line:
             i,t=line.split('|',1);d[TEXT[section][int(i)]]=t
@@ -29,37 +34,66 @@ people=html.fromstring((SOURCE/'people.html').read_text())
 for h in people.xpath('//h3[small]'):
     if h.text and h.xpath('string(./small)').strip():PROPER[h.text.strip()]=h.xpath('string(./small)').strip()
 PUBLISHED=set(TEXT['publications'][i] for i in [6,7,9,10])
-UI=json.loads((ROOT/'translations/ui.json').read_text())
-CSS=(ROOT/'css/full-international.css').read_text()
+SUPPLEMENT=json.loads((ROOT/'translations-current.json').read_text())
+UI=json.loads((ROOT/'ui.json').read_text())
+CSS=(ROOT/'full-international.css').read_text()
+# Reuse identical media bytes from the Japanese pages, including embedded portraits.
+MEDIA={}
+for path in sorted((ROOT/'assets').rglob('*')):
+    if path.is_file():MEDIA[hashlib.sha256(path.read_bytes()).hexdigest()]=str(path.relative_to(ROOT))
+def shared_media(value):
+    if not value.startswith('data:') or ';base64,' not in value:return value
+    header,payload=value.split(',',1)
+    mime=header[5:].split(';')[0]
+    if mime not in ['image/png','image/jpeg','image/webp','video/mp4']:return value
+    raw=base64.b64decode(payload); digest=hashlib.sha256(raw).hexdigest()
+    if digest not in MEDIA:
+        ext={'image/png':'png','image/jpeg':'jpg','image/webp':'webp','video/mp4':'mp4'}[mime]
+        path=ROOT/'assets'/'international-shared'/(digest[:20]+'.'+ext)
+        if not ARGS.check:
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
+        else:assert path.exists(),f'Missing shared media: {path}'
+        MEDIA[digest]=str(path.relative_to(ROOT))
+    return MEDIA[digest]
+def visible_nodes(d):
+    return d.xpath('//body//text()[normalize-space() and not(ancestor::script or ancestor::style)]')
+def media_signature(d):
+    return [(x.tag,attr,shared_media(x.get(attr))) for x in d.xpath('//img|//video|//source|//image') for attr in ['src','data-src','poster','href'] if x.get(attr)]
+def elements(d):
+    return [(x.tag,x.get('id'),x.get('class')) for x in d.xpath('//main//*') if isinstance(x.tag,str)]
 report={}
 for lang in LANGS:
     native=load_translation(lang)
     missing=set(EN)-set(native)
     assert not missing,(lang,missing)
     ui={k:v[LANGS.index(lang)] for k,v in UI.items()}
-    trans={**PROPER,**native,**ui}
+    trans={**PROPER,**native,**ui,**{k:v[lang] for k,v in SUPPLEMENT.items()}}
     def translated(s):
         t=s.strip()
         if t in trans:return s.replace(t,trans[t])
+        if t.endswith(' のWebサイトを開く'):
+            name=t.removesuffix(' のWebサイトを開く')
+            label=trans.get(name,name)
+            return {'en':'Open the website of '+label,'zh':'打开'+label+'网站','ko':label+' 웹사이트 열기','de':'Website von '+label+' öffnen','fr':'Ouvrir le site de '+label,'es':'Abrir el sitio de '+label}[lang]
         match=re.match(r'^(.*)（(\d+)）$',t)
         if match and match[1] in PROPER:return PROPER[match[1]]+' ('+match[2]+')'
         return s
     for page in PAGES:
         source=(SOURCE/(page+'.html')).read_text()
         source=re.sub(r'&lt;!--.*?--&gt;','',source,flags=re.S)
+        original=html.fromstring(source)
         d=html.fromstring(source)
         d.set('lang','zh-CN' if lang=='zh' else lang)
+        source_hash=hashlib.sha256(source.encode()).hexdigest()
         body=d.xpath('//body')[0];body.set('class',(body.get('class','')+' international-full').strip())
         # Preserve the source layout and all substantive content; localize text nodes.
         for el in d.xpath('//body//*[not(self::script or self::style)]'):
             if el.text and el.tag not in ['script','style']:el.text=translated(el.text)
             if el.tail:el.tail=translated(el.tail)
-        # Avoid showing identical Latin-script names twice while retaining Japanese names.
-        for h in d.xpath('//h2[small] | //h3[small]'):
-            small=h.find('small')
-            if h.text and small is not None and h.text.strip()==small.text_content().strip():
-                orig=next((k for k,v in PROPER.items() if v==h.text.strip()),None)
-                if orig:small.text=orig
+        # Keep each person's Japanese and Latin-script name, as in the source.
+        for source_heading,heading in zip(original.xpath('//h2[small]|//h3[small]'),d.xpath('//h2[small]|//h3[small]')):
+            if heading.text and heading.text.strip()==heading.find('small').text_content().strip():
+                heading.find('small').text=(source_heading.text or '').strip()
         for el in d.xpath('//*[@aria-label]'):
             old=el.get('aria-label')
             el.set('aria-label',translated(old))
@@ -96,16 +130,21 @@ for lang in LANGS:
         for code in ['ja']+LANGS:
             head.append(html.Element('link',rel='alternate',hreflang='zh-CN' if code=='zh' else code,href=BASE+(page+'.html' if code=='ja' else filename(page,code))))
         head.append(html.Element('link',rel='alternate',hreflang='x-default',href=BASE+filename(page,'en')))
-        title=(ui.get(page.capitalize(),page.capitalize()) if page!='index' else ui['Research'])+' | Watanabe Laboratory'
+        title=(ui.get(page.capitalize(),page.capitalize())+' | ' if page!='index' else '')+'Watanabe Laboratory'
         d.xpath('//title')[0].text=title
         desc=d.xpath('//meta[@name="description"]')
-        if desc:desc[0].set('content',native[TEXT['index'][7]])
+        if desc:desc[0].set('content',translated(desc[0].get('content','')))
+        for meta in d.xpath('//meta[starts-with(@property,"og:")]'):
+            if meta.get('property')=='og:url':meta.set('content',BASE+filename(page,lang))
+            else:meta.set('content',translated(meta.get('content','')))
+        head.append(html.Element('meta',name='translation-source-sha256',content=source_hash))
+        head.append(html.Element('meta',name='translation-version',content='20260912-complete-1'))
         for id in ['biz-udpgothic-force','vision-line-fix','sulfur-title-line-fix','heading-font-restore']:
             for x in d.xpath('//*[@id="'+id+'"]'):x.getparent().remove(x)
         style=html.Element('style',id='full-international-style');style.text=CSS;head.append(style)
-        # Missing optional videos in the source retain their existing visual panels.
-        for video in d.xpath('//video[@data-src]'):
-            if video.get('data-src') not in json.loads((ROOT/'repo-paths.json').read_text()):video.getparent().remove(video)
+        for el in d.xpath('//*[@src or @poster or @href]'):
+            for attr in ['src','poster','href']:
+                if el.get(attr):el.set(attr,shared_media(el.get(attr)))
         for script in d.xpath('//script[not(@src)]'):
             if script.text and 'gvTotal' in script.text:
                 script.text=script.text.replace('取得できません',ui['Unavailable']).replace('記録なし',ui['No records']).replace("'更新 '",json.dumps(ui['Updated']+' (JST) ')).replace("'ja-JP'",json.dumps(d.get('lang')))
@@ -116,19 +155,25 @@ for lang in LANGS:
             for a in d.xpath('//a[starts-with(@href,"tel:")]'):
                 value=a.get('href')[4:]
                 if value.startswith('0'):a.set('href','tel:+81'+value[1:])
-        # Compact labels in the existing diagram must fit its fixed geometry.
-        for svg in d.xpath('//svg'):
-            for el in svg.xpath('.//text'):
-                for key in ['工学部','情報学部','理学部','農学部']:
-                    if el.text and el.text.strip()==trans.get(key):el.text=EN[key]
-        text=html.tostring(d,encoding='unicode',method='html')
-        (OUT/filename(page,lang)).write_text('<!doctype html>\n'+text+'\n')
+        text='<!doctype html>\n'+html.tostring(d,encoding='unicode',method='html')+'\n'
+        text=re.sub(r'[ \t]+(?=\n)','',text)
+        # Structural and byte-level media parity with the current Japanese page.
+        assert elements(original)==elements(d),(lang,page,'structure differs')
+        assert media_signature(original)==media_signature(d),(lang,page,'media differs')
+        assert len(visible_nodes(original))==len(visible_nodes(d)),(lang,page,'text nodes differ')
+        assert [a.get('href') for a in original.xpath('//a[contains(@href,"doi.org")]')]==[a.get('href') for a in d.xpath('//a[contains(@href,"doi.org")]')],(lang,page,'DOIs differ')
         leftovers=[]
-        for s in d.xpath('//body//text()[not(ancestor::script or ancestor::style)]'):
-            t=s.strip()
-            if t in set(sum(TEXT.values(),[])) and t not in trans and t not in PUBLISHED and t not in ['日本語','中文']:
-                if not (re.match(r'^(.*)（(\d+)）$',t)):leftovers.append(t)
-        assert not leftovers,(lang,page,leftovers)
-        report[filename(page,lang)]={'articles':len(d.xpath('//article')),'images':len(d.xpath('//img')),'doi_links':len(d.xpath('//a[contains(@href,"doi.org")]'))}
-(OUT/'validation.json').write_text(json.dumps(report,indent=2))
-print('Built',len(report),'complete localized pages.')
+        vals=list(visible_nodes(original))+original.xpath('//@aria-label|//@alt|//@placeholder|//@title|//meta[@name="description"]/@content')
+        for val in vals:
+            t=val.strip()
+            if not re.search('[\u3040-\u30ff\u3400-\u9fff]',t):continue
+            if t in ['日本語','中文'] or t in PUBLISHED or t in PROPER:continue
+            if t not in trans and translated(t)==t:leftovers.append(t)
+        assert not leftovers,(lang,page,'untranslated source',sorted(set(leftovers)))
+        output=OUT/filename(page,lang)
+        if ARGS.check:
+            assert output.read_text()==text, f'Outdated translated page: {output.name}; rebuild translations.'
+        else:output.write_text(text)
+        report[filename(page,lang)]={'source_sha256':source_hash,'articles':len(d.xpath('//article')),'images':len(d.xpath('//img')),'videos':len(d.xpath('//video')),'text_nodes':len(visible_nodes(d)),'doi_links':len(d.xpath('//a[contains(@href,"doi.org")]'))}
+if not ARGS.check:(OUT/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
+print(('Verified' if ARGS.check else 'Built'),len(report),'complete localized pages against current Japanese sources.')

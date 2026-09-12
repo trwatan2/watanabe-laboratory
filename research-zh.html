@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="我们结合催化化学、反应工程与电气化反应，面向CO₂、甲烷、氢、碳资源及含硫物质，开发新的反应工艺。">
+  <meta name="description" content="渡部研究室的四个研究主题：碳循环、结构化催化剂、电驱动反应与晶格硫催化，介绍研究内容及相关论文。">
   <title>研究 | Watanabe Laboratory</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +90,8 @@
   }
 </style>
 
-<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/research.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/research-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/research-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/research-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
+<link rel="stylesheet" href="css/research-details.css?v=20260911">
+<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/research.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/research-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/research-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/research-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><meta name="translation-source-sha256" content="860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6"><meta name="translation-version" content="20260912-complete-1"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
 body.international-full,body.international-full *{font-family:"Helvetica Neue",Arial,sans-serif!important}
 .international-full:lang(zh-CN),.international-full:lang(zh-CN) *{font-family:"Microsoft YaHei","PingFang SC",sans-serif!important}
 .international-full:lang(ko),.international-full:lang(ko) *{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif!important}
@@ -135,9 +136,20 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
  .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
 }
 @media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}
-</style><link rel="stylesheet" href="visitor-counter.css?v=20260912-2">
-<script defer src="visitor-counter.js?v=20260912-2"></script>
-</head>
+/* Translated labels can be longer; preserve the source grids without clipping. */
+.international-full .research-jump a{min-width:0}
+.international-full .research-jump strong{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-back{max-width:100%;width:fit-content;white-space:normal}
+.international-full .detail-module>h3{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-topic p,.international-full .detail-module-body>p{line-height:1.9}
+.international-full .member-card,.international-full .detail-copy,.international-full .project-copy{min-width:0}
+@media(max-width:650px){
+ .international-full .research-jump strong{font-size:14px}
+ .international-full .research-jump small{font-size:10px;letter-spacing:0}
+ .international-full .research-jump a{flex-wrap:wrap;align-content:flex-start}
+ .international-full .detail-module>h3{hyphens:none}
+}
+</style></head>
 <body class="subpage research-page international-full">
   <header class="site-header scrolled">
   <a class="brand" href="zh.html" aria-label="Watanabe Laboratory home">
@@ -168,109 +180,74 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
 </header>
 
   <main>
-    <section class="page-hero research-hero">
+<section class="page-hero research-hero" id="research-top">
       <p class="eyebrow">WATANABE LABORATORY / RESEARCH</p>
       <h1>研究<br>进展。</h1>
-      <p>通过催化剂、反应环境、能量供给与物质循环，将分子转化连接至工艺。</p>
-      <div class="research-jump" aria-label="Research themes">
-        <a href="#electrified"><b>01</b><span>Electrified<br>Catalysis</span></a>
-        <a href="#carbon"><b>02</b><span>Carbon<br>Conversion</span></a>
-        <a href="#structured"><b>03</b><span>Structured<br>Catalysts</span></a>
-        <a href="#ereaction"><b>04</b><span>e-Reaction<br>Process</span></a>
-        <a href="#sulfur"><b>05</b><span>Lattice Sulfur<br>Catalysis</span></a>
-      </div>
+      <p>涵盖材料、结构、反应器与能源供给的四个研究主题。连接催化化学与反应工程，将分子转化发展为工艺过程。</p>
+      <nav class="research-jump" aria-label="研究主题"><a href="#carbon"><b>01</b><span><strong>碳循环</strong><small>CARBON CIRCULATION</small></span></a><a href="#structured"><b>02</b><span><strong>结构化催化剂</strong><small>STRUCTURED CATALYSTS</small></span></a><a href="#ereaction"><b>03</b><span><strong>电驱动反应</strong><small>e-REACTION PROCESS</small></span></a><a href="#sulfur"><b>04</b><span><strong>晶格硫催化</strong><small>LATTICE SULFUR CATALYSIS</small></span></a></nav>
     </section>
 
-    <section class="research-detail" id="electrified">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-electric">
-          <span>01</span><b>ELECTRIFIED<br>CATALYSIS</b><small>JOULE HEATING · e-DRM</small>
-          <i class="electric-ring ring-a"></i><i class="electric-ring ring-b"></i>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">01 / ELECTRIFIED CATALYSIS</p>
-        <h2>用电构建反应环境。</h2>
-        <p>我们向催化剂结构体直接供电，在所需位置供给热量。面向干重整等高温反应，同时研究催化反应与热输运。</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>Joule heating / e-DRM / process electrification</dd></div><div><dt>FOCUS</dt><dd>高效局部加热 · 反应环境调控 · 能量利用</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail" id="carbon" aria-labelledby="carbon-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" poster="assets/images/research-carbon-ed6cd1ae1513.png" src="assets/videos/research-carbon-5e1f2d0470d8.mp4" aria-label="碳循环动画"></video></div><figcaption>连接CO₂转化、合成气生产与固体碳固定的碳循环示意图。</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">01 / CARBON CIRCULATION</p>
+            <h2 id="carbon-title">将CO₂转化为资源。</h2>
+            <p>结合CO₂转化、合成气制造与固体碳固定，研究实现碳循环利用的反应系统。</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>CO₂ conversion / syngas / RWGS / DRM / solid carbon / carbon circulation</dd></div><div><dt>FOCUS</dt><dd>合成气生产 · 固体碳回收 · 多级反应 · 现场资源化</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>研究目标</h3><div class="detail-module-body"><p>我们研究以CO₂和甲烷为碳源，将其转化为燃料与化学品原料合成气，或可回收利用的固体碳的反应过程。除催化分子转化外，还探讨反应器组合以及产物的分离与回收，以控制碳的去向。</p>
+<p>为了在现场将工业废气转化为资源，我们研究气体组成、反应温度、流量与反应平衡之间的关系。将催化材料性能与整个工艺的碳收支联系起来，力求实现连续转化与回收。</p></div></div><div class="detail-module "><h3>主要研究内容</h3><div class="detail-module-body"><article class="research-topic"><h4>从CO₂到合成气</h4><p>利用逆水煤气变换反应（RWGS）和甲烷干重整（DRM）将CO₂转化为一氧化碳。对于由氢气和一氧化碳组成的合成气，我们研究反应条件与催化剂的组合如何影响其组成和产量。</p></article><article class="research-topic"><h4>固体碳的转化与回收</h4><p>将RWGS与由一氧化碳生成固体碳的反应相结合，同时组合甲烷化与重整、分解等反应。研究碳生成的位置、形态、在催化剂上的积累与回收方法，发展在反应持续进行的同时取出碳的工艺。</p></article><article class="research-topic"><h4>多级反应与物质循环</h4><p>连接多个反应级，调节各级的温度、气体组成与除水等条件。掌握各反应的作用和级间物质传递，从整个反应器系统评价CO₂转化、产物回收与碳利用之间的关系。</p></article></div></div>
+<!-- carbon: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>相关论文</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5RE00285K" target="_blank" rel="noopener noreferrer">Performance of integrated multi-stage catalytic conversion of CO2 to solid carbon via RWGS–Boudouard coupling ↗</a><small>Reaction Chemistry &amp; Engineering, 2025</small></li><li><a href="https://doi.org/10.1039/D5NJ02716K" target="_blank" rel="noopener noreferrer">Enhancing CO2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor ↗</a><small>New Journal of Chemistry, 2025</small></li></ul><a class="text-link" href="publications-zh.html">查看研究室全部论文 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">返回研究主题列表 ↑</a></section>
 
-    <section class="research-detail alt" id="carbon">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-carbon">
-          <span>02</span><b>CARBON<br>CONVERSION</b><small>CO₂ → SYNGAS · SOLID CARBON</small>
-          <i class="carbon-orb orb-a">CO₂</i><i class="carbon-arrow">→</i><i class="carbon-orb orb-b">C</i>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">02 / CARBON CONVERSION &amp; FIXATION</p>
-        <h2>将CO₂转化为可再利用的碳。</h2>
-        <p>构建将CO₂转化为合成气和固体碳的反应系统，研究碳循环工艺。结合反应平衡、碳沉积、分离与回收，从反应器尺度考察CO₂转化。</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>CO₂ conversion / DRM / RWGS / carbon fixation</dd></div><div><dt>FOCUS</dt><dd>合成气制造 · 固体碳回收 · 碳循环</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail alt" id="structured" aria-labelledby="structured-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video aria-label="让催化剂的形状发挥作用。" controls autoplay muted loop playsinline preload="metadata"><source src="assets/videos/structured-catalyst.mp4" type="video/mp4"></source></video></div><figcaption>展示结构化催化剂几何形状与流动关系的模拟。</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">02 / STRUCTURED CATALYSTS</p>
+            <h2 id="structured-title">让催化剂的形状发挥作用。</h2>
+            <p>利用螺旋结构、多孔金属和涂层，构建兼顾传热与传质的催化反应器。</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>structured catalyst / spiral / porous metal / washcoat / CFD / heat &amp; mass transfer</dd></div><div><dt>FOCUS</dt><dd>催化剂负载 · 流动促进 · 传热 · 传质 · 高流量应用</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>研究目标</h3><div class="detail-module-body"><p>催化反应器的性能不仅取决于催化材料活性，也取决于反应气体流动、热传递以及到催化剂表面的传质。我们采用以螺旋和多孔金属为基材的结构化催化剂，从材料与形状两个方面构建反应环境。</p>
+<p>通过浸涂和镀覆在基材上负载催化组分，调节负载状态与流道形状。结合反应实验与流动、传热分析，研究从气体到达催化剂的过程到反应热传递的各个环节。</p></div></div><div class="detail-module "><h3>主要研究内容</h3><div class="detail-module-body"><article class="research-topic"><h4>螺旋与多孔金属的几何形状</h4><p>研究螺旋扭转与多孔金属流道对气体混合、停留以及与催化剂接触的影响。考察提高流量时反应性能与压降的关系，探索适合处理量要求的反应器形状。</p></article><article class="research-topic"><h4>催化层形成与负载方法</h4><p>利用浸涂、化学镀等方法在金属基材上形成催化层。研究催化剂负载量、分布、附着性与反应性能之间的关系，利用基材的导热性与催化材料的功能。</p></article><article class="research-topic"><h4>传热、传质与反应性能</h4><p>通过实验与计算流体力学（CFD）研究反应器内的流动和温度分布。以CO₂甲烷化等反应为例，评价结构化催化剂形状如何有助于分散反应热和供给反应气体。</p></article></div></div>
+<!-- structured: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>相关论文</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5RE00477B" target="_blank" rel="noopener noreferrer">High-throughput CO2 methanation in a two-stage reactor system with spiral-structured catalysts ↗</a><small>Reaction Chemistry &amp; Engineering, 2026</small></li><li><a href="https://doi.org/10.1039/D5SE00718F" target="_blank" rel="noopener noreferrer">Enhanced thermal management in CO2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems ↗</a><small>Sustainable Energy &amp; Fuels, 2025</small></li></ul><a class="text-link" href="publications-zh.html">查看研究室全部论文 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">返回研究主题列表 ↑</a></section>
 
-    <section class="research-detail" id="structured">
-      <div class="detail-video reveal">
-        <video autoplay muted loop playsinline preload="metadata" aria-label="Structured catalyst simulation">
-          <source src="assets/videos/structured-catalyst.mp4" type="video/mp4"></source>
-        </video>
-        <div class="video-placeholder theme-structured"><span>03</span><b>STRUCTURED<br>CATALYSTS</b><small>SPIRAL · POROUS METAL · FLOW</small></div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">03 / STRUCTURED &amp; SPIRAL CATALYSTS</p>
-        <h2>将催化剂形状转化为反应性能。</h2>
-        <p>利用螺旋结构、多孔金属和涂层，在构建反应器时同时考虑催化材料、流动、传热与传质。通过可视化结构与流动的相互作用，主动调控反应环境。</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>structured catalyst / spiral / CFD / heat &amp; mass transfer</dd></div><div><dt>FOCUS</dt><dd>强化流动 · 强化传热 · 提高空速</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail" id="ereaction" aria-labelledby="ereaction-title"><span id="electrified" class="legacy-anchor" aria-hidden="true"></span><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" aria-label="螺旋催化剂焦耳加热动画" poster="assets/images/research-ereaction-025eee5caa9c.jpg" src="assets/videos/research-ereaction-a4347de3a74c.mp4"></video></div><figcaption>金属螺旋通电产生焦耳热的示意动画。</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">03 / e-REACTION PROCESS</p>
+            <h2 id="ereaction-title">从供热方式改变化学工艺。</h2>
+            <p>将电能直接引入反应器与催化剂，利用快速响应、局部加热和设备紧凑化，开发新的反应操作。</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>e-Reaction / Joule heating / electrified catalysis / e-Methanation / e-DRM</dd></div><div><dt>FOCUS</dt><dd>直接加热 · 温度分布 · 能源利用 · 响应特性 · 多级反应</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>研究目标</h3><div class="detail-module-body"><p>向金属催化结构体直接通电，利用电阻产生的焦耳热进行反应。通过在负载催化剂的结构体中产生热量，控制能量输入位置与反应进行位置的关系，从加热方式研究化学过程。</p>
+<p>将电驱动催化剂的材料和发热特性与反应器温度分布、热传递联系起来。研究对输入功率、气体流量及反应组成变化的响应，发展包括CO₂甲烷化和重整在内的电驱动反应过程。</p></div></div><div class="detail-module "><h3>主要研究内容</h3><div class="detail-module-body"><article class="research-topic"><h4>直接通电与催化剂温度状态</h4><p>研究电流路径、结构体电阻、催化层位置与发热之间的关系。测量输入功率和反应温度，通过与外部加热比较，评价供热方式对催化反应的影响。</p></article><article class="research-topic"><h4>e-Methanation · e-DRM</h4><p>针对电驱动CO₂甲烷化（e-Methanation）和甲烷干重整（e-DRM），研究转化率、产物组成与催化剂状态。分别考察放热和吸热反应中直接加热与反应热的关系。</p></article><article class="research-topic"><h4>连接多个电驱动反应</h4><p>分级组合甲烷化、重整等反应，调节各级的供电与操作条件。研究启动和条件变化的响应、合成气组成控制与设备小型化，力求构建可在现场使用的反应系统。</p></article></div></div>
+<!-- ereaction: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>相关论文</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1093/chemle/upaf161" target="_blank" rel="noopener noreferrer">Integrated electrically-driven CO2 methanation and dry reforming for efficient and flexible syngas production ↗</a><small>Chemistry Letters, 2025</small></li><li><a href="https://doi.org/10.1039/D4RA08236B" target="_blank" rel="noopener noreferrer">e-Methanation with a spiral catalyst: optimized thermal management and long-term stability ↗</a><small>RSC Advances, 2025</small></li></ul><a class="text-link" href="publications-zh.html">查看研究室全部论文 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">返回研究主题列表 ↑</a></section>
 
-    <section class="research-detail alt" id="ereaction">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-ereaction">
-          <span>04</span><b>e-REACTION<br>PROCESS</b><small>ELECTRICITY → CHEMICAL TRANSFORMATION</small>
-          <div class="pulse-line"><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">04 / e-REACTION PROCESS</p>
-        <h2>从供热方式改变化学工艺。</h2>
-        <p>研究将电能直接引入反应器和催化剂的化学工艺。利用电气化带来的快速响应、局部加热和设备紧凑化，开发新的反应操作方式。</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>e-Reaction / electrification / process intensification</dd></div><div><dt>FOCUS</dt><dd>直接加热 · 快速响应 · 现场反应工艺</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail sulfur-detail" id="sulfur" aria-labelledby="sulfur-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" aria-label="NiAs型CoS晶格硫氧化还原反应动画" poster="assets/images/research-sulfur-b90cbe71aedc.webp" src="assets/videos/research-sulfur-11d3c034db78.mp4"></video></div><figcaption>展示晶格硫释放、硫空位形成与硫重新嵌入的氧化还原循环示意动画。</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">04 / LATTICE SULFUR CATALYSIS</p>
+            <h2 id="sulfur-title">将晶格硫用作反应物种。</h2>
+            <p>通过硫化物晶格硫的释放、硫空位的形成及H₂S供硫再插入，研究可反复利用晶格硫的氧化还原催化工艺。</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>lattice sulfur / sulfur vacancy / H₂S / redox cycle / dehydrogenation</dd></div><div><dt>FOCUS</dt><dd>晶格硫反应性 · 硫空位 · 重新嵌入 · 脱氢 · 含硫化合物</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>研究目标</h3><div class="detail-module-body"><p>将构成硫化物的晶格硫（晶格S）作为参与反应的化学物种。重点关注晶格硫参与从烃中夺氢并以H₂S形式离开的过程，以及硫重新嵌入硫空位的过程。</p>
+<p>通过反复消耗和再生晶格硫的氧化还原循环，研究烷烃脱氢与含硫化合物转化。考察反应中材料状态与产物的关系，探讨利用硫物种的催化过程。</p></div></div><div class="detail-module "><h3>主要研究内容</h3><div class="detail-module-body"><article class="research-topic"><h4>晶格硫与烃的反应</h4><p>研究硫化物中的晶格硫参与烃转化的过程。以烷烃脱氢制烯烃等反应为对象，考察催化剂组成、反应温度、气体组成与产物选择性的关系。</p></article><article class="research-topic"><h4>硫空位形成与再生</h4><p>关注晶格硫离开后的硫空位以及通过H₂S重新嵌入硫的过程。评价反应与再生条件、硫迁移以及反复操作中的催化性能，探索重复利用晶格硫的反应条件。</p></article><article class="research-topic"><h4>向含硫化合物与电驱动反应拓展</h4><p>探讨由硫物种介导的烃转化与含硫化合物反应。将催化剂表面状态与加热方式联系起来，研究直接加热等反应操作对反应性和产物的影响。</p></article></div></div>
+<!-- sulfur: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>相关论文</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5SU00447K" target="_blank" rel="noopener noreferrer">Redox mechanism by lattice sulphur in an Fe-based catalyst for propane dehydrogenation with H2S co-feeding ↗</a><small>RSC Sustainability, 2025</small></li><li><a href="https://doi.org/10.1093/chemle/upae228" target="_blank" rel="noopener noreferrer">Electric heating system for iso-C5 dehydrogenation in the presence of H2S ↗</a><small>Chemistry Letters, 2025</small></li></ul><a class="text-link" href="publications-zh.html">查看研究室全部论文 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">返回研究主题列表 ↑</a></section>
 
-    <section class="research-detail sulfur-detail" id="sulfur">
-      <div class="detail-video lattice-visual reveal" aria-label="Lattice sulfur redox cycle illustration">
-        <div class="lattice-title"><span>05</span><b>LATTICE SULFUR<br>AS A REACTIVE SPECIES</b><small>S<sub>lattice</sub> ⇄ vacancy ⇄ S<sub>lattice</sub></small></div>
-        <div class="lattice-grid" aria-hidden="true">
-          <i></i><i></i><i class="s-node"></i><i></i><i></i><i class="s-node"></i>
-          <i></i><i class="s-node"></i><i></i><i class="vacancy"></i><i></i><i></i>
-          <i class="s-node"></i><i></i><i></i><i class="s-node"></i><i></i><i></i>
-          <i></i><i></i><i class="s-node"></i><i></i><i class="s-node"></i><i></i>
-        </div>
-        <div class="sulfur-cycle" aria-hidden="true"><span>Lattice S</span><b>→</b><span>S vacancy</span><b>→</b><span>H₂S<br>regeneration</span></div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">05 / LATTICE SULFUR CATALYSIS</p>
-        <h2>将晶格硫用作催化反应中的反应物种。</h2>
-        <p>硫化物中的晶格硫可从烃中获取氢，并以H₂S形式离开晶格。再从H₂S向形成的硫空位中插入硫，从而构建反复利用晶格硫的氧化还原循环。</p>
-        <p>调控表面可交换的晶格硫、硫空位的生成与再生以及金属–硫界面，探索脱氢反应和涉及含硫化合物的新催化工艺。</p>
-        <dl class="research-facts sulfur-facts"><div><dt>KEYWORDS</dt><dd>lattice sulfur / sulfur vacancy / H₂S / redox cycle</dd></div><div><dt>CONCEPT</dt><dd>S<sub>lattice</sub> release → vacancy → sulfur reinsertion</dd></div></dl>
-      </div>
-    </section>
-
-    <section class="research-outro">
+<section class="research-outro">
       <p class="kicker">FROM CATALYST TO PROCESS</p>
       <h2>Materials. Structures.<br>Reactions. Processes.</h2>
       <p>将材料化学与反应工程、结构化催化剂和能量供给相连接，是渡部研究室的研究方式。</p>
       <a class="button button-solid" href="contact-zh.html">Collaborate with us</a>
     </section>
-  </main>
+</main>
 
-  <section id="visitor-counter" class="global-visitors" aria-label="Global Visitors"></section>
-<footer class="site-footer">
+  <footer class="site-footer">
     <div><b>Watanabe Laboratory</b><span>渡部研究室</span></div>
     <p>© <span id="year"></span> Watanabe Laboratory.</p>
   </footer>

@@ -1,0 +1,730 @@
+{
+  "Watanabe Laboratory | 渡部研究室": {
+    "en": "Watanabe Laboratory",
+    "zh": "渡部研究室 | Watanabe Laboratory",
+    "ko": "와타나베 연구실 | Watanabe Laboratory",
+    "de": "Watanabe Laboratory",
+    "fr": "Laboratoire Watanabe | Watanabe Laboratory",
+    "es": "Laboratorio Watanabe | Watanabe Laboratory"
+  },
+  "材料、構造、反応器、エネルギー供給を横断する4つの研究テーマ。": {
+    "en": "Four research themes spanning materials, structures, reactors and energy supply.",
+    "zh": "涵盖材料、结构、反应器与能源供给的四个研究主题。",
+    "ko": "재료, 구조, 반응기, 에너지 공급을 아우르는 네 가지 연구 주제.",
+    "de": "Vier Forschungsthemen zu Materialien, Strukturen, Reaktoren und Energiezufuhr.",
+    "fr": "Quatre thèmes de recherche couvrant les matériaux, les structures, les réacteurs et l’apport d’énergie.",
+    "es": "Cuatro temas de investigación que abarcan materiales, estructuras, reactores y suministro de energía."
+  },
+  "米国・欧州の触媒研究者マップ「Catalyst Atlas — USA & Europe」をProject 06に追加しました。注目研究者とその地域・拠点をハイライトし、毎月1日に更新します。": {
+    "en": "Catalyst Atlas — USA & Europe, a map of catalysis researchers in the United States and Europe, has been added as Project 06. Featured researchers and their regions and research sites are highlighted, with updates on the first day of every month.",
+    "zh": "美国与欧洲催化研究者地图“Catalyst Atlas — USA & Europe”已作为Project 06上线。地图突出显示值得关注的研究者及其所在地区与研究机构，并于每月1日更新。",
+    "ko": "미국·유럽 촉매 연구자 지도인 ‘Catalyst Atlas — USA & Europe’을 Project 06으로 추가했습니다. 주목할 연구자와 해당 지역·연구 거점을 강조하며, 매월 1일 갱신합니다.",
+    "de": "Die Karte für Katalyseforschende in den USA und Europa „Catalyst Atlas — USA & Europe“ wurde als Project 06 ergänzt. Ausgewählte Forschende sowie ihre Regionen und Forschungsstandorte werden hervorgehoben; die Aktualisierung erfolgt am ersten Tag jedes Monats.",
+    "fr": "La carte des chercheurs en catalyse aux États-Unis et en Europe « Catalyst Atlas — USA & Europe » a été ajoutée en tant que Project 06. Les chercheurs mis en avant ainsi que leurs régions et sites de recherche sont signalés, avec une mise à jour le premier jour de chaque mois.",
+    "es": "El mapa de investigadores en catálisis de Estados Unidos y Europa «Catalyst Atlas — USA & Europe» se ha añadido como Project 06. Destaca a investigadores seleccionados y sus regiones y centros, y se actualiza el primer día de cada mes."
+  },
+  "渡部研究室 / Watanabe Laboratory — 静岡大学浜松キャンパス。触媒化学・反応工学・構造体触媒・CO2変換・格子硫黄触媒プロセス。": {
+    "en": "Watanabe Laboratory, Shizuoka University, Hamamatsu Campus. Catalysis, reaction engineering, structured catalysts, CO2 conversion and lattice-sulfur catalytic processes.",
+    "zh": "渡部研究室，静冈大学滨松校区。研究领域包括催化化学、反应工程、结构化催化剂、CO2转化与晶格硫催化过程。",
+    "ko": "시즈오카대학교 하마마쓰 캠퍼스 와타나베 연구실. 촉매화학, 반응공학, 구조체 촉매, CO2 전환, 격자 황 촉매 공정.",
+    "de": "Watanabe Laboratory, Universität Shizuoka, Campus Hamamatsu. Katalyse, Reaktionstechnik, strukturierte Katalysatoren, CO2-Umwandlung und katalytische Prozesse mit Gitterschwefel.",
+    "fr": "Laboratoire Watanabe, université de Shizuoka, campus de Hamamatsu. Catalyse, génie de la réaction, catalyseurs structurés, conversion du CO2 et procédés catalytiques utilisant le soufre du réseau.",
+    "es": "Laboratorio Watanabe, Universidad de Shizuoka, campus de Hamamatsu. Catálisis, ingeniería de reacciones, catalizadores estructurados, conversión de CO2 y procesos catalíticos con azufre de la red."
+  },
+  "NiAs型CoSの格子硫黄レドックス動画": {
+    "en": "Animation of lattice-sulfur redox reactions in NiAs-type CoS",
+    "zh": "NiAs型CoS晶格硫氧化还原反应动画",
+    "ko": "NiAs형 CoS의 격자 황 산화·환원 반응 애니메이션",
+    "de": "Animation der Gitterschwefel-Redoxreaktionen in CoS vom NiAs-Typ",
+    "fr": "Animation des réactions rédox du soufre du réseau dans CoS de type NiAs",
+    "es": "Animación de las reacciones redox del azufre de la red en CoS de tipo NiAs"
+  },
+  "材料、構造、反応器、エネルギー供給を横断する4つの研究テーマ。触媒化学と反応工学をつなぎ、分子変換をプロセスへ展開します。": {
+    "en": "Four research themes spanning materials, structures, reactors and energy supply. We connect catalysis with reaction engineering to develop molecular transformations into processes.",
+    "zh": "涵盖材料、结构、反应器与能源供给的四个研究主题。连接催化化学与反应工程，将分子转化发展为工艺过程。",
+    "ko": "재료, 구조, 반응기, 에너지 공급을 아우르는 네 가지 연구 주제. 촉매화학과 반응공학을 연결하여 분자 전환을 공정으로 발전시킵니다.",
+    "de": "Vier Forschungsthemen zu Materialien, Strukturen, Reaktoren und Energiezufuhr. Wir verbinden Katalyse und Reaktionstechnik, um molekulare Umwandlungen in Prozesse zu überführen.",
+    "fr": "Quatre thèmes de recherche couvrant les matériaux, les structures, les réacteurs et l’apport d’énergie. Nous associons catalyse et génie de la réaction pour transformer les conversions moléculaires en procédés.",
+    "es": "Cuatro temas de investigación que abarcan materiales, estructuras, reactores y suministro de energía. Conectamos la catálisis y la ingeniería de reacciones para desarrollar las transformaciones moleculares como procesos."
+  },
+  "炭素循環": {
+    "en": "Carbon circulation",
+    "zh": "碳循环",
+    "ko": "탄소 순환",
+    "de": "Kohlenstoffkreislauf",
+    "fr": "Cycle du carbone",
+    "es": "Ciclo del carbono"
+  },
+  "構造体触媒": {
+    "en": "Structured catalysts",
+    "zh": "结构化催化剂",
+    "ko": "구조체 촉매",
+    "de": "Strukturierte Katalysatoren",
+    "fr": "Catalyseurs structurés",
+    "es": "Catalizadores estructurados"
+  },
+  "電化反応": {
+    "en": "Electrified reactions",
+    "zh": "电驱动反应",
+    "ko": "전기 구동 반응",
+    "de": "Elektrifizierte Reaktionen",
+    "fr": "Réactions électrifiées",
+    "es": "Reacciones electrificadas"
+  },
+  "格子硫黄触媒": {
+    "en": "Lattice-sulfur catalysis",
+    "zh": "晶格硫催化",
+    "ko": "격자 황 촉매",
+    "de": "Gitterschwefel-Katalyse",
+    "fr": "Catalyse par le soufre du réseau",
+    "es": "Catálisis con azufre de la red"
+  },
+  "CO₂の変換、合成ガス製造、固体炭素固定化をつなぐ炭素循環のイメージ。": {
+    "en": "An illustration of carbon circulation connecting CO₂ conversion, syngas production and solid-carbon fixation.",
+    "zh": "连接CO₂转化、合成气生产与固体碳固定的碳循环示意图。",
+    "ko": "CO₂ 전환, 합성가스 생산, 고체 탄소 고정화를 연결하는 탄소 순환 개념도.",
+    "de": "Darstellung des Kohlenstoffkreislaufs, der CO₂-Umwandlung, Synthesegaserzeugung und Fixierung als festen Kohlenstoff verbindet.",
+    "fr": "Illustration du cycle du carbone reliant conversion du CO₂, production de gaz de synthèse et fixation sous forme de carbone solide.",
+    "es": "Ilustración del ciclo del carbono que conecta la conversión de CO₂, la producción de gas de síntesis y la fijación como carbono sólido."
+  },
+  "合成ガス製造・固体炭素回収・多段反応・オンサイト資源化": {
+    "en": "Syngas production · Solid-carbon recovery · Multistage reactions · On-site resource conversion",
+    "zh": "合成气生产 · 固体碳回收 · 多级反应 · 现场资源化",
+    "ko": "합성가스 생산 · 고체 탄소 회수 · 다단 반응 · 현장 자원화",
+    "de": "Synthesegaserzeugung · Rückgewinnung festen Kohlenstoffs · Mehrstufige Reaktionen · Ressourcenverwertung vor Ort",
+    "fr": "Production de gaz de synthèse · Récupération de carbone solide · Réactions à plusieurs étages · Valorisation sur site",
+    "es": "Producción de gas de síntesis · Recuperación de carbono sólido · Reacciones multietapa · Valorización in situ"
+  },
+  "研究のねらい": {
+    "en": "Research aims",
+    "zh": "研究目标",
+    "ko": "연구 목표",
+    "de": "Forschungsziele",
+    "fr": "Objectifs de recherche",
+    "es": "Objetivos de investigación"
+  },
+  "CO₂やメタンを炭素源として、燃料・化学品の原料となる合成ガスや、回収して利用できる固体炭素へ変換する反応プロセスを研究しています。触媒による分子変換に加え、反応器の組合せと生成物の分離・回収を検討し、炭素の行き先を制御します。": {
+    "en": "We study reaction processes that use CO₂ and methane as carbon sources to produce syngas for fuels and chemicals, or solid carbon that can be recovered and used. Alongside catalytic molecular transformations, we investigate combinations of reactors and the separation and recovery of products to control where carbon goes.",
+    "zh": "我们研究以CO₂和甲烷为碳源，将其转化为燃料与化学品原料合成气，或可回收利用的固体碳的反应过程。除催化分子转化外，还探讨反应器组合以及产物的分离与回收，以控制碳的去向。",
+    "ko": "CO₂와 메탄을 탄소원으로 사용하여 연료·화학제품의 원료인 합성가스나 회수·이용 가능한 고체 탄소로 전환하는 반응 공정을 연구합니다. 촉매에 의한 분자 전환과 함께 반응기 조합, 생성물 분리·회수를 검토하여 탄소의 행선지를 제어합니다.",
+    "de": "Wir untersuchen Reaktionsprozesse, die CO₂ und Methan als Kohlenstoffquellen nutzen und in Synthesegas als Ausgangsstoff für Kraftstoffe und Chemikalien oder in rückgewinnbaren, nutzbaren festen Kohlenstoff umwandeln. Neben katalytischen molekularen Umwandlungen untersuchen wir Reaktorkombinationen sowie Produkttrennung und -rückgewinnung, um den Verbleib des Kohlenstoffs zu steuern.",
+    "fr": "Nous étudions des procédés réactionnels utilisant le CO₂ et le méthane comme sources de carbone pour produire du gaz de synthèse destiné aux carburants et aux produits chimiques, ou du carbone solide récupérable et utilisable. Outre les transformations moléculaires catalytiques, nous examinons les combinaisons de réacteurs ainsi que la séparation et la récupération des produits afin de contrôler le devenir du carbone.",
+    "es": "Estudiamos procesos de reacción que utilizan CO₂ y metano como fuentes de carbono para producir gas de síntesis destinado a combustibles y productos químicos, o carbono sólido que pueda recuperarse y utilizarse. Además de las transformaciones moleculares catalíticas, investigamos combinaciones de reactores y la separación y recuperación de productos para controlar el destino del carbono."
+  },
+  "産業排ガスをオンサイトで資源へ変えるために、ガス組成、反応温度、流量、反応平衡の関係を調べています。触媒材料の性能とプロセス全体の炭素収支を結び付け、連続的な変換と回収を目指します。": {
+    "en": "To convert industrial exhaust gases into resources on site, we study the relationships between gas composition, reaction temperature, flow rate and reaction equilibrium. We connect catalyst performance with the carbon balance of the entire process, aiming for continuous conversion and recovery.",
+    "zh": "为了在现场将工业废气转化为资源，我们研究气体组成、反应温度、流量与反应平衡之间的关系。将催化材料性能与整个工艺的碳收支联系起来，力求实现连续转化与回收。",
+    "ko": "산업 배기가스를 현장에서 자원으로 바꾸기 위해 가스 조성, 반응 온도, 유량, 반응 평형의 관계를 연구합니다. 촉매 재료의 성능과 공정 전체의 탄소 수지를 연결하여 연속적인 전환과 회수를 목표로 합니다.",
+    "de": "Um Industrieabgase vor Ort in Ressourcen umzuwandeln, untersuchen wir die Beziehungen zwischen Gaszusammensetzung, Reaktionstemperatur, Durchfluss und Reaktionsgleichgewicht. Wir verknüpfen die Leistung der Katalysatormaterialien mit der Kohlenstoffbilanz des Gesamtprozesses und streben eine kontinuierliche Umwandlung und Rückgewinnung an.",
+    "fr": "Pour valoriser les effluents gazeux industriels sur site, nous étudions les relations entre composition des gaz, température de réaction, débit et équilibre réactionnel. Nous relions les performances des matériaux catalytiques au bilan carbone du procédé complet, en visant une conversion et une récupération continues.",
+    "es": "Para convertir los gases residuales industriales en recursos in situ, estudiamos las relaciones entre composición del gas, temperatura de reacción, caudal y equilibrio de reacción. Vinculamos el rendimiento de los materiales catalíticos con el balance de carbono del proceso completo, buscando una conversión y recuperación continuas."
+  },
+  "主な研究項目": {
+    "en": "Main research topics",
+    "zh": "主要研究内容",
+    "ko": "주요 연구 항목",
+    "de": "Wichtige Forschungsthemen",
+    "fr": "Principaux sujets de recherche",
+    "es": "Principales temas de investigación"
+  },
+  "CO₂から合成ガスへ": {
+    "en": "From CO₂ to syngas",
+    "zh": "从CO₂到合成气",
+    "ko": "CO₂에서 합성가스로",
+    "de": "Von CO₂ zu Synthesegas",
+    "fr": "Du CO₂ au gaz de synthèse",
+    "es": "Del CO₂ al gas de síntesis"
+  },
+  "逆水性ガスシフト反応（RWGS）やメタンのドライリフォーミング（DRM）を用い、CO₂を一酸化炭素へ変換します。水素と一酸化炭素からなる合成ガスについて、反応条件と触媒の組合せが組成や生成量に及ぼす影響を調べます。": {
+    "en": "We convert CO₂ into carbon monoxide using the reverse water-gas shift reaction (RWGS) and dry reforming of methane (DRM). For syngas, which consists of hydrogen and carbon monoxide, we investigate how combinations of reaction conditions and catalysts affect its composition and production rate.",
+    "zh": "利用逆水煤气变换反应（RWGS）和甲烷干重整（DRM）将CO₂转化为一氧化碳。对于由氢气和一氧化碳组成的合成气，我们研究反应条件与催化剂的组合如何影响其组成和产量。",
+    "ko": "역수성가스전환 반응(RWGS)과 메탄 건식 개질(DRM)을 이용하여 CO₂를 일산화탄소로 전환합니다. 수소와 일산화탄소로 구성된 합성가스에 대해 반응 조건과 촉매의 조합이 조성과 생성량에 미치는 영향을 연구합니다.",
+    "de": "Wir wandeln CO₂ durch die umgekehrte Wassergas-Shift-Reaktion (RWGS) und die Trockenreformierung von Methan (DRM) in Kohlenmonoxid um. Für das aus Wasserstoff und Kohlenmonoxid bestehende Synthesegas untersuchen wir, wie Kombinationen aus Reaktionsbedingungen und Katalysatoren seine Zusammensetzung und Produktionsmenge beeinflussen.",
+    "fr": "Nous convertissons le CO₂ en monoxyde de carbone par la réaction inverse du gaz à l’eau (RWGS) et le reformage à sec du méthane (DRM). Pour le gaz de synthèse, composé d’hydrogène et de monoxyde de carbone, nous étudions l’effet des combinaisons de conditions réactionnelles et de catalyseurs sur sa composition et sa production.",
+    "es": "Convertimos CO₂ en monóxido de carbono mediante la reacción inversa de desplazamiento de gas de agua (RWGS) y el reformado seco de metano (DRM). Para el gas de síntesis, compuesto por hidrógeno y monóxido de carbono, investigamos cómo las combinaciones de condiciones de reacción y catalizadores afectan a su composición y cantidad producida."
+  },
+  "固体炭素への変換と回収": {
+    "en": "Conversion to and recovery of solid carbon",
+    "zh": "固体碳的转化与回收",
+    "ko": "고체 탄소로의 전환과 회수",
+    "de": "Umwandlung in und Rückgewinnung von festem Kohlenstoff",
+    "fr": "Conversion en carbone solide et récupération",
+    "es": "Conversión a carbono sólido y recuperación"
+  },
+  "RWGSと一酸化炭素から固体炭素を生成する反応、メタン化と改質・分解などを組み合わせます。炭素が生成する場所や形態、触媒上への蓄積、回収方法を検討し、反応を継続しながら炭素を取り出すプロセスへ展開します。": {
+    "en": "We combine RWGS with reactions that produce solid carbon from carbon monoxide, as well as methanation with reforming and decomposition. We investigate where carbon forms, its morphology, its accumulation on catalysts and recovery methods, developing processes that extract carbon while reactions continue.",
+    "zh": "将RWGS与由一氧化碳生成固体碳的反应相结合，同时组合甲烷化与重整、分解等反应。研究碳生成的位置、形态、在催化剂上的积累与回收方法，发展在反应持续进行的同时取出碳的工艺。",
+    "ko": "RWGS와 일산화탄소에서 고체 탄소를 생성하는 반응, 메탄화와 개질·분해 등을 조합합니다. 탄소가 생성되는 위치와 형태, 촉매 위 축적, 회수 방법을 검토하여 반응을 계속하면서 탄소를 꺼내는 공정으로 발전시킵니다.",
+    "de": "Wir kombinieren RWGS mit Reaktionen zur Erzeugung festen Kohlenstoffs aus Kohlenmonoxid sowie Methanisierung mit Reformierung und Zersetzung. Wir untersuchen Bildungsort und Morphologie des Kohlenstoffs, seine Ablagerung auf Katalysatoren und Rückgewinnungsmethoden, um Prozesse zur Kohlenstoffentnahme während laufender Reaktionen zu entwickeln.",
+    "fr": "Nous combinons la RWGS avec des réactions produisant du carbone solide à partir du monoxyde de carbone, ainsi que la méthanation avec le reformage et la décomposition. Nous étudions les lieux et formes de formation du carbone, son accumulation sur les catalyseurs et les méthodes de récupération, afin de développer des procédés permettant de retirer le carbone pendant que les réactions se poursuivent.",
+    "es": "Combinamos RWGS con reacciones que producen carbono sólido a partir de monóxido de carbono, así como metanación con reformado y descomposición. Investigamos dónde se forma el carbono, su morfología, su acumulación en los catalizadores y los métodos de recuperación, desarrollando procesos que permiten extraer carbono mientras continúan las reacciones."
+  },
+  "多段反応と物質循環": {
+    "en": "Multistage reactions and material circulation",
+    "zh": "多级反应与物质循环",
+    "ko": "다단 반응과 물질 순환",
+    "de": "Mehrstufige Reaktionen und Stoffkreisläufe",
+    "fr": "Réactions à plusieurs étages et circulation de matière",
+    "es": "Reacciones multietapa y circulación de materia"
+  },
+  "複数の反応段を接続し、各段の温度、ガス組成、水分除去などを調整します。各反応の役割と段間の物質移動を把握し、CO₂変換、生成物回収、炭素利用の関係を反応器全体で評価します。": {
+    "en": "We connect multiple reaction stages and adjust temperature, gas composition and water removal at each stage. By examining the role of each reaction and material transfer between stages, we assess CO₂ conversion, product recovery and carbon use across the entire reactor system.",
+    "zh": "连接多个反应级，调节各级的温度、气体组成与除水等条件。掌握各反应的作用和级间物质传递，从整个反应器系统评价CO₂转化、产物回收与碳利用之间的关系。",
+    "ko": "여러 반응 단계를 연결하고 각 단계의 온도, 가스 조성, 수분 제거 등을 조절합니다. 각 반응의 역할과 단계 간 물질 이동을 파악하여 CO₂ 전환, 생성물 회수, 탄소 이용의 관계를 반응기 전체에서 평가합니다.",
+    "de": "Wir verbinden mehrere Reaktionsstufen und passen Temperatur, Gaszusammensetzung und Wasserentfernung in jeder Stufe an. Wir erfassen die Rolle jeder Reaktion und den Stofftransport zwischen den Stufen, um CO₂-Umwandlung, Produktrückgewinnung und Kohlenstoffnutzung im gesamten Reaktorsystem zu bewerten.",
+    "fr": "Nous relions plusieurs étages réactionnels et ajustons la température, la composition gazeuse et l’élimination de l’eau à chaque étage. Nous examinons le rôle de chaque réaction et les transferts de matière entre étages pour évaluer les relations entre conversion du CO₂, récupération des produits et utilisation du carbone dans l’ensemble du système réactionnel.",
+    "es": "Conectamos varias etapas de reacción y ajustamos la temperatura, la composición gaseosa y la eliminación de agua en cada una. Analizamos el papel de cada reacción y el transporte de materia entre etapas para evaluar las relaciones entre conversión de CO₂, recuperación de productos y uso del carbono en todo el sistema de reactores."
+  },
+  "関連論文": {
+    "en": "Related publications",
+    "zh": "相关论文",
+    "ko": "관련 논문",
+    "de": "Zugehörige Veröffentlichungen",
+    "fr": "Publications associées",
+    "es": "Publicaciones relacionadas"
+  },
+  "研究室の論文一覧を見る": {
+    "en": "View all laboratory publications",
+    "zh": "查看研究室全部论文",
+    "ko": "연구실 전체 논문 보기",
+    "de": "Alle Veröffentlichungen des Labors anzeigen",
+    "fr": "Voir toutes les publications du laboratoire",
+    "es": "Ver todas las publicaciones del laboratorio"
+  },
+  "研究テーマ一覧へ ↑": {
+    "en": "Back to research themes ↑",
+    "zh": "返回研究主题列表 ↑",
+    "ko": "연구 주제 목록으로 ↑",
+    "de": "Zurück zu den Forschungsthemen ↑",
+    "fr": "Retour aux thèmes de recherche ↑",
+    "es": "Volver a los temas de investigación ↑"
+  },
+  "構造体の形状と流れの関係を示すシミュレーション。": {
+    "en": "A simulation showing the relationship between structured-catalyst geometry and flow.",
+    "zh": "展示结构化催化剂几何形状与流动关系的模拟。",
+    "ko": "구조체의 형상과 유동의 관계를 보여 주는 시뮬레이션.",
+    "de": "Simulation des Zusammenhangs zwischen der Geometrie strukturierter Katalysatoren und der Strömung.",
+    "fr": "Simulation montrant la relation entre géométrie d’un catalyseur structuré et écoulement.",
+    "es": "Simulación que muestra la relación entre la geometría de un catalizador estructurado y el flujo."
+  },
+  "触媒担持・流動促進・伝熱・物質移動・高流量への展開": {
+    "en": "Catalyst deposition · Flow enhancement · Heat transfer · Mass transfer · Higher flow rates",
+    "zh": "催化剂负载 · 流动促进 · 传热 · 传质 · 高流量应用",
+    "ko": "촉매 담지 · 유동 촉진 · 열전달 · 물질전달 · 고유량 적용",
+    "de": "Katalysatorbeladung · Strömungsförderung · Wärmeübertragung · Stofftransport · Höhere Durchflüsse",
+    "fr": "Dépôt de catalyseur · Amélioration de l’écoulement · Transfert thermique · Transfert de matière · Débits élevés",
+    "es": "Carga de catalizador · Mejora del flujo · Transferencia de calor · Transferencia de materia · Caudales elevados"
+  },
+  "触媒反応器では、触媒材料の活性だけでなく、反応ガスの流れ方、熱の伝わり方、触媒表面までの物質移動が反応性能を左右します。当研究室では、スパイラルや金属多孔体を基材とする構造体触媒を用い、材料と形状の両面から反応場をつくります。": {
+    "en": "In catalytic reactors, reaction performance depends on catalyst activity, gas flow, heat transfer and mass transfer to catalyst surfaces. We use structured catalysts based on spirals and porous metals to create reaction environments through both materials and geometry.",
+    "zh": "催化反应器的性能不仅取决于催化材料活性，也取决于反应气体流动、热传递以及到催化剂表面的传质。我们采用以螺旋和多孔金属为基材的结构化催化剂，从材料与形状两个方面构建反应环境。",
+    "ko": "촉매 반응기의 성능은 촉매 재료의 활성뿐 아니라 반응 가스의 흐름, 열전달, 촉매 표면까지의 물질전달에 좌우됩니다. 우리 연구실은 나선과 다공성 금속을 기재로 하는 구조체 촉매를 사용하여 재료와 형상 양쪽에서 반응 환경을 만듭니다.",
+    "de": "Die Leistung katalytischer Reaktoren hängt neben der Aktivität des Katalysatormaterials auch von der Gasströmung, der Wärmeübertragung und dem Stofftransport zur Katalysatoroberfläche ab. Wir nutzen strukturierte Katalysatoren auf Basis von Spiralen und porösen Metallen, um Reaktionsräume durch Material und Geometrie zu gestalten.",
+    "fr": "Dans un réacteur catalytique, les performances dépendent de l’activité du matériau catalytique, mais aussi de l’écoulement des gaz, du transfert thermique et du transfert de matière vers la surface du catalyseur. Nous utilisons des catalyseurs structurés à base de spirales et de métaux poreux pour créer des environnements réactionnels en agissant sur les matériaux et la géométrie.",
+    "es": "En los reactores catalíticos, el rendimiento depende de la actividad del material catalítico, del flujo del gas, de la transferencia de calor y del transporte de materia hasta la superficie del catalizador. Utilizamos catalizadores estructurados basados en espirales y metales porosos para crear entornos de reacción mediante los materiales y la geometría."
+  },
+  "基材へのウォッシュコートやめっきによって触媒成分を付与し、担持状態と流路の形状を調整します。反応実験と流動・伝熱の解析を結び付け、ガスが触媒へ到達する過程から反応熱の移動まで検討します。": {
+    "en": "We deposit catalytic components on substrates by washcoating and plating, adjusting the catalyst distribution and flow-channel geometry. We combine reaction experiments with flow and heat-transfer analysis to investigate gas transport to catalysts and the transfer of reaction heat.",
+    "zh": "通过浸涂和镀覆在基材上负载催化组分，调节负载状态与流道形状。结合反应实验与流动、传热分析，研究从气体到达催化剂的过程到反应热传递的各个环节。",
+    "ko": "워시코팅과 도금으로 기재에 촉매 성분을 부여하고 담지 상태와 유로 형상을 조절합니다. 반응 실험을 유동·전열 해석과 연결하여 가스가 촉매에 도달하는 과정부터 반응열 이동까지 검토합니다.",
+    "de": "Wir bringen katalytische Komponenten durch Washcoating und Metallabscheidung auf Träger auf und passen ihre Verteilung sowie die Geometrie der Strömungskanäle an. Wir verbinden Reaktionsexperimente mit Strömungs- und Wärmeübertragungsanalysen, um den Gastransport zum Katalysator und den Transport der Reaktionswärme zu untersuchen.",
+    "fr": "Nous déposons les composants catalytiques sur les supports par enduction et métallisation, en ajustant leur répartition et la géométrie des canaux. Nous associons expériences réactionnelles et analyses de l’écoulement et du transfert thermique pour étudier le transport des gaz vers les catalyseurs ainsi que celui de la chaleur de réaction.",
+    "es": "Depositamos componentes catalíticos sobre los soportes mediante recubrimiento y metalización, ajustando su distribución y la geometría de los canales. Combinamos experimentos de reacción con análisis de flujo y transferencia térmica para estudiar desde el transporte del gas al catalizador hasta el del calor de reacción."
+  },
+  "スパイラル・金属多孔体の形状": {
+    "en": "Spiral and porous-metal geometry",
+    "zh": "螺旋与多孔金属的几何形状",
+    "ko": "나선·다공성 금속의 형상",
+    "de": "Geometrie von Spiralen und porösen Metallen",
+    "fr": "Géométrie des spirales et des métaux poreux",
+    "es": "Geometría de espirales y metales porosos"
+  },
+  "スパイラルのねじれや金属多孔体の流路が、ガスの混合、滞留、触媒との接触に与える影響を調べます。流量を増やしたときの反応性能と圧力損失の関係を検討し、処理量に適した反応器形状を探ります。": {
+    "en": "We study how spiral twisting and porous-metal flow channels affect gas mixing, residence and contact with catalysts. We examine the relationship between reaction performance and pressure drop as flow increases, seeking reactor geometries suited to the required throughput.",
+    "zh": "研究螺旋扭转与多孔金属流道对气体混合、停留以及与催化剂接触的影响。考察提高流量时反应性能与压降的关系，探索适合处理量要求的反应器形状。",
+    "ko": "나선의 비틀림과 다공성 금속 유로가 가스 혼합, 체류, 촉매와의 접촉에 미치는 영향을 연구합니다. 유량 증가에 따른 반응 성능과 압력 손실의 관계를 검토하여 처리량에 맞는 반응기 형상을 탐색합니다.",
+    "de": "Wir untersuchen, wie die Verdrillung von Spiralen und die Strömungskanäle poröser Metalle die Gasmischung, Verweilzeit und den Katalysatorkontakt beeinflussen. Wir prüfen den Zusammenhang zwischen Reaktionsleistung und Druckverlust bei steigendem Durchfluss und suchen nach Reaktorgeometrien für den jeweiligen Durchsatz.",
+    "fr": "Nous étudions l’effet de la torsion des spirales et des canaux des métaux poreux sur le mélange des gaz, leur séjour et leur contact avec les catalyseurs. Nous examinons la relation entre performances réactionnelles et perte de charge lorsque le débit augmente, afin de trouver des géométries adaptées à la capacité de traitement.",
+    "es": "Estudiamos cómo la torsión de las espirales y los canales de los metales porosos afectan a la mezcla, la permanencia del gas y su contacto con el catalizador. Examinamos la relación entre rendimiento de reacción y pérdida de presión al aumentar el caudal, buscando geometrías de reactor adecuadas a la capacidad de tratamiento."
+  },
+  "触媒層の形成と担持方法": {
+    "en": "Catalyst-layer formation and deposition methods",
+    "zh": "催化层形成与负载方法",
+    "ko": "촉매층 형성과 담지 방법",
+    "de": "Bildung und Abscheidung von Katalysatorschichten",
+    "fr": "Formation des couches catalytiques et méthodes de dépôt",
+    "es": "Formación de capas catalíticas y métodos de depósito"
+  },
+  "ウォッシュコートや無電解めっきなどを用いて、金属基材に触媒層を形成します。触媒の担持量、分布、密着性と反応性能の関係を調べ、基材の伝熱性と触媒材料の機能を活用します。": {
+    "en": "We form catalyst layers on metal substrates using methods including washcoating and electroless plating. We study how catalyst loading, distribution and adhesion relate to reaction performance, making use of substrate heat conduction and catalyst functionality.",
+    "zh": "利用浸涂、化学镀等方法在金属基材上形成催化层。研究催化剂负载量、分布、附着性与反应性能之间的关系，利用基材的导热性与催化材料的功能。",
+    "ko": "워시코팅과 무전해 도금 등을 이용하여 금속 기재 위에 촉매층을 형성합니다. 촉매 담지량, 분포, 밀착성과 반응 성능의 관계를 연구하여 기재의 열전도성과 촉매 재료의 기능을 활용합니다.",
+    "de": "Wir bilden Katalysatorschichten auf Metallträgern durch Washcoating und stromlose Metallabscheidung. Wir untersuchen die Beziehungen zwischen Beladung, Verteilung, Haftung und Reaktionsleistung und nutzen dabei die Wärmeleitfähigkeit des Trägers und die Funktion des Katalysatormaterials.",
+    "fr": "Nous formons des couches catalytiques sur des supports métalliques par enduction et dépôt chimique autocatalytique, notamment. Nous étudions les relations entre charge, répartition, adhérence et performances réactionnelles, en utilisant la conductivité thermique du support et les fonctions du matériau catalytique.",
+    "es": "Formamos capas catalíticas sobre soportes metálicos mediante recubrimiento y metalización química sin corriente, entre otros métodos. Estudiamos las relaciones entre carga, distribución, adherencia y rendimiento de reacción, utilizando la conductividad térmica del soporte y las funciones del material catalítico."
+  },
+  "熱・物質移動と反応性能": {
+    "en": "Heat and mass transfer and reaction performance",
+    "zh": "传热、传质与反应性能",
+    "ko": "열·물질전달과 반응 성능",
+    "de": "Wärme- und Stofftransport und Reaktionsleistung",
+    "fr": "Transferts thermiques et de matière et performances réactionnelles",
+    "es": "Transferencia de calor y materia y rendimiento de reacción"
+  },
+  "実験と数値流体解析（CFD）によって、反応器内の流れと温度分布を検討します。CO₂メタン化などの反応を通じて、構造体の形状が発熱の分散や反応ガスの供給にどう寄与するかを評価します。": {
+    "en": "We study flow and temperature distributions inside reactors through experiments and computational fluid dynamics (CFD). Using reactions such as CO₂ methanation, we evaluate how structured-catalyst geometry contributes to distributing generated heat and supplying reaction gases.",
+    "zh": "通过实验与计算流体力学（CFD）研究反应器内的流动和温度分布。以CO₂甲烷化等反应为例，评价结构化催化剂形状如何有助于分散反应热和供给反应气体。",
+    "ko": "실험과 전산유체역학(CFD)으로 반응기 내 유동과 온도 분포를 검토합니다. CO₂ 메탄화 등의 반응을 통해 구조체 형상이 발열 분산과 반응 가스 공급에 어떻게 기여하는지 평가합니다.",
+    "de": "Wir untersuchen Strömung und Temperaturverteilung in Reaktoren durch Experimente und numerische Strömungsmechanik (CFD). An Reaktionen wie der CO₂-Methanisierung bewerten wir, wie die Geometrie strukturierter Katalysatoren zur Verteilung der entstehenden Wärme und zur Versorgung mit Reaktionsgasen beiträgt.",
+    "fr": "Nous étudions les écoulements et les distributions de température dans les réacteurs par l’expérience et la mécanique des fluides numérique (CFD). À travers des réactions telles que la méthanation du CO₂, nous évaluons comment la géométrie des structures contribue à répartir la chaleur produite et à alimenter la réaction en gaz.",
+    "es": "Estudiamos el flujo y las distribuciones de temperatura en los reactores mediante experimentos y dinámica de fluidos computacional (CFD). A través de reacciones como la metanación de CO₂, evaluamos cómo la geometría de la estructura contribuye a distribuir el calor generado y a suministrar los gases de reacción."
+  },
+  "金属スパイラルへの通電によるジュール加熱のイメージ。": {
+    "en": "An illustration of Joule heating by passing current through a metal spiral.",
+    "zh": "金属螺旋通电产生焦耳热的示意动画。",
+    "ko": "금속 나선에 전류를 흘려 발생하는 줄 가열 개념도.",
+    "de": "Darstellung der Joule-Erwärmung durch Stromfluss in einer Metallspirale.",
+    "fr": "Illustration du chauffage Joule par passage du courant dans une spirale métallique.",
+    "es": "Ilustración del calentamiento Joule al hacer pasar corriente por una espiral metálica."
+  },
+  "直接加熱・温度分布・エネルギー利用・応答性・多段反応": {
+    "en": "Direct heating · Temperature distribution · Energy utilization · Response · Multistage reactions",
+    "zh": "直接加热 · 温度分布 · 能源利用 · 响应特性 · 多级反应",
+    "ko": "직접 가열 · 온도 분포 · 에너지 이용 · 응답성 · 다단 반응",
+    "de": "Direkte Erwärmung · Temperaturverteilung · Energienutzung · Reaktionsfähigkeit auf Änderungen · Mehrstufige Reaktionen",
+    "fr": "Chauffage direct · Distribution de température · Utilisation de l’énergie · Réponse aux changements · Réactions à plusieurs étages",
+    "es": "Calentamiento directo · Distribución de temperatura · Uso de energía · Respuesta a cambios · Reacciones multietapa"
+  },
+  "金属製の触媒構造体へ直接通電し、電気抵抗によって生じるジュール熱を反応に利用します。触媒が担持された構造体で熱を発生させることで、エネルギーを与える位置と反応が進む位置の関係を制御し、加熱方法から化学プロセスを検討します。": {
+    "en": "We pass current directly through metal catalyst structures and use the Joule heat generated by electrical resistance for reactions. Generating heat in the catalyst-bearing structure allows us to control the relationship between energy-input locations and reaction locations, and to investigate chemical processes through their heating methods.",
+    "zh": "向金属催化结构体直接通电，利用电阻产生的焦耳热进行反应。通过在负载催化剂的结构体中产生热量，控制能量输入位置与反应进行位置的关系，从加热方式研究化学过程。",
+    "ko": "금속 촉매 구조체에 직접 전류를 흘리고 전기저항으로 발생하는 줄열을 반응에 이용합니다. 촉매가 담지된 구조체에서 열을 발생시켜 에너지를 공급하는 위치와 반응이 진행되는 위치의 관계를 제어하고, 가열 방법을 통해 화학 공정을 검토합니다.",
+    "de": "Wir leiten Strom direkt durch metallische Katalysatorstrukturen und nutzen die durch den elektrischen Widerstand erzeugte Joule-Wärme für Reaktionen. Durch Wärmeerzeugung in der katalysatortragenden Struktur steuern wir die räumliche Beziehung zwischen Energiezufuhr und Reaktion und untersuchen chemische Prozesse ausgehend von der Heizmethode.",
+    "fr": "Nous faisons passer le courant directement dans des structures catalytiques métalliques et utilisons la chaleur Joule produite par leur résistance électrique pour les réactions. La production de chaleur dans la structure portant le catalyseur permet de contrôler la relation spatiale entre apport d’énergie et réaction, et d’étudier les procédés chimiques à travers leurs méthodes de chauffage.",
+    "es": "Hacemos pasar corriente directamente por estructuras catalíticas metálicas y utilizamos el calor Joule producido por su resistencia eléctrica para las reacciones. Generar calor en la estructura que soporta el catalizador permite controlar la relación espacial entre aporte de energía y reacción, y estudiar los procesos químicos desde sus métodos de calentamiento."
+  },
+  "電化触媒の材料・発熱特性と、反応器の温度分布・熱移動をつなげて研究しています。投入電力、ガス流量、反応組成の変化に対する応答を調べ、CO₂メタン化や改質を含む電化反応プロセスへ展開します。": {
+    "en": "We connect the materials and heat-generation properties of electrified catalysts with reactor temperature distributions and heat transfer. We investigate responses to changes in input power, gas flow and reaction composition, developing electrified reaction processes including CO₂ methanation and reforming.",
+    "zh": "将电驱动催化剂的材料和发热特性与反应器温度分布、热传递联系起来。研究对输入功率、气体流量及反应组成变化的响应，发展包括CO₂甲烷化和重整在内的电驱动反应过程。",
+    "ko": "전기 구동 촉매의 재료·발열 특성을 반응기의 온도 분포·열 이동과 연결하여 연구합니다. 투입 전력, 가스 유량, 반응 조성 변화에 대한 응답을 조사하고 CO₂ 메탄화와 개질을 포함하는 전기 구동 반응 공정으로 발전시킵니다.",
+    "de": "Wir verknüpfen Material- und Wärmeerzeugungseigenschaften elektrifizierter Katalysatoren mit Temperaturverteilung und Wärmeübertragung im Reaktor. Wir untersuchen die Reaktion auf Änderungen von Eingangsleistung, Gasdurchfluss und Reaktionsgemisch und entwickeln elektrifizierte Prozesse einschließlich CO₂-Methanisierung und Reformierung.",
+    "fr": "Nous relions les propriétés des matériaux et de production de chaleur des catalyseurs électrifiés aux distributions de température et aux transferts thermiques du réacteur. Nous étudions les réponses aux variations de puissance, de débit gazeux et de composition réactionnelle, pour développer des procédés électrifiés comprenant la méthanation du CO₂ et le reformage.",
+    "es": "Relacionamos las propiedades de los materiales y de generación de calor de los catalizadores electrificados con las distribuciones de temperatura y la transferencia térmica del reactor. Investigamos la respuesta a cambios en potencia suministrada, caudal gaseoso y composición de reacción, desarrollando procesos electrificados que incluyen la metanación de CO₂ y el reformado."
+  },
+  "直接通電と触媒の温度状態": {
+    "en": "Direct current heating and catalyst temperature",
+    "zh": "直接通电与催化剂温度状态",
+    "ko": "직접 통전과 촉매 온도 상태",
+    "de": "Direkter Stromfluss und Katalysatortemperatur",
+    "fr": "Passage direct du courant et température du catalyseur",
+    "es": "Paso directo de corriente y temperatura del catalizador"
+  },
+  "電流経路、構造体の電気抵抗、触媒層の配置と発熱の関係を検討します。投入電力と反応温度を測定し、外部加熱との比較を通じて、熱の供給方法が触媒反応に及ぼす影響を評価します。": {
+    "en": "We examine the relationships among current paths, structural electrical resistance, catalyst-layer placement and heat generation. We measure input power and reaction temperature and compare direct heating with external heating to evaluate how the heat-supply method affects catalytic reactions.",
+    "zh": "研究电流路径、结构体电阻、催化层位置与发热之间的关系。测量输入功率和反应温度，通过与外部加热比较，评价供热方式对催化反应的影响。",
+    "ko": "전류 경로, 구조체의 전기저항, 촉매층 배치와 발열의 관계를 검토합니다. 투입 전력과 반응 온도를 측정하고 외부 가열과 비교하여 열 공급 방법이 촉매 반응에 미치는 영향을 평가합니다.",
+    "de": "Wir untersuchen die Beziehungen zwischen Strompfaden, elektrischem Widerstand der Struktur, Anordnung der Katalysatorschicht und Wärmeerzeugung. Wir messen Eingangsleistung und Reaktionstemperatur und vergleichen mit externer Beheizung, um den Einfluss der Wärmezufuhr auf katalytische Reaktionen zu bewerten.",
+    "fr": "Nous examinons les relations entre trajets du courant, résistance électrique de la structure, emplacement de la couche catalytique et production de chaleur. Nous mesurons la puissance fournie et la température de réaction, puis comparons avec le chauffage externe pour évaluer l’effet du mode d’apport thermique sur la catalyse.",
+    "es": "Examinamos las relaciones entre trayectorias de corriente, resistencia eléctrica de la estructura, posición de la capa catalítica y generación de calor. Medimos la potencia suministrada y la temperatura de reacción y comparamos con el calentamiento externo para evaluar cómo el método de aporte de calor afecta a la reacción catalítica."
+  },
+  "e-Methanation・e-DRM": {
+    "en": "e-Methanation · e-DRM",
+    "zh": "e-Methanation · e-DRM",
+    "ko": "e-Methanation · e-DRM",
+    "de": "e-Methanation · e-DRM",
+    "fr": "e-Methanation · e-DRM",
+    "es": "e-Methanation · e-DRM"
+  },
+  "電化したCO₂メタン化（e-Methanation）やメタンのドライリフォーミング（e-DRM）を対象に、反応率、生成物組成、触媒の状態を調べます。発熱反応と吸熱反応それぞれについて、直接加熱と反応熱の関係を検討します。": {
+    "en": "We study conversion, product composition and catalyst state in electrified CO₂ methanation (e-Methanation) and dry reforming of methane (e-DRM). For both exothermic and endothermic reactions, we examine the relationship between direct heating and reaction heat.",
+    "zh": "针对电驱动CO₂甲烷化（e-Methanation）和甲烷干重整（e-DRM），研究转化率、产物组成与催化剂状态。分别考察放热和吸热反应中直接加热与反应热的关系。",
+    "ko": "전기 구동 CO₂ 메탄화(e-Methanation)와 메탄 건식 개질(e-DRM)을 대상으로 전환율, 생성물 조성, 촉매 상태를 연구합니다. 발열 반응과 흡열 반응 각각에 대해 직접 가열과 반응열의 관계를 검토합니다.",
+    "de": "Wir untersuchen Umsatz, Produktzusammensetzung und Katalysatorzustand bei elektrifizierter CO₂-Methanisierung (e-Methanation) und Trockenreformierung von Methan (e-DRM). Sowohl für exotherme als auch für endotherme Reaktionen prüfen wir den Zusammenhang zwischen direkter Erwärmung und Reaktionswärme.",
+    "fr": "Nous étudions la conversion, la composition des produits et l’état du catalyseur dans la méthanation électrifiée du CO₂ (e-Methanation) et le reformage à sec du méthane (e-DRM). Pour les réactions exothermiques comme endothermiques, nous examinons la relation entre chauffage direct et chaleur de réaction.",
+    "es": "Estudiamos la conversión, la composición de productos y el estado del catalizador en la metanación electrificada de CO₂ (e-Methanation) y el reformado seco de metano (e-DRM). Para las reacciones exotérmicas y endotérmicas, examinamos la relación entre calentamiento directo y calor de reacción."
+  },
+  "複数の電化反応を接続する": {
+    "en": "Connecting multiple electrified reactions",
+    "zh": "连接多个电驱动反应",
+    "ko": "여러 전기 구동 반응 연결",
+    "de": "Mehrere elektrifizierte Reaktionen verbinden",
+    "fr": "Relier plusieurs réactions électrifiées",
+    "es": "Conectar varias reacciones electrificadas"
+  },
+  "メタン化と改質などを段階的に組み合わせ、各反応段への電力供給と操作条件を調整します。起動や条件変更への応答、合成ガス組成の制御、装置のコンパクト化を検討し、オンサイトで利用できる反応システムを目指します。": {
+    "en": "We combine reactions such as methanation and reforming in stages, adjusting power supply and operating conditions for each stage. We investigate responses to startup and operating changes, control of syngas composition and compact equipment, aiming for reaction systems that can be used on site.",
+    "zh": "分级组合甲烷化、重整等反应，调节各级的供电与操作条件。研究启动和条件变化的响应、合成气组成控制与设备小型化，力求构建可在现场使用的反应系统。",
+    "ko": "메탄화와 개질 등을 단계적으로 조합하고 각 반응 단계의 전력 공급과 운전 조건을 조절합니다. 기동과 조건 변경에 대한 응답, 합성가스 조성 제어, 장치 소형화를 검토하여 현장에서 이용할 수 있는 반응 시스템을 목표로 합니다.",
+    "de": "Wir kombinieren Reaktionen wie Methanisierung und Reformierung stufenweise und passen Stromversorgung und Betriebsbedingungen jeder Stufe an. Wir untersuchen das Verhalten beim Anfahren und bei Betriebsänderungen, die Steuerung der Synthesegaszusammensetzung und kompakte Anlagen, um vor Ort nutzbare Reaktionssysteme zu entwickeln.",
+    "fr": "Nous combinons par étapes des réactions telles que méthanation et reformage, en ajustant l’alimentation électrique et les conditions opératoires de chaque étage. Nous étudions les réponses au démarrage et aux changements de conditions, le contrôle de la composition du gaz de synthèse et la compacité des équipements, afin de créer des systèmes utilisables sur site.",
+    "es": "Combinamos reacciones como metanación y reformado por etapas, ajustando el suministro eléctrico y las condiciones de operación de cada una. Investigamos la respuesta al arranque y a los cambios de condiciones, el control de la composición del gas de síntesis y equipos compactos, buscando sistemas de reacción utilizables in situ."
+  },
+  "格子Sの放出、硫黄欠陥の形成、硫黄の再挿入を示すレドックスサイクルのイメージ。": {
+    "en": "An illustration of a redox cycle showing lattice-sulfur release, sulfur-vacancy formation and sulfur reinsertion.",
+    "zh": "展示晶格硫释放、硫空位形成与硫重新嵌入的氧化还原循环示意动画。",
+    "ko": "격자 황 방출, 황 공공 형성, 황 재삽입을 보여 주는 산화·환원 순환 개념도.",
+    "de": "Darstellung eines Redoxzyklus mit Freisetzung von Gitterschwefel, Bildung von Schwefelleerstellen und Wiedereinlagerung von Schwefel.",
+    "fr": "Illustration d’un cycle rédox montrant la libération du soufre du réseau, la formation de lacunes de soufre et sa réinsertion.",
+    "es": "Ilustración de un ciclo redox con liberación del azufre de la red, formación de vacantes de azufre y reinserción de azufre."
+  },
+  "格子Sを、反応種として利用する。": {
+    "en": "Using lattice sulfur as a reactive species.",
+    "zh": "将晶格硫用作反应物种。",
+    "ko": "격자 황을 반응종으로 이용합니다.",
+    "de": "Gitterschwefel als reaktive Spezies nutzen.",
+    "fr": "Utiliser le soufre du réseau comme espèce réactive.",
+    "es": "Utilizar el azufre de la red como especie reactiva."
+  },
+  "格子Sの反応性・硫黄欠陥・再挿入・脱水素・含硫黄化合物": {
+    "en": "Lattice-sulfur reactivity · Sulfur vacancies · Reinsertion · Dehydrogenation · Sulfur-containing compounds",
+    "zh": "晶格硫反应性 · 硫空位 · 重新嵌入 · 脱氢 · 含硫化合物",
+    "ko": "격자 황 반응성 · 황 공공 · 재삽입 · 탈수소 · 황 함유 화합물",
+    "de": "Reaktivität von Gitterschwefel · Schwefelleerstellen · Wiedereinlagerung · Dehydrierung · Schwefelhaltige Verbindungen",
+    "fr": "Réactivité du soufre du réseau · Lacunes de soufre · Réinsertion · Déshydrogénation · Composés soufrés",
+    "es": "Reactividad del azufre de la red · Vacantes de azufre · Reinserción · Deshidrogenación · Compuestos de azufre"
+  },
+  "硫化物を構成する格子硫黄（格子S）を、反応に関与する化学種として利用します。炭化水素からの水素引抜きに格子Sが関わり、H₂Sとして離脱する過程と、硫黄欠陥へ硫黄が再挿入される過程に着目しています。": {
+    "en": "We use the lattice sulfur (lattice S) that forms sulfides as a chemical species participating in reactions. We focus on its involvement in hydrogen abstraction from hydrocarbons and release as H₂S, followed by sulfur reinsertion into sulfur vacancies.",
+    "zh": "将构成硫化物的晶格硫（晶格S）作为参与反应的化学物种。重点关注晶格硫参与从烃中夺氢并以H₂S形式离开的过程，以及硫重新嵌入硫空位的过程。",
+    "ko": "황화물을 구성하는 격자 황(격자 S)을 반응에 참여하는 화학종으로 이용합니다. 격자 황이 탄화수소에서 수소를 떼어 내고 H₂S로 이탈하는 과정과, 황 공공에 황이 재삽입되는 과정에 주목합니다.",
+    "de": "Wir nutzen den Gitterschwefel (Gitter-S) von Sulfiden als an Reaktionen beteiligte chemische Spezies. Im Mittelpunkt stehen seine Beteiligung an der Wasserstoffabstraktion aus Kohlenwasserstoffen und seine Freisetzung als H₂S sowie die anschließende Wiedereinlagerung von Schwefel in Schwefelleerstellen.",
+    "fr": "Nous utilisons le soufre du réseau des sulfures comme espèce chimique participant aux réactions. Nous nous intéressons à son implication dans l’abstraction d’hydrogène des hydrocarbures et à son départ sous forme de H₂S, puis à la réinsertion du soufre dans les lacunes correspondantes.",
+    "es": "Utilizamos el azufre de la red de los sulfuros como especie química que participa en las reacciones. Nos centramos en su intervención en la extracción de hidrógeno de los hidrocarburos y su salida como H₂S, seguida de la reinserción de azufre en las vacantes correspondientes."
+  },
+  "格子Sの消費と再生を繰り返すレドックスサイクルを通じて、アルカンの脱水素や含硫黄化合物の変換を研究しています。反応中の材料状態と生成物の関係を調べ、硫黄種を活用する触媒プロセスを検討します。": {
+    "en": "Through redox cycles that repeatedly consume and regenerate lattice sulfur, we study alkane dehydrogenation and the conversion of sulfur-containing compounds. We investigate relationships between material state during reactions and products to develop catalytic processes that use sulfur species.",
+    "zh": "通过反复消耗和再生晶格硫的氧化还原循环，研究烷烃脱氢与含硫化合物转化。考察反应中材料状态与产物的关系，探讨利用硫物种的催化过程。",
+    "ko": "격자 황의 소비와 재생을 반복하는 산화·환원 순환을 통해 알케인 탈수소와 황 함유 화합물 전환을 연구합니다. 반응 중 재료 상태와 생성물의 관계를 조사하여 황 화학종을 활용하는 촉매 공정을 검토합니다.",
+    "de": "Mit Redoxzyklen, die Gitterschwefel wiederholt verbrauchen und regenerieren, untersuchen wir die Dehydrierung von Alkanen und die Umwandlung schwefelhaltiger Verbindungen. Wir prüfen die Beziehungen zwischen dem Materialzustand während der Reaktion und den Produkten, um katalytische Prozesse mit Schwefelspezies zu entwickeln.",
+    "fr": "Grâce à des cycles rédox consommant et régénérant le soufre du réseau de manière répétée, nous étudions la déshydrogénation des alcanes et la conversion de composés soufrés. Nous examinons les relations entre l’état du matériau pendant la réaction et les produits pour développer des procédés catalytiques utilisant les espèces soufrées.",
+    "es": "Mediante ciclos redox que consumen y regeneran repetidamente el azufre de la red, estudiamos la deshidrogenación de alcanos y la conversión de compuestos de azufre. Investigamos la relación entre el estado del material durante la reacción y los productos para desarrollar procesos catalíticos que utilizan especies de azufre."
+  },
+  "格子Sと炭化水素の反応": {
+    "en": "Reactions between lattice sulfur and hydrocarbons",
+    "zh": "晶格硫与烃的反应",
+    "ko": "격자 황과 탄화수소의 반응",
+    "de": "Reaktionen von Gitterschwefel mit Kohlenwasserstoffen",
+    "fr": "Réactions du soufre du réseau avec les hydrocarbures",
+    "es": "Reacciones del azufre de la red con hidrocarburos"
+  },
+  "硫化物中の格子Sが炭化水素の変換に関与する過程を調べます。アルカンからオレフィンへの脱水素などを対象に、触媒組成、反応温度、ガス組成と生成物選択性の関係を検討します。": {
+    "en": "We study how lattice sulfur in sulfides participates in hydrocarbon conversion. For reactions such as alkane dehydrogenation to olefins, we examine relationships between catalyst composition, reaction temperature, gas composition and product selectivity.",
+    "zh": "研究硫化物中的晶格硫参与烃转化的过程。以烷烃脱氢制烯烃等反应为对象，考察催化剂组成、反应温度、气体组成与产物选择性的关系。",
+    "ko": "황화물의 격자 황이 탄화수소 전환에 참여하는 과정을 연구합니다. 알케인에서 올레핀으로의 탈수소 등을 대상으로 촉매 조성, 반응 온도, 가스 조성과 생성물 선택성의 관계를 검토합니다.",
+    "de": "Wir untersuchen, wie Gitterschwefel in Sulfiden an der Umwandlung von Kohlenwasserstoffen beteiligt ist. Für Reaktionen wie die Dehydrierung von Alkanen zu Olefinen prüfen wir den Zusammenhang zwischen Katalysatorzusammensetzung, Reaktionstemperatur, Gaszusammensetzung und Produktselektivität.",
+    "fr": "Nous étudions comment le soufre du réseau des sulfures participe à la conversion des hydrocarbures. Pour des réactions telles que la déshydrogénation des alcanes en oléfines, nous examinons les relations entre composition du catalyseur, température, composition gazeuse et sélectivité des produits.",
+    "es": "Estudiamos cómo el azufre de la red de los sulfuros participa en la conversión de hidrocarburos. Para reacciones como la deshidrogenación de alcanos a olefinas, examinamos las relaciones entre composición del catalizador, temperatura de reacción, composición gaseosa y selectividad de productos."
+  },
+  "硫黄欠陥の生成と再生": {
+    "en": "Sulfur-vacancy formation and regeneration",
+    "zh": "硫空位形成与再生",
+    "ko": "황 공공 형성과 재생",
+    "de": "Bildung von Schwefelleerstellen und Regeneration",
+    "fr": "Formation des lacunes de soufre et régénération",
+    "es": "Formación de vacantes de azufre y regeneración"
+  },
+  "格子Sが離脱した後の硫黄欠陥と、H₂Sによる硫黄の再挿入に着目します。反応と再生の条件、硫黄の移動、繰返し操作での触媒性能を評価し、格子Sを反復利用するための反応条件を探ります。": {
+    "en": "We focus on sulfur vacancies left after lattice-sulfur release and sulfur reinsertion using H₂S. We evaluate reaction and regeneration conditions, sulfur transport and catalyst performance during repeated operation to find conditions for repeated use of lattice sulfur.",
+    "zh": "关注晶格硫离开后的硫空位以及通过H₂S重新嵌入硫的过程。评价反应与再生条件、硫迁移以及反复操作中的催化性能，探索重复利用晶格硫的反应条件。",
+    "ko": "격자 황이 이탈한 뒤의 황 공공과 H₂S에 의한 황 재삽입에 주목합니다. 반응·재생 조건, 황 이동, 반복 운전 시 촉매 성능을 평가하여 격자 황을 반복 이용하기 위한 반응 조건을 탐색합니다.",
+    "de": "Wir betrachten die nach der Gitterschwefelfreisetzung verbleibenden Schwefelleerstellen und die Wiedereinlagerung von Schwefel mit H₂S. Wir bewerten Reaktions- und Regenerationsbedingungen, Schwefeltransport und Katalysatorleistung im wiederholten Betrieb, um Bedingungen für die wiederholte Nutzung von Gitterschwefel zu finden.",
+    "fr": "Nous nous intéressons aux lacunes laissées après le départ du soufre du réseau et à la réinsertion de soufre au moyen de H₂S. Nous évaluons les conditions de réaction et de régénération, le transport du soufre et les performances catalytiques lors de cycles répétés, afin de trouver des conditions permettant de réutiliser le soufre du réseau.",
+    "es": "Nos centramos en las vacantes que quedan tras la salida del azufre de la red y en su reinserción mediante H₂S. Evaluamos las condiciones de reacción y regeneración, el transporte de azufre y el rendimiento catalítico en operaciones repetidas para encontrar condiciones que permitan reutilizar el azufre de la red."
+  },
+  "含硫黄化合物と電化反応への展開": {
+    "en": "Extension to sulfur-containing compounds and electrified reactions",
+    "zh": "向含硫化合物与电驱动反应拓展",
+    "ko": "황 함유 화합물과 전기 구동 반응으로의 확장",
+    "de": "Erweiterung auf schwefelhaltige Verbindungen und elektrifizierte Reaktionen",
+    "fr": "Extension aux composés soufrés et aux réactions électrifiées",
+    "es": "Extensión a compuestos de azufre y reacciones electrificadas"
+  },
+  "硫黄種を介した炭化水素変換や含硫黄化合物の反応を検討します。触媒表面の状態と加熱方法を関連付け、直接加熱などを用いた反応操作が反応性や生成物に及ぼす影響を調べます。": {
+    "en": "We investigate hydrocarbon conversion mediated by sulfur species and reactions of sulfur-containing compounds. By relating catalyst-surface conditions to heating methods, we examine how operation using direct heating and other methods affects reactivity and products.",
+    "zh": "探讨由硫物种介导的烃转化与含硫化合物反应。将催化剂表面状态与加热方式联系起来，研究直接加热等反应操作对反应性和产物的影响。",
+    "ko": "황 화학종을 매개로 하는 탄화수소 전환과 황 함유 화합물의 반응을 검토합니다. 촉매 표면 상태와 가열 방법을 연관 지어 직접 가열 등을 이용한 반응 운전이 반응성과 생성물에 미치는 영향을 연구합니다.",
+    "de": "Wir untersuchen die durch Schwefelspezies vermittelte Kohlenwasserstoffumwandlung und Reaktionen schwefelhaltiger Verbindungen. Wir verknüpfen den Zustand der Katalysatoroberfläche mit der Heizmethode und prüfen, wie Betriebsweisen mit direkter Erwärmung und anderen Methoden Reaktivität und Produkte beeinflussen.",
+    "fr": "Nous examinons la conversion des hydrocarbures faisant intervenir des espèces soufrées et les réactions de composés soufrés. En reliant l’état de surface du catalyseur au mode de chauffage, nous étudions l’effet des opérations utilisant notamment le chauffage direct sur la réactivité et les produits.",
+    "es": "Investigamos la conversión de hidrocarburos mediada por especies de azufre y las reacciones de compuestos de azufre. Relacionamos el estado superficial del catalizador con el método de calentamiento y estudiamos cómo la operación mediante calentamiento directo y otros métodos afecta a la reactividad y a los productos."
+  },
+  "渡部研究室の4つの研究テーマ。炭素循環、構造体触媒、電化反応、格子硫黄触媒の研究内容と関連論文を紹介します。": {
+    "en": "The four research themes of Watanabe Laboratory: carbon circulation, structured catalysts, electrified reactions and lattice-sulfur catalysis, with research descriptions and related publications.",
+    "zh": "渡部研究室的四个研究主题：碳循环、结构化催化剂、电驱动反应与晶格硫催化，介绍研究内容及相关论文。",
+    "ko": "와타나베 연구실의 네 가지 연구 주제. 탄소 순환, 구조체 촉매, 전기 구동 반응, 격자 황 촉매의 연구 내용과 관련 논문을 소개합니다.",
+    "de": "Die vier Forschungsthemen des Watanabe Laboratory: Kohlenstoffkreislauf, strukturierte Katalysatoren, elektrifizierte Reaktionen und Gitterschwefel-Katalyse, mit Forschungsbeschreibungen und zugehörigen Veröffentlichungen.",
+    "fr": "Les quatre thèmes du laboratoire Watanabe : cycle du carbone, catalyseurs structurés, réactions électrifiées et catalyse par le soufre du réseau, avec descriptions des recherches et publications associées.",
+    "es": "Los cuatro temas del Laboratorio Watanabe: ciclo del carbono, catalizadores estructurados, reacciones electrificadas y catálisis con azufre de la red, con descripciones de investigación y publicaciones relacionadas."
+  },
+  "研究テーマ": {
+    "en": "Research themes",
+    "zh": "研究主题",
+    "ko": "연구 주제",
+    "de": "Forschungsthemen",
+    "fr": "Thèmes de recherche",
+    "es": "Temas de investigación"
+  },
+  "渡部研究室の研究方針、研究スタイル、主要プロジェクト。": {
+    "en": "Research approach, working methods and major projects at Watanabe Laboratory.",
+    "zh": "渡部研究室的研究方针、研究方式与主要项目。",
+    "ko": "와타나베 연구실의 연구 방침, 연구 방식, 주요 프로젝트.",
+    "de": "Forschungsansatz, Arbeitsweise und wichtige Projekte des Watanabe Laboratory.",
+    "fr": "Orientations, méthodes de recherche et principaux projets du laboratoire Watanabe.",
+    "es": "Enfoque, métodos de investigación y principales proyectos del Laboratorio Watanabe."
+  },
+  "FACULTY / 教員": {
+    "en": "FACULTY",
+    "zh": "教师",
+    "ko": "교원",
+    "de": "LEHRENDE",
+    "fr": "ENSEIGNANTS-CHERCHEURS",
+    "es": "PERSONAL DOCENTE"
+  },
+  "特任准教授": {
+    "en": "Specially Appointed Associate Professor",
+    "zh": "特任副教授",
+    "ko": "특임 부교수",
+    "de": "Außerordentlicher Professor mit besonderem Auftrag",
+    "fr": "Professeur associé sur nomination spéciale",
+    "es": "Profesor asociado de nombramiento especial"
+  },
+  "赤間 弘": {
+    "en": "Hiroshi Akama",
+    "zh": "Hiroshi Akama",
+    "ko": "Hiroshi Akama",
+    "de": "Hiroshi Akama",
+    "fr": "Hiroshi Akama",
+    "es": "Hiroshi Akama"
+  },
+  "渡部研究室のメンバー紹介。静岡大学浜松キャンパス。": {
+    "en": "Meet the members of Watanabe Laboratory at Shizuoka University's Hamamatsu Campus.",
+    "zh": "静冈大学滨松校区渡部研究室成员介绍。",
+    "ko": "시즈오카대학교 하마마쓰 캠퍼스 와타나베 연구실 구성원 소개.",
+    "de": "Mitglieder des Watanabe Laboratory am Campus Hamamatsu der Universität Shizuoka.",
+    "fr": "Présentation des membres du laboratoire Watanabe, université de Shizuoka, campus de Hamamatsu.",
+    "es": "Presentación de los miembros del Laboratorio Watanabe, Universidad de Shizuoka, campus de Hamamatsu."
+  },
+  "渡部 綾 教授": {
+    "en": "Professor Ryo Watanabe",
+    "zh": "Ryo Watanabe教授",
+    "ko": "Ryo Watanabe 교수",
+    "de": "Professor Ryo Watanabe",
+    "fr": "Professeur Ryo Watanabe",
+    "es": "Profesor Ryo Watanabe"
+  },
+  "赤間 弘 特任准教授の似顔絵。白いシャツと濃紺のジャケットで穏やかに微笑む姿。": {
+    "en": "Portrait illustration of Specially Appointed Associate Professor Hiroshi Akama, smiling gently in a white shirt and dark navy jacket.",
+    "zh": "特任副教授Hiroshi Akama的肖像插画，身穿白衬衫与深蓝色外套，面带温和微笑。",
+    "ko": "흰 셔츠와 짙은 남색 재킷을 입고 온화하게 웃는 Hiroshi Akama 특임 부교수의 초상 일러스트.",
+    "de": "Porträtillustration von Hiroshi Akama, außerordentlichem Professor mit besonderem Auftrag, mit sanftem Lächeln, weißem Hemd und dunkelblauem Jackett.",
+    "fr": "Portrait illustré de Hiroshi Akama, professeur associé sur nomination spéciale, souriant doucement, en chemise blanche et veste bleu marine.",
+    "es": "Retrato ilustrado de Hiroshi Akama, profesor asociado de nombramiento especial, con una sonrisa serena, camisa blanca y chaqueta azul marino."
+  },
+  "渡部研究室の就職・進学実績。2007年から2026年までの主な進路先。": {
+    "en": "Employment and further-study destinations of Watanabe Laboratory graduates, 2007–2026.",
+    "zh": "渡部研究室2007—2026年毕业生的主要就业与升学去向。",
+    "ko": "와타나베 연구실 졸업생의 주요 취업·진학 현황, 2007–2026년.",
+    "de": "Berufliche Wege und weiterführendes Studium der Absolventinnen und Absolventen des Watanabe Laboratory, 2007–2026.",
+    "fr": "Débouchés professionnels et poursuites d’études des diplômés du laboratoire Watanabe, 2007–2026.",
+    "es": "Destinos laborales y de estudios posteriores de los graduados del Laboratorio Watanabe, 2007–2026."
+  },
+  "渡部研究室の論文・研究成果。2008–2026年の研究実績を出版年別に掲載し、DOIが付与された論文にはDOIリンクを表示。": {
+    "en": "Watanabe Laboratory publications and research outputs, 2008–2026, listed by publication year with DOI links where available.",
+    "zh": "渡部研究室2008—2026年的论文与研究成果，按发表年份列出，并为已分配DOI的论文提供链接。",
+    "ko": "와타나베 연구실의 2008–2026년 논문과 연구 성과. 출판 연도별로 소개하고 DOI가 있는 논문에는 DOI 링크를 제공합니다.",
+    "de": "Veröffentlichungen und Forschungsergebnisse des Watanabe Laboratory, 2008–2026, nach Erscheinungsjahr mit DOI-Links, soweit vorhanden.",
+    "fr": "Publications et résultats du laboratoire Watanabe de 2008 à 2026, classés par année de publication avec des liens DOI lorsqu’ils existent.",
+    "es": "Publicaciones y resultados del Laboratorio Watanabe, 2008–2026, por año de publicación, con enlaces DOI cuando están disponibles."
+  },
+  "米国・欧州の触媒研究者マップ「Catalyst Atlas — USA & Europe」を追加しました。": {
+    "en": "Catalyst Atlas — USA & Europe, a map of catalysis researchers in the United States and Europe, has been added.",
+    "zh": "美国与欧洲催化研究者地图“Catalyst Atlas — USA & Europe”已上线。",
+    "ko": "미국·유럽 촉매 연구자 지도 ‘Catalyst Atlas — USA & Europe’을 추가했습니다.",
+    "de": "Die Karte für Katalyseforschende in den USA und Europa „Catalyst Atlas — USA & Europe“ wurde ergänzt.",
+    "fr": "La carte des chercheurs en catalyse aux États-Unis et en Europe « Catalyst Atlas — USA & Europe » a été ajoutée.",
+    "es": "Se ha añadido «Catalyst Atlas — USA & Europe», un mapa de investigadores en catálisis de Estados Unidos y Europa."
+  },
+  "PlaygroundのProject 06に、海外の触媒研究者を州・国、大学・研究拠点、研究分野から探せる3Dマップを掲載しました。名前付きカードから研究内容・業績・出典を確認でき、注目研究者のいる地域・拠点を金色で表示します。": {
+    "en": "Project 06 in Playground now features a 3D map for finding overseas catalysis researchers by state or country, university or research site, and research field. Named cards show research, achievements and sources, while regions and sites with featured researchers are displayed in gold.",
+    "zh": "Playground的Project 06新增3D地图，可按州或国家、大学或研究机构及研究领域寻找海外催化研究者。姓名卡片展示研究内容、成果与来源，值得关注的研究者所在地区和机构以金色显示。",
+    "ko": "Playground의 Project 06에 주·국가, 대학·연구 거점, 연구 분야별로 해외 촉매 연구자를 찾는 3D 지도를 추가했습니다. 이름이 표시된 카드에서 연구 내용·성과·출처를 확인할 수 있으며, 주목할 연구자가 있는 지역·거점은 금색으로 표시합니다.",
+    "de": "Project 06 im Playground bietet eine 3D-Karte zur Suche nach Katalyseforschenden im Ausland nach Bundesstaat oder Land, Hochschule oder Forschungsstandort und Forschungsgebiet. Namenskarten zeigen Forschung, Leistungen und Quellen; Regionen und Standorte ausgewählter Forschender erscheinen in Gold.",
+    "fr": "Le Project 06 du Playground propose désormais une carte 3D pour trouver des chercheurs en catalyse à l’étranger par État ou pays, université ou site de recherche et domaine. Les fiches nominatives présentent les recherches, les réalisations et les sources ; les régions et sites des chercheurs mis en avant apparaissent en doré.",
+    "es": "El Project 06 de Playground incorpora un mapa 3D para buscar investigadores en catálisis del extranjero por estado o país, universidad o centro y área de investigación. Las tarjetas con nombre muestran investigaciones, logros y fuentes; las regiones y centros de investigadores destacados aparecen en dorado."
+  },
+  "毎月1日に公開情報を確認し、研究者データとハイライトを更新します。あくまで研究・技術探索の参考情報としてご利用ください。閲覧にはアクセス権が必要です。": {
+    "en": "Public information is checked on the first day of each month to update researcher data and highlights. Please use this as reference information for research and technology exploration. Access permission is required to view the map.",
+    "zh": "每月1日核查公开信息，更新研究者数据与重点标记。请仅将其作为研究与技术探索的参考信息。浏览地图需要访问权限。",
+    "ko": "매월 1일 공개 정보를 확인하여 연구자 데이터와 강조 표시를 갱신합니다. 연구·기술 탐색을 위한 참고 정보로 이용해 주십시오. 지도를 보려면 접근 권한이 필요합니다.",
+    "de": "Am ersten Tag jedes Monats prüfen wir öffentliche Informationen und aktualisieren Forschendendaten und Hervorhebungen. Bitte verwenden Sie diese Angaben als Orientierung für die Recherche zu Forschung und Technologie. Zum Anzeigen der Karte ist eine Zugriffsberechtigung erforderlich.",
+    "fr": "Les informations publiques sont vérifiées le premier jour de chaque mois afin d’actualiser les données et les mises en avant. Veuillez les utiliser comme informations de référence pour explorer la recherche et les technologies. Une autorisation d’accès est nécessaire pour consulter la carte.",
+    "es": "El primer día de cada mes se revisa la información pública para actualizar los datos y los destacados. Utilícelo como información de referencia para explorar la investigación y la tecnología. Se requiere permiso de acceso para consultar el mapa."
+  },
+  "米国・欧州の研究者を探す ↗": {
+    "en": "Find researchers in the USA and Europe ↗",
+    "zh": "寻找美国与欧洲的研究者 ↗",
+    "ko": "미국·유럽 연구자 찾기 ↗",
+    "de": "Forschende in den USA und Europa finden ↗",
+    "fr": "Trouver des chercheurs aux États-Unis et en Europe ↗",
+    "es": "Buscar investigadores en Estados Unidos y Europa ↗"
+  },
+  "渡部研究室のニュース、学会発表、論文、学生受賞。": {
+    "en": "Watanabe Laboratory news, conference presentations, publications and student awards.",
+    "zh": "渡部研究室新闻、会议报告、论文与学生获奖信息。",
+    "ko": "와타나베 연구실의 소식, 학회 발표, 논문, 학생 수상.",
+    "de": "Neuigkeiten, Konferenzbeiträge, Veröffentlichungen und studentische Auszeichnungen des Watanabe Laboratory.",
+    "fr": "Actualités, communications scientifiques, publications et distinctions étudiantes du laboratoire Watanabe.",
+    "es": "Noticias, ponencias, publicaciones y premios estudiantiles del Laboratorio Watanabe."
+  },
+  "米国・欧州の触媒研究者を、州・国、大学・研究拠点、研究分野から探す3Dマップです。地域を選び、拠点から研究者の名前付きカードを開くと、研究内容・代表成果・情報源を確認できます。": {
+    "en": "A 3D map for finding catalysis researchers in the United States and Europe by state or country, university or research site, and research field. Select a region and open a named researcher card from a research site to view research topics, representative achievements and sources.",
+    "zh": "按州或国家、大学或研究机构及研究领域寻找美国与欧洲催化研究者的3D地图。选择地区，从研究机构打开带姓名的研究者卡片，即可查看研究内容、代表成果与信息来源。",
+    "ko": "미국·유럽 촉매 연구자를 주·국가, 대학·연구 거점, 연구 분야별로 찾는 3D 지도입니다. 지역을 선택하고 거점에서 연구자 이름 카드를 열면 연구 내용·대표 성과·정보 출처를 확인할 수 있습니다.",
+    "de": "Eine 3D-Karte zur Suche nach Katalyseforschenden in den USA und Europa nach Bundesstaat oder Land, Hochschule oder Forschungsstandort und Forschungsgebiet. Wählen Sie eine Region und öffnen Sie an einem Standort eine Namenskarte, um Forschung, repräsentative Leistungen und Quellen einzusehen.",
+    "fr": "Carte 3D permettant de trouver des chercheurs en catalyse aux États-Unis et en Europe par État ou pays, université ou site de recherche et domaine. Sélectionnez une région, puis ouvrez une fiche nominative depuis un site pour consulter les recherches, les réalisations représentatives et les sources.",
+    "es": "Mapa 3D para buscar investigadores en catálisis de Estados Unidos y Europa por estado o país, universidad o centro y campo de investigación. Seleccione una región y abra la tarjeta con nombre desde un centro para consultar la investigación, los logros representativos y las fuentes."
+  },
+  "米国・欧州": {
+    "en": "USA & Europe",
+    "zh": "美国与欧洲",
+    "ko": "미국·유럽",
+    "de": "USA und Europa",
+    "fr": "États-Unis et Europe",
+    "es": "Estados Unidos y Europa"
+  },
+  "3D研究者マップ": {
+    "en": "3D researcher map",
+    "zh": "3D研究者地图",
+    "ko": "3D 연구자 지도",
+    "de": "3D-Forschendenkarte",
+    "fr": "Carte 3D des chercheurs",
+    "es": "Mapa 3D de investigadores"
+  },
+  "毎月1日更新": {
+    "en": "Updated on the first day of each month",
+    "zh": "每月1日更新",
+    "ko": "매월 1일 갱신",
+    "de": "Aktualisierung am ersten Tag jedes Monats",
+    "fr": "Mise à jour le premier jour de chaque mois",
+    "es": "Actualización el primer día de cada mes"
+  },
+  "注目研究者をハイライト": {
+    "en": "Featured researchers highlighted",
+    "zh": "突出显示值得关注的研究者",
+    "ko": "주목할 연구자 강조",
+    "de": "Ausgewählte Forschende hervorgehoben",
+    "fr": "Chercheurs mis en avant",
+    "es": "Investigadores destacados"
+  },
+  "独創的な成果や国際的評価に注目した研究者を紹介し、該当する地域・研究拠点を金色で表示します。年齢を公開情報で確認できる40代の研究者も探せます。": {
+    "en": "We introduce researchers noted for original achievements or international recognition and show their regions and research sites in gold. You can also find researchers in their forties whose ages can be confirmed from public information.",
+    "zh": "介绍因原创成果或国际评价而受到关注的研究者，并以金色显示其所在地区与研究机构。还可查找通过公开信息确认年龄为40多岁的研究者。",
+    "ko": "독창적인 성과나 국제적 평가로 주목받는 연구자를 소개하고 해당 지역·연구 거점을 금색으로 표시합니다. 공개 정보로 나이가 확인된 40대 연구자도 찾을 수 있습니다.",
+    "de": "Wir stellen Forschende vor, die durch originelle Leistungen oder internationale Anerkennung auffallen, und markieren ihre Regionen und Forschungsstandorte in Gold. Sie können auch Forschende zwischen 40 und 49 Jahren finden, deren Alter durch öffentliche Informationen bestätigt ist.",
+    "fr": "Nous présentons des chercheurs remarqués pour leurs travaux originaux ou leur reconnaissance internationale et affichons leurs régions et sites en doré. Vous pouvez aussi trouver des chercheurs de 40 à 49 ans dont l’âge est confirmé par des informations publiques.",
+    "es": "Presentamos investigadores que destacan por sus logros originales o reconocimiento internacional y mostramos sus regiones y centros en dorado. También puede encontrar investigadores de entre 40 y 49 años cuya edad se confirma mediante información pública."
+  },
+  "公開情報に基づく探索用の参考資料です。所属・業績・年齢は各プロフィールの出典をご確認ください。どなたでもご利用いただけます。": {
+    "en": "A reference resource for exploration based on public information. Please check each profile's sources for affiliations, achievements and ages. Everyone is welcome to use it.",
+    "zh": "本工具是基于公开信息的探索性参考资料。所属机构、成果与年龄请核对各个人资料中的来源。所有人均可使用。",
+    "ko": "공개 정보에 기반한 탐색용 참고 자료입니다. 소속·성과·나이는 각 프로필의 출처를 확인해 주십시오. 누구나 이용할 수 있습니다.",
+    "de": "Eine Orientierungshilfe für die Recherche auf Grundlage öffentlicher Informationen. Bitte prüfen Sie Zugehörigkeiten, Leistungen und Alter anhand der Quellen im jeweiligen Profil. Das Angebot steht allen offen.",
+    "fr": "Une ressource de référence pour l’exploration, fondée sur des informations publiques. Vérifiez affiliations, réalisations et âges dans les sources de chaque profil. L’outil est accessible à tous.",
+    "es": "Un recurso de referencia para explorar, basado en información pública. Compruebe las afiliaciones, los logros y las edades en las fuentes de cada perfil. Está disponible para todo el público."
+  },
+  "米国・欧州の研究者を探す →": {
+    "en": "Find researchers in the USA and Europe →",
+    "zh": "寻找美国与欧洲的研究者 →",
+    "ko": "미국·유럽 연구자 찾기 →",
+    "de": "Forschende in den USA und Europa finden →",
+    "fr": "Trouver des chercheurs aux États-Unis et en Europe →",
+    "es": "Buscar investigadores en Estados Unidos y Europa →"
+  },
+  "Watanabe's Playground — 渡部研究室で開発・公開する研究支援ツール、可視化、実験的Webプロジェクトのコレクション。": {
+    "en": "Watanabe's Playground — a collection of research-support tools, visualizations and experimental web projects developed and shared by Watanabe Laboratory.",
+    "zh": "Watanabe's Playground — 渡部研究室开发并公开的研究辅助工具、可视化与实验性网页项目集。",
+    "ko": "Watanabe's Playground — 와타나베 연구실에서 개발·공개하는 연구 지원 도구, 시각화, 실험적 웹 프로젝트 모음.",
+    "de": "Watanabe's Playground — eine Sammlung von Forschungswerkzeugen, Visualisierungen und experimentellen Webprojekten, entwickelt und veröffentlicht vom Watanabe Laboratory.",
+    "fr": "Watanabe's Playground — une collection d’outils d’aide à la recherche, de visualisations et de projets web expérimentaux développés et publiés par le laboratoire Watanabe.",
+    "es": "Watanabe's Playground — una colección de herramientas de apoyo a la investigación, visualizaciones y proyectos web experimentales desarrollados y publicados por el Laboratorio Watanabe."
+  },
+  "米国と欧州の研究拠点を光の軌道で結ぶ地球": {
+    "en": "A globe connecting research sites in the United States and Europe with illuminated paths",
+    "zh": "以发光轨迹连接美国与欧洲研究机构的地球",
+    "ko": "빛의 궤적으로 미국과 유럽의 연구 거점을 연결하는 지구",
+    "de": "Ein Globus mit leuchtenden Bahnen zwischen Forschungsstandorten in den USA und Europa",
+    "fr": "Un globe reliant les sites de recherche aux États-Unis et en Europe par des trajectoires lumineuses",
+    "es": "Un globo que conecta centros de investigación de Estados Unidos y Europa mediante trayectorias luminosas"
+  },
+  "渡部研究室へのお問い合わせ・アクセス。静岡大学浜松キャンパス。": {
+    "en": "Contact and directions for Watanabe Laboratory, Shizuoka University, Hamamatsu Campus.",
+    "zh": "静冈大学滨松校区渡部研究室联系方式与交通指南。",
+    "ko": "와타나베 연구실 문의 및 오시는 길. 시즈오카대학교 하마마쓰 캠퍼스.",
+    "de": "Kontakt und Anfahrt zum Watanabe Laboratory, Universität Shizuoka, Campus Hamamatsu.",
+    "fr": "Contact et accès au laboratoire Watanabe, université de Shizuoka, campus de Hamamatsu.",
+    "es": "Contacto y acceso al Laboratorio Watanabe, Universidad de Shizuoka, campus de Hamamatsu."
+  },
+  "渡部研究室の講義・研究室ツール・静岡大学・学会へのリンク集。": {
+    "en": "Links to Watanabe Laboratory lectures and tools, Shizuoka University and academic societies.",
+    "zh": "渡部研究室课程与工具、静冈大学及学会的链接。",
+    "ko": "와타나베 연구실 강의·연구실 도구·시즈오카대학교·학회 링크 모음.",
+    "de": "Links zu Lehrveranstaltungen und Werkzeugen des Watanabe Laboratory, zur Universität Shizuoka und zu Fachgesellschaften.",
+    "fr": "Liens vers les cours et outils du laboratoire Watanabe, l’université de Shizuoka et les sociétés savantes.",
+    "es": "Enlaces a cursos y herramientas del Laboratorio Watanabe, la Universidad de Shizuoka y sociedades científicas."
+  },
+  "Study on the catalytic conversion of greenhouse gases (CO2 and CH4) into high-value solid carbon.": {
+    "en": "Study on the catalytic conversion of greenhouse gases (CO2 and CH4) into high-value solid carbon.",
+    "zh": "研究将温室气体（CO2和CH4）催化转化为高附加值固体碳。",
+    "ko": "온실가스(CO2 및 CH4)를 고부가가치 고체 탄소로 전환하는 촉매 반응 연구.",
+    "de": "Untersuchung der katalytischen Umwandlung von Treibhausgasen (CO2 und CH4) in hochwertigen festen Kohlenstoff.",
+    "fr": "Étude de la conversion catalytique des gaz à effet de serre (CO2 et CH4) en carbone solide à haute valeur ajoutée.",
+    "es": "Estudio de la conversión catalítica de gases de efecto invernadero (CO2 y CH4) en carbono sólido de alto valor."
+  },
+  "Welcome to my profile. If you share an interest in exchanging ideas, collaborating on research, or discussing new perspectives in catalytic reaction engineering, you are always welcome to connect.": {
+    "en": "Welcome to my profile. If you share an interest in exchanging ideas, collaborating on research, or discussing new perspectives in catalytic reaction engineering, you are always welcome to connect.",
+    "zh": "欢迎访问我的个人资料。如果您有兴趣交流想法、开展合作研究，或讨论催化反应工程的新视角，随时欢迎与我联系。",
+    "ko": "제 프로필에 오신 것을 환영합니다. 아이디어 교환, 공동 연구 또는 촉매 반응공학의 새로운 관점에 대한 토론에 관심이 있으시면 언제든지 연락해 주세요.",
+    "de": "Willkommen auf meinem Profil. Wenn Sie sich für den Austausch von Ideen, gemeinsame Forschung oder neue Perspektiven in der katalytischen Reaktionstechnik interessieren, können Sie sich jederzeit gerne mit mir in Verbindung setzen.",
+    "fr": "Bienvenue sur mon profil. Si vous souhaitez échanger des idées, collaborer à des recherches ou discuter de nouvelles perspectives en génie des réactions catalytiques, vous êtes toujours les bienvenus pour me contacter.",
+    "es": "Bienvenido a mi perfil. Si le interesa intercambiar ideas, colaborar en investigación o debatir nuevas perspectivas de la ingeniería de reacciones catalíticas, siempre será un placer que se ponga en contacto conmigo."
+  },
+  "Barakshetra, Nepal": {
+    "en": "Barakshetra, Nepal",
+    "zh": "尼泊尔Barakshetra",
+    "ko": "네팔 Barakshetra",
+    "de": "Barakshetra, Nepal",
+    "fr": "Barakshetra, Népal",
+    "es": "Barakshetra, Nepal"
+  },
+  "Profile": {
+    "en": "Profile",
+    "zh": "个人资料",
+    "ko": "프로필",
+    "de": "Profil",
+    "fr": "Profil",
+    "es": "Perfil"
+  },
+  "。": {
+    "en": ".",
+    "zh": "。",
+    "ko": ".",
+    "de": ".",
+    "fr": ".",
+    "es": "."
+  },
+  "Carbon circulation animation": {
+    "en": "Carbon circulation animation",
+    "zh": "碳循环动画",
+    "ko": "탄소 순환 애니메이션",
+    "de": "Animation des Kohlenstoffkreislaufs",
+    "fr": "Animation du cycle du carbone",
+    "es": "Animación del ciclo del carbono"
+  },
+  "Spiral catalyst Joule heating animation": {
+    "en": "Spiral catalyst Joule heating animation",
+    "zh": "螺旋催化剂焦耳加热动画",
+    "ko": "나선 촉매 줄 가열 애니메이션",
+    "de": "Animation der Joule-Erwärmung eines Spiralkatalysators",
+    "fr": "Animation du chauffage Joule d’un catalyseur en spirale",
+    "es": "Animación del calentamiento Joule de un catalizador en espiral"
+  }
+}

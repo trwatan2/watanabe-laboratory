@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="촉매화학, 반응공학, 전기화 반응을 연결하여 CO₂, 메탄, 수소, 탄소 자원 및 황 화합물을 위한 새로운 반응 공정을 연구합니다.">
+  <meta name="description" content="와타나베 연구실의 네 가지 연구 주제. 탄소 순환, 구조체 촉매, 전기 구동 반응, 격자 황 촉매의 연구 내용과 관련 논문을 소개합니다.">
   <title>연구 | Watanabe Laboratory</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +90,8 @@
   }
 </style>
 
-<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/research.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/research-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/research-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/research-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
+<link rel="stylesheet" href="css/research-details.css?v=20260911">
+<link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/research.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/research-zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/research-ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/research-de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/research-fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/research-es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/research-en.html"><meta name="translation-source-sha256" content="860000c58e0b96d9d2bb227368e57aa87a447cb082694f23b5da7e82a191c8d6"><meta name="translation-version" content="20260912-complete-1"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
 body.international-full,body.international-full *{font-family:"Helvetica Neue",Arial,sans-serif!important}
 .international-full:lang(zh-CN),.international-full:lang(zh-CN) *{font-family:"Microsoft YaHei","PingFang SC",sans-serif!important}
 .international-full:lang(ko),.international-full:lang(ko) *{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif!important}
@@ -135,9 +136,20 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
  .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
 }
 @media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}
-</style><link rel="stylesheet" href="visitor-counter.css?v=20260912-2">
-<script defer src="visitor-counter.js?v=20260912-2"></script>
-</head>
+/* Translated labels can be longer; preserve the source grids without clipping. */
+.international-full .research-jump a{min-width:0}
+.international-full .research-jump strong{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-back{max-width:100%;width:fit-content;white-space:normal}
+.international-full .detail-module>h3{overflow-wrap:anywhere;hyphens:auto}
+.international-full .research-topic p,.international-full .detail-module-body>p{line-height:1.9}
+.international-full .member-card,.international-full .detail-copy,.international-full .project-copy{min-width:0}
+@media(max-width:650px){
+ .international-full .research-jump strong{font-size:14px}
+ .international-full .research-jump small{font-size:10px;letter-spacing:0}
+ .international-full .research-jump a{flex-wrap:wrap;align-content:flex-start}
+ .international-full .detail-module>h3{hyphens:none}
+}
+</style></head>
 <body class="subpage research-page international-full">
   <header class="site-header scrolled">
   <a class="brand" href="ko.html" aria-label="Watanabe Laboratory home">
@@ -168,109 +180,74 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
 </header>
 
   <main>
-    <section class="page-hero research-hero">
+<section class="page-hero research-hero" id="research-top">
       <p class="eyebrow">WATANABE LABORATORY / RESEARCH</p>
       <h1>연구<br>살펴보세요.</h1>
-      <p>촉매, 반응 환경, 에너지 공급과 물질 순환을 연결하여 분자 전환을 공정으로 발전시킵니다.</p>
-      <div class="research-jump" aria-label="Research themes">
-        <a href="#electrified"><b>01</b><span>Electrified<br>Catalysis</span></a>
-        <a href="#carbon"><b>02</b><span>Carbon<br>Conversion</span></a>
-        <a href="#structured"><b>03</b><span>Structured<br>Catalysts</span></a>
-        <a href="#ereaction"><b>04</b><span>e-Reaction<br>Process</span></a>
-        <a href="#sulfur"><b>05</b><span>Lattice Sulfur<br>Catalysis</span></a>
-      </div>
+      <p>재료, 구조, 반응기, 에너지 공급을 아우르는 네 가지 연구 주제. 촉매화학과 반응공학을 연결하여 분자 전환을 공정으로 발전시킵니다.</p>
+      <nav class="research-jump" aria-label="연구 주제"><a href="#carbon"><b>01</b><span><strong>탄소 순환</strong><small>CARBON CIRCULATION</small></span></a><a href="#structured"><b>02</b><span><strong>구조체 촉매</strong><small>STRUCTURED CATALYSTS</small></span></a><a href="#ereaction"><b>03</b><span><strong>전기 구동 반응</strong><small>e-REACTION PROCESS</small></span></a><a href="#sulfur"><b>04</b><span><strong>격자 황 촉매</strong><small>LATTICE SULFUR CATALYSIS</small></span></a></nav>
     </section>
 
-    <section class="research-detail" id="electrified">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-electric">
-          <span>01</span><b>ELECTRIFIED<br>CATALYSIS</b><small>JOULE HEATING · e-DRM</small>
-          <i class="electric-ring ring-a"></i><i class="electric-ring ring-b"></i>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">01 / ELECTRIFIED CATALYSIS</p>
-        <h2>전기로 반응 환경을 만듭니다.</h2>
-        <p>촉매 구조체에 직접 전력을 공급하여 필요한 위치에 열을 전달합니다. 건식 개질 등 고온 반응에서 촉매 반응과 열 수송을 함께 연구합니다.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>Joule heating / e-DRM / process electrification</dd></div><div><dt>FOCUS</dt><dd>효율적인 국소 가열 · 반응 환경 제어 · 에너지 활용</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail" id="carbon" aria-labelledby="carbon-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" poster="assets/images/research-carbon-ed6cd1ae1513.png" src="assets/videos/research-carbon-5e1f2d0470d8.mp4" aria-label="탄소 순환 애니메이션"></video></div><figcaption>CO₂ 전환, 합성가스 생산, 고체 탄소 고정화를 연결하는 탄소 순환 개념도.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">01 / CARBON CIRCULATION</p>
+            <h2 id="carbon-title">CO₂를 자원으로 전환합니다.</h2>
+            <p>CO₂ 전환, 합성가스 생산과 고체 탄소 고정을 결합하여 탄소 순환 반응 시스템을 연구합니다.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>CO₂ conversion / syngas / RWGS / DRM / solid carbon / carbon circulation</dd></div><div><dt>FOCUS</dt><dd>합성가스 생산 · 고체 탄소 회수 · 다단 반응 · 현장 자원화</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>연구 목표</h3><div class="detail-module-body"><p>CO₂와 메탄을 탄소원으로 사용하여 연료·화학제품의 원료인 합성가스나 회수·이용 가능한 고체 탄소로 전환하는 반응 공정을 연구합니다. 촉매에 의한 분자 전환과 함께 반응기 조합, 생성물 분리·회수를 검토하여 탄소의 행선지를 제어합니다.</p>
+<p>산업 배기가스를 현장에서 자원으로 바꾸기 위해 가스 조성, 반응 온도, 유량, 반응 평형의 관계를 연구합니다. 촉매 재료의 성능과 공정 전체의 탄소 수지를 연결하여 연속적인 전환과 회수를 목표로 합니다.</p></div></div><div class="detail-module "><h3>주요 연구 항목</h3><div class="detail-module-body"><article class="research-topic"><h4>CO₂에서 합성가스로</h4><p>역수성가스전환 반응(RWGS)과 메탄 건식 개질(DRM)을 이용하여 CO₂를 일산화탄소로 전환합니다. 수소와 일산화탄소로 구성된 합성가스에 대해 반응 조건과 촉매의 조합이 조성과 생성량에 미치는 영향을 연구합니다.</p></article><article class="research-topic"><h4>고체 탄소로의 전환과 회수</h4><p>RWGS와 일산화탄소에서 고체 탄소를 생성하는 반응, 메탄화와 개질·분해 등을 조합합니다. 탄소가 생성되는 위치와 형태, 촉매 위 축적, 회수 방법을 검토하여 반응을 계속하면서 탄소를 꺼내는 공정으로 발전시킵니다.</p></article><article class="research-topic"><h4>다단 반응과 물질 순환</h4><p>여러 반응 단계를 연결하고 각 단계의 온도, 가스 조성, 수분 제거 등을 조절합니다. 각 반응의 역할과 단계 간 물질 이동을 파악하여 CO₂ 전환, 생성물 회수, 탄소 이용의 관계를 반응기 전체에서 평가합니다.</p></article></div></div>
+<!-- carbon: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>관련 논문</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5RE00285K" target="_blank" rel="noopener noreferrer">Performance of integrated multi-stage catalytic conversion of CO2 to solid carbon via RWGS–Boudouard coupling ↗</a><small>Reaction Chemistry &amp; Engineering, 2025</small></li><li><a href="https://doi.org/10.1039/D5NJ02716K" target="_blank" rel="noopener noreferrer">Enhancing CO2-to-solid-carbon conversion via flow optimization and water removal in a coupled methanation–reforming reactor ↗</a><small>New Journal of Chemistry, 2025</small></li></ul><a class="text-link" href="publications-ko.html">연구실 전체 논문 보기 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">연구 주제 목록으로 ↑</a></section>
 
-    <section class="research-detail alt" id="carbon">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-carbon">
-          <span>02</span><b>CARBON<br>CONVERSION</b><small>CO₂ → SYNGAS · SOLID CARBON</small>
-          <i class="carbon-orb orb-a">CO₂</i><i class="carbon-arrow">→</i><i class="carbon-orb orb-b">C</i>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">02 / CARBON CONVERSION &amp; FIXATION</p>
-        <h2>CO₂를 다시 사용할 수 있는 탄소로.</h2>
-        <p>CO₂를 합성가스와 고체 탄소로 전환하는 반응계를 구축하고 탄소 순환 공정을 연구합니다. 반응 평형, 탄소 침적, 분리와 회수를 결합하여 반응기 규모에서 CO₂ 전환을 검토합니다.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>CO₂ conversion / DRM / RWGS / carbon fixation</dd></div><div><dt>FOCUS</dt><dd>합성가스 생산 · 고체 탄소 회수 · 탄소 순환</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail alt" id="structured" aria-labelledby="structured-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video aria-label="촉매의 형태를 기능으로 연결합니다." controls autoplay muted loop playsinline preload="metadata"><source src="assets/videos/structured-catalyst.mp4" type="video/mp4"></source></video></div><figcaption>구조체의 형상과 유동의 관계를 보여 주는 시뮬레이션.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">02 / STRUCTURED CATALYSTS</p>
+            <h2 id="structured-title">촉매의 형태를 기능으로 연결합니다.</h2>
+            <p>나선 구조, 다공성 금속과 워시코트를 활용하여 열·물질 전달을 고려한 촉매 반응기를 구축합니다.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>structured catalyst / spiral / porous metal / washcoat / CFD / heat &amp; mass transfer</dd></div><div><dt>FOCUS</dt><dd>촉매 담지 · 유동 촉진 · 열전달 · 물질전달 · 고유량 적용</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>연구 목표</h3><div class="detail-module-body"><p>촉매 반응기의 성능은 촉매 재료의 활성뿐 아니라 반응 가스의 흐름, 열전달, 촉매 표면까지의 물질전달에 좌우됩니다. 우리 연구실은 나선과 다공성 금속을 기재로 하는 구조체 촉매를 사용하여 재료와 형상 양쪽에서 반응 환경을 만듭니다.</p>
+<p>워시코팅과 도금으로 기재에 촉매 성분을 부여하고 담지 상태와 유로 형상을 조절합니다. 반응 실험을 유동·전열 해석과 연결하여 가스가 촉매에 도달하는 과정부터 반응열 이동까지 검토합니다.</p></div></div><div class="detail-module "><h3>주요 연구 항목</h3><div class="detail-module-body"><article class="research-topic"><h4>나선·다공성 금속의 형상</h4><p>나선의 비틀림과 다공성 금속 유로가 가스 혼합, 체류, 촉매와의 접촉에 미치는 영향을 연구합니다. 유량 증가에 따른 반응 성능과 압력 손실의 관계를 검토하여 처리량에 맞는 반응기 형상을 탐색합니다.</p></article><article class="research-topic"><h4>촉매층 형성과 담지 방법</h4><p>워시코팅과 무전해 도금 등을 이용하여 금속 기재 위에 촉매층을 형성합니다. 촉매 담지량, 분포, 밀착성과 반응 성능의 관계를 연구하여 기재의 열전도성과 촉매 재료의 기능을 활용합니다.</p></article><article class="research-topic"><h4>열·물질전달과 반응 성능</h4><p>실험과 전산유체역학(CFD)으로 반응기 내 유동과 온도 분포를 검토합니다. CO₂ 메탄화 등의 반응을 통해 구조체 형상이 발열 분산과 반응 가스 공급에 어떻게 기여하는지 평가합니다.</p></article></div></div>
+<!-- structured: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>관련 논문</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5RE00477B" target="_blank" rel="noopener noreferrer">High-throughput CO2 methanation in a two-stage reactor system with spiral-structured catalysts ↗</a><small>Reaction Chemistry &amp; Engineering, 2026</small></li><li><a href="https://doi.org/10.1039/D5SE00718F" target="_blank" rel="noopener noreferrer">Enhanced thermal management in CO2 methanation using spiral-structured catalysts: a comparative study with honeycomb, monolith, and packed-bed systems ↗</a><small>Sustainable Energy &amp; Fuels, 2025</small></li></ul><a class="text-link" href="publications-ko.html">연구실 전체 논문 보기 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">연구 주제 목록으로 ↑</a></section>
 
-    <section class="research-detail" id="structured">
-      <div class="detail-video reveal">
-        <video autoplay muted loop playsinline preload="metadata" aria-label="Structured catalyst simulation">
-          <source src="assets/videos/structured-catalyst.mp4" type="video/mp4"></source>
-        </video>
-        <div class="video-placeholder theme-structured"><span>03</span><b>STRUCTURED<br>CATALYSTS</b><small>SPIRAL · POROUS METAL · FLOW</small></div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">03 / STRUCTURED &amp; SPIRAL CATALYSTS</p>
-        <h2>촉매의 형태를 반응 성능으로.</h2>
-        <p>나선 구조, 다공성 금속과 워시코트를 이용하여 촉매 재료뿐 아니라 유동, 열·물질 전달을 고려한 반응기를 구축합니다. 구조와 유동의 상호작용을 시각화하여 반응 환경을 능동적으로 제어합니다.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>structured catalyst / spiral / CFD / heat &amp; mass transfer</dd></div><div><dt>FOCUS</dt><dd>유동 촉진 · 열전달 강화 · 높은 공간속도</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail" id="ereaction" aria-labelledby="ereaction-title"><span id="electrified" class="legacy-anchor" aria-hidden="true"></span><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" aria-label="나선 촉매 줄 가열 애니메이션" poster="assets/images/research-ereaction-025eee5caa9c.jpg" src="assets/videos/research-ereaction-a4347de3a74c.mp4"></video></div><figcaption>금속 나선에 전류를 흘려 발생하는 줄 가열 개념도.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">03 / e-REACTION PROCESS</p>
+            <h2 id="ereaction-title">열 공급 방식에서 화학 공정을 바꿉니다.</h2>
+            <p>반응기와 촉매에 전기에너지를 직접 공급하여 빠른 응답, 국소 가열과 소형화를 활용하는 반응 조작을 개발합니다.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>e-Reaction / Joule heating / electrified catalysis / e-Methanation / e-DRM</dd></div><div><dt>FOCUS</dt><dd>직접 가열 · 온도 분포 · 에너지 이용 · 응답성 · 다단 반응</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>연구 목표</h3><div class="detail-module-body"><p>금속 촉매 구조체에 직접 전류를 흘리고 전기저항으로 발생하는 줄열을 반응에 이용합니다. 촉매가 담지된 구조체에서 열을 발생시켜 에너지를 공급하는 위치와 반응이 진행되는 위치의 관계를 제어하고, 가열 방법을 통해 화학 공정을 검토합니다.</p>
+<p>전기 구동 촉매의 재료·발열 특성을 반응기의 온도 분포·열 이동과 연결하여 연구합니다. 투입 전력, 가스 유량, 반응 조성 변화에 대한 응답을 조사하고 CO₂ 메탄화와 개질을 포함하는 전기 구동 반응 공정으로 발전시킵니다.</p></div></div><div class="detail-module "><h3>주요 연구 항목</h3><div class="detail-module-body"><article class="research-topic"><h4>직접 통전과 촉매 온도 상태</h4><p>전류 경로, 구조체의 전기저항, 촉매층 배치와 발열의 관계를 검토합니다. 투입 전력과 반응 온도를 측정하고 외부 가열과 비교하여 열 공급 방법이 촉매 반응에 미치는 영향을 평가합니다.</p></article><article class="research-topic"><h4>e-Methanation · e-DRM</h4><p>전기 구동 CO₂ 메탄화(e-Methanation)와 메탄 건식 개질(e-DRM)을 대상으로 전환율, 생성물 조성, 촉매 상태를 연구합니다. 발열 반응과 흡열 반응 각각에 대해 직접 가열과 반응열의 관계를 검토합니다.</p></article><article class="research-topic"><h4>여러 전기 구동 반응 연결</h4><p>메탄화와 개질 등을 단계적으로 조합하고 각 반응 단계의 전력 공급과 운전 조건을 조절합니다. 기동과 조건 변경에 대한 응답, 합성가스 조성 제어, 장치 소형화를 검토하여 현장에서 이용할 수 있는 반응 시스템을 목표로 합니다.</p></article></div></div>
+<!-- ereaction: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>관련 논문</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1093/chemle/upaf161" target="_blank" rel="noopener noreferrer">Integrated electrically-driven CO2 methanation and dry reforming for efficient and flexible syngas production ↗</a><small>Chemistry Letters, 2025</small></li><li><a href="https://doi.org/10.1039/D4RA08236B" target="_blank" rel="noopener noreferrer">e-Methanation with a spiral catalyst: optimized thermal management and long-term stability ↗</a><small>RSC Advances, 2025</small></li></ul><a class="text-link" href="publications-ko.html">연구실 전체 논문 보기 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">연구 주제 목록으로 ↑</a></section>
 
-    <section class="research-detail alt" id="ereaction">
-      <div class="detail-video reveal">
-        <div class="video-placeholder theme-ereaction">
-          <span>04</span><b>e-REACTION<br>PROCESS</b><small>ELECTRICITY → CHEMICAL TRANSFORMATION</small>
-          <div class="pulse-line"><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">04 / e-REACTION PROCESS</p>
-        <h2>열 공급 방식에서 화학 공정을 바꿉니다.</h2>
-        <p>반응기와 촉매에 전기에너지를 직접 공급하는 공정을 검토합니다. 전기화가 제공하는 빠른 응답, 국소 가열과 장치 소형화를 새로운 반응 조작에 활용합니다.</p>
-        <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>e-Reaction / electrification / process intensification</dd></div><div><dt>FOCUS</dt><dd>직접 가열 · 빠른 응답 · 현장 반응 공정</dd></div></dl>
-      </div>
-    </section>
+<section class="research-detail sulfur-detail" id="sulfur" aria-labelledby="sulfur-title"><div class="detail-intro">
+          <figure class="detail-media"><div class="detail-video"><video controls autoplay muted loop playsinline preload="metadata" aria-label="NiAs형 CoS의 격자 황 산화·환원 반응 애니메이션" poster="assets/images/research-sulfur-b90cbe71aedc.webp" src="assets/videos/research-sulfur-11d3c034db78.mp4"></video></div><figcaption>격자 황 방출, 황 공공 형성, 황 재삽입을 보여 주는 산화·환원 순환 개념도.</figcaption></figure>
+          <div class="detail-copy">
+            <p class="kicker">04 / LATTICE SULFUR CATALYSIS</p>
+            <h2 id="sulfur-title">격자 황을 반응종으로 이용합니다.</h2>
+            <p>황화물의 격자 황 방출과 H₂S를 통한 재삽입을 이용하여 황 공공을 거쳐 격자 황을 반복 사용하는 산화환원 촉매 공정을 연구합니다.</p>
+            <dl class="research-facts"><div><dt>KEYWORDS</dt><dd>lattice sulfur / sulfur vacancy / H₂S / redox cycle / dehydrogenation</dd></div><div><dt>FOCUS</dt><dd>격자 황 반응성 · 황 공공 · 재삽입 · 탈수소 · 황 함유 화합물</dd></div></dl>
+          </div>
+        </div><div class="detail-module "><h3>연구 목표</h3><div class="detail-module-body"><p>황화물을 구성하는 격자 황(격자 S)을 반응에 참여하는 화학종으로 이용합니다. 격자 황이 탄화수소에서 수소를 떼어 내고 H₂S로 이탈하는 과정과, 황 공공에 황이 재삽입되는 과정에 주목합니다.</p>
+<p>격자 황의 소비와 재생을 반복하는 산화·환원 순환을 통해 알케인 탈수소와 황 함유 화합물 전환을 연구합니다. 반응 중 재료 상태와 생성물의 관계를 조사하여 황 화학종을 활용하는 촉매 공정을 검토합니다.</p></div></div><div class="detail-module "><h3>주요 연구 항목</h3><div class="detail-module-body"><article class="research-topic"><h4>격자 황과 탄화수소의 반응</h4><p>황화물의 격자 황이 탄화수소 전환에 참여하는 과정을 연구합니다. 알케인에서 올레핀으로의 탈수소 등을 대상으로 촉매 조성, 반응 온도, 가스 조성과 생성물 선택성의 관계를 검토합니다.</p></article><article class="research-topic"><h4>황 공공 형성과 재생</h4><p>격자 황이 이탈한 뒤의 황 공공과 H₂S에 의한 황 재삽입에 주목합니다. 반응·재생 조건, 황 이동, 반복 운전 시 촉매 성능을 평가하여 격자 황을 반복 이용하기 위한 반응 조건을 탐색합니다.</p></article><article class="research-topic"><h4>황 함유 화합물과 전기 구동 반응으로의 확장</h4><p>황 화학종을 매개로 하는 탄화수소 전환과 황 함유 화합물의 반응을 검토합니다. 촉매 표면 상태와 가열 방법을 연관 지어 직접 가열 등을 이용한 반응 운전이 반응성과 생성물에 미치는 영향을 연구합니다.</p></article></div></div>
+<!-- sulfur: additional_sections / figures / results in data/research-details.json -->
+<div class="detail-module "><h3>관련 논문</h3><div class="detail-module-body"><ul class="research-paper-list"><li><a href="https://doi.org/10.1039/D5SU00447K" target="_blank" rel="noopener noreferrer">Redox mechanism by lattice sulphur in an Fe-based catalyst for propane dehydrogenation with H2S co-feeding ↗</a><small>RSC Sustainability, 2025</small></li><li><a href="https://doi.org/10.1093/chemle/upae228" target="_blank" rel="noopener noreferrer">Electric heating system for iso-C5 dehydrogenation in the presence of H2S ↗</a><small>Chemistry Letters, 2025</small></li></ul><a class="text-link" href="publications-ko.html">연구실 전체 논문 보기 <span aria-hidden="true">↗</span></a></div></div><a class="research-back" href="#research-top">연구 주제 목록으로 ↑</a></section>
 
-    <section class="research-detail sulfur-detail" id="sulfur">
-      <div class="detail-video lattice-visual reveal" aria-label="Lattice sulfur redox cycle illustration">
-        <div class="lattice-title"><span>05</span><b>LATTICE SULFUR<br>AS A REACTIVE SPECIES</b><small>S<sub>lattice</sub> ⇄ vacancy ⇄ S<sub>lattice</sub></small></div>
-        <div class="lattice-grid" aria-hidden="true">
-          <i></i><i></i><i class="s-node"></i><i></i><i></i><i class="s-node"></i>
-          <i></i><i class="s-node"></i><i></i><i class="vacancy"></i><i></i><i></i>
-          <i class="s-node"></i><i></i><i></i><i class="s-node"></i><i></i><i></i>
-          <i></i><i></i><i class="s-node"></i><i></i><i class="s-node"></i><i></i>
-        </div>
-        <div class="sulfur-cycle" aria-hidden="true"><span>Lattice S</span><b>→</b><span>S vacancy</span><b>→</b><span>H₂S<br>regeneration</span></div>
-      </div>
-      <div class="detail-copy reveal">
-        <p class="kicker">05 / LATTICE SULFUR CATALYSIS</p>
-        <h2>격자 황을 촉매 반응의 반응 종으로 사용합니다.</h2>
-        <p>황화물의 격자 황은 탄화수소에서 수소를 받아 H₂S로 이탈하는 반응 종으로 작용합니다. 생성된 황 공공에 H₂S의 황을 재삽입하여 격자 황을 반복 사용하는 산화환원 순환을 구성합니다.</p>
-        <p>표면의 교환 가능한 격자 황, 황 공공의 생성·재생과 금속–황 계면을 제어하여 탈수소 반응 및 황 화합물을 이용한 새로운 촉매 공정을 탐색합니다.</p>
-        <dl class="research-facts sulfur-facts"><div><dt>KEYWORDS</dt><dd>lattice sulfur / sulfur vacancy / H₂S / redox cycle</dd></div><div><dt>CONCEPT</dt><dd>S<sub>lattice</sub> release → vacancy → sulfur reinsertion</dd></div></dl>
-      </div>
-    </section>
-
-    <section class="research-outro">
+<section class="research-outro">
       <p class="kicker">FROM CATALYST TO PROCESS</p>
       <h2>Materials. Structures.<br>Reactions. Processes.</h2>
       <p>재료화학을 반응공학, 구조체와 에너지 공급까지 연결하는 것이 와타나베 연구실의 연구 방식입니다.</p>
       <a class="button button-solid" href="contact-ko.html">Collaborate with us</a>
     </section>
-  </main>
+</main>
 
-  <section id="visitor-counter" class="global-visitors" aria-label="Global Visitors"></section>
-<footer class="site-footer">
+  <footer class="site-footer">
     <div><b>Watanabe Laboratory</b><span>와타나베 연구실</span></div>
     <p>© <span id="year"></span> Watanabe Laboratory.</p>
   </footer>
