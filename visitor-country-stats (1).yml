@@ -5,11 +5,10 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/visitor-country-stats (1).yml'
-      - 'visitor-country-stats.json'
+      - '.github/workflows/visitor-country-stats*.yml'
   schedule:
-    # 06:25 JST every day
-    - cron: '25 21 * * *'
+    # Every hour; a failed run no longer leaves the site stale until tomorrow.
+    - cron: '25 * * * *'
 
 permissions:
   contents: write
@@ -30,130 +29,258 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Fetch GoatCounter country statistics
+      - name: Verify and fetch GoatCounter country statistics
         shell: bash
         env:
           GOATCOUNTER_API_KEY: ${{ secrets.GOATCOUNTER_API_KEY }}
         run: |
-          if [ -z "$GOATCOUNTER_API_KEY" ]; then
-            echo "GOATCOUNTER_API_KEY is not configured."
-            exit 1
-          fi
+          cat > "$RUNNER_TEMP/update-visitor-stats.cjs" <<'COLLECTOR'
+          'use strict';
 
-          node <<'NODE'
-          (async () => {
-          const fs = require('fs');
+          const fs = require('node:fs');
+          const { setTimeout: sleep } = require('node:timers/promises');
+          const BASE = 'https://watanabe-lab.goatcounter.com/api/v0';
+          const SINCE = '2026-08-31T00:00:00Z';
+          const OUTPUT = 'visitor-country-stats.json';
 
-          const token = process.env.GOATCOUNTER_API_KEY;
-          const base = 'https://watanabe-lab.goatcounter.com/api/v0';
-          const start = '2026-08-31T00:00:00Z'; // cumulative window from website launch; includes UTC day of first visits
-
-          async function apiGet(u) {
-            const r = await fetch(u, {headers: {
-              Authorization: 'Bearer ' + token,
-              'Content-Type': 'application/json'
-            }});
-            if (!r.ok) {
-              const body = (await r.text()).split(token).join('[REDACTED]').slice(0, 1200);
-              throw new Error('GoatCounter ' + u.pathname + ' HTTP ' + r.status + ': ' + body);
-            }
-            return r.json();
+          function positiveID(value) {
+            const id = Number(value);
+            if (!Number.isSafeInteger(id) || id <= 0) throw new Error('Invalid tracking path ID');
+            return id;
           }
 
-          // Resolve the existing aggregate path to its numeric ID first.
-          // This also works when the server does not support path_by_name.
-          async function findTotalPath() {
-            let after = 0;
-            for (let page = 0; page < 100; page++) {
-              const u = new URL(base + '/paths');
-              u.searchParams.set('limit', '200');
-              u.searchParams.set('after', String(after));
-              const d = await apiGet(u);
-              if (!Array.isArray(d.paths)) throw new Error('Unexpected paths response');
-              const found = d.paths.find(p => String(p.path).replace(/^\//, '') === 'site-total');
-              if (found) {
-                const id = Number(found.id);
-                if (!Number.isInteger(id) || id <= 0) throw new Error('Invalid aggregate path ID');
-                return id;
+          async function update({ token, fetchImpl = fetch, wait = sleep, log = console.log,
+            output = OUTPUT, now = () => new Date() } = {}) {
+            if (!token) throw new Error('GOATCOUNTER_API_KEY is not configured.');
+            let previous = {};
+            if (fs.existsSync(output)) previous = JSON.parse(fs.readFileSync(output, 'utf8'));
+            // Fix one cutoff for all pages of this snapshot.
+            const cutoff = now().toISOString();
+            const delays = [3000, 10000, 30000];
+
+            async function apiGet(path, params = {}) {
+              const url = new URL(BASE + path);
+              for (const [key, value] of Object.entries(params)) url.searchParams.set(key, String(value));
+              for (let attempt = 0; ; attempt++) {
+                let delay = delays[attempt];
+                try {
+                  const response = await fetchImpl(url, {
+                    headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+                    signal: AbortSignal.timeout(20000), redirect: 'error'
+                  });
+                  if (!response.ok) {
+                    // Do not log response bodies or credentials.
+                    const error = new Error('GoatCounter ' + path + ' HTTP ' + response.status);
+                    error.status = response.status;
+                    error.retryable = [404, 408, 429].includes(response.status) || response.status >= 500;
+                    const retryAfter = response.headers.get('retry-after');
+                    if (retryAfter) {
+                      const milliseconds = /^\d+$/.test(retryAfter)
+                        ? Number(retryAfter) * 1000 : Date.parse(retryAfter) - Date.now();
+                      if (Number.isFinite(milliseconds)) delay = Math.max(delay, Math.min(60000, milliseconds));
+                    }
+                    await response.body?.cancel();
+                    throw error;
+                  }
+                  return await response.json();
+                } catch (error) {
+                  if (error.retryable === false || attempt >= delays.length) throw error;
+                  log('Retrying ' + path + ' in ' + delay / 1000 + ' seconds (attempt ' + (attempt + 2) + '/4).');
+                  await wait(delay);
+                }
               }
-              if (!d.more || !d.paths.length) break;
-              const next = Number(d.paths[d.paths.length - 1].id);
-              if (!(next > after)) throw new Error('Path pagination did not advance');
-              after = next;
-              await new Promise(resolve => setTimeout(resolve, 300));
             }
-            throw new Error('The /site-total tracking path is not recorded in GoatCounter yet.');
-          }
-          const totalPathID = await findTotalPath();
-          console.log('Aggregate tracking path found; requesting country statistics.');
 
-          async function getAllLocations() {
-            const all = [];
+            async function findPath() {
+              // Reuse only a previously verified ID for this exact site and tracking path.
+              if (previous.source === BASE && previous.trackingPath === '/site-total' && previous.trackingPathId) {
+                return positiveID(previous.trackingPathId);
+              }
+              try {
+                let after = 0;
+                for (let page = 0; page < 100; page++) {
+                  const data = await apiGet('/paths', { limit: 200, after });
+                  if (!Array.isArray(data.paths)) throw new Error('Unexpected paths response');
+                  const found = data.paths.find(p => String(p.path).replace(/^\//, '') === 'site-total');
+                  if (found) return positiveID(found.id);
+                  if (!data.more) throw new Error('The /site-total tracking path is missing.');
+                  const next = positiveID(data.paths.at(-1)?.id);
+                  if (next <= after) throw new Error('Path pagination did not advance');
+                  after = next;
+                }
+                throw new Error('Path pagination limit exceeded');
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                log('The paths endpoint is unavailable; resolving /site-total from page statistics.');
+              }
+              // Some server instances return 404 for /paths. Use the documented hits
+              // endpoint, matching the exact aggregate path before using its numeric ID.
+              const excluded = new Set();
+              for (let page = 0; page < 100; page++) {
+                const data = await apiGet('/stats/hits', {
+                  start: SINCE, end: cutoff, limit: 100, exclude_paths: [...excluded].join(',')
+                });
+                if (!Array.isArray(data.hits)) throw new Error('Unexpected page statistics response');
+                const found = data.hits.find(p => String(p.path).replace(/^\//, '') === 'site-total');
+                if (found) return positiveID(found.path_id);
+                if (!data.more) throw new Error('The /site-total tracking path is missing.');
+                const size = excluded.size;
+                data.hits.forEach(p => excluded.add(positiveID(p.path_id)));
+                if (excluded.size === size) throw new Error('Page statistics pagination did not advance');
+              }
+              throw new Error('Page statistics pagination limit exceeded');
+            }
+
+            const trackingPathId = await findPath();
+            log('Aggregate tracking path verified: ' + trackingPathId);
+            const locations = [];
             let offset = 0;
-
-            for (let page = 0; page < 20; page++) {
-              const u = new URL(base + '/stats/locations');
-              u.searchParams.set('start', start);
-              u.searchParams.set('limit', '100');
-              u.searchParams.set('offset', String(offset));
-              u.searchParams.set('include_paths', String(totalPathID));
-
-              const d = await apiGet(u);
-              if (!Array.isArray(d.stats)) throw new Error('Unexpected GoatCounter response');
-              const stats = d.stats;
-              all.push(...stats);
-
-              if (!d.more || stats.length === 0) break;
-              offset += stats.length;
+            for (let page = 0; ; page++) {
+              if (page >= 20) throw new Error('Country pagination limit exceeded');
+              const data = await apiGet('/stats/locations', {
+                start: SINCE, end: cutoff, limit: 100, offset, include_paths: trackingPathId
+              });
+              if (!Array.isArray(data.stats)) throw new Error('Unexpected country statistics response');
+              locations.push(...data.stats);
+              if (!data.more) break;
+              if (!data.stats.length) throw new Error('Country pagination did not advance');
+              offset += data.stats.length;
             }
-            return all;
+
+            const names = new Intl.DisplayNames(['en'], { type: 'region' });
+            const countries = new Map();
+            let unknown = 0;
+            for (const item of locations) {
+              if (!Number.isSafeInteger(item.count) || item.count < 0) throw new Error('Invalid country count');
+              const code = String(item.id ?? '').trim().split('-')[0].toUpperCase();
+              if (!/^[A-Z]{2}$/.test(code) || code === 'ZZ') { unknown += item.count; continue; }
+              countries.set(code, (countries.get(code) || 0) + item.count);
+            }
+            const topCountries = [...countries].map(([code, count]) => ({ code, name: names.of(code) || code, count }))
+              .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+            const japan = countries.get('JP') || 0;
+            const international = topCountries.reduce((sum, c) => sum + (c.code === 'JP' ? 0 : c.count), 0);
+            if (japan + international + unknown === 0 && previous.japan + previous.international + previous.unknown > 0) {
+              throw new Error('Empty cumulative statistics; preserving the last successful summary.');
+            }
+            const result = {
+              status: 'ready', updatedAt: now().toISOString(), since: SINCE, through: cutoff,
+              japan, international, unknown, topCountries: topCountries.slice(0, 10),
+              source: BASE, trackingPath: '/site-total', trackingPathId, refreshIntervalHours: 1
+            };
+            // Replace the public file only after every request and validation succeeds.
+            fs.writeFileSync(output + '.tmp', JSON.stringify(result, null, 2) + '\n');
+            fs.renameSync(output + '.tmp', output);
+            log(JSON.stringify(result));
+            return result;
           }
 
-          const countryNames = new Intl.DisplayNames(['en'], {type:'region'});
-          const stats = await getAllLocations();
-
-          let japan = 0;
-          let international = 0;
-          let unknown = 0;
-          const countries = [];
-
-          for (const item of stats) {
-            const rawId = String(item.id ?? '').trim();
-            const code = rawId.split('-')[0].toUpperCase();
-            const count = Number(item.count ?? 0);
-
-            if (!code || code === 'UNKNOWN' || code === 'ZZ') {
-              unknown += count;
-              continue;
-            }
-
-            if (code === 'JP') japan += count;
-            else international += count;
-
-            let name = String(item.name ?? '').trim();
-            if (!name || name === code) {
-              try { name = countryNames.of(code) || code; } catch { name = code; }
-            }
-
-            countries.push({code, name, count});
+          module.exports = { update };
+          if (require.main === module) {
+            update({ token: process.env.GOATCOUNTER_API_KEY }).catch(error => {
+              console.error(String(error.message).split(process.env.GOATCOUNTER_API_KEY || '\0').join('[REDACTED]'));
+              process.exitCode = 1;
+            });
+          }
+          COLLECTOR
+          cat > "$RUNNER_TEMP/update-visitor-stats.test.cjs" <<'TESTS'
+          'use strict';
+          const { test } = require('node:test');
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+          const os = require('node:os');
+          const path = require('node:path');
+          const { update } = require('./update-visitor-stats.cjs');
+          const BASE = 'https://watanabe-lab.goatcounter.com/api/v0';
+          const old = { status: 'ready', updatedAt: '2026-09-10T21:34:20.481Z', japan: 137, international: 5, unknown: 0 };
+          const response = (body, status = 200, headers = {}) => new Response(JSON.stringify(body), { status, headers });
+          function fixture(t, previous = old) {
+            const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'visitor-test-'));
+            t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+            const output = path.join(dir, 'stats.json');
+            fs.writeFileSync(output, JSON.stringify(previous));
+            const before = fs.readFileSync(output, 'utf8');
+            const delays = [];
+            return { output, before, delays, token: 'test-secret', log: () => {},
+              wait: async ms => { delays.push(ms); }, now: () => new Date('2026-09-12T02:00:00Z') };
           }
 
-          countries.sort((a,b) => b.count - a.count || a.name.localeCompare(b.name));
+          test('recovers from the observed /paths 404 via exact aggregate path in hits', async t => {
+            const f = fixture(t);
+            let pathsCalls = 0;
+            const actual = await update({ ...f, fetchImpl: async url => {
+              if (url.pathname.endsWith('/paths')) { pathsCalls++; return response({ error: 'not found' }, 404); }
+              if (url.pathname.endsWith('/hits')) return response({ hits: [
+                { path: '/index.html', path_id: 4 }, { path: '/site-total', path_id: 7 }
+              ], more: false });
+              assert.equal(url.searchParams.get('include_paths'), '7');
+              return response({ stats: [{ id: 'JP', count: 150 }, { id: 'US', count: 5 }], more: false });
+            }});
+            assert.equal(pathsCalls, 4);
+            assert.deepEqual(f.delays, [3000, 10000, 30000]);
+            assert.equal(actual.japan, 150);
+            assert.equal(actual.international, 5);
+            assert.equal(actual.trackingPathId, 7);
+            assert.equal(JSON.parse(fs.readFileSync(f.output)).updatedAt, '2026-09-12T02:00:00.000Z');
+          });
 
-          const result = {
-            status: 'ready',
-            updatedAt: new Date().toISOString(),
-            since: start,
-            japan,
-            international,
-            unknown,
-            topCountries: countries.slice(0, 10)
-          };
+          test('reuses verified ID, retries rate limits, and combines all country pages', async t => {
+            const f = fixture(t, { ...old, source: BASE, trackingPath: '/site-total', trackingPathId: 7 });
+            let count = 0;
+            const actual = await update({ ...f, fetchImpl: async url => {
+              assert.equal(url.pathname, '/api/v0/stats/locations');
+              assert.equal(url.searchParams.get('include_paths'), '7');
+              count++;
+              if (count === 1) return response({}, 429, { 'retry-after': '12' });
+              if (url.searchParams.get('offset') === '0') return response({ stats: [
+                { id: 'JP-22', count: 140 }, { id: 'US', count: 5 }
+              ], more: true });
+              assert.equal(url.searchParams.get('offset'), '2');
+              return response({ stats: [{ id: 'JP-13', count: 10 }, { id: 'ZZ', count: 2 }], more: false });
+            }});
+            assert.deepEqual(f.delays, [12000]);
+            assert.equal(actual.japan, 150);
+            assert.equal(actual.international, 5);
+            assert.equal(actual.unknown, 2);
+            assert.equal(actual.topCountries.filter(c => c.code === 'JP').length, 1);
+          });
 
-          fs.writeFileSync('visitor-country-stats.json', JSON.stringify(result, null, 2) + '\n');
-          console.log(result);
-          })().catch(err => { console.error(err.message); process.exit(1); });
-          NODE
+          for (const status of [401, 403, 503]) test('HTTP ' + status + ' preserves counts and timestamp', async t => {
+            const f = fixture(t);
+            let calls = 0;
+            await assert.rejects(update({ ...f, fetchImpl: async () => { calls++; return response({}, status); } }), new RegExp('HTTP ' + status));
+            assert.equal(calls, status === 503 ? 4 : 1);
+            assert.equal(fs.readFileSync(f.output, 'utf8'), f.before);
+          });
+
+          test('network timeout is retried', async t => {
+            const f = fixture(t);
+            let calls = 0;
+            await update({ ...f, fetchImpl: async url => {
+              if (++calls === 1) throw new DOMException('timed out', 'TimeoutError');
+              if (url.pathname.endsWith('/paths')) return response({ paths: [{ id: 7, path: '/site-total' }] });
+              return response({ stats: [{ id: 'JP', count: 150 }] });
+            }});
+            assert.equal(f.delays.length, 1);
+          });
+
+          for (const stats of [[], [{ id: 'JP', count: -1 }], [{ id: 'JP' }]]) {
+            test('empty or invalid response cannot erase previous statistics: ' + JSON.stringify(stats), async t => {
+              const f = fixture(t);
+              await assert.rejects(update({ ...f, fetchImpl: async url => url.pathname.endsWith('/paths')
+                ? response({ paths: [{ id: 7, path: '/site-total' }] }) : response({ stats }) }));
+              assert.equal(fs.readFileSync(f.output, 'utf8'), f.before);
+            });
+          }
+
+          test('missing aggregate path does not silently switch to all-page totals', async t => {
+            const f = fixture(t);
+            await assert.rejects(update({ ...f, fetchImpl: async () => response({ paths: [{ id: 1, path: '/index.html' }], more: false }) }), /tracking path is missing/);
+            assert.equal(fs.readFileSync(f.output, 'utf8'), f.before);
+          });
+          TESTS
+          node --test "$RUNNER_TEMP/update-visitor-stats.test.cjs"
+          node "$RUNNER_TEMP/update-visitor-stats.cjs"
 
       - name: Commit public country summary
         shell: bash
@@ -169,11 +296,25 @@ jobs:
           fi
 
           git commit -m "Update visitor country statistics"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Unable to publish the updated summary."
+          exit 1
 
       - name: Rebuild GitHub Pages
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
+        run: |
+          for attempt in 1 2 3; do
+            if gh api --method POST "repos/${{ github.repository }}/pages/builds"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
 
