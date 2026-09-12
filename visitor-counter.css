@@ -1,0 +1,11 @@
+.global-visitors{box-sizing:border-box;max-width:1180px;margin:0 auto;padding:12px 42px;background:#0b0d0e;color:#fff;font-family:inherit}
+.global-visitors .gv-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px;min-height:28px;font-size:11px;line-height:1.5}
+.global-visitors .gv-title{font-weight:700;font-size:13px;color:#fff}
+.global-visitors .gv-title small{display:block;margin:1px 0 0;color:#aaa;font-size:8px;letter-spacing:.07em}
+.global-visitors .gv-metric{display:inline-flex;align-items:baseline;gap:7px;white-space:nowrap;color:#ddd}
+.global-visitors .gv-metric b{font-size:16px;font-variant-numeric:tabular-nums;color:#fff}
+.global-visitors .gv-countries{margin-left:auto;max-width:100%;color:#ddd;font-size:10px;white-space:normal;overflow-wrap:anywhere}
+.global-visitors .gv-countries b{font-weight:500}
+.global-visitors .gv-status,.global-visitors .gv-note{display:block;font-size:10px;line-height:1.6;color:#aaa;margin-top:4px;overflow-wrap:anywhere}
+.global-visitors .gv-note{margin-top:1px;font-size:9px;color:#929697}
+@media(max-width:760px){.global-visitors{padding:12px 18px}.global-visitors .gv-strip{gap:6px 17px}.global-visitors .gv-title{width:100%;font-size:12px}.global-visitors .gv-title small{display:inline-block;margin-left:8px;font-size:7px}.global-visitors .gv-countries{width:100%;margin-left:0}.global-visitors .gv-metric b{font-size:15px}}

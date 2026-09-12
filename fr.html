@@ -107,70 +107,7 @@ img,video{max-width:100%}
 </style>
 
 
-<style id="global-visitors-style">
-.global-visitors{
-  max-width:1180px;
-  margin:0 auto;
-  padding:8px 42px 10px;
-  background:#0b0d0e;
-  color:#fff;
-}
-.gv-strip{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:7px 18px;
-  min-height:28px;
-  font-size:11px;
-  line-height:1.2;
-}
-.gv-title{
-  font-weight:800;
-  font-size:13px;
-  white-space:nowrap;
-  color:#fff;
-}
-.gv-title small{
-  margin-left:6px;
-  color:#fff;
-  opacity:.56;
-  font-size:8px;
-  letter-spacing:.10em;
-  font-weight:800;
-}
-.gv-metric{
-  display:inline-flex;
-  align-items:baseline;
-  gap:5px;
-  white-space:nowrap;
-  color:#fff;
-  opacity:.82;
-}
-.gv-metric b{
-  color:#fff;
-  opacity:1;
-  font-size:12px;
-}
-.gv-countries{
-  margin-left:auto;
-  color:#fff;
-  opacity:.82;
-  font-size:10px;
-  white-space:nowrap;
-}
-.gv-countries b{
-  color:#fff;
-  opacity:1;
-  font-weight:700;
-}
-@media(max-width:760px){
-  .global-visitors{padding:8px 18px 10px}
-  .gv-strip{gap:5px 11px;font-size:10px}
-  .gv-title{width:100%;font-size:12px}
-  .gv-countries{width:100%;margin-left:0;white-space:normal;font-size:9px}
-  .gv-metric b{font-size:11px}
-}
-</style>
+
 
 
 <link rel="canonical" href="https://trwatan2.github.io/watanabe-laboratory/fr.html"><link rel="alternate" hreflang="ja" href="https://trwatan2.github.io/watanabe-laboratory/index.html"><link rel="alternate" hreflang="en" href="https://trwatan2.github.io/watanabe-laboratory/en.html"><link rel="alternate" hreflang="zh-CN" href="https://trwatan2.github.io/watanabe-laboratory/zh.html"><link rel="alternate" hreflang="ko" href="https://trwatan2.github.io/watanabe-laboratory/ko.html"><link rel="alternate" hreflang="de" href="https://trwatan2.github.io/watanabe-laboratory/de.html"><link rel="alternate" hreflang="fr" href="https://trwatan2.github.io/watanabe-laboratory/fr.html"><link rel="alternate" hreflang="es" href="https://trwatan2.github.io/watanabe-laboratory/es.html"><link rel="alternate" hreflang="x-default" href="https://trwatan2.github.io/watanabe-laboratory/en.html"><style id="full-international-style">/* Full multilingual editions share the Japanese site's layout, media and typography. */
@@ -218,7 +155,9 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
  .international-full .hero-jp{font-size:16px;letter-spacing:.02em}
 }
 @media(prefers-reduced-motion:reduce){.international-full *{scroll-behavior:auto!important}.international-full .reveal{opacity:1;transform:none}}
-</style></head>
+</style><link rel="stylesheet" href="visitor-counter.css?v=20260912-2">
+<script defer src="visitor-counter.js?v=20260912-2"></script>
+</head>
 <body class="international-full">
   <header class="site-header" id="top">
     <a class="brand" href="fr.html" aria-label="Watanabe Laboratory home"><span class="brand-mark">WL</span><span class="brand-name"><b>Watanabe Laboratory</b><small>Laboratoire Watanabe</small></span></a>
@@ -257,55 +196,9 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
     <section class="contact"><div class="contact-inner reveal"><p class="kicker">CONTACT</p><h2>Travaillons ensemble.</h2><p>Contactez-nous pour une collaboration, une visite ou des études supérieures.</p><a class="button button-solid" href="contact-fr.html">Contact</a></div></section>
   </main>
 
-<section class="global-visitors" aria-label="Global Visitors">
-  <div class="gv-strip">
-    <div class="gv-title">Global Visitors <small>RESEARCH LAB WEBSITE</small></div>
-    <div class="gv-metric">Total <b id="gvTotal">Chargement</b></div>
-    <div class="gv-metric">Japon <b id="gvJapan">Chargement</b></div>
-    <div class="gv-metric">International <b id="gvInternational">Chargement</b></div>
-    <div class="gv-countries">Principaux pays : <b id="gvCountries">Chargement</b></div>
-  </div>
-</section>
-<script>
-(async function(){
-  var ids=['gvTotal','gvJapan','gvInternational','gvCountries'];
-  function unavailable(){ids.forEach(function(id){document.getElementById(id).textContent='Indisponible';});}
-  var stamp=Date.now();
-  var urls=[
-    'visitor-country-stats.json?v='+stamp,
-    'https://raw.githubusercontent.com/trwatan2/watanabe-laboratory/main/visitor-country-stats.json?v='+stamp
-  ];
-  var results=await Promise.allSettled(urls.map(async function(url){
-    var r=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(10000)});
-    if(!r.ok)throw new Error('HTTP '+r.status);
-    var d=await r.json();
-    if(d.status!=='ready'||!Number.isFinite(Date.parse(d.updatedAt)))throw new Error('Invalid summary');
-    ['japan','international','unknown'].forEach(function(k){
-      if(!Number.isInteger(d[k])||d[k]<0)throw new Error('Invalid count');
-    });
-    if(!Array.isArray(d.topCountries))throw new Error('Invalid countries');
-    return d;
-  }));
-  var data=results.filter(function(r){return r.status==='fulfilled';})
-    .map(function(r){return r.value;})
-    .sort(function(a,b){return Date.parse(b.updatedAt)-Date.parse(a.updatedAt);})[0];
-  if(!data){unavailable();return;}
-  document.getElementById('gvTotal').textContent=String(data.japan+data.international+data.unknown);
-  document.getElementById('gvJapan').textContent=String(data.japan);
-  document.getElementById('gvInternational').textContent=String(data.international);
-  document.getElementById('gvCountries').textContent=data.topCountries.slice(0,4)
-    .map(function(c){return (c.name||c.code)+' '+c.count;}).join(' / ')||'Aucune donnée';
-  var updated=document.createElement('small');
-  updated.style.cssText='font-size:10px;color:#aaa;margin-left:12px';
-  updated.textContent="Mise \u00e0 jour (JST) "+new Date(data.updatedAt).toLocaleString("fr",{timeZone:'Asia/Tokyo'});
-  document.querySelector('.gv-strip').appendChild(updated);
-})().catch(function(){
-  ['gvTotal','gvJapan','gvInternational','gvCountries'].forEach(function(id){
-    document.getElementById(id).textContent='Indisponible';
-  });
-});
-</script>
 
+
+<section id="visitor-counter" class="global-visitors" aria-label="Global Visitors"></section>
 <footer class="site-footer">
   <div><b>Watanabe Laboratory</b><span>Laboratoire Watanabe · Université de Shizuoka · Hamamatsu</span></div>
   <p>© <span id="year"></span> Watanabe Laboratory.</p>
