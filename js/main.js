@@ -23,14 +23,44 @@ updateHeader();
 window.addEventListener('scroll', updateHeader, {passive:true});
 
 if(menuButton && nav){
-  menuButton.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(open));
-  });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  const languageMenu = nav.querySelector('.language-menu');
+  const desktopLanguagePosition = languageMenu?.nextSibling;
+  const closeMenu = () => {
     nav.classList.remove('open');
-    menuButton.setAttribute('aria-expanded','false');
-  }));
+    menuButton.setAttribute('aria-expanded', 'false');
+    if(languageMenu) languageMenu.open = false;
+  };
+  // Keep keyboard order consistent with the mobile menu's visual order.
+  const positionLanguageMenu = () => {
+    if(!languageMenu) return;
+    if(getComputedStyle(menuButton).display !== 'none'){
+      if(nav.firstElementChild !== languageMenu) nav.prepend(languageMenu);
+    } else {
+      nav.insertBefore(languageMenu, desktopLanguagePosition);
+      closeMenu();
+    }
+  };
+  positionLanguageMenu();
+  window.addEventListener('resize', positionLanguageMenu, {passive:true});
+  menuButton.addEventListener('click', () => {
+    if(nav.classList.contains('open')){
+      closeMenu();
+    } else {
+      nav.classList.add('open');
+      menuButton.setAttribute('aria-expanded', 'true');
+      nav.scrollTop = 0;
+    }
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if(event.key === 'Escape' && nav.classList.contains('open')){
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if(!header.contains(event.target)) closeMenu();
+  });
 }
 
 document.querySelectorAll('video').forEach(video => {

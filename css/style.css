@@ -235,3 +235,55 @@ body{font-size:18px;line-height:1.75}
   .people-page .member-info h3{font-size:25px}
   .people-page .member-meta dd{font-size:15.5px}
 }
+
+/* Keep language selection reachable in the existing collapsed navigation. */
+@media(max-width:960px){
+  .site-header nav.global-nav{
+    max-height:calc(100vh - 72px);
+    max-height:calc(100dvh - 72px);
+    overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:16px 6vw max(24px,env(safe-area-inset-bottom));gap:8px;
+  }
+  .site-header .global-nav > *{flex-shrink:0}
+  .site-header .global-nav > a{display:flex;align-items:center;min-height:44px}
+  .site-header .global-nav .language-menu{
+    order:-1;width:100%;margin-top:0;padding-bottom:12px;
+    border-bottom:1px solid rgba(255,255,255,.16);
+  }
+  .site-header .language-menu summary{
+    display:flex;align-items:center;justify-content:space-between;min-height:44px;
+    font-size:16px;color:#d7ff45;opacity:1;
+  }
+  .site-header .global-nav .language-menu-panel{
+    position:static;margin-top:8px;min-width:0;width:100%;max-width:none;
+    grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:8px;
+    box-shadow:none;background:#111516;
+  }
+  .site-header .language-menu-panel a{min-height:44px;font-size:14px!important}
+}
+@media(min-width:961px) and (max-width:1250px){
+  .international-full .site-header nav.global-nav{
+    max-height:calc(100vh - 72px);
+    max-height:calc(100dvh - 72px);
+    overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:16px 6vw max(24px,env(safe-area-inset-bottom));gap:8px;
+  }
+  .international-full .site-header .global-nav > *{flex-shrink:0}
+  .international-full .site-header .global-nav > a{display:flex;align-items:center;min-height:44px}
+  .international-full .site-header .global-nav .language-menu{
+    order:-1;width:100%;margin-top:0;padding-bottom:12px;
+    border-bottom:1px solid rgba(255,255,255,.16);
+  }
+  .international-full .site-header .language-menu summary{
+    display:flex;align-items:center;justify-content:space-between;min-height:44px;
+    font-size:16px;color:#d7ff45;opacity:1;
+  }
+  .international-full .site-header .global-nav .language-menu-panel{
+    position:static;margin-top:8px;min-width:0;width:100%;max-width:none;
+    grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:8px;
+    box-shadow:none;background:#111516;
+  }
+  .international-full .site-header .language-menu-panel a{min-height:44px;font-size:14px!important}
+}
