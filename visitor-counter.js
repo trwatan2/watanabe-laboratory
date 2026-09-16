@@ -89,7 +89,9 @@
     }
     set('gvTotal', total.toLocaleString(locale));
     var fresh = data && Date.now() - Date.parse(data.updatedAt) <= 6 * 3600000;
-    if (fresh && totalFromSummary === total) {
+    // Keep the last successful country breakdown visible, with its timestamp.
+    // The public total can be newer than this independently updated snapshot.
+    if (data) {
       set('gvJapan', data.japan.toLocaleString(locale));
       set('gvInternational', data.international.toLocaleString(locale));
       var names = typeof Intl.DisplayNames === 'function' ? new Intl.DisplayNames([locale], { type: 'region' }) : null;
@@ -99,6 +101,10 @@
         return name + ' ' + c.count.toLocaleString(locale);
       }).join(' / ') || '—');
       status.textContent = text.snapshot + ' · ' + formatDate(data.updatedAt);
+      if (!fresh) status.textContent += ' · ' + text.retry;
+      if (direct !== null && direct > totalFromSummary) {
+        status.textContent += ' / ' + text.total + ': ' + text.checked + ' · ' + formatDate(checkedAt);
+      }
     } else {
       set('gvJapan', '—'); set('gvInternational', '—'); set('gvCountries', text.pending);
       status.textContent = (direct !== null && total === direct ? text.checked + ' · ' + formatDate(checkedAt)
