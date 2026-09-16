@@ -6,10 +6,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/visitor-country-stats.yml'
-      - 'visitor-country-stats.json'
   schedule:
-    # 06:25 JST every day
-    - cron: '25 21 * * *'
+    # Refresh hourly; preserve the last successful snapshot on API failure.
+    - cron: '25 * * * *'
 
 permissions:
   contents: write
@@ -28,6 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Fetch GoatCounter country statistics
@@ -46,18 +46,30 @@ jobs:
 
           const token = process.env.GOATCOUNTER_API_KEY;
           const base = 'https://watanabe-lab.goatcounter.com/api/v0';
-          const start = '2026-08-31T00:00:00Z'; // tracking began 2026-09-09 JST
+          const start = '2026-08-31T00:00:00Z';
+          const cutoff = new Date().toISOString();
 
           async function apiGet(u) {
-            const r = await fetch(u, {headers: {
-              Authorization: 'Bearer ' + token,
-              'Content-Type': 'application/json'
-            }});
-            if (!r.ok) {
-              const body = (await r.text()).split(token).join('[REDACTED]').slice(0, 1200);
-              throw new Error('GoatCounter ' + u.pathname + ' HTTP ' + r.status + ': ' + body);
+            const delays = [3000, 10000, 30000];
+            for (let attempt = 0; ; attempt++) {
+              try {
+                const r = await fetch(u, {headers: {
+                  Authorization: 'Bearer ' + token,
+                  'Content-Type': 'application/json'
+                }, signal: AbortSignal.timeout(20000), redirect: 'error'});
+                if (!r.ok) {
+                  const error = new Error('GoatCounter ' + u.pathname + ' HTTP ' + r.status);
+                  error.retryable = [408, 429].includes(r.status) || r.status >= 500;
+                  await r.body?.cancel();
+                  throw error;
+                }
+                return await r.json();
+              } catch (error) {
+                if (error.retryable === false || attempt >= delays.length) throw error;
+                console.log('Retrying statistics request (' + (attempt + 2) + '/4).');
+                await new Promise(resolve => setTimeout(resolve, delays[attempt]));
+              }
             }
-            return r.json();
           }
 
           // Resolve the existing aggregate path to its numeric ID first.
@@ -94,6 +106,7 @@ jobs:
             for (let page = 0; page < 20; page++) {
               const u = new URL(base + '/stats/locations');
               u.searchParams.set('start', start);
+              u.searchParams.set('end', cutoff);
               u.searchParams.set('limit', '100');
               u.searchParams.set('offset', String(offset));
               u.searchParams.set('include_paths', String(totalPathID));
@@ -103,10 +116,11 @@ jobs:
               const stats = d.stats;
               all.push(...stats);
 
-              if (!d.more || stats.length === 0) break;
+              if (!d.more) return all;
+              if (stats.length === 0) throw new Error('Country pagination did not advance');
               offset += stats.length;
             }
-            return all;
+            throw new Error('Country pagination limit exceeded');
           }
 
           const countryNames = new Intl.DisplayNames(['en'], {type:'region'});
@@ -120,7 +134,8 @@ jobs:
           for (const item of stats) {
             const rawId = String(item.id ?? '').trim();
             const code = rawId.split('-')[0].toUpperCase();
-            const count = Number(item.count ?? 0);
+            const count = Number(item.count);
+            if (!Number.isSafeInteger(count) || count < 0) throw new Error('Invalid country count');
 
             if (!code || code === 'UNKNOWN' || code === 'ZZ') {
               unknown += count;
@@ -142,7 +157,7 @@ jobs:
 
           const result = {
             status: 'ready',
-            updatedAt: new Date().toISOString(),
+            updatedAt: cutoff,
             since: start,
             japan,
             international,
@@ -161,19 +176,53 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add visitor-country-stats.json
+          # Keep the generated snapshot outside the checkout while advancing
+          # to main. Replaying a JSON diff from an old run causes conflicts.
+          summary_file="$(mktemp)"
+          cp visitor-country-stats.json "$summary_file"
+          trap 'rm -f "$summary_file"' EXIT
 
-          if git diff --cached --quiet; then
-            echo "No country-stat changes."
-            exit 0
-          fi
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout --force -B main origin/main
 
-          git commit -m "Update visitor country statistics"
-          git pull --rebase origin main
-          git push origin HEAD:main
+            # Never replace a more recent snapshot published by another run.
+            if node -e '
+              const fs = require("fs");
+              const saved = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+              const current = JSON.parse(fs.readFileSync("visitor-country-stats.json", "utf8"));
+              process.exit(Date.parse(current.updatedAt) >= Date.parse(saved.updatedAt) ? 0 : 1);
+            ' "$summary_file"; then
+              echo "An equally recent or newer country summary is already published."
+              exit 0
+            fi
+
+            cp "$summary_file" visitor-country-stats.json
+            git add visitor-country-stats.json
+            if git diff --cached --quiet; then
+              echo "No country-stat changes."
+              exit 0
+            fi
+
+            git commit -m "Update visitor country statistics"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Main changed while publishing; retrying ($attempt/3)."
+            sleep 2
+          done
+
+          echo "::error::Could not publish country statistics after 3 attempts."
+          exit 1
 
       - name: Rebuild GitHub Pages
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
-
+        run: |
+          for attempt in 1 2 3; do
+            if gh api --method POST "repos/${{ github.repository }}/pages/builds"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
