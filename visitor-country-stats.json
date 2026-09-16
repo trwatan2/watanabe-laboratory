@@ -1,15 +1,15 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-15T21:29:43.392Z",
+  "updatedAt": "2026-09-16T13:29:32.312Z",
   "since": "2026-08-31T00:00:00Z",
-  "japan": 225,
+  "japan": 240,
   "international": 7,
   "unknown": 0,
   "topCountries": [
     {
       "code": "JP",
       "name": "Japan",
-      "count": 225
+      "count": 240
     },
     {
       "code": "AE",
