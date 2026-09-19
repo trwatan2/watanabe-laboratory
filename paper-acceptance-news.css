@@ -61,3 +61,13 @@
   .paper-acceptance-news figure { width: 100%; max-width: 340px; margin: 0 auto; }
   .paper-acceptance-news .paper-heading { font-size: 22px; }
 }
+
+/* Journal name for the accepted paper. */
+.news .paper-acceptance-news .paper-journal,
+.news-index .paper-acceptance-news .paper-journal {
+  margin: -4px 0 20px;
+  color: #587300;
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
