@@ -726,5 +726,69 @@
     "de": "Animation der Joule-Erwärmung eines Spiralkatalysators",
     "fr": "Animation du chauffage Joule d’un catalyseur en spirale",
     "es": "Animación del calentamiento Joule de un catalizador en espiral"
+  },
+  "論文採択": {
+    "en": "PAPER ACCEPTED",
+    "zh": "论文录用",
+    "ko": "논문 게재 승인",
+    "de": "ARTIKEL ANGENOMMEN",
+    "fr": "ARTICLE ACCEPTÉ",
+    "es": "ARTÍCULO ACEPTADO"
+  },
+  "メタンのドライ改質と固体炭素固定化に関する論文が採択されました": {
+    "en": "Paper on methane dry reforming and solid carbon fixation accepted for publication",
+    "zh": "关于甲烷干重整与固体碳固定的论文已被录用",
+    "ko": "메탄 건식 개질과 고체 탄소 고정에 관한 논문의 게재가 승인되었습니다",
+    "de": "Artikel zur Trockenreformierung von Methan und zur Fixierung als fester Kohlenstoff zur Veröffentlichung angenommen",
+    "fr": "Un article sur le reformage à sec du méthane et la fixation du carbone solide accepté pour publication",
+    "es": "Aceptado para publicación un artículo sobre el reformado en seco de metano y la fijación de carbono sólido"
+  },
+  "炭素捕集段を組み込んだメタンのドライ改質において、反応平衡の移動と固体炭素固定化を検討した研究です。": {
+    "en": "The study examines equilibrium shifting and solid carbon fixation in methane dry reforming with an integrated carbon-capture stage.",
+    "zh": "本研究将碳捕集阶段引入甲烷干重整过程，探讨反应平衡的移动与固体碳固定。",
+    "ko": "탄소 포집 단계를 결합한 메탄 건식 개질에서 반응 평형의 이동과 고체 탄소 고정을 검토한 연구입니다.",
+    "de": "Die Studie untersucht die Gleichgewichtsverschiebung und die Fixierung als fester Kohlenstoff bei der Trockenreformierung von Methan mit einer integrierten Stufe zur Kohlenstoffabscheidung.",
+    "fr": "Cette étude examine le déplacement de l’équilibre et la fixation du carbone solide lors du reformage à sec du méthane intégrant une étape de capture du carbone.",
+    "es": "El estudio examina el desplazamiento del equilibrio y la fijación de carbono sólido en el reformado en seco de metano con una etapa integrada de captura de carbono."
+  },
+  "著者": {
+    "en": "Authors",
+    "zh": "作者",
+    "ko": "저자",
+    "de": "Autoren",
+    "fr": "Auteurs",
+    "es": "Autores"
+  },
+  "研究概念図：ドライ改質 → 炭素生成 → ドライ改質": {
+    "en": "Research concept: dry reforming → carbon formation → dry reforming",
+    "zh": "研究示意图：干重整 → 碳生成 → 干重整",
+    "ko": "연구 개념도: 건식 개질 → 탄소 생성 → 건식 개질",
+    "de": "Forschungskonzept: Trockenreformierung → Kohlenstoffbildung → Trockenreformierung",
+    "fr": "Concept de recherche : reformage à sec → formation de carbone → reformage à sec",
+    "es": "Concepto de investigación: reformado en seco → formación de carbono → reformado en seco"
+  },
+  "メタンと二酸化炭素を供給し、ドライ改質、炭素生成、ドライ改質の3段を通して合成ガスと固体炭素を得る反応システムの概念図": {
+    "en": "Schematic of a reaction system that feeds methane and carbon dioxide through dry reforming, carbon formation and a second dry-reforming stage to produce syngas and solid carbon",
+    "zh": "以甲烷和二氧化碳为原料，依次经过干重整、碳生成和第二段干重整，制备合成气与固体碳的反应系统示意图",
+    "ko": "메탄과 이산화탄소를 공급하고 건식 개질, 탄소 생성, 두 번째 건식 개질 단계를 거쳐 합성가스와 고체 탄소를 얻는 반응 시스템 개념도",
+    "de": "Schema eines Reaktionssystems, in dem Methan und Kohlendioxid über Trockenreformierung, Kohlenstoffbildung und eine zweite Trockenreformierungsstufe zu Synthesegas und festem Kohlenstoff umgesetzt werden",
+    "fr": "Schéma d’un système alimenté en méthane et en dioxyde de carbone, combinant reformage à sec, formation de carbone et second reformage à sec pour produire du gaz de synthèse et du carbone solide",
+    "es": "Esquema de un sistema que alimenta metano y dióxido de carbono a tres etapas de reformado en seco, formación de carbono y un segundo reformado en seco para producir gas de síntesis y carbono sólido"
+  },
+  "研究概念図を拡大表示": {
+    "en": "Enlarge the research schematic",
+    "zh": "放大研究示意图",
+    "ko": "연구 개념도 확대 보기",
+    "de": "Forschungsschema vergrößern",
+    "fr": "Agrandir le schéma de recherche",
+    "es": "Ampliar el esquema de investigación"
+  },
+  "採択のお知らせを読む": {
+    "en": "Read the acceptance announcement",
+    "zh": "阅读论文录用公告",
+    "ko": "논문 게재 승인 소식 읽기",
+    "de": "Mitteilung zur Annahme lesen",
+    "fr": "Lire l’annonce d’acceptation",
+    "es": "Leer el anuncio de aceptación"
   }
 }

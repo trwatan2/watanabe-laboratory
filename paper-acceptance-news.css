@@ -1,0 +1,63 @@
+/* Paper acceptance announcement — shared by all seven language editions. */
+.news .paper-acceptance-news,
+.news-index > article.paper-acceptance-news {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  gap: clamp(24px, 4vw, 52px);
+  align-items: center;
+  margin: 24px 0 40px;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid #d9dfcd;
+  background: #f5f7ef;
+  color: #151b12;
+  scroll-margin-top: 110px;
+}
+.paper-acceptance-news .paper-copy { min-width: 0; }
+.paper-acceptance-news .paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  margin: 0 0 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: .035em;
+  color: #587300;
+}
+.paper-acceptance-news .paper-meta time { color: #587300; font-size: 13px; }
+.paper-acceptance-news .paper-heading {
+  margin: 0 0 18px;
+  font-size: clamp(22px, 2.3vw, 30px);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: #151b12;
+  overflow-wrap: break-word;
+}
+.news .paper-acceptance-news .paper-title,
+.news-index .paper-acceptance-news .paper-title {
+  margin: 0 0 18px;
+  font-size: clamp(19px, 1.7vw, 24px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #151b12;
+  overflow-wrap: break-word;
+}
+.paper-acceptance-news .paper-authors { margin: 0 0 22px; }
+.paper-acceptance-news .paper-authors dt { margin: 0 0 5px; color: #587300; font-size: 12px; font-weight: 700; }
+.paper-acceptance-news .paper-authors dd { margin: 0; color: #333c2c; font-size: 15px; line-height: 1.85; }
+.news .paper-acceptance-news .paper-summary,
+.news-index .paper-acceptance-news .paper-summary { margin: 0 0 20px; color: #333c2c; font-size: 16px; line-height: 1.9; }
+.paper-acceptance-news .paper-read-link { display: inline-block; font-size: 14px; font-weight: 700; line-height: 1.8; color: #587300; text-decoration: underline; text-underline-offset: 5px; }
+.paper-acceptance-news figure { margin: 0; min-width: 0; }
+.paper-acceptance-news .paper-figure-link { display: block; padding: 12px; background: #fff; border: 1px solid #e2e4db; }
+.paper-acceptance-news img { display: block; width: 100%; height: auto; }
+.paper-acceptance-news figcaption { margin-top: 12px; color: #58604e; font-size: 12px; line-height: 1.7; text-align: center; }
+.paper-acceptance-news a:focus-visible { outline: 3px solid #587300; outline-offset: 5px; }
+@media (max-width: 720px) {
+  .news .paper-acceptance-news,
+  .news-index > article.paper-acceptance-news { grid-template-columns: minmax(0, 1fr); }
+  .paper-acceptance-news figure { width: 100%; max-width: 340px; margin: 0 auto; }
+  .paper-acceptance-news .paper-heading { font-size: 22px; }
+}
