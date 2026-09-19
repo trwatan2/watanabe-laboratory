@@ -790,5 +790,69 @@
     "de": "Mitteilung zur Annahme lesen",
     "fr": "Lire l’annonce d’acceptation",
     "es": "Leer el anuncio de aceptación"
+  },
+  "学会発表": {
+    "en": "CONFERENCE",
+    "zh": "学术会议",
+    "ko": "학회 발표",
+    "de": "TAGUNG",
+    "fr": "CONFÉRENCE",
+    "es": "CONGRESO"
+  },
+  "学生6名が化学工学会第57回秋季大会で発表しました": {
+    "en": "Six students presented at the SCEJ 57th Autumn Meeting",
+    "zh": "6名学生在日本化学工学会第57届秋季大会上发表研究成果",
+    "ko": "학생 6명이 일본화학공학회 제57회 추계학술대회에서 발표했습니다",
+    "de": "Sechs Studierende präsentierten ihre Forschung auf der 57. Herbsttagung der SCEJ",
+    "fr": "Six étudiants ont présenté leurs travaux à la 57e réunion d’automne de la SCEJ",
+    "es": "Seis estudiantes presentaron sus trabajos en la 57.ª Reunión de Otoño de la SCEJ"
+  },
+  "2026年9月14日～16日に広島大学東広島キャンパスで開催された化学工学会第57回秋季大会において、当研究室の学生6名が研究成果を発表しました。": {
+    "en": "Six students from our laboratory presented their research at the SCEJ 57th Autumn Meeting, held on September 14–16, 2026, at the Higashi-Hiroshima Campus of Hiroshima University.",
+    "zh": "2026年9月14日至16日，日本化学工学会第57届秋季大会在广岛大学东广岛校区举行。本研究室的6名学生在会上发表了研究成果。",
+    "ko": "2026년 9월 14일부터 16일까지 히로시마대학교 히가시히로시마 캠퍼스에서 열린 일본화학공학회 제57회 추계학술대회에서 우리 연구실 학생 6명이 연구 성과를 발표했습니다.",
+    "de": "Sechs Studierende unseres Labors stellten ihre Forschungsergebnisse auf der 57. Herbsttagung der SCEJ vor. Die Tagung fand vom 14. bis 16. September 2026 auf dem Campus Higashi-Hiroshima der Universität Hiroshima statt.",
+    "fr": "Six étudiants de notre laboratoire ont présenté leurs résultats de recherche à la 57e réunion d’automne de la SCEJ, organisée du 14 au 16 septembre 2026 sur le campus de Higashi-Hiroshima de l’Université de Hiroshima.",
+    "es": "Seis estudiantes de nuestro laboratorio presentaron sus resultados de investigación en la 57.ª Reunión de Otoño de la SCEJ, celebrada del 14 al 16 de septiembre de 2026 en el campus de Higashi-Hiroshima de la Universidad de Hiroshima."
+  },
+  "発表プログラム（SY-63）を見る": {
+    "en": "View the presentation program (SY-63)",
+    "zh": "查看报告日程（SY-63）",
+    "ko": "발표 프로그램(SY-63) 보기",
+    "de": "Vortragsprogramm ansehen (SY-63)",
+    "fr": "Consulter le programme des présentations (SY-63)",
+    "es": "Ver el programa de presentaciones (SY-63)"
+  },
+  "学会発表の記事を読む": {
+    "en": "Read the conference report",
+    "zh": "阅读会议报道",
+    "ko": "학회 발표 소식 읽기",
+    "de": "Tagungsbericht lesen",
+    "fr": "Lire le compte rendu de la conférence",
+    "es": "Leer la noticia del congreso"
+  },
+  "化学工学会第57回秋季大会の会場にて（広島大学）": {
+    "en": "At the SCEJ 57th Autumn Meeting venue, Hiroshima University",
+    "zh": "日本化学工学会第57届秋季大会会场（广岛大学）",
+    "ko": "일본화학공학회 제57회 추계학술대회 행사장에서(히로시마대학교)",
+    "de": "Am Veranstaltungsort der 57. Herbsttagung der SCEJ, Universität Hiroshima",
+    "fr": "Sur le site de la 57e réunion d’automne de la SCEJ, Université de Hiroshima",
+    "es": "En la sede de la 57.ª Reunión de Otoño de la SCEJ, Universidad de Hiroshima"
+  },
+  "広島大学の化学工学会第57回秋季大会の看板前で撮影した研究室メンバーの集合写真": {
+    "en": "Group photo of laboratory members in front of the SCEJ 57th Autumn Meeting sign at Hiroshima University",
+    "zh": "研究室成员在广岛大学日本化学工学会第57届秋季大会会场标牌前的合影",
+    "ko": "히로시마대학교의 일본화학공학회 제57회 추계학술대회 안내판 앞에서 촬영한 연구실 구성원 단체 사진",
+    "de": "Gruppenfoto der Labormitglieder vor dem Schild der 57. Herbsttagung der SCEJ an der Universität Hiroshima",
+    "fr": "Photo de groupe des membres du laboratoire devant le panneau de la 57e réunion d’automne de la SCEJ à l’Université de Hiroshima",
+    "es": "Foto de grupo de los miembros del laboratorio frente al cartel de la 57.ª Reunión de Otoño de la SCEJ en la Universidad de Hiroshima"
+  },
+  "学会会場での集合写真を拡大表示": {
+    "en": "Enlarge the group photo at the conference venue",
+    "zh": "放大会场合影",
+    "ko": "학회 행사장 단체 사진 확대 보기",
+    "de": "Gruppenfoto am Tagungsort vergrößern",
+    "fr": "Agrandir la photo de groupe sur le site de la conférence",
+    "es": "Ampliar la foto de grupo en la sede del congreso"
   }
 }
