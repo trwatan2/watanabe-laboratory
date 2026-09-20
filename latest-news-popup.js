@@ -18,17 +18,11 @@
   const lang = labels[language] ? language : 'ja';
   const ui = labels[lang];
   const newsPage = lang === 'ja' ? 'news.html' : `news-${lang}.html`;
-  const storageKey = 'watanabe-lab-dismissed-news-v1';
-  const hero = document.querySelector('.hero');
   const nav = document.querySelector('.global-nav');
-  let version = '';
   let renderedItems = '';
-  let dismissed = '';
   let hasItems = false;
-  let manuallyOpened = false;
-  let dismissedThisVisit = false;
-  let heroVisible = !hero || hero.getBoundingClientRect().bottom > 92;
-  try { dismissed = localStorage.getItem(storageKey) || ''; } catch (_) { /* Storage is optional. */ }
+  // Always open on each homepage visit, regardless of past dismissals or scroll position.
+  let isOpen = true;
 
   const make = (tag, className, text) => {
     const element = document.createElement(tag);
@@ -73,23 +67,18 @@
 
   function renderVisibility() {
     root.hidden = !hasItems || !!nav?.classList.contains('open');
-    const automatic = !dismissedThisVisit && dismissed !== version && heroVisible;
-    const open = manuallyOpened || automatic;
-    panel.hidden = !open;
-    launcher.hidden = open;
-    launcher.setAttribute('aria-expanded', String(open));
+    panel.hidden = !isOpen;
+    launcher.hidden = isOpen;
+    launcher.setAttribute('aria-expanded', String(isOpen));
   }
   function dismiss(returnFocus) {
-    manuallyOpened = false;
-    dismissedThisVisit = true;
-    dismissed = version;
-    try { localStorage.setItem(storageKey, version); } catch (_) { /* Keep working without storage. */ }
+    isOpen = false;
     renderVisibility();
     if (returnFocus && !root.hidden) launcher.focus({preventScroll: true});
   }
   close.addEventListener('click', () => dismiss(true));
   launcher.addEventListener('click', () => {
-    manuallyOpened = true;
+    isOpen = true;
     renderVisibility();
     close.focus({preventScroll: true});
   });
@@ -98,18 +87,16 @@
     const returnFocus = root.contains(document.activeElement);
     dismiss(returnFocus);
   }, true); // Check the menu before its own Escape handler closes it.
-  // Reading an article also acknowledges this set of updates.
+  // Following a news link closes the panel only for the current page view.
   root.addEventListener('click', event => {
     if (event.target.closest('a')) dismiss(false);
   });
-  if (hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(entries => {
-      heroVisible = entries[0].isIntersecting;
-      // Never hide the control a keyboard user is currently operating.
-      if (!heroVisible && panel.contains(document.activeElement)) manuallyOpened = true;
-      renderVisibility();
-    }, {rootMargin: '-92px 0px 0px 0px'}).observe(hero);
-  }
+  // Browser Back can restore this document without running the script again.
+  window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    isOpen = true;
+    renderVisibility();
+  });
   if (nav) new MutationObserver(renderVisibility).observe(nav, {attributes: true, attributeFilter: ['class']});
 
   function extract(documentNode, fallback = false) {
@@ -137,8 +124,6 @@
     const signature = JSON.stringify(items);
     if (signature === renderedItems) return;
     renderedItems = signature;
-    const nextVersion = items.map(item => `${item.date}:${item.id}`).join('|');
-    version = nextVersion;
     list.replaceChildren();
     items.forEach(item => {
       const li = make('li');
@@ -157,9 +142,9 @@
     renderVisibility();
   }
 
-  // A local fallback keeps the panel useful offline and when previewing downloaded HTML.
+  // Display existing homepage news immediately; refresh it without waiting to open.
   const fallback = extract(document, true);
-  const fallbackTimer = setTimeout(() => show(fallback), 700);
+  show(fallback);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 4500);
   fetch(newsPage, {cache: 'no-cache', signal: controller.signal})
@@ -173,5 +158,5 @@
       show(current.length ? current : fallback);
     })
     .catch(() => show(fallback))
-    .finally(() => { clearTimeout(fallbackTimer); clearTimeout(timeout); });
+    .finally(() => { clearTimeout(timeout); });
 })();
