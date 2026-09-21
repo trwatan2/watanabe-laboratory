@@ -1,15 +1,15 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-21T13:34:32.777Z",
+  "updatedAt": "2026-09-21T14:35:21.208Z",
   "since": "2026-08-31T00:00:00Z",
-  "japan": 333,
-  "international": 8,
+  "japan": 360,
+  "international": 9,
   "unknown": 0,
   "topCountries": [
     {
       "code": "JP",
       "name": "Japan",
-      "count": 333
+      "count": 360
     },
     {
       "code": "AE",
@@ -24,6 +24,11 @@
     {
       "code": "SE",
       "name": "Sweden",
+      "count": 1
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
       "count": 1
     },
     {
