@@ -171,7 +171,7 @@
 @media (prefers-reduced-motion: reduce) { #news-update .news-update-panel { animation: none; } }
 
 /* Instagram: direct profile links, visible before scrolling or loading News. */
-.instagram-follow {
+.instagram-follow, .facebook-follow {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -224,4 +224,19 @@
 @media (max-height: 600px) {
   #news-update .news-update-panel.has-instagram { display: block; overflow-y: auto; max-height: calc(100dvh - 100px); }
   #news-update .news-update-list { overflow: visible; }
+}
+
+/* Keep Facebook next to Instagram in the hero, News cards and News popup. */
+.social-links { display: flex; gap: 10px; align-items: stretch; max-width: 100%; }
+.social-links > a { flex: 1 1 0; min-width: 0; white-space: nowrap; }
+.hero-actions .hero-social-links { flex: 0 1 320px; width: 320px; }
+.hero-social-links > a { min-height: 54px; font-size: 13px; padding: 12px 14px; }
+.facebook-follow { background: #0866cf; border-color: #72b3ff; }
+.facebook-follow:hover { background: #0752a6; color: #fff; }
+.facebook-follow:focus-visible { outline: 3px solid #72b3ff; outline-offset: 4px; }
+.instagram-news .social-links { width: 340px; }
+#news-update .social-links > a { width: auto; padding: 10px 8px; font-size: 12px; gap: 5px; }
+@media (max-width: 400px) {
+  .social-links { gap: 8px; }
+  .social-links > a { padding: 10px 8px; font-size: 12px; gap: 5px; }
 }
