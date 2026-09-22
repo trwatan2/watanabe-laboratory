@@ -50,7 +50,7 @@
   header.append(heading, close);
   // Keep the follow link visible immediately, independent of the News fetch.
   const instagram = make('div', 'news-update-instagram');
-  const instagramTitle = lang === 'ja' ? 'Instagram・Facebookで発信中' : 'Follow us on Instagram & Facebook';
+  const instagramTitle = lang === 'ja' ? 'Instagramで発信中' : 'Follow us on Instagram';
   const instagramText = lang === 'ja' ? '研究成果・実験風景・学生の活動を発信' : 'Research, experiments and student life';
   const instagramLabel = 'Instagram ↗';
   instagram.append(make('p', 'news-update-instagram-title', instagramTitle), make('p', 'news-update-instagram-text', instagramText));
@@ -59,11 +59,7 @@
   follow.target = '_blank';
   follow.rel = 'noopener noreferrer';
   const socialLinks = make('div', 'social-links');
-  const facebook = make('a', 'facebook-follow', 'Facebook ↗');
-  facebook.href = 'https://www.facebook.com/profile.php?id=61573170537417';
-  facebook.target = '_blank';
-  facebook.rel = 'noopener noreferrer';
-  socialLinks.append(follow, facebook);
+  socialLinks.append(follow);
   instagram.append(socialLinks);
   const list = make('ul', 'news-update-list');
   const footer = make('div', 'news-update-footer');
