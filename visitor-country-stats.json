@@ -1,9 +1,9 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-24T14:36:44.735Z",
+  "updatedAt": "2026-09-24T15:35:36.421Z",
   "since": "2026-08-31T00:00:00Z",
   "japan": 455,
-  "international": 12,
+  "international": 13,
   "unknown": 0,
   "topCountries": [
     {
@@ -24,6 +24,11 @@
     {
       "code": "CA",
       "name": "Canada",
+      "count": 1
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
       "count": 1
     },
     {
