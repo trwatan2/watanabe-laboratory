@@ -1,0 +1,9 @@
+/* Scoped styling for the auto-methanation announcement. */
+.news .auto-methanation-news,.news-index > article.auto-methanation-news{grid-template-columns:minmax(0,1fr) minmax(300px,42%)}
+.auto-methanation-news .paper-figure-link,.pub-auto-methanation .paper-figure-link{display:block;padding:12px;background:#fff;border:1px solid #e2e4db}
+.auto-methanation-news img,.pub-auto-methanation img{display:block;width:100%;height:auto;background:#fff}
+.pub-page .pub-row.pub-auto-methanation{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,36%);gap:32px;align-items:center;background:#f5f7ef;padding:28px;border:1px solid #d9dfcd;scroll-margin-top:110px}
+.pub-auto-methanation .pub-acceptance-status{margin:0 0 14px}
+.pub-auto-methanation figure{margin:0;min-width:0}.pub-auto-methanation figcaption{font-size:12px;line-height:1.7;color:#58604e;text-align:center;margin-top:12px}
+.pub-auto-methanation .paper-read-link{display:inline-block;margin-top:12px;font-size:14px;color:#587300;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:800px){.news .auto-methanation-news,.news-index > article.auto-methanation-news,.pub-page .pub-row.pub-auto-methanation{grid-template-columns:minmax(0,1fr)}.auto-methanation-news figure{max-width:675px}}
