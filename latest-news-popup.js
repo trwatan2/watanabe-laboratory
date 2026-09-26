@@ -48,19 +48,6 @@
   // Static icon only; article content is always inserted with textContent.
   close.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m3 3 10 10M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
   header.append(heading, close);
-  // Keep the follow link visible immediately, independent of the News fetch.
-  const instagram = make('div', 'news-update-instagram');
-  const instagramTitle = lang === 'ja' ? 'Instagramで発信中' : 'Follow us on Instagram';
-  const instagramText = lang === 'ja' ? '研究成果・実験風景・学生の活動を発信' : 'Research, experiments and student life';
-  const instagramLabel = 'Instagram ↗';
-  instagram.append(make('p', 'news-update-instagram-title', instagramTitle), make('p', 'news-update-instagram-text', instagramText));
-  const follow = make('a', 'instagram-follow', instagramLabel);
-  follow.href = 'https://www.instagram.com/rwatan428/';
-  follow.target = '_blank';
-  follow.rel = 'noopener noreferrer';
-  const socialLinks = make('div', 'social-links');
-  socialLinks.append(follow);
-  instagram.append(socialLinks);
   const list = make('ul', 'news-update-list');
   const footer = make('div', 'news-update-footer');
   const all = make('a', 'news-update-all');
@@ -69,8 +56,7 @@
   arrow.setAttribute('aria-hidden', 'true');
   all.append(make('span', '', ui.all), arrow);
   footer.append(all);
-  panel.classList.add('has-instagram');
-  panel.append(header, instagram, list, footer);
+  panel.append(header, list, footer);
   const launcher = make('button', 'news-update-launcher');
   launcher.type = 'button';
   launcher.setAttribute('aria-label', ui.open);
@@ -173,3 +159,4 @@
     .catch(() => show(fallback))
     .finally(() => { clearTimeout(timeout); });
 })();
+
