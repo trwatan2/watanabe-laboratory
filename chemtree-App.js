@@ -36,7 +36,7 @@ const branchColors = {
     catalysis: '#72ff9b',
     materials: '#68b7ff',
     synthesis: '#c887ff',
-    biochem: '#ffd478',
+    biochem: '#ff66bb',
     analytical: '#67f0e5',
     physical: '#ff8fa8',
     theory: '#ffb86c',

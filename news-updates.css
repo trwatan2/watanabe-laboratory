@@ -54,7 +54,7 @@
 .conference-news figure { margin: 0; min-width: 0; }
 .conference-news .conference-photo { display: block; }
 .conference-news img { display: block; width: 100%; height: auto; }
-.conference-news figcaption { margin-top: 12px; color: #58604e; font-size: 12px; line-height: 1.7; }
+.conference-news figcaption { margin-top: 12px; color: #605260; font-size: 12px; line-height: 1.7; }
 .conference-news a:focus-visible { outline: 3px solid #a00060; outline-offset: 5px; }
 @media (max-width: 800px) {
   .news .conference-news,
@@ -80,7 +80,7 @@
   max-height: min(620px, calc(100dvh - 120px));
   overflow: hidden;
   background: #141a17;
-  border: 1px solid #4d5841;
+  border: 1px solid #68405b;
   border-top: 3px solid #ff0099;
   border-radius: 12px;
   box-shadow: 0 16px 56px #0007;
@@ -122,7 +122,7 @@
   flex-shrink: 0;
   padding: 0;
   color: #c7cec7;
-  border: 1px solid #4d5841;
+  border: 1px solid #68405b;
   border-radius: 50%;
   background: transparent;
 }
