@@ -7,7 +7,7 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
 .international-full .hero-jp{letter-spacing:.06em}
 .international-full .hero-lead{line-height:1.6;max-width:760px}
 .international-full .global-nav{gap:16px;font-size:12px;letter-spacing:.04em}
-.international-full .global-nav a[aria-current="page"]{color:#d7ff45;opacity:1}
+.international-full .global-nav a[aria-current="page"]{color:#ff0099;opacity:1}
 .international-full .language-menu summary{font-size:13px}
 .international-full .statement h2{font-size:clamp(38px,4.8vw,76px);line-height:1.2;letter-spacing:-.035em}
 .international-full .vision-line,.international-full .sulfur-title-line{display:inline;white-space:normal}

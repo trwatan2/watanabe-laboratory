@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=27" />
+  <link rel="stylesheet" href="css/style.css?v=20260927-magenta" />
   <style id="biz-udpgothic-force">
     html, body, body *, body *::before, body *::after {
       font-family: "BIZ UDPGothic", sans-serif !important;
@@ -22,8 +22,8 @@
   </style>
 
   <style id="v28-accent-fix">
-    /* v29: brighter olive-lime accents on light surfaces — inline so GitHub folder/CSS cache cannot block it */
-    :root{--accent-light:#6a8720;--accent-link:#587300}
+    /* v29: magenta accents on light surfaces — inline so GitHub folder/CSS cache cannot block it */
+    :root{--accent-light:#b0006a;--accent-link:#a00060}
     .statement .kicker,
     .statement .section-label,
     .news .section-label,
@@ -44,7 +44,7 @@
     .academic-links span,
     .people-page .member-year{color:var(--accent-light)!important}
 
-    /* Links use a slightly deeper olive-lime for readability; labels stay brighter. */
+    /* Links use a deeper magenta for readability; labels stay brighter. */
     .statement .text-link,
     .news .text-link,
     .content-section:not(.dark-section):not(.light-outro) .text-link,
@@ -58,9 +58,9 @@
     .news .text-link:hover,
     .content-section:not(.dark-section):not(.light-outro) .text-link:hover,
     .pub-page a:hover,
-    .contact-card:not(.primary-contact) .text-link:hover{color:#3f5700!important}
+    .contact-card:not(.primary-contact) .text-link:hover{color:#780048!important}
 
-    /* Keep the original bright lime only on genuinely dark backgrounds. */
+    /* Keep the bright magenta only on genuinely dark backgrounds. */
     .hero .eyebrow,
     .page-hero .eyebrow,
     .dark-section .kicker,
@@ -68,9 +68,9 @@
     .research-jump b,
     .info-card span,
     .profile-monogram,
-    .video-placeholder>span{color:#d7ff45!important}
+    .video-placeholder>span{color:#ff0099!important}
 
-    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#d29b18!important}
+    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#ff0099!important}
   </style>
 
 <style id="links-page-style">
@@ -79,7 +79,7 @@
   .link-section{margin-top:58px}
   .link-section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid rgba(12,17,18,.16)}
   .link-section-head h2{margin:0;font-size:clamp(32px,4vw,52px);line-height:1}
-  .link-section-head p{margin:0;color:#6a8720;font-size:13px;font-weight:700;letter-spacing:.13em}
+  .link-section-head p{margin:0;color:#b0006a;font-size:13px;font-weight:700;letter-spacing:.13em}
   .link-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
   .link-card{
     display:flex;justify-content:space-between;align-items:center;gap:22px;
@@ -87,11 +87,11 @@
     background:#fff;color:#121515;text-decoration:none;
     transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
   }
-  .link-card:hover{transform:translateY(-2px);border-color:#6a8720;box-shadow:0 10px 26px rgba(0,0,0,.07)}
+  .link-card:hover{transform:translateY(-2px);border-color:#b0006a;box-shadow:0 10px 26px rgba(0,0,0,.07)}
   .link-card .label{display:block;margin-bottom:7px;font-size:20px;font-weight:700;line-height:1.45}
   .link-card .sub{display:block;color:#686d69;font-size:13px;line-height:1.5}
-  .link-card .arrow{flex:0 0 auto;color:#587300;font-size:25px;font-weight:700}
-  .link-card.internal-tool{border-left:4px solid #6a8720}
+  .link-card .arrow{flex:0 0 auto;color:#a00060;font-size:25px;font-weight:700}
+  .link-card.internal-tool{border-left:4px solid #b0006a}
   .link-card.society{background:#f7f7f4}
   .links-note{margin-top:26px;color:#777;font-size:13px}
   @media (max-width:760px){
@@ -114,8 +114,8 @@
     text-transform:none;letter-spacing:.08em;white-space:nowrap
   }
   .language-menu summary::-webkit-details-marker{display:none}
-  .language-menu summary::after{content:" ▾";color:#d7ff45}
-  .language-menu[open] summary{color:#d7ff45;opacity:1}
+  .language-menu summary::after{content:" ▾";color:#ff0099}
+  .language-menu[open] summary{color:#ff0099;opacity:1}
   .language-menu-panel{
     position:absolute;right:0;top:28px;min-width:180px;padding:10px;
     display:grid;gap:2px;background:#0b0d0e;border:1px solid rgba(255,255,255,.16);
@@ -125,7 +125,7 @@
     display:block!important;padding:8px 10px!important;opacity:.86!important;
     text-transform:none!important;letter-spacing:.03em!important;font-size:12px!important
   }
-  .language-menu-panel a:hover{background:rgba(215,255,69,.08);color:#d7ff45!important}
+  .language-menu-panel a:hover{background:rgba(255,0,153,.08);color:#ff0099!important}
   @media(max-width:960px){
     .language-menu{width:100%;margin-top:6px}
     .language-menu summary{font-size:14px}

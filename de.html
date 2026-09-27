@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=27">
+  <link rel="stylesheet" href="css/style.css?v=20260927-magenta">
   <style id="v28-accent-fix">
-    /* v29: brighter olive-lime accents on light surfaces — inline so GitHub folder/CSS cache cannot block it */
-    :root{--accent-light:#6a8720;--accent-link:#587300}
+    /* v29: magenta accents on light surfaces — inline so GitHub folder/CSS cache cannot block it */
+    :root{--accent-light:#b0006a;--accent-link:#a00060}
     .statement .kicker,
     .statement .section-label,
     .news .section-label,
@@ -34,7 +34,7 @@
     .academic-links span,
     .people-page .member-year{color:var(--accent-light)!important}
 
-    /* Links use a slightly deeper olive-lime for readability; labels stay brighter. */
+    /* Links use a deeper magenta for readability; labels stay brighter. */
     .statement .text-link,
     .news .text-link,
     .content-section:not(.dark-section):not(.light-outro) .text-link,
@@ -48,9 +48,9 @@
     .news .text-link:hover,
     .content-section:not(.dark-section):not(.light-outro) .text-link:hover,
     .pub-page a:hover,
-    .contact-card:not(.primary-contact) .text-link:hover{color:#3f5700!important}
+    .contact-card:not(.primary-contact) .text-link:hover{color:#780048!important}
 
-    /* Keep the original bright lime only on genuinely dark backgrounds. */
+    /* Keep the bright magenta only on genuinely dark backgrounds. */
     .hero .eyebrow,
     .page-hero .eyebrow,
     .dark-section .kicker,
@@ -58,9 +58,9 @@
     .research-jump b,
     .info-card span,
     .profile-monogram,
-    .video-placeholder>span{color:#d7ff45!important}
+    .video-placeholder>span{color:#ff0099!important}
 
-    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#d29b18!important}
+    .sulfur-detail .kicker, .sulfur-feature .kicker{color:#ff0099!important}
   </style>
 
 <style id="home-recovery-failsafe">
@@ -85,8 +85,8 @@ img,video{max-width:100%}
     text-transform:none;letter-spacing:.08em;white-space:nowrap
   }
   .language-menu summary::-webkit-details-marker{display:none}
-  .language-menu summary::after{content:" ▾";color:#d7ff45}
-  .language-menu[open] summary{color:#d7ff45;opacity:1}
+  .language-menu summary::after{content:" ▾";color:#ff0099}
+  .language-menu[open] summary{color:#ff0099;opacity:1}
   .language-menu-panel{
     position:absolute;right:0;top:28px;min-width:180px;padding:10px;
     display:grid;gap:2px;background:#0b0d0e;border:1px solid rgba(255,255,255,.16);
@@ -96,7 +96,7 @@ img,video{max-width:100%}
     display:block!important;padding:8px 10px!important;opacity:.86!important;
     text-transform:none!important;letter-spacing:.03em!important;font-size:12px!important
   }
-  .language-menu-panel a:hover{background:rgba(215,255,69,.08);color:#d7ff45!important}
+  .language-menu-panel a:hover{background:rgba(255,0,153,.08);color:#ff0099!important}
   @media(max-width:960px){
     .language-menu{width:100%;margin-top:6px}
     .language-menu summary{font-size:14px}
@@ -132,7 +132,7 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
 .international-full .hero-jp{letter-spacing:.06em}
 .international-full .hero-lead{line-height:1.6;max-width:760px}
 .international-full .global-nav{gap:16px;font-size:12px;letter-spacing:.04em}
-.international-full .global-nav a[aria-current="page"]{color:#d7ff45;opacity:1}
+.international-full .global-nav a[aria-current="page"]{color:#ff0099;opacity:1}
 .international-full .language-menu summary{font-size:13px}
 .international-full .statement h2{font-size:clamp(38px,4.8vw,76px);line-height:1.2;letter-spacing:-.035em}
 .international-full .vision-line,.international-full .sulfur-title-line{display:inline;white-space:normal}
@@ -184,16 +184,16 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
 </style>
 <style id="student-award-news-style">
 .news .student-award-news,.news-index>article.student-award-news{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,350px);gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(24px,4vw,44px);margin:24px 0 40px;border:1px solid #d9dfcd;background:#f5f7ef;color:#151b12;scroll-margin-top:110px}
-.student-award-news .award-meta{display:flex;gap:18px;align-items:center;margin:0 0 20px;color:#587300;font-size:13px;letter-spacing:.06em}
+.student-award-news .award-meta{display:flex;gap:18px;align-items:center;margin:0 0 20px;color:#a00060;font-size:13px;letter-spacing:.06em}
 .student-award-news .award-heading{font-size:clamp(21px,2.5vw,30px);line-height:1.6;letter-spacing:.01em;margin:0 0 20px;font-weight:700;color:#151b12}
 .student-award-news p{font-size:16px;line-height:1.9;margin:0 0 24px;color:#333c2c;white-space:pre-line}
 .student-award-news figure{margin:0;min-width:0}.student-award-news img{display:block;width:100%;height:auto;border:1px solid #e2e4db;background:white;box-shadow:0 6px 24px #17220b14}
 .student-award-news figcaption{font-size:12px;line-height:1.7;color:#58604e;margin-top:12px;text-align:center}
-.student-award-news .award-link{display:inline-block;font-size:14px;font-weight:700;color:#587300;text-decoration:underline;text-underline-offset:5px;line-height:1.8;margin:0 18px 8px 0}
+.student-award-news .award-link{display:inline-block;font-size:14px;font-weight:700;color:#a00060;text-decoration:underline;text-underline-offset:5px;line-height:1.8;margin:0 18px 8px 0}
 @media(max-width:650px){.news .student-award-news,.news-index>article.student-award-news{grid-template-columns:1fr}.student-award-news figure{max-width:420px;margin:0 auto}.student-award-news .award-heading{font-size:22px}}
 </style>
-<link rel="stylesheet" href="paper-acceptance-news.css?v=20260919-2" />
-<link rel="stylesheet" href="news-updates.css?v=20260922-instagram-only" />
+<link rel="stylesheet" href="paper-acceptance-news.css?v=20260927-magenta" />
+<link rel="stylesheet" href="news-updates.css?v=20260927-magenta" />
 
 <!-- Watanabe Laboratory identity: browser icons and link-sharing preview -->
 <link rel="stylesheet" href="lab-branding.css?v=20260921-brand" />
@@ -213,7 +213,7 @@ body.international-full,body.international-full *{font-family:"Helvetica Neue",A
 <meta name="twitter:description" content="Watanabe Laboratory, Universität Shizuoka, Campus Hamamatsu. Katalyse, Reaktionstechnik, strukturierte Katalysatoren, CO2-Umwandlung und katalytische Prozesse mit Gitterschwefel." />
 <meta name="twitter:image" content="https://trwatan2.github.io/watanabe-laboratory/watanabe-instagram-logo.png?v=20260921-brand" />
 <meta name="twitter:image:alt" content="WATANABE LAB" />
-<link rel="stylesheet" href="auto-methanation-news.css?v=20260925" />
+<link rel="stylesheet" href="auto-methanation-news.css?v=20260927-magenta" />
 </head>
 <body class="international-full">
   <header class="site-header" id="top">
