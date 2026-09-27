@@ -20,6 +20,9 @@
   .site-header .brand-mark { width: 48px; height: 48px; flex-basis: 48px; }
 }
 
-/* Match the approved laboratory identity to the site accent in every language. */
-.site-header .brand-name b,
-.site-header .brand-name small { color: #ff0099; }
+/* Neutral header lettering balances the magenta logo and action accents. */
+.site-header .brand-name b { color: #f3f4f5; }
+.site-header .brand-name small { color: #bcc3c8; }
+
+/* Shared by all seven homepages; overrides the earlier inline accent rule. */
+.hero .hero-content > .eyebrow { color: #ced5d9 !important; }
