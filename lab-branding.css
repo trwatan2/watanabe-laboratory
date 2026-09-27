@@ -21,8 +21,8 @@
 }
 
 /* Neutral header lettering balances the magenta logo and action accents. */
-.site-header .brand-name b { color: #f3f4f5; }
-.site-header .brand-name small { color: #bcc3c8; }
+.site-header .brand-name b { color: #b8bec4; }
+.site-header .brand-name small { color: #b8bec4; }
 
 /* Shared by all seven homepages; overrides the earlier inline accent rule. */
-.hero .hero-content > .eyebrow { color: #ced5d9 !important; }
+.hero .hero-content > .eyebrow { color: #b8bec4 !important; }
