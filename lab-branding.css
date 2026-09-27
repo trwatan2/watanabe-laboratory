@@ -1,4 +1,4 @@
-/* Shared laboratory mark, using the supplied artwork unchanged. */
+/* Shared laboratory mark, white and magenta artwork on charcoal. */
 .site-header .brand-mark {
   display: block;
   flex: 0 0 56px;
@@ -7,7 +7,7 @@
   border: 0;
   border-radius: 6px;
   overflow: hidden;
-  background: #041b3e;
+  background: #0b0d0e;
 }
 .site-header .brand-mark img {
   display: block;
@@ -19,3 +19,7 @@
 @media (max-width: 600px) {
   .site-header .brand-mark { width: 48px; height: 48px; flex-basis: 48px; }
 }
+
+/* Match the approved laboratory identity to the site accent in every language. */
+.site-header .brand-name b,
+.site-header .brand-name small { color: #ff0099; }
