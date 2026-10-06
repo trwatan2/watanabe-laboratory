@@ -1,20 +1,25 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-06T03:08:58.956Z",
+  "updatedAt": "2026-10-06T10:33:57.076Z",
   "since": "2026-08-31T00:00:00Z",
-  "japan": 698,
-  "international": 17,
+  "japan": 723,
+  "international": 18,
   "unknown": 0,
   "topCountries": [
     {
       "code": "JP",
       "name": "Japan",
-      "count": 698
+      "count": 723
     },
     {
       "code": "AE",
       "name": "United Arab Emirates",
       "count": 7
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "count": 2
     },
     {
       "code": "GB",
@@ -39,11 +44,6 @@
     {
       "code": "DE",
       "name": "Germany",
-      "count": 1
-    },
-    {
-      "code": "ID",
-      "name": "Indonesia",
       "count": 1
     },
     {
