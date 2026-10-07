@@ -59,7 +59,8 @@ jobs:
                 }, signal: AbortSignal.timeout(20000), redirect: 'error'});
                 if (!r.ok) {
                   const error = new Error('GoatCounter ' + u.pathname + ' HTTP ' + r.status);
-                  error.retryable = [408, 429].includes(r.status) || r.status >= 500;
+                  error.status = r.status;
+                  error.retryable = [404, 408, 429].includes(r.status) || r.status >= 500;
                   await r.body?.cancel();
                   throw error;
                 }
@@ -96,7 +97,45 @@ jobs:
             }
             throw new Error('The /site-total tracking path is not recorded in GoatCounter yet.');
           }
-          const totalPathID = await findTotalPath();
+          // /paths can return 404 on some GoatCounter instances. Resolve the
+          // same exact aggregate path through statistics before requesting countries.
+          async function findTotalPathFromHits() {
+            const excluded = new Set();
+            for (let page = 0; page < 100; page++) {
+              const u = new URL(base + '/stats/hits');
+              u.searchParams.set('start', start);
+              u.searchParams.set('end', cutoff);
+              u.searchParams.set('limit', '100');
+              u.searchParams.set('exclude_paths', [...excluded].join(','));
+              const d = await apiGet(u);
+              if (!Array.isArray(d.hits)) throw new Error('Unexpected page statistics response');
+              const found = d.hits.find(p => String(p.path).replace(/^\//, '') === 'site-total');
+              if (found) {
+                const id = Number(found.path_id);
+                if (!Number.isSafeInteger(id) || id <= 0) throw new Error('Invalid aggregate path ID');
+                return id;
+              }
+              if (!d.more) break;
+              const before = excluded.size;
+              for (const hit of d.hits) {
+                const id = Number(hit.path_id);
+                if (!Number.isSafeInteger(id) || id <= 0) throw new Error('Invalid page path ID');
+                excluded.add(id);
+              }
+              if (excluded.size === before) throw new Error('Page statistics pagination did not advance');
+              await new Promise(resolve => setTimeout(resolve, 300));
+            }
+            throw new Error('The /site-total tracking path is not recorded in GoatCounter yet.');
+          }
+
+          let totalPathID;
+          try {
+            totalPathID = await findTotalPath();
+          } catch (error) {
+            if (error.status !== 404) throw error;
+            console.log('Paths endpoint unavailable; resolving the aggregate path from page statistics.');
+            totalPathID = await findTotalPathFromHits();
+          }
           console.log('Aggregate tracking path found; requesting country statistics.');
 
           async function getAllLocations() {
@@ -226,5 +265,3 @@ jobs:
             sleep 10
           done
           exit 1
-
-
