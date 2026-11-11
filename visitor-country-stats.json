@@ -1,15 +1,15 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-11T15:27:45.905Z",
+  "updatedAt": "2026-11-11T22:51:37.547Z",
   "since": "2026-08-31T00:00:00Z",
-  "japan": 1762,
-  "international": 29,
+  "japan": 1765,
+  "international": 32,
   "unknown": 0,
   "topCountries": [
     {
       "code": "JP",
       "name": "Japan",
-      "count": 1762
+      "count": 1765
     },
     {
       "code": "AE",
@@ -27,14 +27,14 @@
       "count": 5
     },
     {
+      "code": "AT",
+      "name": "Austria",
+      "count": 3
+    },
+    {
       "code": "ID",
       "name": "Indonesia",
       "count": 2
-    },
-    {
-      "code": "AT",
-      "name": "Austria",
-      "count": 1
     },
     {
       "code": "CA",
