@@ -1,15 +1,15 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-24T02:24:41.073Z",
+  "updatedAt": "2026-11-24T12:47:48.612Z",
   "since": "2026-08-31T00:00:00Z",
-  "japan": 2043,
-  "international": 38,
+  "japan": 2067,
+  "international": 41,
   "unknown": 0,
   "topCountries": [
     {
       "code": "JP",
       "name": "Japan",
-      "count": 2043
+      "count": 2067
     },
     {
       "code": "US",
@@ -25,6 +25,11 @@
       "code": "GB",
       "name": "United Kingdom",
       "count": 6
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "count": 4
     },
     {
       "code": "AT",
@@ -49,11 +54,6 @@
     {
       "code": "EG",
       "name": "Egypt",
-      "count": 1
-    },
-    {
-      "code": "DE",
-      "name": "Germany",
       "count": 1
     }
   ]
